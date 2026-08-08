@@ -1,7 +1,6 @@
 import json
 import subprocess
 import sys
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -39,7 +38,10 @@ class SkillpackTests(unittest.TestCase):
         metadata_path = ROOT / "catalog" / "skills" / "seo-keyword-insights.json"
         metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
         self.assertEqual(metadata["id"], "seo-keyword-insights")
-        self.assertIn("prompt", metadata["install"])
+        self.assertEqual(
+            metadata["install"]["cli"],
+            "npx skills add sandbaseai/sandbase-skills --skill seo-keyword-insights --agent codex",
+        )
         self.assertEqual(metadata["api"]["pricing_model"], "usage-based/call")
         self.assertGreaterEqual(len(metadata["api"]["endpoints"]), 10)
         for endpoint in metadata["api"]["endpoints"]:
@@ -64,7 +66,8 @@ class SkillpackTests(unittest.TestCase):
         plugin = json.loads(
             (
                 ROOT
-                / "registry"
+                / "integrations"
+                / "sandbase-registry"
                 / "data"
                 / "skills"
                 / "sandbase"
@@ -82,20 +85,6 @@ class SkillpackTests(unittest.TestCase):
         self.assertEqual(required, displayed)
         self.assertEqual(plugin["metadata"]["endpoint_count"], len(displayed))
 
-    def test_dry_run_does_not_write_and_real_install_copies_skill(self):
-        with tempfile.TemporaryDirectory() as temp_dir:
-            project = Path(temp_dir) / "sample-project"
-            project.mkdir()
-            dry_run = self.run_cli(
-                "install", "--target", "codex", "--dest", str(project), "--dry-run"
-            )
-            installed = project / ".codex" / "skills" / "seo-keyword-insights"
-            self.assertEqual(dry_run.returncode, 0, dry_run.stderr)
-            self.assertFalse(installed.exists())
-            install = self.run_cli("install", "--target", "codex", "--dest", str(project))
-            self.assertEqual(install.returncode, 0, install.stderr)
-            self.assertTrue((installed / "SKILL.md").is_file())
-
     def test_catalog_contains_only_existing_skill_paths(self):
         catalog = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
         for entry in catalog["skills"]:
@@ -105,6 +94,15 @@ class SkillpackTests(unittest.TestCase):
         catalog = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
         for entry in catalog["skills"]:
             self.assertTrue((ROOT / entry["registry_path"]).is_file())
+
+    def test_every_catalog_entry_has_a_standard_npx_install_command(self):
+        catalog = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
+        for entry in catalog["skills"]:
+            metadata = json.loads((ROOT / entry["metadata_path"]).read_text(encoding="utf-8"))
+            self.assertEqual(
+                metadata["install"]["cli"],
+                f"npx skills add sandbaseai/sandbase-skills --skill {entry['name']} --agent codex",
+            )
 
     def test_every_skill_has_agent_metadata(self):
         catalog = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))

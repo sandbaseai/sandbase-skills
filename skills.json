@@ -7,7 +7,7 @@
     {
       "name": "seo-keyword-insights",
       "path": "marketing/seo-keyword-insights",
-      "registry_path": "registry/data/skills/sandbase/seo-keyword-insights/plugin.json",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/seo-keyword-insights/plugin.json",
       "category": "marketing-seo",
       "metadata_path": "catalog/skills/seo-keyword-insights.json",
       "display_name": "SEO Keyword Insights",
@@ -20,7 +20,7 @@
     {
       "name": "reddit-customer-insights",
       "path": "marketing/reddit-customer-insights",
-      "registry_path": "registry/data/skills/sandbase/reddit-customer-insights/plugin.json",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/reddit-customer-insights/plugin.json",
       "category": "marketing-research",
       "metadata_path": "catalog/skills/reddit-customer-insights.json",
       "display_name": "Reddit Customer Insights",
@@ -33,7 +33,7 @@
     {
       "name": "exa-deep-search",
       "path": "marketing/exa-deep-search",
-      "registry_path": "registry/data/skills/sandbase/exa-deep-search/plugin.json",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/exa-deep-search/plugin.json",
       "category": "search-research",
       "metadata_path": "catalog/skills/exa-deep-search.json",
       "display_name": "Exa Deep Search",
@@ -46,7 +46,7 @@
     {
       "name": "backlink-gap-analysis",
       "path": "marketing/backlink-gap-analysis",
-      "registry_path": "registry/data/skills/sandbase/backlink-gap-analysis/plugin.json",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/backlink-gap-analysis/plugin.json",
       "category": "marketing-seo",
       "metadata_path": "catalog/skills/backlink-gap-analysis.json",
       "display_name": "Backlink Gap Analysis",
@@ -59,7 +59,7 @@
     {
       "name": "competitor-content-intelligence",
       "path": "marketing/competitor-content-intelligence",
-      "registry_path": "registry/data/skills/sandbase/competitor-content-intelligence/plugin.json",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/competitor-content-intelligence/plugin.json",
       "category": "marketing-content",
       "metadata_path": "catalog/skills/competitor-content-intelligence.json",
       "display_name": "Competitor Content Intelligence",

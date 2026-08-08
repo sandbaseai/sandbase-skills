@@ -5,9 +5,8 @@ Downloadable Agent Skills for practical research and growth workflows. Install o
 ## Start here
 
 1. Choose a Skill below.
-2. Clone or download this repository.
-3. Install the Skill into your agent project.
-4. Ask your agent to use the installed Skill.
+2. Run one `npx` command from your agent project.
+3. Ask your agent to use the installed Skill.
 
 No API key belongs in a Skill, prompt, or report. The agent environment must already have an authorized SandBase connection.
 
@@ -23,26 +22,28 @@ No API key belongs in a Skill, prompt, or report. The agent environment must alr
 
 ## Install a Skill
 
-Use the included installer from the repository root. It supports Codex, Claude, Cursor, and a generic project structure.
+From your project root, install a Skill with the open `skills` CLI. `npx` downloads the CLI when needed; you do not need to clone this repository or run a local Python file.
 
 ```bash
-python3 scripts/skillpack.py install \
-  --target codex \
-  --dest /path/to/your/project \
-  --skills exa-deep-search
+npx skills add sandbaseai/sandbase-skills \
+  --skill exa-deep-search \
+  --agent codex
 ```
 
-Preview an installation without writing files:
+The default install is project-scoped. Add `--global` when you want the Skill available across all of your Codex projects:
 
 ```bash
-python3 scripts/skillpack.py install \
-  --target codex \
-  --dest /path/to/your/project \
-  --skills exa-deep-search \
-  --dry-run
+npx skills add sandbaseai/sandbase-skills \
+  --skill exa-deep-search \
+  --agent codex \
+  --global
 ```
 
-The installer copies the selected Skill into the target project. Use `--force` only when you intend to replace an existing installed Skill.
+To browse the available Skills before installing, run:
+
+```bash
+npx skills add sandbaseai/sandbase-skills --list
+```
 
 ## Use it in your agent
 
@@ -61,19 +62,19 @@ marketing/<skill>/SKILL.md       The downloadable Agent instruction
 marketing/<skill>/agents/        Agent UI metadata
 skills.json                      Machine-readable index of all public Skills
 catalog/skills/                  Optional data for a website or marketplace
-registry/data/skills/sandbase/   Optional database-registration manifests
-scripts/skillpack.py             List, validate, and install Skills locally
+integrations/sandbase-registry/  Optional SandBase Registry import manifests
+scripts/skillpack.py             Maintainer-only validation and inspection helper
 ```
 
-Most users only need `marketing/` and the installer. The `catalog/` and `registry/` directories are for teams that run a Skill website or import Skills into the SandBase registry.
+Most users only need the `npx skills add` command above. `catalog/` is for teams that run a Skill website; `integrations/` is for teams that import Skills into a platform.
 
 ## For website and registry integrators
 
-`skills.json` is the repository index. Each entry points to the downloadable Skill, its display metadata, and its registry manifest.
+`skills.json` is the repository index. Each entry points to the downloadable Skill, its display metadata, and its optional SandBase Registry manifest under `integrations/`.
 
 The endpoint list in `catalog/skills/<skill>.json` is display metadata. Resolve current endpoint parameters from the SandBase Capability Registry at runtime with `sandbase_describe_tool`; do not copy API parameter snapshots, prices, or credentials into this repository. The validator ensures that every catalog endpoint list exactly matches its registry manifest.
 
-## Validate locally
+## For contributors: validate locally
 
 ```bash
 python3 scripts/skillpack.py validate

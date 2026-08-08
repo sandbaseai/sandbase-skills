@@ -35,8 +35,9 @@
     ]
   },
   "install": {
-    "prompt": "Use the SandBase SEO Keyword Insights skill for my agent. Review https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/seo-keyword-insights",
-    "cli": "python3 scripts/skillpack.py install --target codex --dest /path/to/project --skills seo-keyword-insights",
+    "prompt": "Use $seo-keyword-insights to build an evidence-backed SEO keyword strategy for my website.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill seo-keyword-insights --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill seo-keyword-insights --agent codex --global",
     "source_path": "marketing/seo-keyword-insights"
   },
   "actions": [

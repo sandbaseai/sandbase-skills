@@ -22,5 +22,11 @@
       {"method": "POST", "operation": "dataforseo/v3/content_analysis/search/live", "tool_name": "dataforseo_v3_content_analysis_search_live", "summary": "Validate topical content coverage."}
     ]
   },
+  "install": {
+    "prompt": "Use $competitor-content-intelligence to find evidence-backed content gaps in my market.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill competitor-content-intelligence --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill competitor-content-intelligence --agent codex --global",
+    "source_path": "marketing/competitor-content-intelligence"
+  },
   "related_skills": ["seo-keyword-insights", "exa-deep-search"]
 }

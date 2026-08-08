@@ -21,5 +21,11 @@
       {"method": "POST", "operation": "reddit/topic-feed", "tool_name": "reddit_app_topic_feed", "summary": "Collect a public topic feed."}
     ]
   },
+  "install": {
+    "prompt": "Use $reddit-customer-insights to research customer pain points from public Reddit discussions.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill reddit-customer-insights --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill reddit-customer-insights --agent codex --global",
+    "source_path": "marketing/reddit-customer-insights"
+  },
   "related_skills": []
 }

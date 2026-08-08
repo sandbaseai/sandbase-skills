@@ -23,5 +23,11 @@
       {"method": "POST", "operation": "dataforseo/v3/backlinks/domain_pages/live", "tool_name": "dataforseo_v3_backlinks_domain_pages_live", "summary": "Identify pages with backlink evidence."}
     ]
   },
+  "install": {
+    "prompt": "Use $backlink-gap-analysis to identify ethical backlink gaps for my domain.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill backlink-gap-analysis --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill backlink-gap-analysis --agent codex --global",
+    "source_path": "marketing/backlink-gap-analysis"
+  },
   "related_skills": ["seo-keyword-insights"]
 }

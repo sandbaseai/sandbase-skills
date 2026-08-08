@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""List, validate, and install the public SandBase Skills collection."""
+"""List and validate the public SandBase Skills collection."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import re
-import shutil
 import sys
 from pathlib import Path
 
@@ -14,12 +13,6 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = REPO_ROOT / "skills.json"
 SKILL_NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-TARGET_DIRS = {
-    "codex": Path(".codex/skills"),
-    "claude": Path(".claude/skills"),
-    "cursor": Path(".cursor/skills"),
-    "generic": Path("skills"),
-}
 
 
 def load_catalog() -> dict:
@@ -89,6 +82,12 @@ def validate_skill(entry: dict) -> list[str]:
         errors.append(f"{name}: web metadata schema_version or id is invalid")
     if not metadata.get("display_name") or not metadata.get("description"):
         errors.append(f"{name}: web metadata requires display_name and description")
+    install = metadata.get("install")
+    expected_install = (
+        f"npx skills add sandbaseai/sandbase-skills --skill {name} --agent codex"
+    )
+    if not isinstance(install, dict) or install.get("cli") != expected_install:
+        errors.append(f"{name}: web metadata must declare the standard npx install command")
     api = metadata.get("api", {})
     schema_resolution = api.get("schema_resolution")
     if (
@@ -177,37 +176,6 @@ def command_show(catalog: dict, skill_name: str) -> int:
     return 0
 
 
-def command_install(catalog: dict, args: argparse.Namespace) -> int:
-    errors = validate_catalog(catalog)
-    if errors:
-        print("Cannot install an invalid collection.", file=sys.stderr)
-        for error in errors:
-            print(f"- {error}", file=sys.stderr)
-        return 1
-    entries = selected_entries(catalog, args.skills)
-    destination = Path(args.dest).expanduser().resolve() / TARGET_DIRS[args.target]
-    operations: list[tuple[Path, Path]] = []
-    for entry in entries:
-        source = REPO_ROOT / entry["path"]
-        target = destination / entry["name"]
-        if target.exists() and not args.force:
-            print(f"Refusing to overwrite {target}; use --force to replace it.", file=sys.stderr)
-            return 1
-        operations.append((source, target))
-    for source, target in operations:
-        print(f"Install {source.relative_to(REPO_ROOT)} -> {target}")
-    if args.dry_run:
-        print("Dry run: no files changed.")
-        return 0
-    destination.mkdir(parents=True, exist_ok=True)
-    for source, target in operations:
-        if target.exists():
-            shutil.rmtree(target)
-        shutil.copytree(source, target)
-    print(f"Installed {len(operations)} skill(s) into {destination}")
-    return 0
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
@@ -215,12 +183,6 @@ def parse_args() -> argparse.Namespace:
     commands.add_parser("validate", help="validate catalog and skill frontmatter")
     show = commands.add_parser("show", help="print display-ready metadata for one skill")
     show.add_argument("skill")
-    install = commands.add_parser("install", help="copy skills into a local agent project")
-    install.add_argument("--target", choices=TARGET_DIRS, required=True)
-    install.add_argument("--dest", required=True, help="destination project root")
-    install.add_argument("--skills", help="comma-separated catalog skill names; default: all")
-    install.add_argument("--dry-run", action="store_true", help="print planned copies only")
-    install.add_argument("--force", action="store_true", help="replace an existing installed skill")
     return parser.parse_args()
 
 
@@ -234,7 +196,7 @@ def main() -> int:
             return command_validate(catalog)
         if args.command == "show":
             return command_show(catalog, args.skill)
-        return command_install(catalog, args)
+        raise ValueError(f"Unsupported command: {args.command}")
     except ValueError as error:
         print(f"Error: {error}", file=sys.stderr)
         return 2
