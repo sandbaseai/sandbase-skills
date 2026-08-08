@@ -52,15 +52,6 @@ def validate_skill(entry: dict) -> list[str]:
     skill_file = skill_dir / "SKILL.md"
     if not skill_dir.is_dir() or not skill_file.is_file():
         return [f"{name}: SKILL.md not found at {relative_path}"]
-    agent_file = skill_dir / "agents" / "openai.yaml"
-    if not agent_file.is_file():
-        errors.append(f"{name}: agents/openai.yaml is required")
-    else:
-        agent_text = agent_file.read_text(encoding="utf-8")
-        if f'display_name: "{entry.get("display_name", "")}"' not in agent_text:
-            errors.append(f"{name}: Agent display_name must match the catalog")
-        if f"${name}" not in agent_text:
-            errors.append(f"{name}: Agent default_prompt must mention ${name}")
     fields = frontmatter(skill_file.read_text(encoding="utf-8"))
     if not fields:
         errors.append(f"{name}: invalid YAML frontmatter delimiters")
@@ -104,6 +95,22 @@ def validate_skill(entry: dict) -> list[str]:
             if not isinstance(endpoint, dict) or not endpoint.get("tool_name") or not endpoint.get("operation"):
                 errors.append(f"{name}: every API endpoint requires tool_name and operation")
                 continue
+    installed_text = skill_file.read_text(encoding="utf-8")
+    references_dir = skill_dir / "references"
+    if references_dir.is_dir():
+        installed_text += "\n" + "\n".join(
+            reference.read_text(encoding="utf-8")
+            for reference in sorted(references_dir.rglob("*.md"))
+        )
+    missing_tools = [
+        endpoint["tool_name"]
+        for endpoint in endpoints
+        if isinstance(endpoint, dict)
+        and endpoint.get("tool_name")
+        and endpoint["tool_name"] not in installed_text
+    ]
+    if missing_tools:
+        errors.append(f"{name}: installed Skill does not document {', '.join(missing_tools)}")
     registry_path = entry.get("registry_path")
     if not isinstance(registry_path, str):
         errors.append(f"{name}: registry_path is required")

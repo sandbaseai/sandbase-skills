@@ -24,11 +24,11 @@ Do not push directly to the upstream repository. Keep one pull request focused o
 ## Add a new Skill
 
 1. Create `marketing/<skill-id>/SKILL.md` with `name` and `description` YAML frontmatter.
-2. Add `marketing/<skill-id>/agents/openai.yaml` with display metadata and a default prompt that names `$<skill-id>`.
+2. Add a `references/sandbase-api-map.md` file that documents every tool available to the installed Skill.
 3. Add one entry to `skills.json`.
 4. Add one display record under `catalog/skills/` and, when SandBase Registry import is needed, one manifest under `integrations/sandbase-registry/data/skills/sandbase/`.
 5. Set the catalog `install.cli` to `npx skills add sandbaseai/sandbase-skills --skill <skill-id> --agent codex`.
-6. Declare the same `tool_name` values in the catalog and the registry manifest.
+6. Declare the same `tool_name` values in the catalog, installed API map, and registry manifest.
 
 ## Validate before opening a pull request
 

@@ -104,10 +104,17 @@ class SkillpackTests(unittest.TestCase):
                 f"npx skills add sandbaseai/sandbase-skills --skill {entry['name']} --agent codex",
             )
 
-    def test_every_skill_has_agent_metadata(self):
+    def test_every_installed_skill_documents_its_declared_tools(self):
         catalog = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
         for entry in catalog["skills"]:
-            self.assertTrue((ROOT / entry["path"] / "agents" / "openai.yaml").is_file())
+            skill_dir = ROOT / entry["path"]
+            text = (skill_dir / "SKILL.md").read_text(encoding="utf-8")
+            references_dir = skill_dir / "references"
+            for reference in references_dir.rglob("*.md"):
+                text += reference.read_text(encoding="utf-8")
+            metadata = json.loads((ROOT / entry["metadata_path"]).read_text(encoding="utf-8"))
+            for endpoint in metadata["api"]["endpoints"]:
+                self.assertIn(endpoint["tool_name"], text)
 
 
 if __name__ == "__main__":

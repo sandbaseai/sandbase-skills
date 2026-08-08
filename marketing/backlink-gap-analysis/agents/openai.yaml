@@ -1,4 +1,0 @@
-interface:
-  display_name: "Backlink Gap Analysis"
-  short_description: "Find ethical competitor backlink gaps"
-  default_prompt: "Use $backlink-gap-analysis to identify ethical backlink gaps for my domain."

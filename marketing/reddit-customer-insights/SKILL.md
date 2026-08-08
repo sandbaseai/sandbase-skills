@@ -5,7 +5,11 @@ description: Discover evidence-backed customer language, pain points, objections
 
 # Reddit Customer Insights
 
-Turn Reddit discussions into a concise, source-backed customer-insight brief. Use SandBase Reddit capabilities only for collection; the Agent synthesizes findings from the returned posts and comments.
+Turn Reddit discussions into a concise, source-backed customer-insight brief. Use SandBase Reddit capabilities only for collection; the Agent synthesizes findings from the returned posts and comments. Read [the API map](references/sandbase-api-map.md) before selecting a capability.
+
+## Call SandBase capabilities
+
+For every selected tool, call `sandbase_describe_tool` first and use only arguments in its current input schema. Then call `sandbase_call_tool` with the exact `tool_name`. The API map fixes the workflow's tool names; Capability Registry remains authoritative for parameters and available Reddit data.
 
 ## Workflow
 

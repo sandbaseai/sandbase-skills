@@ -5,7 +5,11 @@ description: Search, extract, and compare high-quality public sources with Exa t
 
 # Exa Deep Search
 
-Turn Exa search into a focused, source-backed research brief. The current Skill uses the SandBase `exa_search` capability, which can return highlights, summaries, or full page text in the same call.
+Turn Exa search into a focused, source-backed research brief. Read [the API map](references/sandbase-api-map.md) before selecting a capability.
+
+## Call SandBase capabilities
+
+For every selected tool, call `sandbase_describe_tool` first and use only arguments in its current input schema. Then call `sandbase_call_tool` with the exact `tool_name`. The API map fixes the workflow's tool names; Capability Registry remains authoritative for parameters and current availability.
 
 ## Workflow
 

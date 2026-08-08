@@ -5,7 +5,11 @@ description: Find and prioritize ethical backlink and digital-PR opportunities u
 
 # Backlink Gap Analysis
 
-Use backlink evidence to find relevant, reachable opportunities. Do not send outreach or create links.
+Use backlink evidence to find relevant, reachable opportunities. Do not send outreach or create links. Read [the API map](references/sandbase-api-map.md) before selecting a capability.
+
+## Call SandBase capabilities
+
+For every selected tool, call `sandbase_describe_tool` first and use only arguments in its current input schema. Then call `sandbase_call_tool` with the exact `tool_name`. The API map fixes the workflow's tool names; Capability Registry remains authoritative for parameters and supported targets.
 
 ## Workflow
 

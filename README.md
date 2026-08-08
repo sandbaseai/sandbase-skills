@@ -53,13 +53,13 @@ After installation, use the Skill by name. For example:
 Use $exa-deep-search to research how enterprise teams evaluate AI agents. Prefer primary sources and cite every finding.
 ```
 
-Each Skill describes its workflow, evidence standards, expected output, and the SandBase capabilities it needs. Your agent performs the analysis; the Skill does not depend on a separate third-party LLM.
+Each Skill describes its workflow, evidence standards, expected output, and the SandBase capabilities it needs. Every endpoint is documented in the installed Skill's API map; parameters are resolved at runtime with `sandbase_describe_tool`. Your agent performs the analysis; the Skill does not depend on a separate third-party LLM.
 
 ## Repository layout
 
 ```text
 marketing/<skill>/SKILL.md       The downloadable Agent instruction
-marketing/<skill>/agents/        Agent UI metadata
+marketing/<skill>/references/    Optional capability maps and deeper guidance
 skills.json                      Machine-readable index of all public Skills
 catalog/skills/                  Optional data for a website or marketplace
 integrations/sandbase-registry/  Optional SandBase Registry import manifests

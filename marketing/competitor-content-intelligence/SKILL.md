@@ -5,7 +5,11 @@ description: Analyze competitor content coverage and uncover differentiated cont
 
 # Competitor Content Intelligence
 
-Compare public content evidence to identify differentiated editorial and landing-page opportunities.
+Compare public content evidence to identify differentiated editorial and landing-page opportunities. Read [the API map](references/sandbase-api-map.md) before selecting a capability.
+
+## Call SandBase capabilities
+
+For every selected tool, call `sandbase_describe_tool` first and use only arguments in its current input schema. Then call `sandbase_call_tool` with the exact `tool_name`. The API map fixes the workflow's tool names; Capability Registry remains authoritative for parameters and supported targets.
 
 ## Workflow
 

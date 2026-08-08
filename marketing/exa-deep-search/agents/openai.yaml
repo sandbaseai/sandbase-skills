@@ -1,4 +1,0 @@
-interface:
-  display_name: "Exa Deep Search"
-  short_description: "Search and extract reliable public sources"
-  default_prompt: "Use $exa-deep-search to research a topic with source-backed findings."
