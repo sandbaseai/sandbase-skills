@@ -85,6 +85,16 @@ def validate_skill(entry: dict) -> list[str]:
         errors.append(f"{name}: web metadata must declare API endpoints")
     elif any(not endpoint.get("tool_name") for endpoint in endpoints if isinstance(endpoint, dict)):
         errors.append(f"{name}: every API endpoint requires tool_name")
+    else:
+        for endpoint in endpoints:
+            if not isinstance(endpoint, dict) or "schema" not in endpoint:
+                continue
+            schema_ref = endpoint["schema"]
+            if not isinstance(schema_ref, dict) or schema_ref.get("source") != "sandbase-capability-registry":
+                errors.append(f"{name}: endpoint schema must identify sandbase-capability-registry")
+                continue
+            if not isinstance(endpoint.get("capability_id"), str) or not endpoint["capability_id"]:
+                errors.append(f"{name}: dynamic endpoint schema requires capability_id")
     tests = metadata.get("agent_tests")
     eval_file = REPO_ROOT / "evals" / f"{name}.json"
     if not isinstance(tests, list) or not tests:

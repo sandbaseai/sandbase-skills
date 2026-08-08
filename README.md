@@ -7,6 +7,11 @@ A versioned collection of downloadable Agent Skills that turn SandBase capabilit
 | Skill | Purpose |
 |---|---|
 | `seo-keyword-insights` | Research keywords, competition, demand, and SERP-backed page opportunities with SandBase SEO capabilities. |
+| `reddit-customer-insights` | Turn public Reddit discussions into customer-language, pain-point, and objection research. |
+| `exa-deep-search` | Search, extract, and compare high-quality public sources with Exa. |
+| `backlink-gap-analysis` | Find ethical backlink and digital-PR gaps from backlink evidence. |
+| `competitor-content-intelligence` | Compare public competitor coverage and identify differentiated content opportunities. |
+| `market-signal-monitor` | Monitor non-financial web, community, news, and search-interest signals. |
 
 ## Web catalog metadata
 
@@ -15,6 +20,14 @@ The repository exposes display-ready data in `skills.json` and a detailed record
 `operation` is a human-readable provider operation for display. Calls must still go through the SandBase MCP gateway using `tool_name`; the web UI can obtain current parameter fields from `sandbase_describe_tool` when a row expands.
 
 Every detailed record also includes `examples`, `configuration`, `notes`, `related_skills`, and `agent_tests`. These map directly to a Skill detail page: Overview, Install, Tools & Endpoints, Example Tasks, Configuration, Notes, Related Skills, and **Test in Agent**.
+
+## Endpoint schemas
+
+Each endpoint binding uses SandBase Capability Registry as the authoritative source for its current input schema. A page resolves the binding's `capability_id` at runtime and renders `inputSchema`. The first reference implementation is `seo-keyword-insights` → `keyword_suggestions`.
+
+## Registry example
+
+`registry/data/skills/sandbase/seo-keyword-insights/plugin.json` is the registration template for the first public Skill. It declares the stable endpoint bindings in `unified_schema.required_endpoints`, organizes them into `workflow_groups`, and defines secret-free `test_presets`. Keep its endpoint set identical to the detailed catalog; parameters remain in Capability Registry and are not copied into this file.
 
 ## Test in SandBase Agent
 

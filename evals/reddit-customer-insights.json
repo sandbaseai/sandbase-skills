@@ -1,0 +1,1 @@
+{"schema_version":1,"skill_id":"reddit-customer-insights","source":"catalog/skills/reddit-customer-insights.json#/agent_tests","execution":"sandbase-agent","safety_default":"read-only"}

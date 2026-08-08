@@ -23,7 +23,7 @@ class SkillpackTests(unittest.TestCase):
     def test_catalog_and_skills_validate(self):
         result = self.run_cli("validate")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("Validated 1 skill(s).", result.stdout)
+        self.assertIn("Validated 6 skill(s).", result.stdout)
 
     def test_seo_skill_declares_sandbase_tool_map(self):
         skill_dir = ROOT / "marketing" / "seo-keyword-insights"
@@ -50,6 +50,42 @@ class SkillpackTests(unittest.TestCase):
             self.assertTrue(endpoint["tool_name"])
         self.assertEqual(len(metadata["agent_tests"]), 2)
         self.assertEqual(metadata["agent_tests"][0]["safety"], "read-only")
+
+    def test_keyword_suggestions_uses_dynamic_schema(self):
+        metadata = json.loads(
+            (ROOT / "catalog" / "skills" / "seo-keyword-insights.json").read_text(encoding="utf-8")
+        )
+        endpoint = next(
+            item
+            for item in metadata["api"]["endpoints"]
+            if item["tool_name"] == "dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live"
+        )
+        self.assertEqual(endpoint["capability_id"], "7899ddd4-f405-4fb0-a073-35ac83042d97")
+        self.assertEqual(endpoint["schema"]["source"], "sandbase-capability-registry")
+        self.assertEqual(metadata["api"]["schema_resolution"]["strategy"], "dynamic")
+
+    def test_registry_example_matches_the_public_endpoint_catalog(self):
+        plugin = json.loads(
+            (
+                ROOT
+                / "registry"
+                / "data"
+                / "skills"
+                / "sandbase"
+                / "seo-keyword-insights"
+                / "plugin.json"
+            ).read_text(encoding="utf-8")
+        )
+        catalog = json.loads(
+            (ROOT / "catalog" / "skills" / "seo-keyword-insights.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(plugin["name"], "sandbase/seo-keyword-insights")
+        self.assertEqual(plugin["type"], "skill")
+        self.assertNotIn("created_by", plugin)
+        required = set(plugin["unified_schema"]["required_endpoints"])
+        displayed = {item["tool_name"] for item in catalog["api"]["endpoints"]}
+        self.assertEqual(required, displayed)
+        self.assertEqual(plugin["metadata"]["endpoint_count"], len(displayed))
 
     def test_agent_test_declarations_validate(self):
         result = self.run_cli("test", "--skill", "seo-keyword-insights")

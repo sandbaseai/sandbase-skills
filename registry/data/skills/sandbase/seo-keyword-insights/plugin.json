@@ -1,0 +1,92 @@
+{
+  "name": "sandbase/seo-keyword-insights",
+  "display_name": "SEO Keyword Insights",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "seo-keyword-insights",
+  "description": "Research SEO keywords for any domain, topic, or competitor using DataForSEO via SandBase. Parses site content, expands seed keywords, validates search volume and difficulty, clusters by intent, and delivers prioritized page recommendations.",
+  "type": "skill",
+  "capability_tags": [
+    "SEO",
+    "keywords",
+    "content strategy",
+    "competitor research",
+    "SERP"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-seo"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/seo-keyword-insights",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/seo-keyword-insights/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/seo-keyword-insights.json",
+    "skill_path": "marketing/seo-keyword-insights",
+    "catalog_path": "catalog/skills/seo-keyword-insights.json",
+    "required_endpoints": [
+      "dataforseo_v3_on_page_content_parsing_live",
+      "dataforseo_v3_on_page_keyword_density_live",
+      "dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live",
+      "dataforseo_v3_dataforseo_labs_google_keyword_ideas_live",
+      "dataforseo_v3_dataforseo_labs_google_related_keywords_live",
+      "dataforseo_v3_keywords_data_google_ads_keywords_for_keywords_live",
+      "dataforseo_v3_keywords_data_google_ads_keywords_for_site_live",
+      "dataforseo_v3_keywords_data_google_ads_search_volume_live",
+      "dataforseo_v3_dataforseo_labs_google_bulk_keyword_difficulty_live",
+      "dataforseo_v3_dataforseo_labs_google_historical_search_volume_live",
+      "dataforseo_v3_keywords_data_google_trends_explore_live",
+      "dataforseo_v3_dataforseo_labs_google_keywords_for_site_live",
+      "dataforseo_v3_dataforseo_labs_google_ranked_keywords_live",
+      "dataforseo_v3_dataforseo_labs_google_competitors_domain_live",
+      "dataforseo_v3_dataforseo_labs_google_domain_intersection_live",
+      "dataforseo_v3_dataforseo_labs_google_serp_competitors_live",
+      "dataforseo_v3_serp_google_organic_live_advanced",
+      "dataforseo_v3_serp_google_autocomplete_live_advanced",
+      "dataforseo_v3_serp_google_related_searches_live_advanced"
+    ],
+    "workflow_groups": [
+      {"title": "Understand the site", "endpoint_refs": ["dataforseo_v3_on_page_content_parsing_live", "dataforseo_v3_on_page_keyword_density_live"]},
+      {"title": "Discover keywords", "endpoint_refs": ["dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live", "dataforseo_v3_dataforseo_labs_google_keyword_ideas_live", "dataforseo_v3_dataforseo_labs_google_related_keywords_live", "dataforseo_v3_keywords_data_google_ads_keywords_for_keywords_live", "dataforseo_v3_keywords_data_google_ads_keywords_for_site_live", "dataforseo_v3_serp_google_autocomplete_live_advanced"]},
+      {"title": "Validate demand", "endpoint_refs": ["dataforseo_v3_keywords_data_google_ads_search_volume_live", "dataforseo_v3_dataforseo_labs_google_bulk_keyword_difficulty_live", "dataforseo_v3_dataforseo_labs_google_historical_search_volume_live", "dataforseo_v3_keywords_data_google_trends_explore_live"]},
+      {"title": "Find competitor gaps", "endpoint_refs": ["dataforseo_v3_dataforseo_labs_google_keywords_for_site_live", "dataforseo_v3_dataforseo_labs_google_ranked_keywords_live", "dataforseo_v3_dataforseo_labs_google_competitors_domain_live", "dataforseo_v3_dataforseo_labs_google_domain_intersection_live", "dataforseo_v3_dataforseo_labs_google_serp_competitors_live"]},
+      {"title": "Validate the SERP", "endpoint_refs": ["dataforseo_v3_serp_google_organic_live_advanced", "dataforseo_v3_serp_google_related_searches_live_advanced"]}
+    ],
+    "test_presets": [
+      {"id": "keyword-research", "label": "Research AI agent keywords", "input": {"topic": "AI agent observability", "country": "US", "language": "en"}}
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 100,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "headline": "Powered by DataForSEO. Find the keywords worth ranking for — before you write.",
+    "category": "Marketing & Growth",
+    "outcomes": [
+      "Keyword clusters with demand and difficulty evidence",
+      "Competitor and content-gap analysis",
+      "Prioritized landing-page and content briefs"
+    ],
+    "endpoint_count": 19,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ],
+    "homepage": "https://github.com/sandbaseai/sandbase-skills",
+    "official_url": "https://github.com/sandbaseai/sandbase-skills/tree/2ef8370/marketing/seo-keyword-insights",
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/2ef8370/marketing/seo-keyword-insights",
+    "protocol": "skill"
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

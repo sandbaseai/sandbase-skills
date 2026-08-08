@@ -83,6 +83,11 @@
     "gateway": "sandbase-mcp",
     "authentication": "sandbase-authorized-connection",
     "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "dynamic_lookup": "Resolve the capability by capability_id and render its current inputSchema."
+    },
     "schema_lookup": {
       "tool": "sandbase_describe_tool",
       "argument": "name"
@@ -103,9 +108,19 @@
       },
       {
         "method": "POST",
+        "operation": "dataforseo/v3/on_page/keyword_density/live",
+        "tool_name": "dataforseo_v3_on_page_keyword_density_live",
+        "summary": "Analyze keyword density on an existing page."
+      },
+      {
+        "method": "POST",
         "operation": "dataforseo/v3/dataforseo_labs/google/keyword_suggestions/live",
         "tool_name": "dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live",
-        "summary": "Expand seed topics into keyword suggestions with metrics."
+        "capability_id": "7899ddd4-f405-4fb0-a073-35ac83042d97",
+        "summary": "Expand seed topics into keyword suggestions with metrics.",
+        "schema": {
+          "source": "sandbase-capability-registry"
+        }
       },
       {
         "method": "POST",
@@ -196,6 +211,12 @@
         "operation": "dataforseo/v3/serp/google/autocomplete/live/advanced",
         "tool_name": "dataforseo_v3_serp_google_autocomplete_live_advanced",
         "summary": "Discover Google autocomplete language for keyword expansion."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/serp/google/related_searches/live/advanced",
+        "tool_name": "dataforseo_v3_serp_google_related_searches_live_advanced",
+        "summary": "Retrieve related Google searches for keyword expansion and SERP validation."
       }
     ]
   },

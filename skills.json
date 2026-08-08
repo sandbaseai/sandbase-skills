@@ -20,6 +20,11 @@
         "SERP"
       ],
       "description": "Build an evidence-backed SEO keyword strategy with SandBase capabilities."
-    }
+    },
+    {"name":"reddit-customer-insights","path":"marketing/reddit-customer-insights","category":"marketing-research","metadata_path":"catalog/skills/reddit-customer-insights.json","display_name":"Reddit Customer Insights","short_description":"Turn Reddit discussions into customer insight.","status":"ready","version":"0.1.0","tags":["Reddit","voice of customer"],"description":"Research public customer language and pain points."},
+    {"name":"exa-deep-search","path":"marketing/exa-deep-search","category":"search-research","metadata_path":"catalog/skills/exa-deep-search.json","display_name":"Exa Deep Search","short_description":"Search, extract, and compare high-quality public sources.","status":"ready","version":"0.1.0","tags":["Exa","research"],"description":"Deep web research with Exa search and content extraction."},
+    {"name":"backlink-gap-analysis","path":"marketing/backlink-gap-analysis","category":"marketing-seo","metadata_path":"catalog/skills/backlink-gap-analysis.json","display_name":"Backlink Gap Analysis","short_description":"Find ethical backlink gaps against competitors.","status":"ready","version":"0.1.0","tags":["backlinks","SEO"],"description":"Prioritize backlink and digital-PR gaps from evidence."},
+    {"name":"competitor-content-intelligence","path":"marketing/competitor-content-intelligence","category":"marketing-content","metadata_path":"catalog/skills/competitor-content-intelligence.json","display_name":"Competitor Content Intelligence","short_description":"Find differentiated content opportunities.","status":"ready","version":"0.1.0","tags":["content strategy","competitive research"],"description":"Compare public content coverage and identify gaps."},
+    {"name":"market-signal-monitor","path":"marketing/market-signal-monitor","category":"marketing-research","metadata_path":"catalog/skills/market-signal-monitor.json","display_name":"Market Signal Monitor","short_description":"Monitor non-financial category signals.","status":"ready","version":"0.1.0","tags":["market research","trends"],"description":"Build time-bounded market and audience signal briefs."}
   ]
 }
