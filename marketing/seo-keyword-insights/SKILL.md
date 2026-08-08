@@ -18,12 +18,6 @@ The primary capability is **DataForSEO keyword search through SandBase**: discov
 - Inspect live SERPs before recommending a page type or claiming a ranking opportunity.
 - Keep user domains, competitor lists, raw exports, and strategy confidential. Return a summarized report unless raw data is requested.
 
-## Evidence and judgment
-
-Use DataForSEO-backed SandBase results for facts: keywords, volume, CPC, difficulty, rank, trends, competitor domains, and SERP features. Use the Agent only to normalize rows, name clusters, explain tradeoffs, and assemble a report from those facts.
-
-Do not expose a separate LLM endpoint or make it a prerequisite for this Skill. Mark any semantic grouping or intent interpretation that is not directly supported by SERP or keyword evidence as a judgment.
-
 ## Workflow
 
 ### 1. Frame the decision

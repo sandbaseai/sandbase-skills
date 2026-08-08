@@ -77,7 +77,6 @@
   },
   "notes": [
     "Use site or page evidence before keyword expansion.",
-    "Treat generated keywords as hypotheses until SandBase metrics or SERP evidence validate them.",
     "Keep raw customer domains and exports out of public reports."
   ],
   "api": {

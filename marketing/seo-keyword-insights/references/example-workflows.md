@@ -34,7 +34,7 @@ Research “AI agent observability” keywords for a B2B SaaS product in the Uni
 3. `dataforseo_v3_dataforseo_labs_google_bulk_keyword_difficulty_live`.
 4. `dataforseo_v3_keywords_data_google_trends_explore_live` for seasonality or emerging demand.
 
-**Return**: a shortlist grouped by problem, commercial fit, difficulty, and trend. State that any cluster labels are Agent judgment, while metrics are tool evidence.
+**Return**: a shortlist grouped by problem, commercial fit, difficulty, and trend, with the market and source for each metric.
 
 ## 3. Find competitor keyword gaps
 
