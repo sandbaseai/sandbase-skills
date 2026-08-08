@@ -1,4 +1,0 @@
-interface:
-  display_name: "Market Signal Monitor"
-  short_description: "Monitor category and audience signals"
-  default_prompt: "Use $market-signal-monitor to build a dated market-signal brief for my category."

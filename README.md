@@ -1,61 +1,91 @@
 # SandBase Skills
 
-A public collection of downloadable Agent Skills. Each Skill turns SandBase capabilities into a focused, repeatable workflow and requires an authorized SandBase connection.
+Downloadable Agent Skills for practical research and growth workflows. Install one into your agent project, then let your agent use its existing SandBase connection to call the required capabilities.
 
-## Included skills
+## Start here
 
-| Skill | Purpose |
-|---|---|
-| `seo-keyword-insights` | Research keywords, competition, demand, and SERP-backed page opportunities with SandBase SEO capabilities. |
-| `reddit-customer-insights` | Turn public Reddit discussions into customer-language, pain-point, and objection research. |
-| `exa-deep-search` | Search, extract, and compare high-quality public sources with Exa. |
-| `backlink-gap-analysis` | Find ethical backlink and digital-PR gaps from backlink evidence. |
-| `competitor-content-intelligence` | Compare public competitor coverage and identify differentiated content opportunities. |
-| `market-signal-monitor` | Monitor non-financial web, community, news, and search-interest signals. |
+1. Choose a Skill below.
+2. Clone or download this repository.
+3. Install the Skill into your agent project.
+4. Ask your agent to use the installed Skill.
 
-## Web catalog metadata
+No API key belongs in a Skill, prompt, or report. The agent environment must already have an authorized SandBase connection.
 
-The repository exposes a display-ready index in `skills.json` and a detailed record per Skill under `catalog/skills/`. A website can render cards and detail pages directly from this data: title, description, tags, install prompt, pricing label, examples, configuration, and an expandable Tools & Endpoints list.
+## Choose a Skill
 
-`operation` is a human-readable provider operation for display. Calls must go through the SandBase MCP gateway using `tool_name`; the UI resolves current parameters from Capability Registry with `sandbase_describe_tool` when a row expands. The repository deliberately does not copy endpoint parameter snapshots, pricing, or API keys into Skills.
+| Skill | Use it to | Install name |
+|---|---|---|
+| SEO Keyword Insights | Find evidence-backed keyword, content, and SERP opportunities. | `seo-keyword-insights` |
+| Reddit Customer Insights | Discover customer language, pain points, and objections from public Reddit discussions. | `reddit-customer-insights` |
+| Exa Deep Search | Find and extract reliable public sources for a research question. | `exa-deep-search` |
+| Backlink Gap Analysis | Compare backlink evidence and identify ethical outreach or digital-PR opportunities. | `backlink-gap-analysis` |
+| Competitor Content Intelligence | Identify differentiated content opportunities from public competitor coverage. | `competitor-content-intelligence` |
 
-## Endpoint schemas
+## Install a Skill
 
-Each endpoint binding uses SandBase Capability Registry as the authoritative source for its current input schema. A page resolves the binding by `tool_name` at runtime and renders the returned `inputSchema`. An optional `capability_id` can improve database joins, but must not replace the live lookup.
-
-## Registry example
-
-Each `registry/data/skills/sandbase/<skill-id>/plugin.json` file is a database-registration manifest. It declares the stable endpoint bindings in `unified_schema.required_endpoints` and optional workflow groups or safe starter presets. Its endpoint set must exactly match the detailed catalog; parameters remain in Capability Registry.
-
-## Install locally
-
-Clone or download this repository, then install into an agent project:
+Use the included installer from the repository root. It supports Codex, Claude, Cursor, and a generic project structure.
 
 ```bash
-python3 scripts/skillpack.py install --target codex --dest /path/to/project
+python3 scripts/skillpack.py install \
+  --target codex \
+  --dest /path/to/your/project \
+  --skills exa-deep-search
 ```
 
-Supported targets are `codex`, `claude`, `cursor`, and `generic`. The installer copies skills into the target's project-level skills directory and refuses to overwrite existing skills unless `--force` is passed.
+Preview an installation without writing files:
 
 ```bash
-python3 scripts/skillpack.py list
+python3 scripts/skillpack.py install \
+  --target codex \
+  --dest /path/to/your/project \
+  --skills exa-deep-search \
+  --dry-run
+```
+
+The installer copies the selected Skill into the target project. Use `--force` only when you intend to replace an existing installed Skill.
+
+## Use it in your agent
+
+After installation, use the Skill by name. For example:
+
+```text
+Use $exa-deep-search to research how enterprise teams evaluate AI agents. Prefer primary sources and cite every finding.
+```
+
+Each Skill describes its workflow, evidence standards, expected output, and the SandBase capabilities it needs. Your agent performs the analysis; the Skill does not depend on a separate third-party LLM.
+
+## Repository layout
+
+```text
+marketing/<skill>/SKILL.md       The downloadable Agent instruction
+marketing/<skill>/agents/        Agent UI metadata
+skills.json                      Machine-readable index of all public Skills
+catalog/skills/                  Optional data for a website or marketplace
+registry/data/skills/sandbase/   Optional database-registration manifests
+scripts/skillpack.py             List, validate, and install Skills locally
+```
+
+Most users only need `marketing/` and the installer. The `catalog/` and `registry/` directories are for teams that run a Skill website or import Skills into the SandBase registry.
+
+## For website and registry integrators
+
+`skills.json` is the repository index. Each entry points to the downloadable Skill, its display metadata, and its registry manifest.
+
+The endpoint list in `catalog/skills/<skill>.json` is display metadata. Resolve current endpoint parameters from the SandBase Capability Registry at runtime with `sandbase_describe_tool`; do not copy API parameter snapshots, prices, or credentials into this repository. The validator ensures that every catalog endpoint list exactly matches its registry manifest.
+
+## Validate locally
+
+```bash
 python3 scripts/skillpack.py validate
-python3 scripts/skillpack.py install --target codex --dest /path/to/project --skills seo-keyword-insights --dry-run
-python3 scripts/skillpack.py install --target codex --dest /path/to/project --skills seo-keyword-insights
-```
-
-After installation, connect SandBase in the agent environment. In a SandBase Agent, the installed Skill can call the configured SandBase capabilities directly. Do not add API keys to a Skill, project file, prompt, or report.
-
-## Test locally
-
-Run the offline package test suite:
-
-```bash
 python3 -m unittest discover -s tests -v
 ```
 
-The tests validate the catalog, registry manifests, Skill frontmatter, internal references, SandBase API-map safety rules, and installer dry-run behavior. They do not make live API calls or require credentials.
+These checks are offline. They do not make API calls or require credentials.
 
-## Add a Skill
+## Contribute
 
-Create each new Skill under a product area, for example `marketing/<skill-name>/`. Include a `SKILL.md` with the required `name` and `description` frontmatter, then add it to `skills.json`. Run `python3 scripts/skillpack.py validate` and the tests before publishing.
+See [CONTRIBUTING.md](CONTRIBUTING.md) before adding or changing a Skill.
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE).

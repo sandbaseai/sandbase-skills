@@ -21,5 +21,5 @@
       {"method": "POST", "operation": "reddit/topic-feed", "tool_name": "reddit_app_topic_feed", "summary": "Collect a public topic feed."}
     ]
   },
-  "related_skills": ["market-signal-monitor"]
+  "related_skills": []
 }
