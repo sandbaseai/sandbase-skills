@@ -1,11 +1,13 @@
 ---
-name: seo-keyword-research
-description: Build an evidence-backed SEO keyword strategy using SandBase-managed search, keyword, site-analysis, and SERP capabilities. Use when asked to discover or prioritize keywords, assess search demand or ranking feasibility, map intent and topics, find competitor gaps, plan organic-search landing pages or content, or analyze a website's SEO opportunities.
+name: seo-keyword-insights
+description: Build evidence-backed SEO keyword insights and strategy using SandBase-managed search, keyword, site-analysis, and SERP capabilities. Use when asked to discover or prioritize keywords, assess search demand or ranking feasibility, map intent and topics, find competitor gaps, plan organic-search landing pages or content, or analyze a website's SEO opportunities.
 ---
 
-# SEO Keyword Research
+# SEO Keyword Insights
 
 Build a decision-ready organic-search strategy from a site, product, seed topic, or competitor set. This Skill is a SandBase API workflow: it calls the named SEO capabilities in [the SandBase API map](references/sandbase-api-map.md) through the SandBase MCP gateway. In a SandBase Agent, run the capabilities directly. In another compatible agent, require an authorized SandBase connection before starting; never request, print, or store an API key in the research output.
+
+The primary capability is **DataForSEO keyword search through SandBase**: discover candidates, validate demand and difficulty, compare site visibility, and inspect live SERPs. Read [example workflows](references/example-workflows.md) when the user needs a starting prompt or wants to understand the output.
 
 ## Operating principles
 
@@ -15,6 +17,12 @@ Build a decision-ready organic-search strategy from a site, product, seed topic,
 - Optimize for qualified organic traffic and the site's conversion model, not volume alone.
 - Inspect live SERPs before recommending a page type or claiming a ranking opportunity.
 - Keep user domains, competitor lists, raw exports, and strategy confidential. Return a summarized report unless raw data is requested.
+
+## Evidence and judgment
+
+Use DataForSEO-backed SandBase results for facts: keywords, volume, CPC, difficulty, rank, trends, competitor domains, and SERP features. Use the Agent only to normalize rows, name clusters, explain tradeoffs, and assemble a report from those facts.
+
+Do not expose a separate LLM endpoint or make it a prerequisite for this Skill. Mark any semantic grouping or intent interpretation that is not directly supported by SERP or keyword evidence as a judgment.
 
 ## Workflow
 
@@ -62,6 +70,14 @@ For competitor work, distinguish:
 
 Do not call every available provider merely because it exists. Stop expanding once clusters have enough evidence to make a decision; expand again only for thin or ambiguous clusters.
 
+Use the keyword capabilities deliberately:
+
+- Start with `keyword_suggestions`, `keyword_ideas`, `related_keywords`, or Google Ads seed expansion.
+- Use `search_volume`, historical volume, Google Trends, and bulk difficulty only after shortlisting candidates.
+- Use `keywords_for_site` and `ranked_keywords` to distinguish existing coverage from true gaps.
+- Use `competitors_domain`, `domain_intersection`, and `serp_competitors` only for a justified competitor comparison.
+- Use Google organic SERP and related/autocomplete queries to validate intent and the recommended page type.
+
 ### 4. Interpret intent, competition, and opportunity
 
 Cluster validated candidates by user problem and shared ranking intent, then label each cluster with funnel stage and the best page purpose. Use live SERPs to verify whether the query rewards a product page, feature page, comparison, integration page, programmatic template, documentation, category page, or editorial content.
@@ -83,6 +99,14 @@ Explain the reasoning behind each priority. Do not use a universal volume or dif
 Return a concise report using [the report template](references/report-template.md) for full deliverables. Separate observed data, calculated prioritization, and strategic judgment. Include assumptions, market labels, sources/capabilities used, data gaps, and next validation actions.
 
 For every recommended page, specify its target cluster, primary query, supporting queries, intent, proposed page type, angle, conversion path, and SERP evidence. Recommend updates to an existing page when that is stronger than creating a new URL. Flag potential cannibalization between pages targeting the same intent.
+
+## Example tasks
+
+- “Find non-brand keyword opportunities for `example.com` in the United States. Prioritize commercial intent and show the evidence behind every recommendation.”
+- “Expand `AI agent observability` into keyword clusters, then validate volume, difficulty, trends, and the Google SERP for the top cluster.”
+- “Compare `our-domain.com` with `competitor-a.com` and `competitor-b.com`. Separate coverage gaps from performance gaps and recommend the next three pages.”
+- “Audit the keywords this domain already ranks for. Identify which existing pages should be improved before creating new content.”
+- “Research keyword opportunities for `CRM software` in Germany. Keep Germany/German metrics separate from any English-language research.”
 
 ## Quality gate
 

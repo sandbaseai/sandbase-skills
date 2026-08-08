@@ -1,11 +1,24 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "name": "sandbase-skills",
+  "display_name": "SandBase Skills",
+  "description": "Downloadable Agent Skills powered by SandBase capabilities.",
   "skills": [
     {
-      "name": "seo-keyword-research",
-      "path": "marketing/seo-keyword-research",
-      "category": "marketing",
+      "name": "seo-keyword-insights",
+      "path": "marketing/seo-keyword-insights",
+      "category": "marketing-seo",
+      "metadata_path": "catalog/skills/seo-keyword-insights.json",
+      "display_name": "SEO Keyword Insights",
+      "short_description": "Find qualified organic-search opportunities.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "SEO",
+        "keywords",
+        "content strategy",
+        "SERP"
+      ],
       "description": "Build an evidence-backed SEO keyword strategy with SandBase capabilities."
     }
   ]

@@ -6,7 +6,26 @@ A versioned collection of downloadable Agent Skills that turn SandBase capabilit
 
 | Skill | Purpose |
 |---|---|
-| `seo-keyword-research` | Research keywords, competition, demand, and SERP-backed page opportunities with SandBase SEO capabilities. |
+| `seo-keyword-insights` | Research keywords, competition, demand, and SERP-backed page opportunities with SandBase SEO capabilities. |
+
+## Web catalog metadata
+
+The repository exposes display-ready data in `skills.json` and a detailed record per Skill under `catalog/skills/`. A website can render the skill detail page directly from this data: title, description, tags, compatibility, install prompt, action buttons, pricing label, and an expandable Tools & Endpoints list.
+
+`operation` is a human-readable provider operation for display. Calls must still go through the SandBase MCP gateway using `tool_name`; the web UI can obtain current parameter fields from `sandbase_describe_tool` when a row expands.
+
+Every detailed record also includes `examples`, `configuration`, `notes`, `related_skills`, and `agent_tests`. These map directly to a Skill detail page: Overview, Install, Tools & Endpoints, Example Tasks, Configuration, Notes, Related Skills, and **Test in Agent**.
+
+## Test in SandBase Agent
+
+Agent-test declarations live in each catalog record and are indexed by `evals/<skill-id>.json`. A product surface can send a selected test's `prompt` to a SandBase Agent, allow only `allowed_tools`, capture its trace and final response, and evaluate every `assertions` item. Tests marked `read-only` must not invoke write, posting, or account-changing capabilities.
+
+The package CLI validates the test declarations offline:
+
+```bash
+python3 scripts/skillpack.py test --skill seo-keyword-insights
+python3 scripts/skillpack.py show seo-keyword-insights
+```
 
 ## Install locally
 
@@ -21,8 +40,8 @@ Supported targets are `codex`, `claude`, `cursor`, and `generic`. The installer 
 ```bash
 python3 scripts/skillpack.py list
 python3 scripts/skillpack.py validate
-python3 scripts/skillpack.py install --target codex --dest /path/to/project --skills seo-keyword-research --dry-run
-python3 scripts/skillpack.py install --target codex --dest /path/to/project --skills seo-keyword-research
+python3 scripts/skillpack.py install --target codex --dest /path/to/project --skills seo-keyword-insights --dry-run
+python3 scripts/skillpack.py install --target codex --dest /path/to/project --skills seo-keyword-insights
 ```
 
 After installation, connect SandBase in the agent environment. In a SandBase Agent, the installed Skill can call the configured SandBase capabilities directly. Do not add API keys to a Skill, project file, prompt, or report.

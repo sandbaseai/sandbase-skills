@@ -27,8 +27,8 @@ def load_catalog() -> dict:
         catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
         raise ValueError(f"Cannot read {CATALOG_PATH.name}: {error}") from error
-    if catalog.get("schema_version") != 1 or not isinstance(catalog.get("skills"), list):
-        raise ValueError("skills.json must use schema_version 1 and contain a skills array")
+    if catalog.get("schema_version") != 2 or not isinstance(catalog.get("skills"), list):
+        raise ValueError("skills.json must use schema_version 2 and contain a skills array")
     return catalog
 
 
@@ -66,6 +66,40 @@ def validate_skill(entry: dict) -> list[str]:
         errors.append(f"{name}: frontmatter name must equal catalog name")
     elif not fields.get("description"):
         errors.append(f"{name}: frontmatter description is required")
+    metadata_path = entry.get("metadata_path")
+    if not isinstance(metadata_path, str):
+        errors.append(f"{name}: metadata_path is required")
+        return errors
+    metadata_file = REPO_ROOT / metadata_path
+    try:
+        metadata = json.loads(metadata_file.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        errors.append(f"{name}: cannot read web metadata: {error}")
+        return errors
+    if metadata.get("schema_version") != 1 or metadata.get("id") != name:
+        errors.append(f"{name}: web metadata schema_version or id is invalid")
+    if not metadata.get("display_name") or not metadata.get("description"):
+        errors.append(f"{name}: web metadata requires display_name and description")
+    endpoints = metadata.get("api", {}).get("endpoints")
+    if not isinstance(endpoints, list) or not endpoints:
+        errors.append(f"{name}: web metadata must declare API endpoints")
+    elif any(not endpoint.get("tool_name") for endpoint in endpoints if isinstance(endpoint, dict)):
+        errors.append(f"{name}: every API endpoint requires tool_name")
+    tests = metadata.get("agent_tests")
+    eval_file = REPO_ROOT / "evals" / f"{name}.json"
+    if not isinstance(tests, list) or not tests:
+        errors.append(f"{name}: web metadata must declare agent_tests")
+    elif any(
+        not isinstance(test, dict)
+        or not test.get("id")
+        or not test.get("prompt")
+        or not isinstance(test.get("allowed_tools"), list)
+        or not isinstance(test.get("assertions"), list)
+        for test in tests
+    ):
+        errors.append(f"{name}: every agent test needs id, prompt, allowed_tools, and assertions")
+    if not eval_file.is_file():
+        errors.append(f"{name}: evals/{name}.json is required")
     return errors
 
 
@@ -113,6 +147,30 @@ def command_validate(catalog: dict) -> int:
     return 0
 
 
+def command_show(catalog: dict, skill_name: str) -> int:
+    entries = selected_entries(catalog, skill_name)
+    if len(entries) != 1:
+        raise ValueError("show accepts exactly one skill")
+    metadata_path = REPO_ROOT / entries[0]["metadata_path"]
+    print(metadata_path.read_text(encoding="utf-8"))
+    return 0
+
+
+def command_test(catalog: dict, skill_name: str) -> int:
+    entries = selected_entries(catalog, skill_name)
+    if len(entries) != 1:
+        raise ValueError("test accepts exactly one skill")
+    errors = validate_catalog(catalog)
+    if errors:
+        return command_validate(catalog)
+    metadata = json.loads((REPO_ROOT / entries[0]["metadata_path"]).read_text(encoding="utf-8"))
+    tests = metadata["agent_tests"]
+    print(f"Validated {len(tests)} SandBase Agent test case(s) for {skill_name}.")
+    for test in tests:
+        print(f"- {test['id']} [{test['safety']}]")
+    return 0
+
+
 def command_install(catalog: dict, args: argparse.Namespace) -> int:
     errors = validate_catalog(catalog)
     if errors:
@@ -149,6 +207,10 @@ def parse_args() -> argparse.Namespace:
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("list", help="list catalog skills")
     commands.add_parser("validate", help="validate catalog and skill frontmatter")
+    show = commands.add_parser("show", help="print display-ready metadata for one skill")
+    show.add_argument("skill")
+    test = commands.add_parser("test", help="validate SandBase Agent test declarations")
+    test.add_argument("--skill", required=True)
     install = commands.add_parser("install", help="copy skills into a local agent project")
     install.add_argument("--target", choices=TARGET_DIRS, required=True)
     install.add_argument("--dest", required=True, help="destination project root")
@@ -166,6 +228,10 @@ def main() -> int:
             return command_list(catalog)
         if args.command == "validate":
             return command_validate(catalog)
+        if args.command == "show":
+            return command_show(catalog, args.skill)
+        if args.command == "test":
+            return command_test(catalog, args.skill)
         return command_install(catalog, args)
     except ValueError as error:
         print(f"Error: {error}", file=sys.stderr)

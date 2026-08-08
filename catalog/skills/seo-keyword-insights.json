@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "id": "seo-keyword-insights",
+  "display_name": "SEO Keyword Insights",
+  "short_description": "Find qualified organic-search opportunities.",
+  "description": "Uses SandBase DataForSEO keyword search, demand, difficulty, site-visibility, competitor, and SERP capabilities to turn a website or product into a prioritized SEO keyword and page strategy.",
+  "category": {
+    "id": "marketing-seo",
+    "label": "Marketing & SEO"
+  },
+  "tags": [
+    "SEO",
+    "keywords",
+    "content strategy",
+    "competitor research",
+    "SERP"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/seo-keyword-insights",
+    "skill_file": "marketing/seo-keyword-insights/SKILL.md",
+    "readme_anchor": "#seo-keyword-insights"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection"
+    ]
+  },
+  "install": {
+    "prompt": "Use the SandBase SEO Keyword Insights skill for my agent. Review https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/seo-keyword-insights",
+    "cli": "python3 scripts/skillpack.py install --target codex --dest /path/to/project --skills seo-keyword-insights",
+    "source_path": "marketing/seo-keyword-insights"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/seo-keyword-insights"
+    }
+  ],
+  "examples": [
+    "Find non-brand SEO keyword opportunities for a B2B SaaS website.",
+    "Build a keyword strategy for an AI agent infrastructure product.",
+    "Compare our domain against three competitors and identify keyword gaps.",
+    "Cluster validated keywords by search intent and recommend landing pages or blog posts.",
+    "Find which existing pages should be improved before creating new content."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "target domain or product",
+      "country and language",
+      "search engine and device",
+      "competitor domains",
+      "conversion goal"
+    ]
+  },
+  "notes": [
+    "Use site or page evidence before keyword expansion.",
+    "Treat generated keywords as hypotheses until SandBase metrics or SERP evidence validate them.",
+    "Keep raw customer domains and exports out of public reports."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/on_page/content_parsing/live",
+        "tool_name": "dataforseo_v3_on_page_content_parsing_live",
+        "summary": "Extract structured content or Markdown from a page."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/keyword_suggestions/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live",
+        "summary": "Expand seed topics into keyword suggestions with metrics."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/keyword_ideas/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_keyword_ideas_live",
+        "summary": "Generate keyword ideas with volume and CPC signals."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/related_keywords/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_related_keywords_live",
+        "summary": "Find related keywords that share SERP patterns."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/keywords_data/google_ads/keywords_for_keywords/live",
+        "tool_name": "dataforseo_v3_keywords_data_google_ads_keywords_for_keywords_live",
+        "summary": "Expand Google Ads keyword ideas from validated seed terms."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/keywords_data/google_ads/keywords_for_site/live",
+        "tool_name": "dataforseo_v3_keywords_data_google_ads_keywords_for_site_live",
+        "summary": "Generate keyword ideas from a target website."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/keywords_data/google_ads/search_volume/live",
+        "tool_name": "dataforseo_v3_keywords_data_google_ads_search_volume_live",
+        "summary": "Validate search volume and competition signals."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/bulk_keyword_difficulty/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_bulk_keyword_difficulty_live",
+        "summary": "Score ranking difficulty for shortlisted keywords."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/keywords_data/google_trends/explore/live",
+        "tool_name": "dataforseo_v3_keywords_data_google_trends_explore_live",
+        "summary": "Inspect interest over time and seasonal demand."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/historical_search_volume/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_historical_search_volume_live",
+        "summary": "Review monthly historical demand before prioritizing a keyword."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/keywords_for_site/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_keywords_for_site_live",
+        "summary": "Retrieve keywords the target site ranks for."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/ranked_keywords/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_ranked_keywords_live",
+        "summary": "Identify existing ranked keywords and pages before creating new URLs."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/competitors_domain/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_competitors_domain_live",
+        "summary": "Identify organic-search competitor domains."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/domain_intersection/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_domain_intersection_live",
+        "summary": "Compare keyword coverage between two domains."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/serp_competitors/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_serp_competitors_live",
+        "summary": "Identify domains that compete for a keyword set in organic search."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/serp/google/organic/live/advanced",
+        "tool_name": "dataforseo_v3_serp_google_organic_live_advanced",
+        "summary": "Inspect live Google organic results and SERP features."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/serp/google/autocomplete/live/advanced",
+        "tool_name": "dataforseo_v3_serp_google_autocomplete_live_advanced",
+        "summary": "Discover Google autocomplete language for keyword expansion."
+      }
+    ]
+  },
+  "agent_tests": [
+    {
+      "id": "site-brief-and-seed-validation",
+      "label": "Validate a site brief and seed expansion",
+      "mode": "sandbase-agent",
+      "safety": "read-only",
+      "description": "Verify that the agent first derives seeds from a public page, then uses only SandBase capabilities to expand and qualify them.",
+      "prompt": "Use the SEO Keyword Insights skill to analyze https://example.com for US English. Create a concise site brief, propose three non-brand seed themes, call the page-content capability and keyword-suggestions capability, then return five evidence-labeled candidates. Do not call any write, posting, or account-changing capability.",
+      "allowed_tools": [
+        "dataforseo_v3_on_page_content_parsing_live",
+        "dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live"
+      ],
+      "assertions": [
+        "A site brief appears before keyword recommendations.",
+        "Every candidate identifies its evidence source.",
+        "No non-SandBase or mutating tool is called.",
+        "The result states market and language."
+      ],
+      "evidence": [
+        "tool-call trace",
+        "final response"
+      ]
+    },
+    {
+      "id": "serp-page-type-recommendation",
+      "label": "Validate SERP-backed page advice",
+      "mode": "sandbase-agent",
+      "safety": "read-only",
+      "description": "Verify that a page-type recommendation uses live SERP evidence rather than a metric-only assumption.",
+      "prompt": "Use the SEO Keyword Insights skill to assess the query 'keyword research tool' for US English. Retrieve the live Google organic SERP and recommend one page type. Cite the observed ranking-page pattern and label uncertainty. Do not make changes to any account or website.",
+      "allowed_tools": [
+        "dataforseo_v3_serp_google_organic_live_advanced"
+      ],
+      "assertions": [
+        "The recommendation names a page type.",
+        "The recommendation includes observed SERP evidence.",
+        "The result labels uncertainty or evidence limits.",
+        "No mutating tool is called."
+      ],
+      "evidence": [
+        "tool-call trace",
+        "final response"
+      ]
+    }
+  ],
+  "related_skills": []
+}

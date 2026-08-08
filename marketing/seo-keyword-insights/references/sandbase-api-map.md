@@ -1,4 +1,4 @@
-# SandBase SEO API Map
+# SandBase DataForSEO Keyword Search API Map
 
 Use these SandBase `tool_name` values through `sandbase_call_tool`. They are the SEO capability set observed for this Skill. Before each call, use `sandbase_describe_tool` for the current input schema; SandBase owns authentication, API routing, and provider credentials.
 
@@ -11,7 +11,7 @@ Use these SandBase `tool_name` values through `sandbase_call_tool`. They are the
 
 Start a site-based research request with `dataforseo_v3_on_page_content_parsing_live` for the homepage and representative product, use-case, pricing, docs, or content pages.
 
-## Keyword discovery and validation
+## Keyword discovery
 
 | Purpose | tool_name |
 |---|---|
@@ -20,6 +20,13 @@ Start a site-based research request with `dataforseo_v3_on_page_content_parsing_
 | Find related terms with shared SERP patterns | `dataforseo_v3_dataforseo_labs_google_related_keywords_live` |
 | Generate Google Ads ideas from seed keywords | `dataforseo_v3_keywords_data_google_ads_keywords_for_keywords_live` |
 | Generate Google Ads ideas from a site | `dataforseo_v3_keywords_data_google_ads_keywords_for_site_live` |
+| Find Google autocomplete queries | `dataforseo_v3_serp_google_autocomplete_live_advanced` |
+| Find related Google searches | `dataforseo_v3_serp_google_related_searches_live_advanced` |
+
+## Demand and feasibility
+
+| Purpose | tool_name |
+|---|---|
 | Retrieve Google Ads search volume and competition | `dataforseo_v3_keywords_data_google_ads_search_volume_live` |
 | Retrieve Bing seed-keyword ideas | `dataforseo_v3_keywords_data_bing_keywords_for_keywords_live` |
 | Retrieve Bing site-keyword ideas | `dataforseo_v3_keywords_data_bing_keywords_for_site_live` |
@@ -30,7 +37,7 @@ Start a site-based research request with `dataforseo_v3_on_page_content_parsing_
 
 Use a small, diverse seed set for discovery. Validate only shortlisted candidates with demand and difficulty tools; do not convert unavailable data into an estimate.
 
-## Target-site and competitor intelligence
+## Target-site visibility and competitor intelligence
 
 | Purpose | tool_name |
 |---|---|

@@ -1,4 +1,0 @@
-interface:
-  display_name: "SEO Keyword Research"
-  short_description: "Find qualified organic-search opportunities"
-  default_prompt: "Use $seo-keyword-research to build a validated keyword strategy for my website."
