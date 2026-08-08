@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "name": "sandbase-skills",
+  "skills": [
+    {
+      "name": "seo-keyword-research",
+      "path": "marketing/seo-keyword-research",
+      "category": "marketing",
+      "description": "Build an evidence-backed SEO keyword strategy with SandBase capabilities."
+    }
+  ]
+}
