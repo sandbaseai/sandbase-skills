@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""List, validate, and install the SandBase Skills collection."""
+"""List, validate, and install the public SandBase Skills collection."""
 
 from __future__ import annotations
 
@@ -59,6 +59,15 @@ def validate_skill(entry: dict) -> list[str]:
     skill_file = skill_dir / "SKILL.md"
     if not skill_dir.is_dir() or not skill_file.is_file():
         return [f"{name}: SKILL.md not found at {relative_path}"]
+    agent_file = skill_dir / "agents" / "openai.yaml"
+    if not agent_file.is_file():
+        errors.append(f"{name}: agents/openai.yaml is required")
+    else:
+        agent_text = agent_file.read_text(encoding="utf-8")
+        if f'display_name: "{entry.get("display_name", "")}"' not in agent_text:
+            errors.append(f"{name}: Agent display_name must match the catalog")
+        if f"${name}" not in agent_text:
+            errors.append(f"{name}: Agent default_prompt must mention ${name}")
     fields = frontmatter(skill_file.read_text(encoding="utf-8"))
     if not fields:
         errors.append(f"{name}: invalid YAML frontmatter delimiters")
@@ -80,36 +89,38 @@ def validate_skill(entry: dict) -> list[str]:
         errors.append(f"{name}: web metadata schema_version or id is invalid")
     if not metadata.get("display_name") or not metadata.get("description"):
         errors.append(f"{name}: web metadata requires display_name and description")
-    endpoints = metadata.get("api", {}).get("endpoints")
+    api = metadata.get("api", {})
+    schema_resolution = api.get("schema_resolution")
+    if (
+        not isinstance(schema_resolution, dict)
+        or schema_resolution.get("source") != "sandbase-capability-registry"
+        or schema_resolution.get("lookup") != "sandbase_describe_tool"
+    ):
+        errors.append(f"{name}: API schema_resolution must use sandbase_describe_tool")
+    endpoints = api.get("endpoints")
     if not isinstance(endpoints, list) or not endpoints:
         errors.append(f"{name}: web metadata must declare API endpoints")
-    elif any(not endpoint.get("tool_name") for endpoint in endpoints if isinstance(endpoint, dict)):
-        errors.append(f"{name}: every API endpoint requires tool_name")
     else:
         for endpoint in endpoints:
-            if not isinstance(endpoint, dict) or "schema" not in endpoint:
+            if not isinstance(endpoint, dict) or not endpoint.get("tool_name") or not endpoint.get("operation"):
+                errors.append(f"{name}: every API endpoint requires tool_name and operation")
                 continue
-            schema_ref = endpoint["schema"]
-            if not isinstance(schema_ref, dict) or schema_ref.get("source") != "sandbase-capability-registry":
-                errors.append(f"{name}: endpoint schema must identify sandbase-capability-registry")
-                continue
-            if not isinstance(endpoint.get("capability_id"), str) or not endpoint["capability_id"]:
-                errors.append(f"{name}: dynamic endpoint schema requires capability_id")
-    tests = metadata.get("agent_tests")
-    eval_file = REPO_ROOT / "evals" / f"{name}.json"
-    if not isinstance(tests, list) or not tests:
-        errors.append(f"{name}: web metadata must declare agent_tests")
-    elif any(
-        not isinstance(test, dict)
-        or not test.get("id")
-        or not test.get("prompt")
-        or not isinstance(test.get("allowed_tools"), list)
-        or not isinstance(test.get("assertions"), list)
-        for test in tests
-    ):
-        errors.append(f"{name}: every agent test needs id, prompt, allowed_tools, and assertions")
-    if not eval_file.is_file():
-        errors.append(f"{name}: evals/{name}.json is required")
+    registry_path = entry.get("registry_path")
+    if not isinstance(registry_path, str):
+        errors.append(f"{name}: registry_path is required")
+        return errors
+    registry_file = REPO_ROOT / registry_path
+    try:
+        plugin = json.loads(registry_file.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        errors.append(f"{name}: cannot read registry manifest: {error}")
+        return errors
+    if plugin.get("name") != f"sandbase/{name}" or plugin.get("type") != "skill":
+        errors.append(f"{name}: registry manifest name or type is invalid")
+    required = plugin.get("unified_schema", {}).get("required_endpoints")
+    displayed = [endpoint.get("tool_name") for endpoint in endpoints if isinstance(endpoint, dict)]
+    if not isinstance(required, list) or set(required) != set(displayed) or len(required) != len(displayed):
+        errors.append(f"{name}: catalog endpoints must exactly match registry required_endpoints")
     return errors
 
 
@@ -166,21 +177,6 @@ def command_show(catalog: dict, skill_name: str) -> int:
     return 0
 
 
-def command_test(catalog: dict, skill_name: str) -> int:
-    entries = selected_entries(catalog, skill_name)
-    if len(entries) != 1:
-        raise ValueError("test accepts exactly one skill")
-    errors = validate_catalog(catalog)
-    if errors:
-        return command_validate(catalog)
-    metadata = json.loads((REPO_ROOT / entries[0]["metadata_path"]).read_text(encoding="utf-8"))
-    tests = metadata["agent_tests"]
-    print(f"Validated {len(tests)} SandBase Agent test case(s) for {skill_name}.")
-    for test in tests:
-        print(f"- {test['id']} [{test['safety']}]")
-    return 0
-
-
 def command_install(catalog: dict, args: argparse.Namespace) -> int:
     errors = validate_catalog(catalog)
     if errors:
@@ -219,8 +215,6 @@ def parse_args() -> argparse.Namespace:
     commands.add_parser("validate", help="validate catalog and skill frontmatter")
     show = commands.add_parser("show", help="print display-ready metadata for one skill")
     show.add_argument("skill")
-    test = commands.add_parser("test", help="validate SandBase Agent test declarations")
-    test.add_argument("--skill", required=True)
     install = commands.add_parser("install", help="copy skills into a local agent project")
     install.add_argument("--target", choices=TARGET_DIRS, required=True)
     install.add_argument("--dest", required=True, help="destination project root")
@@ -240,8 +234,6 @@ def main() -> int:
             return command_validate(catalog)
         if args.command == "show":
             return command_show(catalog, args.skill)
-        if args.command == "test":
-            return command_test(catalog, args.skill)
         return command_install(catalog, args)
     except ValueError as error:
         print(f"Error: {error}", file=sys.stderr)

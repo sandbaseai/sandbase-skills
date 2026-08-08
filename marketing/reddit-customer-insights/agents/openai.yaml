@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reddit Customer Insights"
+  short_description: "Discover customer language and pain points"
+  default_prompt: "Use $reddit-customer-insights to research customer pain points from public Reddit discussions."

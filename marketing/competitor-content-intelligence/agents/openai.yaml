@@ -1,0 +1,4 @@
+interface:
+  display_name: "Competitor Content Intelligence"
+  short_description: "Find differentiated content opportunities"
+  default_prompt: "Use $competitor-content-intelligence to find evidence-backed content gaps in my market."

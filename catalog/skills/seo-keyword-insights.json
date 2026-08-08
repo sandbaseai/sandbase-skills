@@ -86,6 +86,7 @@
     "schema_resolution": {
       "source": "sandbase-capability-registry",
       "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool",
       "dynamic_lookup": "Resolve the capability by capability_id and render its current inputSchema."
     },
     "schema_lookup": {
@@ -220,50 +221,5 @@
       }
     ]
   },
-  "agent_tests": [
-    {
-      "id": "site-brief-and-seed-validation",
-      "label": "Validate a site brief and seed expansion",
-      "mode": "sandbase-agent",
-      "safety": "read-only",
-      "description": "Verify that the agent first derives seeds from a public page, then uses only SandBase capabilities to expand and qualify them.",
-      "prompt": "Use the SEO Keyword Insights skill to analyze https://example.com for US English. Create a concise site brief, propose three non-brand seed themes, call the page-content capability and keyword-suggestions capability, then return five evidence-labeled candidates. Do not call any write, posting, or account-changing capability.",
-      "allowed_tools": [
-        "dataforseo_v3_on_page_content_parsing_live",
-        "dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live"
-      ],
-      "assertions": [
-        "A site brief appears before keyword recommendations.",
-        "Every candidate identifies its evidence source.",
-        "No non-SandBase or mutating tool is called.",
-        "The result states market and language."
-      ],
-      "evidence": [
-        "tool-call trace",
-        "final response"
-      ]
-    },
-    {
-      "id": "serp-page-type-recommendation",
-      "label": "Validate SERP-backed page advice",
-      "mode": "sandbase-agent",
-      "safety": "read-only",
-      "description": "Verify that a page-type recommendation uses live SERP evidence rather than a metric-only assumption.",
-      "prompt": "Use the SEO Keyword Insights skill to assess the query 'keyword research tool' for US English. Retrieve the live Google organic SERP and recommend one page type. Cite the observed ranking-page pattern and label uncertainty. Do not make changes to any account or website.",
-      "allowed_tools": [
-        "dataforseo_v3_serp_google_organic_live_advanced"
-      ],
-      "assertions": [
-        "The recommendation names a page type.",
-        "The recommendation includes observed SERP evidence.",
-        "The result labels uncertainty or evidence limits.",
-        "No mutating tool is called."
-      ],
-      "evidence": [
-        "tool-call trace",
-        "final response"
-      ]
-    }
-  ],
   "related_skills": []
 }

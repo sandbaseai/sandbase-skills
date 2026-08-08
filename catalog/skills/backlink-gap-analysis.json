@@ -1,1 +1,27 @@
-{"schema_version":1,"id":"backlink-gap-analysis","display_name":"Backlink Gap Analysis","short_description":"Find ethical backlink gaps against competitors.","description":"Compare target and competitor backlink evidence to prioritize relevant referring-domain and digital-PR gaps.","category":{"id":"marketing-seo","label":"Marketing & SEO"},"tags":["backlinks","digital PR","SEO"],"version":"0.1.0","status":"active","visibility":"public","examples":["Compare a SaaS domain against competitors and identify ethical backlink gaps."],"api":{"gateway":"sandbase-mcp","pricing_model":"usage-based/call","endpoints":[{"method":"POST","tool_name":"dataforseo_v3_backlinks_summary_live","summary":"Summarize a backlink profile."},{"method":"POST","tool_name":"dataforseo_v3_backlinks_referring_domains_live","summary":"List referring domains."},{"method":"POST","tool_name":"dataforseo_v3_backlinks_competitors_live","summary":"Find link competitors."},{"method":"POST","tool_name":"dataforseo_v3_backlinks_backlinks_live","summary":"Inspect competitor-earned links."}]},"agent_tests":[{"id":"backlink-gap","label":"Research backlink gaps","mode":"sandbase-agent","safety":"read-only","prompt":"Compare example.com backlink evidence with competitors and return three ethical gap types without outreach.","allowed_tools":["dataforseo_v3_backlinks_summary_live","dataforseo_v3_backlinks_referring_domains_live"],"assertions":["Recommendations cite backlink evidence.","No outreach is performed."]}],"related_skills":["seo-keyword-insights"]}
+{
+  "schema_version": 1,
+  "id": "backlink-gap-analysis",
+  "display_name": "Backlink Gap Analysis",
+  "short_description": "Find ethical backlink gaps against competitors.",
+  "description": "Compare target and competitor backlink evidence to prioritize relevant referring-domain and digital-PR gaps.",
+  "category": {"id": "marketing-seo", "label": "Marketing & SEO"},
+  "tags": ["backlinks", "digital PR", "SEO"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "examples": ["Compare a SaaS domain against competitors and identify ethical backlink gaps."],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"},
+    "endpoints": [
+      {"method": "POST", "operation": "dataforseo/v3/backlinks/summary/live", "tool_name": "dataforseo_v3_backlinks_summary_live", "summary": "Summarize a backlink profile."},
+      {"method": "POST", "operation": "dataforseo/v3/backlinks/referring_domains/live", "tool_name": "dataforseo_v3_backlinks_referring_domains_live", "summary": "List referring domains."},
+      {"method": "POST", "operation": "dataforseo/v3/backlinks/competitors/live", "tool_name": "dataforseo_v3_backlinks_competitors_live", "summary": "Find link competitors."},
+      {"method": "POST", "operation": "dataforseo/v3/backlinks/backlinks/live", "tool_name": "dataforseo_v3_backlinks_backlinks_live", "summary": "Inspect competitor-earned links."},
+      {"method": "POST", "operation": "dataforseo/v3/backlinks/anchors/live", "tool_name": "dataforseo_v3_backlinks_anchors_live", "summary": "Assess anchor-text patterns."},
+      {"method": "POST", "operation": "dataforseo/v3/backlinks/domain_pages/live", "tool_name": "dataforseo_v3_backlinks_domain_pages_live", "summary": "Identify pages with backlink evidence."}
+    ]
+  },
+  "related_skills": ["seo-keyword-insights"]
+}

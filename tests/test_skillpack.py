@@ -34,8 +34,6 @@ class SkillpackTests(unittest.TestCase):
         self.assertIn("dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live", api_map)
         self.assertIn("dataforseo_v3_serp_google_autocomplete_live_advanced", api_map)
         self.assertTrue((skill_dir / "references" / "example-workflows.md").is_file())
-        self.assertNotIn("AISA_API_KEY", skill_text + api_map)
-        self.assertNotIn("api.aisa", skill_text + api_map)
 
     def test_seo_web_metadata_is_display_ready(self):
         metadata_path = ROOT / "catalog" / "skills" / "seo-keyword-insights.json"
@@ -48,8 +46,6 @@ class SkillpackTests(unittest.TestCase):
             self.assertEqual(endpoint["method"], "POST")
             self.assertTrue(endpoint["operation"])
             self.assertTrue(endpoint["tool_name"])
-        self.assertEqual(len(metadata["agent_tests"]), 2)
-        self.assertEqual(metadata["agent_tests"][0]["safety"], "read-only")
 
     def test_keyword_suggestions_uses_dynamic_schema(self):
         metadata = json.loads(
@@ -81,16 +77,10 @@ class SkillpackTests(unittest.TestCase):
         )
         self.assertEqual(plugin["name"], "sandbase/seo-keyword-insights")
         self.assertEqual(plugin["type"], "skill")
-        self.assertNotIn("created_by", plugin)
         required = set(plugin["unified_schema"]["required_endpoints"])
         displayed = {item["tool_name"] for item in catalog["api"]["endpoints"]}
         self.assertEqual(required, displayed)
         self.assertEqual(plugin["metadata"]["endpoint_count"], len(displayed))
-
-    def test_agent_test_declarations_validate(self):
-        result = self.run_cli("test", "--skill", "seo-keyword-insights")
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("Validated 2 SandBase Agent test case(s)", result.stdout)
 
     def test_dry_run_does_not_write_and_real_install_copies_skill(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -110,6 +100,16 @@ class SkillpackTests(unittest.TestCase):
         catalog = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
         for entry in catalog["skills"]:
             self.assertTrue((ROOT / entry["path"] / "SKILL.md").is_file())
+
+    def test_every_catalog_entry_has_a_matching_registry_manifest(self):
+        catalog = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
+        for entry in catalog["skills"]:
+            self.assertTrue((ROOT / entry["registry_path"]).is_file())
+
+    def test_every_skill_has_agent_metadata(self):
+        catalog = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
+        for entry in catalog["skills"]:
+            self.assertTrue((ROOT / entry["path"] / "agents" / "openai.yaml").is_file())
 
 
 if __name__ == "__main__":

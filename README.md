@@ -1,6 +1,6 @@
 # SandBase Skills
 
-A versioned collection of downloadable Agent Skills that turn SandBase capabilities into repeatable workflows. Each skill is self-contained, but all SandBase-backed skills require an authorized SandBase connection when used outside a SandBase Agent.
+A public collection of downloadable Agent Skills. Each Skill turns SandBase capabilities into a focused, repeatable workflow and requires an authorized SandBase connection.
 
 ## Included skills
 
@@ -15,30 +15,17 @@ A versioned collection of downloadable Agent Skills that turn SandBase capabilit
 
 ## Web catalog metadata
 
-The repository exposes display-ready data in `skills.json` and a detailed record per Skill under `catalog/skills/`. A website can render the skill detail page directly from this data: title, description, tags, compatibility, install prompt, action buttons, pricing label, and an expandable Tools & Endpoints list.
+The repository exposes a display-ready index in `skills.json` and a detailed record per Skill under `catalog/skills/`. A website can render cards and detail pages directly from this data: title, description, tags, install prompt, pricing label, examples, configuration, and an expandable Tools & Endpoints list.
 
-`operation` is a human-readable provider operation for display. Calls must still go through the SandBase MCP gateway using `tool_name`; the web UI can obtain current parameter fields from `sandbase_describe_tool` when a row expands.
-
-Every detailed record also includes `examples`, `configuration`, `notes`, `related_skills`, and `agent_tests`. These map directly to a Skill detail page: Overview, Install, Tools & Endpoints, Example Tasks, Configuration, Notes, Related Skills, and **Test in Agent**.
+`operation` is a human-readable provider operation for display. Calls must go through the SandBase MCP gateway using `tool_name`; the UI resolves current parameters from Capability Registry with `sandbase_describe_tool` when a row expands. The repository deliberately does not copy endpoint parameter snapshots, pricing, or API keys into Skills.
 
 ## Endpoint schemas
 
-Each endpoint binding uses SandBase Capability Registry as the authoritative source for its current input schema. A page resolves the binding's `capability_id` at runtime and renders `inputSchema`. The first reference implementation is `seo-keyword-insights` → `keyword_suggestions`.
+Each endpoint binding uses SandBase Capability Registry as the authoritative source for its current input schema. A page resolves the binding by `tool_name` at runtime and renders the returned `inputSchema`. An optional `capability_id` can improve database joins, but must not replace the live lookup.
 
 ## Registry example
 
-`registry/data/skills/sandbase/seo-keyword-insights/plugin.json` is the registration template for the first public Skill. It declares the stable endpoint bindings in `unified_schema.required_endpoints`, organizes them into `workflow_groups`, and defines secret-free `test_presets`. Keep its endpoint set identical to the detailed catalog; parameters remain in Capability Registry and are not copied into this file.
-
-## Test in SandBase Agent
-
-Agent-test declarations live in each catalog record and are indexed by `evals/<skill-id>.json`. A product surface can send a selected test's `prompt` to a SandBase Agent, allow only `allowed_tools`, capture its trace and final response, and evaluate every `assertions` item. Tests marked `read-only` must not invoke write, posting, or account-changing capabilities.
-
-The package CLI validates the test declarations offline:
-
-```bash
-python3 scripts/skillpack.py test --skill seo-keyword-insights
-python3 scripts/skillpack.py show seo-keyword-insights
-```
+Each `registry/data/skills/sandbase/<skill-id>/plugin.json` file is a database-registration manifest. It declares the stable endpoint bindings in `unified_schema.required_endpoints` and optional workflow groups or safe starter presets. Its endpoint set must exactly match the detailed catalog; parameters remain in Capability Registry.
 
 ## Install locally
 
@@ -67,7 +54,7 @@ Run the offline package test suite:
 python3 -m unittest discover -s tests -v
 ```
 
-The tests validate the catalog, Skill frontmatter, internal references, SandBase API-map safety rules, and installer dry-run behavior. They do not make live API calls or require credentials.
+The tests validate the catalog, registry manifests, Skill frontmatter, internal references, SandBase API-map safety rules, and installer dry-run behavior. They do not make live API calls or require credentials.
 
 ## Add a Skill
 
