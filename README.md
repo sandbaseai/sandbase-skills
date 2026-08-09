@@ -4,11 +4,30 @@ Downloadable Agent Skills for practical research and growth workflows. Install o
 
 ## Start here
 
-1. Choose a Skill below.
-2. Run one `npx` command from your agent project.
-3. Ask your agent to use the installed Skill.
+1. Connect your agent to SandBase.
+2. Choose a Skill below.
+3. Run one `npx` command from your agent project.
+4. Ask your agent to use the installed Skill.
 
 No API key belongs in a Skill, prompt, or report. The agent environment must already have an authorized SandBase connection.
+
+## Connect SandBase
+
+These Skills call SandBase capabilities through MCP, so a SandBase API key and an authorized MCP connection are required before the first task. For Codex, the recommended setup is the SandBase CLI; it opens the browser authorization flow, stores the credential securely, and configures the SandBase MCP connection:
+
+```bash
+npx -y @sandbaseai/cli connect --client codex
+```
+
+Use the matching client name when connecting another supported agent, then restart or refresh that agent if the CLI asks you to. If your organization already manages the MCP connection, ask its administrator to grant you access to the required SandBase capabilities instead of running the command again.
+
+For direct API or manually managed MCP setups, keep the key only in your secret manager or environment configuration under `SANDBASE_API_KEY`:
+
+```bash
+export SANDBASE_API_KEY='your_sandbase_api_key'
+```
+
+Never commit this value, add it to a repository `.env` file, paste it into a chat prompt, or include it in a report. The installed Skill discovers the current tool schema through the authorized connection; it never needs the raw key.
 
 ## Choose a Skill
 
