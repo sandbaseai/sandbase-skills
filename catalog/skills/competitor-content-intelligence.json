@@ -3,23 +3,34 @@
   "id": "competitor-content-intelligence",
   "display_name": "Competitor Content Intelligence",
   "short_description": "Find differentiated content opportunities from public evidence.",
-  "description": "Compare competitor coverage, source pages, and topic evidence to produce a prioritized content-brief backlog.",
-  "category": {"id": "marketing-content", "label": "Marketing & Content"},
-  "tags": ["content strategy", "competitive research", "editorial"],
+  "description": "Compare competitor coverage, extract and analyze source pages, validate topic patterns, and produce a prioritized content-brief backlog with differentiation angles.",
+  "category": {
+    "id": "marketing-content",
+    "label": "Marketing & Content"
+  },
+  "tags": [
+    "content strategy",
+    "competitive research",
+    "editorial",
+    "content gaps"
+  ],
   "version": "0.1.0",
   "status": "active",
   "visibility": "public",
-  "examples": ["Compare three competitors' content coverage for agent observability.", "Find missing buyer questions for a B2B product category."],
-  "api": {
-    "gateway": "sandbase-mcp",
-    "pricing_model": "usage-based/call",
-    "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"},
-    "endpoints": [
-      {"method": "POST", "operation": "exa/search", "tool_name": "exa_search", "summary": "Discover relevant competitor and source pages."},
-      {"method": "POST", "operation": "cloudsway/search", "tool_name": "cloudsway_search", "summary": "Discover complementary web sources."},
-      {"method": "POST", "operation": "context-dev/scrape-markdown", "tool_name": "context_dev_scrape_markdown", "summary": "Extract selected public pages as Markdown."},
-      {"method": "POST", "operation": "dataforseo/v3/on_page/content_parsing/live", "tool_name": "dataforseo_v3_on_page_content_parsing_live", "summary": "Parse a page into structured content."},
-      {"method": "POST", "operation": "dataforseo/v3/content_analysis/search/live", "tool_name": "dataforseo_v3_content_analysis_search_live", "summary": "Validate topical content coverage."}
+  "repository": {
+    "source_path": "marketing/competitor-content-intelligence",
+    "skill_file": "marketing/competitor-content-intelligence/SKILL.md",
+    "readme_anchor": "#competitor-content-intelligence"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection"
     ]
   },
   "install": {
@@ -28,5 +39,104 @@
     "global_cli": "npx skills add sandbaseai/sandbase-skills --skill competitor-content-intelligence --agent codex --global",
     "source_path": "marketing/competitor-content-intelligence"
   },
-  "related_skills": ["seo-keyword-insights", "exa-deep-search"]
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/competitor-content-intelligence"
+    }
+  ],
+  "examples": [
+    "Compare three competitors' content coverage for AI agent observability.",
+    "Find missing buyer questions for a B2B product category.",
+    "What content formats are competitors NOT using for this topic?",
+    "Find topics where competitor content is outdated and we could publish something better.",
+    "Give me 5 content briefs for differentiated articles based on competitor gaps."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "target audience and their problems",
+      "topic or category",
+      "competitor domains (2-5 recommended)",
+      "target positioning and differentiation",
+      "content types in scope (blog, landing page, docs, comparison, tool)",
+      "intended use (content calendar, brief backlog, editorial strategy)"
+    ]
+  },
+  "notes": [
+    "Focuses on content strategy differentiation, not content copying.",
+    "Does not reproduce competitor text beyond short necessary excerpts.",
+    "A gap in one market may be saturated in another — geography and language matter."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool",
+      "dynamic_lookup": "Resolve the capability by capability_id and render its current inputSchema."
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "exa/search",
+        "tool_name": "exa_search",
+        "summary": "Discover relevant competitor and source pages with semantic search."
+      },
+      {
+        "method": "POST",
+        "operation": "cloudsway/search",
+        "tool_name": "cloudsway_search",
+        "summary": "Discover complementary public web sources."
+      },
+      {
+        "method": "POST",
+        "operation": "context-dev/scrape-markdown",
+        "tool_name": "context_dev_scrape_markdown",
+        "summary": "Extract a selected public page as clean Markdown for analysis."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/on_page/content_parsing/live",
+        "tool_name": "dataforseo_v3_on_page_content_parsing_live",
+        "summary": "Parse a page into structured content with heading hierarchy."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/content_analysis/search/live",
+        "tool_name": "dataforseo_v3_content_analysis_search_live",
+        "summary": "Validate broader topical coverage and content patterns."
+      }
+    ]
+  },
+  "related_skills": [
+    "seo-keyword-insights",
+    "exa-deep-search"
+  ]
 }

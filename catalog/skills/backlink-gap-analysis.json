@@ -3,24 +3,34 @@
   "id": "backlink-gap-analysis",
   "display_name": "Backlink Gap Analysis",
   "short_description": "Find ethical backlink gaps against competitors.",
-  "description": "Compare target and competitor backlink evidence to prioritize relevant referring-domain and digital-PR gaps.",
-  "category": {"id": "marketing-seo", "label": "Marketing & SEO"},
-  "tags": ["backlinks", "digital PR", "SEO"],
+  "description": "Compare target and competitor backlink profiles using DataForSEO via SandBase to prioritize relevant referring-domain opportunities, assess anchor health, and identify linkable asset patterns.",
+  "category": {
+    "id": "marketing-seo",
+    "label": "Marketing & SEO"
+  },
+  "tags": [
+    "backlinks",
+    "digital PR",
+    "SEO",
+    "link building"
+  ],
   "version": "0.1.0",
   "status": "active",
   "visibility": "public",
-  "examples": ["Compare a SaaS domain against competitors and identify ethical backlink gaps."],
-  "api": {
-    "gateway": "sandbase-mcp",
-    "pricing_model": "usage-based/call",
-    "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"},
-    "endpoints": [
-      {"method": "POST", "operation": "dataforseo/v3/backlinks/summary/live", "tool_name": "dataforseo_v3_backlinks_summary_live", "summary": "Summarize a backlink profile."},
-      {"method": "POST", "operation": "dataforseo/v3/backlinks/referring_domains/live", "tool_name": "dataforseo_v3_backlinks_referring_domains_live", "summary": "List referring domains."},
-      {"method": "POST", "operation": "dataforseo/v3/backlinks/competitors/live", "tool_name": "dataforseo_v3_backlinks_competitors_live", "summary": "Find link competitors."},
-      {"method": "POST", "operation": "dataforseo/v3/backlinks/backlinks/live", "tool_name": "dataforseo_v3_backlinks_backlinks_live", "summary": "Inspect competitor-earned links."},
-      {"method": "POST", "operation": "dataforseo/v3/backlinks/anchors/live", "tool_name": "dataforseo_v3_backlinks_anchors_live", "summary": "Assess anchor-text patterns."},
-      {"method": "POST", "operation": "dataforseo/v3/backlinks/domain_pages/live", "tool_name": "dataforseo_v3_backlinks_domain_pages_live", "summary": "Identify pages with backlink evidence."}
+  "repository": {
+    "source_path": "marketing/backlink-gap-analysis",
+    "skill_file": "marketing/backlink-gap-analysis/SKILL.md",
+    "readme_anchor": "#backlink-gap-analysis"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection"
     ]
   },
   "install": {
@@ -29,5 +39,108 @@
     "global_cli": "npx skills add sandbaseai/sandbase-skills --skill backlink-gap-analysis --agent codex --global",
     "source_path": "marketing/backlink-gap-analysis"
   },
-  "related_skills": ["seo-keyword-insights"]
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/backlink-gap-analysis"
+    }
+  ],
+  "examples": [
+    "Compare our-domain.com with two competitors and find ethical backlink gaps.",
+    "Audit the anchor text profile for my domain and flag any risks.",
+    "What types of content earn links in the developer tools space?",
+    "Build a list of publications that cover our industry and link to competitors.",
+    "We just launched. What's our realistic path to closing the backlink gap?"
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "target domain",
+      "competitor domains (2-5 recommended)",
+      "market or industry",
+      "disallowed link tactics",
+      "analysis goal (gap analysis, anchor audit, prospect list, asset discovery)"
+    ]
+  },
+  "notes": [
+    "Read-only research. Does not send outreach or create links.",
+    "Excludes low-quality, manipulative, or paid-link prospects by default.",
+    "Backlink data is directional evidence — databases may lag reality by days to weeks."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool",
+      "dynamic_lookup": "Resolve the capability by capability_id and render its current inputSchema."
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/backlinks/summary/live",
+        "tool_name": "dataforseo_v3_backlinks_summary_live",
+        "summary": "Summarize a domain or page backlink profile."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/backlinks/referring_domains/live",
+        "tool_name": "dataforseo_v3_backlinks_referring_domains_live",
+        "summary": "List referring domains and their backlink evidence."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/backlinks/competitors/live",
+        "tool_name": "dataforseo_v3_backlinks_competitors_live",
+        "summary": "Find domains competing for similar backlinks."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/backlinks/backlinks/live",
+        "tool_name": "dataforseo_v3_backlinks_backlinks_live",
+        "summary": "Inspect individual competitor-earned backlinks."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/backlinks/anchors/live",
+        "tool_name": "dataforseo_v3_backlinks_anchors_live",
+        "summary": "Assess anchor-text patterns and topical relevance."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/backlinks/domain_pages/live",
+        "tool_name": "dataforseo_v3_backlinks_domain_pages_live",
+        "summary": "Identify pages that attract links and potential asset patterns."
+      }
+    ]
+  },
+  "related_skills": [
+    "seo-keyword-insights"
+  ]
 }

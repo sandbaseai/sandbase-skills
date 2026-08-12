@@ -3,22 +3,34 @@
   "id": "reddit-customer-insights",
   "display_name": "Reddit Customer Insights",
   "short_description": "Turn Reddit discussions into customer insight.",
-  "description": "Research public Reddit conversations to identify customer pain points, objections, language, and content opportunities.",
-  "category": {"id": "marketing-research", "label": "Marketing & Research"},
-  "tags": ["Reddit", "voice of customer", "research"],
+  "description": "Research public Reddit conversations to identify customer pain points, objections, buying triggers, language patterns, and content opportunities using SandBase Reddit capabilities.",
+  "category": {
+    "id": "marketing-research",
+    "label": "Marketing & Research"
+  },
+  "tags": [
+    "Reddit",
+    "voice of customer",
+    "research",
+    "pain points"
+  ],
   "version": "0.1.0",
   "status": "active",
   "visibility": "public",
-  "examples": ["Find recurring pain points for project-management software buyers."],
-  "api": {
-    "gateway": "sandbase-mcp",
-    "pricing_model": "usage-based/call",
-    "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"},
-    "endpoints": [
-      {"method": "POST", "operation": "reddit/search-typeahead", "tool_name": "reddit_app_search_typeahead", "summary": "Discover relevant communities and queries."},
-      {"method": "POST", "operation": "reddit/dynamic-search", "tool_name": "reddit_app_dynamic_search", "summary": "Search public Reddit posts, comments, and communities."},
-      {"method": "POST", "operation": "reddit/post-details", "tool_name": "reddit_app_post_details", "summary": "Inspect selected discussion context."},
-      {"method": "POST", "operation": "reddit/topic-feed", "tool_name": "reddit_app_topic_feed", "summary": "Collect a public topic feed."}
+  "repository": {
+    "source_path": "marketing/reddit-customer-insights",
+    "skill_file": "marketing/reddit-customer-insights/SKILL.md",
+    "readme_anchor": "#reddit-customer-insights"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection"
     ]
   },
   "install": {
@@ -27,5 +39,97 @@
     "global_cli": "npx skills add sandbaseai/sandbase-skills --skill reddit-customer-insights --agent codex --global",
     "source_path": "marketing/reddit-customer-insights"
   },
-  "related_skills": []
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/reddit-customer-insights"
+    }
+  ],
+  "examples": [
+    "Find recurring pain points for project-management software buyers on Reddit.",
+    "What events prompt teams to look for a new CRM? Find buying triggers from Reddit.",
+    "Why are people switching away from [Competitor]? What are they switching to?",
+    "How do developers describe their frustrations with API documentation? Extract their language.",
+    "Find unanswered questions about [topic] on Reddit that we could create content for."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "product or market category",
+      "target audience segment",
+      "competitor names",
+      "specific communities to search",
+      "time range",
+      "research objective (pain points, triggers, objections, language, content ideas)"
+    ]
+  },
+  "notes": [
+    "Read-only research only. Never post, vote, message, or alter Reddit accounts.",
+    "Treat findings as qualitative evidence, not statistically representative samples.",
+    "Keep user company and strategy details confidential in outputs."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool",
+      "dynamic_lookup": "Resolve the capability by capability_id and render its current inputSchema."
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "reddit/search-typeahead",
+        "tool_name": "reddit_app_search_typeahead",
+        "summary": "Discover relevant communities and search queries."
+      },
+      {
+        "method": "POST",
+        "operation": "reddit/dynamic-search",
+        "tool_name": "reddit_app_dynamic_search",
+        "summary": "Search public Reddit posts, comments, and communities."
+      },
+      {
+        "method": "POST",
+        "operation": "reddit/post-details",
+        "tool_name": "reddit_app_post_details",
+        "summary": "Inspect selected discussion context and comments."
+      },
+      {
+        "method": "POST",
+        "operation": "reddit/topic-feed",
+        "tool_name": "reddit_app_topic_feed",
+        "summary": "Collect a public topic feed for volume analysis."
+      }
+    ]
+  },
+  "related_skills": [
+    "competitor-content-intelligence"
+  ]
 }

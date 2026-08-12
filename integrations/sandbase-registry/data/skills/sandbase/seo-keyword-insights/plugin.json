@@ -82,8 +82,8 @@
       "Cursor"
     ],
     "homepage": "https://github.com/sandbaseai/sandbase-skills",
-    "official_url": "https://github.com/sandbaseai/sandbase-skills/tree/2ef8370/marketing/seo-keyword-insights",
-    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/2ef8370/marketing/seo-keyword-insights",
+    "official_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/seo-keyword-insights",
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/seo-keyword-insights",
     "protocol": "skill"
   },
   "published_at": null,

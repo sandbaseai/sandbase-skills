@@ -1,1 +1,112 @@
-{"name":"sandbase/competitor-content-intelligence","display_name":"Competitor Content Intelligence","vendor":"sandbase","vendor_slug":"sandbase","model_slug":"competitor-content-intelligence","description":"Find differentiated content opportunities from public competitor evidence.","type":"skill","capability_tags":["content strategy","competitive research","editorial"],"unified_schema":{"protocol":"skill","servers":["sandbase-mcp"],"categories":["marketing-content"],"git_url":"https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/competitor-content-intelligence","required_endpoints":["exa_search","cloudsway_search","context_dev_scrape_markdown","dataforseo_v3_on_page_content_parsing_live","dataforseo_v3_content_analysis_search_live"]},"execution_mode":"sync","supported_modes":null,"fallback_models":null,"fallback_policy":"auto","run_count":0,"sort_order":140,"context_length":0,"icon_url":"","metadata":{"category":"Marketing & Content","endpoint_count":5,"supported_clients":["SandBase Agent","Codex","Claude","Cursor"]},"published_at":null,"enabled":true,"featured":false}
+{
+  "name": "sandbase/competitor-content-intelligence",
+  "display_name": "Competitor Content Intelligence",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "competitor-content-intelligence",
+  "description": "Find differentiated content opportunities from public competitor evidence. Discovers competitor pages, extracts and analyzes content depth, validates topic coverage, and delivers a prioritized content-brief backlog.",
+  "type": "skill",
+  "capability_tags": [
+    "content strategy",
+    "competitive research",
+    "editorial",
+    "content gaps"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-content"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/competitor-content-intelligence",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/competitor-content-intelligence/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/competitor-content-intelligence.json",
+    "skill_path": "marketing/competitor-content-intelligence",
+    "catalog_path": "catalog/skills/competitor-content-intelligence.json",
+    "required_endpoints": [
+      "exa_search",
+      "cloudsway_search",
+      "context_dev_scrape_markdown",
+      "dataforseo_v3_on_page_content_parsing_live",
+      "dataforseo_v3_content_analysis_search_live"
+    ],
+    "workflow_groups": [
+      {
+        "title": "Discover competitor pages",
+        "endpoint_refs": [
+          "exa_search",
+          "cloudsway_search"
+        ]
+      },
+      {
+        "title": "Extract and parse content",
+        "endpoint_refs": [
+          "context_dev_scrape_markdown",
+          "dataforseo_v3_on_page_content_parsing_live"
+        ]
+      },
+      {
+        "title": "Validate topic coverage",
+        "endpoint_refs": [
+          "dataforseo_v3_content_analysis_search_live"
+        ]
+      }
+    ],
+    "test_presets": [
+      {
+        "id": "content-gap",
+        "label": "Find content gaps for a topic",
+        "input": {
+          "topic": "AI agent observability",
+          "competitors": [
+            "competitor1.com",
+            "competitor2.com"
+          ]
+        }
+      },
+      {
+        "id": "buyer-questions",
+        "label": "Find unanswered buyer questions",
+        "input": {
+          "topic": "enterprise AI deployment",
+          "audience": "engineering leaders"
+        }
+      }
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 140,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "headline": "Know what competitors cover — then find what they miss.",
+    "category": "Marketing & Content",
+    "outcomes": [
+      "Competitor coverage matrix with gap classification",
+      "Prioritized content opportunities with differentiation angles",
+      "Actionable content briefs ready for writers",
+      "Format and depth gap analysis"
+    ],
+    "endpoint_count": 5,
+    "supported_clients": [
+      "SandBase Agent",
+      "Codex",
+      "Claude",
+      "Cursor"
+    ],
+    "homepage": "https://github.com/sandbaseai/sandbase-skills",
+    "official_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/competitor-content-intelligence",
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/competitor-content-intelligence",
+    "skill_file_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/competitor-content-intelligence/SKILL.md",
+    "protocol": "skill"
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

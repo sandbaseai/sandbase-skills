@@ -1,1 +1,113 @@
-{"name":"sandbase/backlink-gap-analysis","display_name":"Backlink Gap Analysis","vendor":"sandbase","vendor_slug":"sandbase","model_slug":"backlink-gap-analysis","description":"Find ethical backlink and digital-PR gaps from DataForSEO evidence.","type":"skill","capability_tags":["backlinks","digital PR","SEO"],"unified_schema":{"protocol":"skill","servers":["sandbase-mcp"],"categories":["marketing-seo"],"git_url":"https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/backlink-gap-analysis","required_endpoints":["dataforseo_v3_backlinks_summary_live","dataforseo_v3_backlinks_referring_domains_live","dataforseo_v3_backlinks_competitors_live","dataforseo_v3_backlinks_backlinks_live","dataforseo_v3_backlinks_anchors_live","dataforseo_v3_backlinks_domain_pages_live"]},"execution_mode":"sync","supported_modes":null,"fallback_models":null,"fallback_policy":"auto","run_count":0,"sort_order":130,"context_length":0,"icon_url":"","metadata":{"category":"Marketing & SEO","endpoint_count":6,"supported_clients":["SandBase Agent","Codex","Claude","Cursor"]},"published_at":null,"enabled":true,"featured":false}
+{
+  "name": "sandbase/backlink-gap-analysis",
+  "display_name": "Backlink Gap Analysis",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "backlink-gap-analysis",
+  "description": "Find ethical backlink and digital-PR gaps using DataForSEO via SandBase. Profiles domains, identifies competitor-earned links, assesses anchor health, and delivers a prioritized prospect list.",
+  "type": "skill",
+  "capability_tags": [
+    "backlinks",
+    "digital PR",
+    "SEO",
+    "link building"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-seo"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/backlink-gap-analysis",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/backlink-gap-analysis/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/backlink-gap-analysis.json",
+    "skill_path": "marketing/backlink-gap-analysis",
+    "catalog_path": "catalog/skills/backlink-gap-analysis.json",
+    "required_endpoints": [
+      "dataforseo_v3_backlinks_summary_live",
+      "dataforseo_v3_backlinks_referring_domains_live",
+      "dataforseo_v3_backlinks_competitors_live",
+      "dataforseo_v3_backlinks_backlinks_live",
+      "dataforseo_v3_backlinks_anchors_live",
+      "dataforseo_v3_backlinks_domain_pages_live"
+    ],
+    "workflow_groups": [
+      {
+        "title": "Profile target domain",
+        "endpoint_refs": [
+          "dataforseo_v3_backlinks_summary_live",
+          "dataforseo_v3_backlinks_referring_domains_live"
+        ]
+      },
+      {
+        "title": "Identify competitor links",
+        "endpoint_refs": [
+          "dataforseo_v3_backlinks_competitors_live",
+          "dataforseo_v3_backlinks_backlinks_live"
+        ]
+      },
+      {
+        "title": "Assess relevance and assets",
+        "endpoint_refs": [
+          "dataforseo_v3_backlinks_anchors_live",
+          "dataforseo_v3_backlinks_domain_pages_live"
+        ]
+      }
+    ],
+    "test_presets": [
+      {
+        "id": "backlink-gap",
+        "label": "Compare backlink profiles",
+        "input": {
+          "target": "example.com",
+          "competitors": [
+            "competitor1.com",
+            "competitor2.com"
+          ]
+        }
+      },
+      {
+        "id": "anchor-audit",
+        "label": "Audit anchor text health",
+        "input": {
+          "target": "example.com"
+        }
+      }
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 130,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "headline": "Find the links your competitors earned — ethically close the gap.",
+    "category": "Marketing & SEO",
+    "outcomes": [
+      "Domain backlink profile comparison",
+      "Prioritized link-prospect list with relevance scoring",
+      "Anchor text health assessment",
+      "Linkable asset recommendations"
+    ],
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Codex",
+      "Claude",
+      "Cursor"
+    ],
+    "homepage": "https://github.com/sandbaseai/sandbase-skills",
+    "official_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/backlink-gap-analysis",
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/backlink-gap-analysis",
+    "skill_file_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/backlink-gap-analysis/SKILL.md",
+    "protocol": "skill"
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

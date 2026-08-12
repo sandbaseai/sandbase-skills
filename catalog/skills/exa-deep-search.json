@@ -1,1 +1,121 @@
-{"schema_version":1,"id":"exa-deep-search","display_name":"Exa Deep Search","short_description":"Search, extract, and compare high-quality public sources.","description":"Use Exa Search to discover sources and Exa Contents to extract selected URLs.","category":{"id":"search-research","label":"Search & Research"},"tags":["Exa","deep search","research"],"version":"0.1.0","status":"active","visibility":"public","examples":["Research the competitive landscape for AI agent observability."],"api":{"gateway":"sandbase-mcp","schema_resolution":{"source":"sandbase-capability-registry","strategy":"dynamic","lookup":"sandbase_describe_tool"},"pricing_model":"usage-based/call","endpoints":[{"method":"POST","operation":"exa/search","tool_name":"exa_search","capability_id":"618583c7-f2d2-4256-84d4-997a7b7287cf","summary":"Discover web sources with optional highlights, summaries, or text."},{"method":"POST","operation":"exa/contents","tool_name":"exa_contents","registry_name":"exa/contents","availability":"pending_publication","summary":"Extract selected URLs as clean text, highlights, summaries, or subpages."}]},"install":{"prompt":"Use $exa-deep-search to research a topic with source-backed findings.","cli":"npx skills add sandbaseai/sandbase-skills --skill exa-deep-search --agent codex","global_cli":"npx skills add sandbaseai/sandbase-skills --skill exa-deep-search --agent codex --global","source_path":"marketing/exa-deep-search"},"related_skills":["competitor-content-intelligence"]}
+{
+  "schema_version": 1,
+  "id": "exa-deep-search",
+  "display_name": "Exa Deep Search",
+  "short_description": "Search, extract, and compare high-quality public sources.",
+  "description": "Use Exa Search to discover sources and Exa Contents to extract selected URLs.",
+  "category": {
+    "id": "search-research",
+    "label": "Search & Research"
+  },
+  "tags": [
+    "Exa",
+    "deep search",
+    "research"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/exa-deep-search",
+    "skill_file": "marketing/exa-deep-search/SKILL.md",
+    "readme_anchor": "#exa-deep-search"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection"
+    ]
+  },
+  "install": {
+    "prompt": "Use $exa-deep-search to research a topic with source-backed findings.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill exa-deep-search --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill exa-deep-search --agent codex --global",
+    "source_path": "marketing/exa-deep-search"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/exa-deep-search"
+    }
+  ],
+  "examples": [
+    "Research the competitive landscape for AI agent observability.",
+    "Find the last 30 days of reliable sources about a topic and give a five-source brief.",
+    "Compare public arguments for and against a technical architecture with citations."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "research question or topic",
+      "time window",
+      "geography or language",
+      "include or exclude domains",
+      "deliverable format"
+    ]
+  },
+  "notes": [
+    "Search before extracting; use exa_contents only for selected sources.",
+    "If exa_contents is unavailable, return search results and note the extraction gap."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool",
+      "dynamic_lookup": "Resolve the capability by capability_id and render its current inputSchema."
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "exa/search",
+        "tool_name": "exa_search",
+        "capability_id": "618583c7-f2d2-4256-84d4-997a7b7287cf",
+        "summary": "Discover web sources with optional highlights, summaries, or text."
+      },
+      {
+        "method": "POST",
+        "operation": "exa/contents",
+        "tool_name": "exa_contents",
+        "registry_name": "exa/contents",
+        "availability": "pending_publication",
+        "summary": "Extract selected URLs as clean text, highlights, summaries, or subpages."
+      }
+    ]
+  },
+  "related_skills": [
+    "competitor-content-intelligence"
+  ]
+}

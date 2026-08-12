@@ -1,1 +1,107 @@
-{"name":"sandbase/reddit-customer-insights","display_name":"Reddit Customer Insights","vendor":"sandbase","vendor_slug":"sandbase","model_slug":"reddit-customer-insights","description":"Turn public Reddit discussions into evidence-backed customer insight.","type":"skill","capability_tags":["reddit","voice of customer","research"],"unified_schema":{"protocol":"skill","servers":["sandbase-mcp"],"categories":["marketing-research"],"git_url":"https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/reddit-customer-insights","required_endpoints":["reddit_app_search_typeahead","reddit_app_dynamic_search","reddit_app_post_details","reddit_app_topic_feed"]},"execution_mode":"sync","supported_modes":null,"fallback_models":null,"fallback_policy":"auto","run_count":0,"sort_order":110,"context_length":0,"icon_url":"","metadata":{"category":"Marketing & Research","endpoint_count":4,"supported_clients":["SandBase Agent","Codex","Claude","Cursor"]},"published_at":null,"enabled":true,"featured":false}
+{
+  "name": "sandbase/reddit-customer-insights",
+  "display_name": "Reddit Customer Insights",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "reddit-customer-insights",
+  "description": "Turn public Reddit discussions into evidence-backed customer insight. Discovers communities, collects discussions, and synthesizes pain points, buying triggers, objections, and customer language.",
+  "type": "skill",
+  "capability_tags": [
+    "Reddit",
+    "voice of customer",
+    "research",
+    "pain points"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-research"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/reddit-customer-insights",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/reddit-customer-insights/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/reddit-customer-insights.json",
+    "skill_path": "marketing/reddit-customer-insights",
+    "catalog_path": "catalog/skills/reddit-customer-insights.json",
+    "required_endpoints": [
+      "reddit_app_search_typeahead",
+      "reddit_app_dynamic_search",
+      "reddit_app_post_details",
+      "reddit_app_topic_feed"
+    ],
+    "workflow_groups": [
+      {
+        "title": "Discover communities",
+        "endpoint_refs": [
+          "reddit_app_search_typeahead"
+        ]
+      },
+      {
+        "title": "Collect discussions",
+        "endpoint_refs": [
+          "reddit_app_dynamic_search",
+          "reddit_app_topic_feed"
+        ]
+      },
+      {
+        "title": "Inspect selected posts",
+        "endpoint_refs": [
+          "reddit_app_post_details"
+        ]
+      }
+    ],
+    "test_presets": [
+      {
+        "id": "pain-points-research",
+        "label": "Research customer pain points",
+        "input": {
+          "query": "project management software frustrations",
+          "subreddit": "projectmanagement"
+        }
+      },
+      {
+        "id": "buying-triggers",
+        "label": "Find buying triggers",
+        "input": {
+          "query": "switching CRM recommendation",
+          "subreddit": "smallbusiness"
+        }
+      }
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 110,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "headline": "Hear what customers actually say — before they tell your sales team.",
+    "category": "Marketing & Research",
+    "outcomes": [
+      "Recurring pain points ranked by frequency",
+      "Customer language and vocabulary for messaging",
+      "Buying triggers and objections with source evidence",
+      "Content and product opportunity backlog"
+    ],
+    "endpoint_count": 4,
+    "supported_clients": [
+      "SandBase Agent",
+      "Codex",
+      "Claude",
+      "Cursor"
+    ],
+    "homepage": "https://github.com/sandbaseai/sandbase-skills",
+    "official_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/reddit-customer-insights",
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/reddit-customer-insights",
+    "skill_file_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/reddit-customer-insights/SKILL.md",
+    "protocol": "skill"
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}
