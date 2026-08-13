@@ -1,0 +1,42 @@
+{
+  "name": "sandbase/twitter-intelligence",
+  "display_name": "Twitter Intelligence",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "twitter-intelligence",
+  "description": "Full-spectrum Twitter/X research and social listening.",
+  "type": "skill",
+  "capability_tags": ["Twitter", "social listening", "trends", "sentiment"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["social-intelligence"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/twitter-intelligence",
+    "required_endpoints": [
+      "twitter_web_search_timeline",
+      "twitter_web_trending",
+      "twitter_web_user_profile",
+      "twitter_web_tweet_detail",
+      "twitter_web_user_followers",
+      "twitter_web_user_followings",
+      "twitter_web_user_media",
+      "twitter_bulk_tweet_search"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 200,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Social Intelligence",
+    "endpoint_count": 8,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

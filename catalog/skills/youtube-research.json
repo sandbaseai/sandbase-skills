@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "youtube-research",
+  "display_name": "YouTube Research",
+  "short_description": "Search videos, analyze channels, and extract captions on YouTube.",
+  "description": "Comprehensive YouTube content research. Search videos and channels, analyze engagement, extract captions for content analysis, discover trends and Shorts.",
+  "category": {"id": "social-intelligence", "label": "Social Intelligence"},
+  "tags": ["YouTube", "video research", "channels", "captions"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/youtube-research", "skill_file": "research/youtube-research/SKILL.md", "readme_anchor": "#youtube-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $youtube-research to search videos, analyze channels, and extract transcripts.", "cli": "npx skills add sandbaseai/sandbase-skills --skill youtube-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill youtube-research --agent codex --global", "source_path": "research/youtube-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/youtube-research"}],
+  "examples": ["Find popular videos about [topic] in the last month.", "Analyze [channel]'s content strategy.", "Extract the transcript from this video.", "What are people saying in the comments?", "Find YouTube channels covering [niche]."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["search keywords", "channel URL or name", "video URL", "niche or topic"]},
+  "notes": ["Read-only research. Does not upload or engage.", "Captions may contain transcription errors."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "youtube/web-v2/general-search", "tool_name": "youtube_web_v2_general_search", "summary": "Search videos by keyword."}, {"method": "GET", "operation": "youtube/web-v2/search-channels", "tool_name": "youtube_web_v2_search_channels", "summary": "Search for channels."}, {"method": "GET", "operation": "youtube/web-v2/video-info", "tool_name": "youtube_web_v2_video_info", "summary": "Get video metadata and stats."}, {"method": "GET", "operation": "youtube/web-v2/video-comments", "tool_name": "youtube_web_v2_video_comments", "summary": "Get video comments."}, {"method": "GET", "operation": "youtube/web-v2/video-captions", "tool_name": "youtube_web_v2_video_captions", "summary": "Request caption extraction."}, {"method": "GET", "operation": "youtube/web-v2/channel-videos", "tool_name": "youtube_web_v2_channel_videos", "summary": "List channel videos."}, {"method": "GET", "operation": "youtube/web-v2/channel-description", "tool_name": "youtube_web_v2_channel_description", "summary": "Get channel description."}, {"method": "GET", "operation": "youtube/web-v2/shorts-search", "tool_name": "youtube_web_v2_shorts_search", "summary": "Search YouTube Shorts."}]},
+  "related_skills": ["kol-discovery"]
+}

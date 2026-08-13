@@ -1,0 +1,41 @@
+{
+  "name": "sandbase/douyin-research",
+  "display_name": "Douyin Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "douyin-research",
+  "description": "抖音内容与创作者研究。",
+  "type": "skill",
+  "capability_tags": ["抖音", "短视频", "达人", "挑战赛"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["social-intelligence"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/douyin-research",
+    "required_endpoints": [
+      "douyin_search_general_search_v2",
+      "douyin_search_video_search_v2",
+      "douyin_search_user_search_v2",
+      "douyin_search_challenge_search_v2",
+      "douyin_search_music_search",
+      "douyin_search_live_search_v1",
+      "douyin_search_search_suggest"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 280,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Social Intelligence",
+    "endpoint_count": 7,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "google-news-research",
+  "display_name": "Google News Research",
+  "short_description": "Search and monitor news articles via Google News.",
+  "description": "News discovery and monitoring through Google News. Search articles by topic, track news coverage, and analyze media patterns.",
+  "category": {"id": "search-research", "label": "Search & Research"},
+  "tags": ["news", "Google News", "media", "current events"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/google-news-research", "skill_file": "research/google-news-research/SKILL.md", "readme_anchor": "#google-news-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $google-news-research to search and monitor news articles.", "cli": "npx skills add sandbaseai/sandbase-skills --skill google-news-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill google-news-research --agent codex --global", "source_path": "research/google-news-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/google-news-research"}],
+  "examples": ["What news about [company] this week?", "Track news coverage of [event].", "Compare media coverage of [topic].", "Find breaking news about [topic].", "News sentiment around [brand]."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["search keywords", "topic or entity", "time range", "language"]},
+  "notes": ["News data is time-sensitive — note publication dates.", "Cross-reference multiple sources for accuracy."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "google-news/bulk/articles", "tool_name": "google_news_bulk_articles", "summary": "Search news articles by keyword."}]},
+  "related_skills": ["brand-monitoring", "last30days-research"]
+}

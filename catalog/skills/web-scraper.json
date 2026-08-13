@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "web-scraper",
+  "display_name": "Web Scraper",
+  "short_description": "Scrape pages, crawl sites, and extract structured data.",
+  "description": "Universal web scraping and data extraction. Scrape individual pages as Markdown or HTML, crawl entire sites, extract structured product data, and capture screenshots.",
+  "category": {"id": "search-research", "label": "Search & Research"},
+  "tags": ["web scraping", "crawling", "data extraction", "screenshots"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/web-scraper", "skill_file": "research/web-scraper/SKILL.md", "readme_anchor": "#web-scraper"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $web-scraper to extract content, crawl sites, and capture screenshots.", "cli": "npx skills add sandbaseai/sandbase-skills --skill web-scraper --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill web-scraper --agent codex --global", "source_path": "research/web-scraper"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/web-scraper"}],
+  "examples": ["Extract this article as Markdown.", "Crawl [website] and list product pages.", "Extract product data from this page.", "Take a screenshot of [URL].", "Map all pages on [website]."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["URL(s) to scrape", "crawl depth", "data schema for extraction", "screenshot options"]},
+  "notes": ["Rate limiting handled automatically.", "Use lightest tool for the job: markdown before full crawl."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "POST", "operation": "context-dev/scrape-markdown", "tool_name": "context_dev_scrape_markdown", "summary": "Extract page as clean Markdown."}, {"method": "POST", "operation": "context-dev/capture-screenshot", "tool_name": "context_dev_capture_screenshot", "summary": "Capture page screenshot."}, {"method": "POST", "operation": "context-dev/extract-structured-data", "tool_name": "context_dev_extract_structured_data", "summary": "Extract custom structured data."}, {"method": "POST", "operation": "context-dev/extract-product", "tool_name": "context_dev_extract_product", "summary": "Extract product data."}, {"method": "POST", "operation": "firecrawl/scrape", "tool_name": "firecrawl_scrape", "summary": "Advanced single-page scrape."}, {"method": "POST", "operation": "firecrawl/crawl", "tool_name": "firecrawl_crawl", "summary": "Multi-page site crawl."}, {"method": "POST", "operation": "firecrawl/map", "tool_name": "firecrawl_map", "summary": "Discover all URLs on a site."}]},
+  "related_skills": ["site-audit", "competitor-monitor"]
+}

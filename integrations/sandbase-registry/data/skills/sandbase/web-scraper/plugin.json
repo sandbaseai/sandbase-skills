@@ -1,0 +1,41 @@
+{
+  "name": "sandbase/web-scraper",
+  "display_name": "Web Scraper",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "web-scraper",
+  "description": "Universal web scraping, crawling, and structured data extraction.",
+  "type": "skill",
+  "capability_tags": ["web scraping", "crawling", "data extraction", "screenshots"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["search-research"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/web-scraper",
+    "required_endpoints": [
+      "context_dev_scrape_markdown",
+      "context_dev_capture_screenshot",
+      "context_dev_extract_structured_data",
+      "context_dev_extract_product",
+      "firecrawl_scrape",
+      "firecrawl_crawl",
+      "firecrawl_map"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 310,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Search & Research",
+    "endpoint_count": 7,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

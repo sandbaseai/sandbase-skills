@@ -1,0 +1,41 @@
+{
+  "name": "sandbase/kol-discovery",
+  "display_name": "KOL Discovery",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "kol-discovery",
+  "description": "Cross-platform KOL and creator discovery.",
+  "type": "skill",
+  "capability_tags": ["KOL", "influencer", "creators", "outreach"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["marketing-content"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/kol-discovery",
+    "required_endpoints": [
+      "tiktok_app_v3_creator_info",
+      "tiktok_app_v3_creator_search_insights",
+      "instagram_v3_user_profile",
+      "instagram_v3_similar_users",
+      "youtube_web_v2_search_channels",
+      "xiaohongshu_app_v2_search_users",
+      "xiaohongshu_app_v2_user_info"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 420,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & Content",
+    "endpoint_count": 7,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

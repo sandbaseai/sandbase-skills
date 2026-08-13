@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "instagram-research",
+  "display_name": "Instagram Research",
+  "short_description": "Analyze profiles, track hashtags, and research content on Instagram.",
+  "description": "Instagram content and creator research. Search posts, analyze profiles, track hashtag trends, explore locations and music, and gather competitive intelligence.",
+  "category": {"id": "social-intelligence", "label": "Social Intelligence"},
+  "tags": ["Instagram", "influencer", "hashtags", "content"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/instagram-research", "skill_file": "research/instagram-research/SKILL.md", "readme_anchor": "#instagram-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $instagram-research to analyze profiles, hashtags, and content on Instagram.", "cli": "npx skills add sandbaseai/sandbase-skills --skill instagram-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill instagram-research --agent codex --global", "source_path": "research/instagram-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/instagram-research"}],
+  "examples": ["Analyze @competitor's Instagram engagement.", "Find top posts for #[hashtag].", "Who are top Instagram influencers in [niche]?", "What content format performs best for [brand]?", "Track [campaign hashtag] performance."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["username or profile URL", "hashtags", "location", "niche or industry"]},
+  "notes": ["Read-only research. Never follows, likes, or comments.", "Focus on public accounts and content only."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "instagram/v3/general-search", "tool_name": "instagram_v3_general_search", "summary": "Search accounts, hashtags, places."}, {"method": "GET", "operation": "instagram/v3/user-profile", "tool_name": "instagram_v3_user_profile", "summary": "Get profile details and stats."}, {"method": "GET", "operation": "instagram/v3/user-posts", "tool_name": "instagram_v3_user_posts", "summary": "Get user's recent posts."}, {"method": "GET", "operation": "instagram/v3/hashtag-posts", "tool_name": "instagram_v3_hashtag_posts", "summary": "Get posts for a hashtag."}, {"method": "GET", "operation": "instagram/v3/post-info", "tool_name": "instagram_v3_post_info", "summary": "Get detailed post metrics."}, {"method": "GET", "operation": "instagram/v3/post-comments", "tool_name": "instagram_v3_post_comments", "summary": "Get post comments."}, {"method": "GET", "operation": "instagram/v3/explore", "tool_name": "instagram_v3_explore", "summary": "Discover trending content."}, {"method": "GET", "operation": "instagram/v3/similar-users", "tool_name": "instagram_v3_similar_users", "summary": "Find similar accounts."}]},
+  "related_skills": ["kol-discovery", "brand-monitoring"]
+}

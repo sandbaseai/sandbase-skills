@@ -1,0 +1,37 @@
+{
+  "name": "sandbase/serp-analysis",
+  "display_name": "SERP Analysis",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "serp-analysis",
+  "description": "Google SERP analysis with live organic results.",
+  "type": "skill",
+  "capability_tags": ["SERP", "Google", "rankings", "SEO"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["marketing-seo"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/serp-analysis",
+    "required_endpoints": [
+      "dataforseo_v3_serp_google_organic_live_advanced",
+      "dataforseo_v3_serp_google_related_searches_live_advanced",
+      "dataforseo_v3_serp_google_autocomplete_live_advanced"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 330,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & SEO",
+    "endpoint_count": 3,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

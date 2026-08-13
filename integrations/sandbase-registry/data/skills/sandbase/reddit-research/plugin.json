@@ -1,0 +1,41 @@
+{
+  "name": "sandbase/reddit-research",
+  "display_name": "Reddit Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "reddit-research",
+  "description": "Reddit community intelligence and discussion research.",
+  "type": "skill",
+  "capability_tags": ["Reddit", "communities", "discussions", "trends"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["social-intelligence"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/reddit-research",
+    "required_endpoints": [
+      "reddit_app_dynamic_search",
+      "reddit_app_search_typeahead",
+      "reddit_app_subreddit_feed",
+      "reddit_app_subreddit_info",
+      "reddit_app_popular_feed",
+      "reddit_app_post_details",
+      "reddit_app_post_comments"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 260,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Social Intelligence",
+    "endpoint_count": 7,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

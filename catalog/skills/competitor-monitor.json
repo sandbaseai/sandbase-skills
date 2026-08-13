@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "competitor-monitor",
+  "display_name": "Competitor Monitor",
+  "short_description": "Track competitor websites, content, and social activity.",
+  "description": "Cross-channel competitive intelligence. Track competitor website content, social media activity, news coverage, and search visibility for strategic monitoring.",
+  "category": {"id": "marketing-content", "label": "Marketing & Content"},
+  "tags": ["competitive intelligence", "monitoring", "tracking"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/competitor-monitor", "skill_file": "research/competitor-monitor/SKILL.md", "readme_anchor": "#competitor-monitor"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $competitor-monitor to track competitor websites, content, and social activity.", "cli": "npx skills add sandbaseai/sandbase-skills --skill competitor-monitor --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill competitor-monitor --agent codex --global", "source_path": "research/competitor-monitor"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/competitor-monitor"}],
+  "examples": ["Monitor [competitor]'s website changes.", "Compare social media activity.", "What's [competitor] ranking for?", "Track [competitor]'s news coverage.", "Analyze [competitor]'s LinkedIn strategy."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["competitor domain(s)", "competitor social accounts", "keywords to track", "monitoring frequency"]},
+  "notes": ["Focus on observable public behavior.", "Compare like-for-like across same time periods."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "POST", "operation": "firecrawl/scrape", "tool_name": "firecrawl_scrape", "summary": "Scrape competitor pages."}, {"method": "POST", "operation": "firecrawl/map", "tool_name": "firecrawl_map", "summary": "Discover competitor site structure."}, {"method": "POST", "operation": "context-dev/capture-screenshot", "tool_name": "context_dev_capture_screenshot", "summary": "Visual monitoring."}, {"method": "POST", "operation": "exa/search", "tool_name": "exa_search", "summary": "Find competitor content."}, {"method": "GET", "operation": "twitter/web/search-timeline", "tool_name": "twitter_web_search_timeline", "summary": "Monitor Twitter mentions."}, {"method": "GET", "operation": "linkedin/web-v2/company-posts", "tool_name": "linkedin_web_v2_company_posts", "summary": "LinkedIn activity."}, {"method": "POST", "operation": "tavily/search", "tool_name": "tavily_search", "summary": "News coverage."}]},
+  "related_skills": ["competitor-content-intelligence", "brand-monitoring"]
+}

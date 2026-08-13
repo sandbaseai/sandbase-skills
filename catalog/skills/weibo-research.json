@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "weibo-research",
+  "display_name": "微博研究",
+  "short_description": "追踪热搜、分析用户、监控微博舆情。",
+  "description": "微博热点与舆情研究。搜索内容、追踪热搜趋势、分析用户画像和话题传播。适用于舆情监控、热点追踪、品牌口碑研究。",
+  "category": {"id": "social-intelligence", "label": "Social Intelligence"},
+  "tags": ["微博", "热搜", "舆情", "中文社交"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/weibo-research", "skill_file": "research/weibo-research/SKILL.md", "readme_anchor": "#weibo-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $weibo-research to track hot searches, monitor sentiment, and analyze users on Weibo.", "cli": "npx skills add sandbaseai/sandbase-skills --skill weibo-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill weibo-research --agent codex --global", "source_path": "research/weibo-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/weibo-research"}],
+  "examples": ["微博热搜有哪些热点？", "搜索关于 [品牌] 的微博讨论。", "分析 @[账号] 的运营数据。", "追踪 #[话题]# 热度变化。", "[品牌] 的微博口碑如何？"],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["关键词", "用户名", "话题标签", "时间范围"]},
+  "notes": ["仅用于公开内容研究。不发布或互动。", "热搜数据时效性强，注意标注观察时间。"],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "weibo/web/hot-search", "tool_name": "weibo_web_hot_search", "summary": "获取实时热搜榜。"}, {"method": "GET", "operation": "weibo/web/trend-top", "tool_name": "weibo_web_trend_top", "summary": "获取趋势排行。"}, {"method": "GET", "operation": "weibo/web/search", "tool_name": "weibo_web_search", "summary": "按关键词搜索微博。"}, {"method": "GET", "operation": "weibo/web/user-info", "tool_name": "weibo_web_user_info", "summary": "获取用户资料。"}, {"method": "GET", "operation": "weibo/web/user-posts", "tool_name": "weibo_web_user_posts", "summary": "获取用户微博。"}, {"method": "GET", "operation": "weibo/web/post-detail", "tool_name": "weibo_web_post_detail", "summary": "获取微博详情。"}, {"method": "GET", "operation": "weibo/web/post-comments", "tool_name": "weibo_web_post_comments", "summary": "获取评论。"}]},
+  "related_skills": ["brand-monitoring"]
+}

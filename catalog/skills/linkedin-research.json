@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "linkedin-research",
+  "display_name": "LinkedIn Research",
+  "short_description": "Research companies, professionals, and job markets on LinkedIn.",
+  "description": "LinkedIn professional intelligence. Research companies, analyze professional profiles, track industry content, and monitor job markets for B2B competitive intelligence.",
+  "category": {"id": "social-intelligence", "label": "Social Intelligence"},
+  "tags": ["LinkedIn", "B2B", "companies", "jobs"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/linkedin-research", "skill_file": "research/linkedin-research/SKILL.md", "readme_anchor": "#linkedin-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $linkedin-research to research companies, professionals, and job markets.", "cli": "npx skills add sandbaseai/sandbase-skills --skill linkedin-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill linkedin-research --agent codex --global", "source_path": "research/linkedin-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/linkedin-research"}],
+  "examples": ["Research [company] on LinkedIn.", "What is [person]'s professional background?", "Find open [role] positions.", "Analyze [company]'s LinkedIn content strategy.", "Compare hiring between [A] and [B]."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["company name or URL", "person name or profile URL", "job title or keywords", "location"]},
+  "notes": ["Read-only research. Never connects or messages.", "Reports on public information only."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "linkedin/web-v2/company-profile", "tool_name": "linkedin_web_v2_company_profile", "summary": "Get company details and specialties."}, {"method": "GET", "operation": "linkedin/web-v2/company-posts", "tool_name": "linkedin_web_v2_company_posts", "summary": "Get company posts and engagement."}, {"method": "GET", "operation": "linkedin/web-v2/user-profile", "tool_name": "linkedin_web_v2_user_profile", "summary": "Get professional profile."}, {"method": "GET", "operation": "linkedin/web-v2/user-posts", "tool_name": "linkedin_web_v2_user_posts", "summary": "Get user's content activity."}, {"method": "GET", "operation": "linkedin/web-v2/search-jobs", "tool_name": "linkedin_web_v2_search_jobs", "summary": "Search job postings."}, {"method": "GET", "operation": "linkedin/web-v2/job-detail", "tool_name": "linkedin_web_v2_job_detail", "summary": "Get full job details."}]},
+  "related_skills": ["competitor-monitor"]
+}

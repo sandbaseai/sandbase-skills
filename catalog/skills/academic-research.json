@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "academic-research",
+  "display_name": "Academic Research",
+  "short_description": "Search academic papers and scholarly articles.",
+  "description": "Academic paper search and research synthesis. Find scholarly articles, search across academic databases, and get AI-powered explanations of findings.",
+  "category": {"id": "search-research", "label": "Search & Research"},
+  "tags": ["academic", "papers", "scholarly", "citations"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/academic-research", "skill_file": "research/academic-research/SKILL.md", "readme_anchor": "#academic-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $academic-research to find scholarly papers and synthesize research findings.", "cli": "npx skills add sandbaseai/sandbase-skills --skill academic-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill academic-research --agent codex --global", "source_path": "research/academic-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/academic-research"}],
+  "examples": ["Find papers about [topic] from last 2 years.", "What does research say about [question]?", "Find papers comparing [A] vs [B].", "Literature review on [topic] — top 10 papers.", "What's the scientific consensus on [claim]?"],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["research topic or question", "year range", "field or discipline"]},
+  "notes": ["Distinguish peer-reviewed from preprints.", "Note publication recency — older papers may not reflect current consensus."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "POST", "operation": "scholar/search-scholar", "tool_name": "scholar_search_scholar", "summary": "Search academic papers."}, {"method": "POST", "operation": "scholar/search-web", "tool_name": "scholar_search_web", "summary": "Web search with academic focus."}, {"method": "POST", "operation": "scholar/search-mixed", "tool_name": "scholar_search_mixed", "summary": "Combined academic + web search."}, {"method": "POST", "operation": "scholar/explain", "tool_name": "scholar_explain", "summary": "AI-powered confidence-scored explanation."}]},
+  "related_skills": ["multi-source-search"]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "sandbase/brand-monitoring",
+  "display_name": "Brand Monitoring",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "brand-monitoring",
+  "description": "Cross-platform brand reputation monitoring.",
+  "type": "skill",
+  "capability_tags": ["brand", "reputation", "social listening", "sentiment"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["marketing-content"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/brand-monitoring",
+    "required_endpoints": [
+      "twitter_web_search_timeline",
+      "reddit_app_dynamic_search",
+      "tavily_search",
+      "google_news_bulk_articles",
+      "xiaohongshu_app_v2_search_notes",
+      "weibo_web_search"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 410,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & Content",
+    "endpoint_count": 6,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

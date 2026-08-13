@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "xiaohongshu-research",
+  "display_name": "小红书研究",
+  "short_description": "搜索笔记、分析创作者、追踪话题趋势。",
+  "description": "小红书内容与创作者研究。搜索笔记、分析用户画像、追踪话题热度、研究商品评价和消费趋势。",
+  "category": {"id": "social-intelligence", "label": "Social Intelligence"},
+  "tags": ["小红书", "种草", "创作者", "消费趋势"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/xiaohongshu-research", "skill_file": "research/xiaohongshu-research/SKILL.md", "readme_anchor": "#xiaohongshu-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $xiaohongshu-research to search notes, analyze creators, and track trends on Xiaohongshu.", "cli": "npx skills add sandbaseai/sandbase-skills --skill xiaohongshu-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill xiaohongshu-research --agent codex --global", "source_path": "research/xiaohongshu-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/xiaohongshu-research"}],
+  "examples": ["搜索关于 [品牌] 的小红书笔记。", "找 [品类] 领域的小红书博主。", "追踪 #[话题] 的热度。", "分析 @[账号] 的内容策略。", "[竞品] 在小红书的种草对比。"],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["关键词", "用户名", "话题标签", "商品类别"]},
+  "notes": ["仅用于公开内容研究。不发布、点赞或评论。", "小红书数据反映消费趋势，但不代表购买决策。"],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "xiaohongshu/app-v2/search-notes", "tool_name": "xiaohongshu_app_v2_search_notes", "summary": "搜索笔记。"}, {"method": "GET", "operation": "xiaohongshu/app-v2/search-users", "tool_name": "xiaohongshu_app_v2_search_users", "summary": "搜索用户。"}, {"method": "GET", "operation": "xiaohongshu/app-v2/user-info", "tool_name": "xiaohongshu_app_v2_user_info", "summary": "获取用户资料。"}, {"method": "GET", "operation": "xiaohongshu/app-v2/user-posted-notes", "tool_name": "xiaohongshu_app_v2_user_posted_notes", "summary": "获取用户笔记。"}, {"method": "GET", "operation": "xiaohongshu/app-v2/topic-feed", "tool_name": "xiaohongshu_app_v2_topic_feed", "summary": "获取话题笔记流。"}, {"method": "GET", "operation": "xiaohongshu/app-v2/note-comments", "tool_name": "xiaohongshu_app_v2_note_comments", "summary": "获取笔记评论。"}, {"method": "GET", "operation": "xiaohongshu/app-v2/product-reviews", "tool_name": "xiaohongshu_app_v2_product_reviews", "summary": "获取商品评价。"}]},
+  "related_skills": ["kol-discovery", "brand-monitoring"]
+}

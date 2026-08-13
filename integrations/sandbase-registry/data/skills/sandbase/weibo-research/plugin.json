@@ -1,0 +1,41 @@
+{
+  "name": "sandbase/weibo-research",
+  "display_name": "Weibo Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "weibo-research",
+  "description": "微博热搜与舆情研究。",
+  "type": "skill",
+  "capability_tags": ["微博", "热搜", "舆情", "中文社交"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["social-intelligence"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/weibo-research",
+    "required_endpoints": [
+      "weibo_web_hot_search",
+      "weibo_web_trend_top",
+      "weibo_web_search",
+      "weibo_web_user_info",
+      "weibo_web_user_posts",
+      "weibo_web_post_detail",
+      "weibo_web_post_comments"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 270,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Social Intelligence",
+    "endpoint_count": 7,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

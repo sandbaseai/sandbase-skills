@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "tiktok-research",
+  "display_name": "TikTok Research",
+  "short_description": "Search videos, analyze creators, and track trends on TikTok.",
+  "description": "TikTok content and creator intelligence. Search videos, analyze creator profiles, track hashtag performance, discover trending content, and research live streams and commerce.",
+  "category": {"id": "social-intelligence", "label": "Social Intelligence"},
+  "tags": ["TikTok", "short-form video", "creators", "trends"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/tiktok-research", "skill_file": "research/tiktok-research/SKILL.md", "readme_anchor": "#tiktok-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $tiktok-research to search videos, analyze creators, and track trends on TikTok.", "cli": "npx skills add sandbaseai/sandbase-skills --skill tiktok-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill tiktok-research --agent codex --global", "source_path": "research/tiktok-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/tiktok-research"}],
+  "examples": ["Find trending TikTok videos about [topic].", "Analyze @creator's TikTok presence.", "What hashtags perform best in [niche]?", "Find TikTok creators with 100K-1M followers.", "What sounds are trending?"],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["search keywords", "creator handle", "hashtag", "niche or category"]},
+  "notes": ["Read-only research. Never posts or engages.", "TikTok metrics are volatile — note observation timestamps."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "tiktok/app-v3/general-search-result", "tool_name": "tiktok_app_v3_general_search_result", "summary": "Search videos by keyword."}, {"method": "GET", "operation": "tiktok/app-v3/hashtag-video-list", "tool_name": "tiktok_app_v3_hashtag_video_list", "summary": "Get videos under a hashtag."}, {"method": "GET", "operation": "tiktok/app-v3/creator-info", "tool_name": "tiktok_app_v3_creator_info", "summary": "Get creator profile and metrics."}, {"method": "GET", "operation": "tiktok/app-v3/creator-search-insights", "tool_name": "tiktok_app_v3_creator_search_insights", "summary": "Creator search performance data."}, {"method": "GET", "operation": "tiktok/app-v3/one-video", "tool_name": "tiktok_app_v3_one_video", "summary": "Get video details and metrics."}, {"method": "GET", "operation": "tiktok/app-v3/music-chart-list", "tool_name": "tiktok_app_v3_music_chart_list", "summary": "Trending music charts."}, {"method": "GET", "operation": "tiktok/app-v3/live-ranking-list", "tool_name": "tiktok_app_v3_live_ranking_list", "summary": "Top live creators."}]},
+  "related_skills": ["kol-discovery", "douyin-research"]
+}

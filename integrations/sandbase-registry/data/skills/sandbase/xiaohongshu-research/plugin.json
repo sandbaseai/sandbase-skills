@@ -1,0 +1,41 @@
+{
+  "name": "sandbase/xiaohongshu-research",
+  "display_name": "Xiaohongshu Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "xiaohongshu-research",
+  "description": "小红书内容与创作者研究。",
+  "type": "skill",
+  "capability_tags": ["小红书", "种草", "创作者", "消费趋势"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["social-intelligence"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/xiaohongshu-research",
+    "required_endpoints": [
+      "xiaohongshu_app_v2_search_notes",
+      "xiaohongshu_app_v2_search_users",
+      "xiaohongshu_app_v2_user_info",
+      "xiaohongshu_app_v2_user_posted_notes",
+      "xiaohongshu_app_v2_topic_feed",
+      "xiaohongshu_app_v2_note_comments",
+      "xiaohongshu_app_v2_product_reviews"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 250,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Social Intelligence",
+    "endpoint_count": 7,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

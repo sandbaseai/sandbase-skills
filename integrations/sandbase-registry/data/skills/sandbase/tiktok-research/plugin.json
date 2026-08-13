@@ -1,0 +1,41 @@
+{
+  "name": "sandbase/tiktok-research",
+  "display_name": "TikTok Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "tiktok-research",
+  "description": "TikTok content and creator intelligence with trend discovery.",
+  "type": "skill",
+  "capability_tags": ["TikTok", "short-form video", "creators", "trends"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["social-intelligence"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/tiktok-research",
+    "required_endpoints": [
+      "tiktok_app_v3_general_search_result",
+      "tiktok_app_v3_hashtag_video_list",
+      "tiktok_app_v3_creator_info",
+      "tiktok_app_v3_creator_search_insights",
+      "tiktok_app_v3_one_video",
+      "tiktok_app_v3_music_chart_list",
+      "tiktok_app_v3_live_ranking_list"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 230,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Social Intelligence",
+    "endpoint_count": 7,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

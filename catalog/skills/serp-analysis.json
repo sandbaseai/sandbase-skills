@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "serp-analysis",
+  "display_name": "SERP Analysis",
+  "short_description": "Analyze Google search results and SERP features.",
+  "description": "Google SERP analysis through DataForSEO. Inspect live organic rankings, identify SERP features, discover related searches, and analyze autocomplete suggestions.",
+  "category": {"id": "marketing-seo", "label": "Marketing & SEO"},
+  "tags": ["SERP", "Google", "rankings", "SEO"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/serp-analysis", "skill_file": "research/serp-analysis/SKILL.md", "readme_anchor": "#serp-analysis"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $serp-analysis to analyze Google search results and rankings.", "cli": "npx skills add sandbaseai/sandbase-skills --skill serp-analysis --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill serp-analysis --agent codex --global", "source_path": "research/serp-analysis"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/serp-analysis"}],
+  "examples": ["What's ranking on page 1 for [keyword]?", "What SERP features appear for [keyword]?", "Google autocomplete suggestions for [seed].", "Related searches for [query].", "Compare SERP for [A] vs [B]."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["target keyword", "country and language", "device (desktop/mobile)"]},
+  "notes": ["SERP data is a real-time snapshot — rankings change.", "Specify country, language, and device for accuracy."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "POST", "operation": "dataforseo/v3/serp/google/organic/live/advanced", "tool_name": "dataforseo_v3_serp_google_organic_live_advanced", "summary": "Live Google organic SERP."}, {"method": "POST", "operation": "dataforseo/v3/serp/google/related_searches/live/advanced", "tool_name": "dataforseo_v3_serp_google_related_searches_live_advanced", "summary": "Related searches."}, {"method": "POST", "operation": "dataforseo/v3/serp/google/autocomplete/live/advanced", "tool_name": "dataforseo_v3_serp_google_autocomplete_live_advanced", "summary": "Autocomplete suggestions."}]},
+  "related_skills": ["seo-keyword-insights"]
+}

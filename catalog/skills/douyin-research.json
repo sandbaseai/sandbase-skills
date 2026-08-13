@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "douyin-research",
+  "display_name": "抖音研究",
+  "short_description": "搜索抖音视频、分析创作者、追踪话题趋势。",
+  "description": "抖音内容与创作者研究。搜索视频、分析达人、追踪挑战赛和话题趋势、研究音乐热度和直播。",
+  "category": {"id": "social-intelligence", "label": "Social Intelligence"},
+  "tags": ["抖音", "短视频", "达人", "挑战赛"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/douyin-research", "skill_file": "research/douyin-research/SKILL.md", "readme_anchor": "#douyin-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $douyin-research to search videos, analyze creators, and track trends on Douyin.", "cli": "npx skills add sandbaseai/sandbase-skills --skill douyin-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill douyin-research --agent codex --global", "source_path": "research/douyin-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/douyin-research"}],
+  "examples": ["搜索关于 [话题] 的抖音热门视频。", "找 [品类] 领域的抖音达人。", "追踪 #[挑战赛] 的热度。", "分析 [品牌] 的抖音营销。", "最近有哪些爆款内容模式？"],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["搜索关键词", "达人账号", "挑战赛/话题", "品类"]},
+  "notes": ["仅用于公开内容研究。不发布或互动。", "抖音数据时效性强，热点变化快。"],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "douyin/search/general-search-v2", "tool_name": "douyin_search_general_search_v2", "summary": "综合搜索。"}, {"method": "GET", "operation": "douyin/search/video-search-v2", "tool_name": "douyin_search_video_search_v2", "summary": "搜索视频。"}, {"method": "GET", "operation": "douyin/search/user-search-v2", "tool_name": "douyin_search_user_search_v2", "summary": "搜索用户。"}, {"method": "GET", "operation": "douyin/search/challenge-search-v2", "tool_name": "douyin_search_challenge_search_v2", "summary": "搜索挑战赛。"}, {"method": "GET", "operation": "douyin/search/music-search", "tool_name": "douyin_search_music_search", "summary": "搜索音乐。"}, {"method": "GET", "operation": "douyin/search/live-search-v1", "tool_name": "douyin_search_live_search_v1", "summary": "搜索直播。"}, {"method": "GET", "operation": "douyin/search/search-suggest", "tool_name": "douyin_search_search_suggest", "summary": "搜索联想词。"}]},
+  "related_skills": ["tiktok-research", "kol-discovery"]
+}

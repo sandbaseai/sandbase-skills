@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "tavily-deep-research",
+  "display_name": "Tavily Deep Research",
+  "short_description": "Advanced web search, content extraction, and site mapping.",
+  "description": "Advanced web search and content extraction through Tavily. Search with depth control and topic filtering, extract clean content from URLs, and discover site structures.",
+  "category": {"id": "search-research", "label": "Search & Research"},
+  "tags": ["web search", "content extraction", "Tavily", "news"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/tavily-deep-research", "skill_file": "research/tavily-deep-research/SKILL.md", "readme_anchor": "#tavily-deep-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $tavily-deep-research for web search, content extraction, and site mapping.", "cli": "npx skills add sandbaseai/sandbase-skills --skill tavily-deep-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill tavily-deep-research --agent codex --global", "source_path": "research/tavily-deep-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/tavily-deep-research"}],
+  "examples": ["Search for latest news about [topic].", "Extract content from this article: [URL].", "Research [topic] with 10 authoritative sources.", "Map all pages on [website].", "Find recent news about [company]."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["search query", "URLs to extract", "topic filter", "time range (days)", "domain filters"]},
+  "notes": ["Use appropriate depth: basic for quick checks, advanced for research.", "Cite sources with URLs for every factual claim."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "POST", "operation": "tavily/search", "tool_name": "tavily_search", "summary": "AI-optimized web search with depth and topic control."}, {"method": "POST", "operation": "tavily/extract", "tool_name": "tavily_extract", "summary": "Extract clean content from URLs."}, {"method": "POST", "operation": "tavily/map", "tool_name": "tavily_map", "summary": "Discover site structure and pages."}]},
+  "related_skills": ["multi-source-search", "web-scraper"]
+}

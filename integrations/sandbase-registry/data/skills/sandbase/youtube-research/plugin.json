@@ -1,0 +1,42 @@
+{
+  "name": "sandbase/youtube-research",
+  "display_name": "YouTube Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "youtube-research",
+  "description": "YouTube content research, channel analysis, and caption extraction.",
+  "type": "skill",
+  "capability_tags": ["YouTube", "video research", "channels", "captions"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["social-intelligence"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/youtube-research",
+    "required_endpoints": [
+      "youtube_web_v2_general_search",
+      "youtube_web_v2_search_channels",
+      "youtube_web_v2_video_info",
+      "youtube_web_v2_video_comments",
+      "youtube_web_v2_video_captions",
+      "youtube_web_v2_channel_videos",
+      "youtube_web_v2_channel_description",
+      "youtube_web_v2_shorts_search"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 210,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Social Intelligence",
+    "endpoint_count": 8,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

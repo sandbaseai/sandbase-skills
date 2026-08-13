@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "kol-discovery",
+  "display_name": "KOL Discovery",
+  "short_description": "Find and evaluate KOLs across TikTok, Instagram, YouTube, and 小红书.",
+  "description": "Cross-platform influencer and creator discovery. Find, evaluate, and compare KOLs across TikTok, Instagram, YouTube, and Xiaohongshu by engagement rate, content fit, and audience quality.",
+  "category": {"id": "marketing-content", "label": "Marketing & Content"},
+  "tags": ["KOL", "influencer", "creators", "outreach"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/kol-discovery", "skill_file": "research/kol-discovery/SKILL.md", "readme_anchor": "#kol-discovery"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $kol-discovery to find and evaluate influencers across platforms.", "cli": "npx skills add sandbaseai/sandbase-skills --skill kol-discovery --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill kol-discovery --agent codex --global", "source_path": "research/kol-discovery"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/kol-discovery"}],
+  "examples": ["Find TikTok creators in [niche] with 50K-500K followers.", "Evaluate @[creator] across platforms.", "Build influencer outreach list for [product].", "Find 小红书 KOLs in [category].", "Compare engagement rates across platforms."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["niche or category", "follower range", "platforms to search", "geographic market", "content style"]},
+  "notes": ["Evaluate engagement rate, not just follower count.", "Cross-platform presence indicates established creators."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "tiktok/app-v3/creator-info", "tool_name": "tiktok_app_v3_creator_info", "summary": "TikTok creator profile."}, {"method": "GET", "operation": "tiktok/app-v3/creator-search-insights", "tool_name": "tiktok_app_v3_creator_search_insights", "summary": "TikTok creator analytics."}, {"method": "GET", "operation": "instagram/v3/user-profile", "tool_name": "instagram_v3_user_profile", "summary": "Instagram profile and metrics."}, {"method": "GET", "operation": "instagram/v3/similar-users", "tool_name": "instagram_v3_similar_users", "summary": "Find similar creators."}, {"method": "GET", "operation": "youtube/web-v2/search-channels", "tool_name": "youtube_web_v2_search_channels", "summary": "YouTube channel search."}, {"method": "GET", "operation": "xiaohongshu/app-v2/search-users", "tool_name": "xiaohongshu_app_v2_search_users", "summary": "小红书 creator search."}, {"method": "GET", "operation": "xiaohongshu/app-v2/user-info", "tool_name": "xiaohongshu_app_v2_user_info", "summary": "小红书 creator profile."}]},
+  "related_skills": ["instagram-research", "tiktok-research", "youtube-research"]
+}

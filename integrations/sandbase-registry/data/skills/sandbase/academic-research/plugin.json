@@ -1,0 +1,38 @@
+{
+  "name": "sandbase/academic-research",
+  "display_name": "Academic Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "academic-research",
+  "description": "Academic paper search and research synthesis.",
+  "type": "skill",
+  "capability_tags": ["academic", "papers", "scholarly", "citations"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["search-research"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/academic-research",
+    "required_endpoints": [
+      "scholar_search_scholar",
+      "scholar_search_web",
+      "scholar_search_mixed",
+      "scholar_explain"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 320,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Search & Research",
+    "endpoint_count": 4,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

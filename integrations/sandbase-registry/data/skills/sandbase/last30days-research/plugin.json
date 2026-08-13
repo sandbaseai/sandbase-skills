@@ -1,0 +1,40 @@
+{
+  "name": "sandbase/last30days-research",
+  "display_name": "Last 30 Days Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "last30days-research",
+  "description": "Recent-history research across multiple platforms.",
+  "type": "skill",
+  "capability_tags": ["recent", "multi-platform", "trends", "timeline"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["search-research"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/last30days-research",
+    "required_endpoints": [
+      "tavily_search",
+      "google_news_bulk_articles",
+      "exa_search",
+      "twitter_web_search_timeline",
+      "reddit_app_dynamic_search",
+      "youtube_web_v2_general_search"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 430,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Search & Research",
+    "endpoint_count": 6,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

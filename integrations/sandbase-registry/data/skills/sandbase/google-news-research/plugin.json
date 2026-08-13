@@ -1,0 +1,35 @@
+{
+  "name": "sandbase/google-news-research",
+  "display_name": "Google News Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "google-news-research",
+  "description": "News discovery and monitoring through Google News.",
+  "type": "skill",
+  "capability_tags": ["news", "Google News", "media", "current events"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["search-research"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/google-news-research",
+    "required_endpoints": [
+      "google_news_bulk_articles"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 340,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Search & Research",
+    "endpoint_count": 1,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

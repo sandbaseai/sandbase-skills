@@ -1,0 +1,37 @@
+{
+  "name": "sandbase/tavily-deep-research",
+  "display_name": "Tavily Deep Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "tavily-deep-research",
+  "description": "Advanced web search and content extraction through Tavily.",
+  "type": "skill",
+  "capability_tags": ["web search", "content extraction", "Tavily", "news"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["search-research"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/tavily-deep-research",
+    "required_endpoints": [
+      "tavily_search",
+      "tavily_extract",
+      "tavily_map"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 300,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Search & Research",
+    "endpoint_count": 3,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

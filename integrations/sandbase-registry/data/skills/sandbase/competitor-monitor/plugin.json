@@ -1,0 +1,41 @@
+{
+  "name": "sandbase/competitor-monitor",
+  "display_name": "Competitor Monitor",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "competitor-monitor",
+  "description": "Cross-channel competitive intelligence.",
+  "type": "skill",
+  "capability_tags": ["competitive intelligence", "monitoring", "tracking"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["marketing-seo"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/competitor-monitor",
+    "required_endpoints": [
+      "firecrawl_scrape",
+      "firecrawl_map",
+      "context_dev_capture_screenshot",
+      "exa_search",
+      "twitter_web_search_timeline",
+      "linkedin_web_v2_company_posts",
+      "tavily_search"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 440,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & SEO",
+    "endpoint_count": 7,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "site-audit",
+  "display_name": "Site Audit",
+  "short_description": "Audit website content, structure, and SEO health.",
+  "description": "Comprehensive website auditing. Crawl sites, analyze content, check SEO fundamentals, assess structure, and deliver prioritized action items.",
+  "category": {"id": "marketing-seo", "label": "Marketing & SEO"},
+  "tags": ["website audit", "SEO", "content", "technical"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/site-audit", "skill_file": "research/site-audit/SKILL.md", "readme_anchor": "#site-audit"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $site-audit to audit a website's content, structure, and SEO health.", "cli": "npx skills add sandbaseai/sandbase-skills --skill site-audit --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill site-audit --agent codex --global", "source_path": "research/site-audit"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/site-audit"}],
+  "examples": ["Audit [website] structure and SEO.", "How many pages on [website] and types?", "Check SEO basics for [URL].", "Find thin or duplicate content.", "Take screenshots of key pages."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["website URL", "pages to audit", "specific SEO checks", "crawl depth"]},
+  "notes": ["Start with structure before page-level analysis.", "Sample representative pages on large sites."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "POST", "operation": "firecrawl/map", "tool_name": "firecrawl_map", "summary": "Discover all site URLs."}, {"method": "POST", "operation": "firecrawl/crawl", "tool_name": "firecrawl_crawl", "summary": "Multi-page crawl."}, {"method": "POST", "operation": "context-dev/scrape-markdown", "tool_name": "context_dev_scrape_markdown", "summary": "Extract page content."}, {"method": "POST", "operation": "context-dev/capture-screenshot", "tool_name": "context_dev_capture_screenshot", "summary": "Visual assessment."}, {"method": "POST", "operation": "dataforseo/v3/on_page/content_parsing/live", "tool_name": "dataforseo_v3_on_page_content_parsing_live", "summary": "Structured content analysis."}, {"method": "POST", "operation": "dataforseo/v3/on_page/keyword_density/live", "tool_name": "dataforseo_v3_on_page_keyword_density_live", "summary": "Keyword density check."}]},
+  "related_skills": ["web-scraper", "serp-analysis"]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "sandbase/linkedin-research",
+  "display_name": "LinkedIn Research",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "linkedin-research",
+  "description": "LinkedIn professional intelligence for B2B research.",
+  "type": "skill",
+  "capability_tags": ["LinkedIn", "B2B", "companies", "jobs"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["social-intelligence"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/linkedin-research",
+    "required_endpoints": [
+      "linkedin_web_v2_company_profile",
+      "linkedin_web_v2_company_posts",
+      "linkedin_web_v2_user_profile",
+      "linkedin_web_v2_user_posts",
+      "linkedin_web_v2_search_jobs",
+      "linkedin_web_v2_job_detail"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 240,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Social Intelligence",
+    "endpoint_count": 6,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

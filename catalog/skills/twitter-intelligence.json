@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "twitter-intelligence",
+  "display_name": "Twitter Intelligence",
+  "short_description": "Full-spectrum Twitter/X research and social listening.",
+  "description": "Search tweets, analyze trends, monitor users, and gather social intelligence from Twitter/X. Covers trend discovery, topic monitoring, user analysis, sentiment tracking, and competitor intelligence.",
+  "category": {"id": "social-intelligence", "label": "Social Intelligence"},
+  "tags": ["Twitter", "social listening", "trends", "sentiment"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/twitter-intelligence", "skill_file": "research/twitter-intelligence/SKILL.md", "readme_anchor": "#twitter-intelligence"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $twitter-intelligence to research trends, users, and sentiment on Twitter/X.", "cli": "npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex --global", "source_path": "research/twitter-intelligence"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/twitter-intelligence"}],
+  "examples": ["What are people saying about [brand] on Twitter this week?", "Find trending topics in the AI/tech space.", "Analyze @competitor's Twitter presence.", "Monitor mentions of [product launch] and summarize sentiment.", "Who are the most influential voices discussing [topic]?"],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["keywords or brand names", "user handles to monitor", "hashtags", "time range"]},
+  "notes": ["Read-only research. Never posts or engages.", "Twitter data is real-time social signal, not representative polling."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "twitter/web/search-timeline", "tool_name": "twitter_web_search_timeline", "summary": "Search tweets by keyword, hashtag, or phrase."}, {"method": "GET", "operation": "twitter/web/trending", "tool_name": "twitter_web_trending", "summary": "Discover trending topics."}, {"method": "GET", "operation": "twitter/web/user-profile", "tool_name": "twitter_web_user_profile", "summary": "Get user profile details."}, {"method": "GET", "operation": "twitter/web/tweet-detail", "tool_name": "twitter_web_tweet_detail", "summary": "Get full tweet details with engagement."}, {"method": "GET", "operation": "twitter/web/user-followers", "tool_name": "twitter_web_user_followers", "summary": "List user followers."}, {"method": "GET", "operation": "twitter/web/user-followings", "tool_name": "twitter_web_user_followings", "summary": "List accounts a user follows."}, {"method": "GET", "operation": "twitter/web/user-media", "tool_name": "twitter_web_user_media", "summary": "Get user media posts."}, {"method": "GET", "operation": "twitter/bulk/tweet-search", "tool_name": "twitter_bulk_tweet_search", "summary": "High-volume batch tweet search."}]},
+  "related_skills": ["brand-monitoring", "last30days-research"]
+}

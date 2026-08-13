@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "reddit-research",
+  "display_name": "Reddit Research",
+  "short_description": "Search discussions, track communities, and discover trends on Reddit.",
+  "description": "General-purpose Reddit research and community intelligence. Search across all of Reddit, monitor subreddits, analyze discussions, and discover trending content.",
+  "category": {"id": "social-intelligence", "label": "Social Intelligence"},
+  "tags": ["Reddit", "communities", "discussions", "trends"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/reddit-research", "skill_file": "research/reddit-research/SKILL.md", "readme_anchor": "#reddit-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $reddit-research to search discussions, monitor communities, and discover trends.", "cli": "npx skills add sandbaseai/sandbase-skills --skill reddit-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill reddit-research --agent codex --global", "source_path": "research/reddit-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/reddit-research"}],
+  "examples": ["What's trending on Reddit in tech?", "Search Reddit for [topic/product].", "Analyze r/[subreddit] themes.", "Find most upvoted posts about [topic].", "What's Reddit saying about [launch]?"],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["keywords", "subreddit names", "time range", "sort order"]},
+  "notes": ["Read-only research. Never posts, votes, or comments.", "Search multiple subreddits to avoid single-community bias."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "reddit/app/dynamic-search", "tool_name": "reddit_app_dynamic_search", "summary": "Search posts, comments, communities."}, {"method": "GET", "operation": "reddit/app/search-typeahead", "tool_name": "reddit_app_search_typeahead", "summary": "Discover communities and suggestions."}, {"method": "GET", "operation": "reddit/app/subreddit-feed", "tool_name": "reddit_app_subreddit_feed", "summary": "Latest posts from a subreddit."}, {"method": "GET", "operation": "reddit/app/subreddit-info", "tool_name": "reddit_app_subreddit_info", "summary": "Community details and stats."}, {"method": "GET", "operation": "reddit/app/popular-feed", "tool_name": "reddit_app_popular_feed", "summary": "Site-wide popular content."}, {"method": "GET", "operation": "reddit/app/post-details", "tool_name": "reddit_app_post_details", "summary": "Full post content."}, {"method": "GET", "operation": "reddit/app/post-comments", "tool_name": "reddit_app_post_comments", "summary": "Comment threads."}]},
+  "related_skills": ["brand-monitoring", "last30days-research"]
+}

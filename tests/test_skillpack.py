@@ -22,7 +22,7 @@ class SkillpackTests(unittest.TestCase):
     def test_catalog_and_skills_validate(self):
         result = self.run_cli("validate")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("Validated 5 skill(s).", result.stdout)
+        self.assertIn("Validated 25 skill(s).", result.stdout)
 
     def test_seo_skill_declares_sandbase_tool_map(self):
         skill_dir = ROOT / "marketing" / "seo-keyword-insights"

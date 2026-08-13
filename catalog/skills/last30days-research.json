@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "last30days-research",
+  "display_name": "Last 30 Days Research",
+  "short_description": "Research any topic across the last 30 days from multiple platforms.",
+  "description": "Comprehensive recent-history research. Aggregate the last 30 days of activity from Reddit, Twitter, YouTube, news, and web search for trend analysis and timeline reconstruction.",
+  "category": {"id": "search-research", "label": "Search & Research"},
+  "tags": ["recent", "multi-platform", "trends", "timeline"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/last30days-research", "skill_file": "research/last30days-research/SKILL.md", "readme_anchor": "#last30days-research"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $last30days-research for comprehensive recent-history research across platforms.", "cli": "npx skills add sandbaseai/sandbase-skills --skill last30days-research --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill last30days-research --agent codex --global", "source_path": "research/last30days-research"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/last30days-research"}],
+  "examples": ["What's happened with [topic] in the last 30 days?", "Track [launch] reception over the past month.", "How has discussion about [company] evolved?", "Find all mentions of [person] recently.", "Recent trend around [technology]."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["topic or entity", "platforms to include", "language/market"]},
+  "notes": ["Query 3-4 platforms for comprehensive coverage.", "Note platform bias: Reddit technical, Twitter real-time, YouTube educational."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "POST", "operation": "tavily/search", "tool_name": "tavily_search", "summary": "Web/news with date filtering."}, {"method": "GET", "operation": "google-news/bulk/articles", "tool_name": "google_news_bulk_articles", "summary": "News articles."}, {"method": "POST", "operation": "exa/search", "tool_name": "exa_search", "summary": "Semantic web search with dates."}, {"method": "GET", "operation": "twitter/web/search-timeline", "tool_name": "twitter_web_search_timeline", "summary": "Twitter discussions."}, {"method": "GET", "operation": "reddit/app/dynamic-search", "tool_name": "reddit_app_dynamic_search", "summary": "Reddit discussions."}, {"method": "GET", "operation": "youtube/web-v2/general-search", "tool_name": "youtube_web_v2_general_search", "summary": "YouTube content."}]},
+  "related_skills": ["multi-source-search", "brand-monitoring"]
+}

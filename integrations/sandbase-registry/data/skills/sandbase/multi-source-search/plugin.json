@@ -1,0 +1,40 @@
+{
+  "name": "sandbase/multi-source-search",
+  "display_name": "Multi-Source Search",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "multi-source-search",
+  "description": "Parallel multi-source research with confidence scoring.",
+  "type": "skill",
+  "capability_tags": ["multi-source", "research", "cross-validation", "confidence"],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": ["sandbase-mcp"],
+    "categories": ["search-research"],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/multi-source-search",
+    "required_endpoints": [
+      "tavily_search",
+      "tavily_extract",
+      "exa_search",
+      "exa_contents",
+      "scholar_search_mixed",
+      "cloudsway_search"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 400,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Search & Research",
+    "endpoint_count": 6,
+    "supported_clients": ["SandBase Agent", "Codex", "Claude", "Cursor"]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

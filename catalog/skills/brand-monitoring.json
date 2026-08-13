@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "brand-monitoring",
+  "display_name": "Brand Monitoring",
+  "short_description": "Monitor brand mentions and reputation across platforms.",
+  "description": "Cross-platform brand reputation monitoring. Track mentions across Twitter, Reddit, news, Xiaohongshu, and Weibo with sentiment analysis and competitive comparison.",
+  "category": {"id": "marketing-content", "label": "Marketing & Content"},
+  "tags": ["brand", "reputation", "social listening", "sentiment"],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {"source_path": "research/brand-monitoring", "skill_file": "research/brand-monitoring/SKILL.md", "readme_anchor": "#brand-monitoring"},
+  "compatibility": {"agents": ["SandBase Agent", "Codex", "Claude Code", "Cursor"], "requires": ["Authorized SandBase connection"]},
+  "install": {"prompt": "Use $brand-monitoring to track brand mentions and sentiment across platforms.", "cli": "npx skills add sandbaseai/sandbase-skills --skill brand-monitoring --agent codex", "global_cli": "npx skills add sandbaseai/sandbase-skills --skill brand-monitoring --agent codex --global", "source_path": "research/brand-monitoring"},
+  "actions": [{"id": "connect-sandbase", "label": "Connect SandBase", "kind": "authorization_required"}, {"id": "view-source", "label": "View on GitHub", "kind": "external_link", "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/research/brand-monitoring"}],
+  "examples": ["Monitor [brand] across Twitter, Reddit, and news.", "What's the sentiment toward [brand]?", "Any negative news about [brand]?", "Compare mentions: [our brand] vs [competitor].", "Track [launch] reception across platforms."],
+  "configuration": {"required": [{"kind": "sandbase_connection", "label": "Authorized SandBase connection", "required": true}], "optional_inputs": ["brand name(s)", "competitor brands", "platforms to monitor", "time range", "language/market"]},
+  "notes": ["Monitor multiple platforms for complete coverage.", "Track both brand name and common misspellings."],
+  "api": {"gateway": "sandbase-mcp", "authentication": "sandbase-authorized-connection", "pricing_model": "usage-based/call", "schema_resolution": {"source": "sandbase-capability-registry", "strategy": "dynamic", "lookup": "sandbase_describe_tool"}, "schema_lookup": {"tool": "sandbase_describe_tool", "argument": "name"}, "call": {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}, "endpoints": [{"method": "GET", "operation": "twitter/web/search-timeline", "tool_name": "twitter_web_search_timeline", "summary": "Twitter brand mentions."}, {"method": "GET", "operation": "reddit/app/dynamic-search", "tool_name": "reddit_app_dynamic_search", "summary": "Reddit brand discussions."}, {"method": "POST", "operation": "tavily/search", "tool_name": "tavily_search", "summary": "News and web mentions."}, {"method": "GET", "operation": "google-news/bulk/articles", "tool_name": "google_news_bulk_articles", "summary": "News articles."}, {"method": "GET", "operation": "xiaohongshu/app-v2/search-notes", "tool_name": "xiaohongshu_app_v2_search_notes", "summary": "小红书 mentions."}, {"method": "GET", "operation": "weibo/web/search", "tool_name": "weibo_web_search", "summary": "微博 mentions."}]},
+  "related_skills": ["twitter-intelligence", "reddit-research"]
+}
