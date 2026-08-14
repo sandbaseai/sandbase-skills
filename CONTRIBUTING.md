@@ -37,4 +37,8 @@ python3 scripts/skillpack.py validate
 python3 -m unittest discover -s tests -v
 ```
 
+Changes to the DeepSeek Harness installer must also preserve the native DSH
+layout `.dsh/skills/<skill-id>/SKILL.md`; `tests/test_install_dsh.py` covers the
+copy and overwrite-safety contract.
+
 Keep changes focused. Do not commit secrets, generated endpoint schemas, copied provider documentation, or unrelated files.
