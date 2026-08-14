@@ -1,6 +1,29 @@
 # SandBase Skills
 
-Downloadable Agent Skills for practical research and growth workflows. Install one into your agent project, then let your agent use its existing SandBase connection to call the required capabilities.
+[![Release](https://img.shields.io/github/v/release/sandbaseai/sandbase-skills)](https://github.com/sandbaseai/sandbase-skills/releases/latest)
+[![License](https://img.shields.io/github/license/sandbaseai/sandbase-skills)](LICENSE)
+
+88 downloadable Agent Skills for research, market intelligence, content,
+social, security, and growth workflows. Install a complete Skill bundle into
+Codex or DeepSeek Harness, then let the agent use its existing SandBase
+connection to call the required capabilities.
+
+## DeepSeek Harness quick start
+
+DeepSeek Harness natively discovers project skills under `.dsh/skills`. The
+versioned source installer copies the selected Skill and all of its references
+into that discovery root:
+
+```bash
+git clone --branch v0.1.0 --depth 1 https://github.com/sandbaseai/sandbase-skills.git
+cd sandbase-skills
+node bin/sandbase-dsh-skills.mjs add exa-deep-search --project /path/to/dsh-project
+```
+
+Start DSH from the target project and invoke `$exa-deep-search`. See the
+[v0.1.0 release](https://github.com/sandbaseai/sandbase-skills/releases/tag/v0.1.0)
+for verification evidence and the [DeepSeek Harness section](#deepseek-harness)
+for compatibility, permissions, uninstall, and troubleshooting details.
 
 ## Start here
 
