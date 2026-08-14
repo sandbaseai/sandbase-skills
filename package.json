@@ -1,0 +1,42 @@
+{
+  "name": "@sandbaseai/dsh-skills",
+  "version": "0.1.0",
+  "description": "Install SandBase Agent Skills into DeepSeek Harness projects.",
+  "type": "module",
+  "bin": {
+    "sandbase-dsh-skills": "bin/sandbase-dsh-skills.mjs"
+  },
+  "exports": "./lib/dsh-installer.mjs",
+  "files": [
+    "bin",
+    "lib",
+    "marketing",
+    "research",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/install-dsh.test.mjs && python3 -m unittest discover -s tests -v",
+    "validate": "python3 scripts/skillpack.py validate",
+    "package:check": "npm pack --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandbaseai/sandbase-skills.git"
+  },
+  "homepage": "https://github.com/sandbaseai/sandbase-skills#readme",
+  "bugs": {
+    "url": "https://github.com/sandbaseai/sandbase-skills/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "agent-skills",
+    "sandbase",
+    "research"
+  ],
+  "license": "Apache-2.0"
+}

@@ -60,11 +60,10 @@ npx skills add sandbaseai/sandbase-skills --list
 
 DeepSeek Harness discovers project skills from `.dsh/skills/<skill-name>/SKILL.md`.
 Install a SandBase skill, including its references, into that native discovery
-root with:
+root directly from npm:
 
 ```bash
-git clone https://github.com/sandbaseai/sandbase-skills.git
-python3 sandbase-skills/scripts/install_dsh.py exa-deep-search --project /path/to/dsh-project
+npx @sandbaseai/dsh-skills add exa-deep-search --project /path/to/dsh-project
 ```
 
 Then start DSH from the target project and invoke the installed skill by name,
@@ -75,8 +74,46 @@ the agent environment. The installer never reads or writes API keys.
 List every installable skill with:
 
 ```bash
-python3 sandbase-skills/scripts/install_dsh.py --list
+npx @sandbaseai/dsh-skills list
 ```
+
+Until the first npm release, run the identical CLI from a checkout with
+`node bin/sandbase-dsh-skills.mjs`. The existing Python installer remains an
+offline fallback.
+
+#### Compatibility
+
+- Node.js 20+ for the npm CLI, or Python 3.10+ for the fallback installer
+- DeepSeek Harness versions that discover `.dsh/skills/<name>/SKILL.md`
+- A configured SandBase MCP connection exposing `sandbase_describe_tool` and
+  `sandbase_call_tool`
+
+#### Uninstall
+
+```bash
+npx @sandbaseai/dsh-skills remove exa-deep-search --project /path/to/dsh-project
+```
+
+The command only removes the named directory after verifying that it contains
+a `SKILL.md` marker.
+
+#### Permissions and data
+
+The installer reads the selected skill bundle and writes it beneath the target
+project's `.dsh/skills` directory. It makes no network requests after npm has
+downloaded the package and never reads `SANDBASE_API_KEY`. Installed skill
+instructions may ask DSH to call the already configured SandBase MCP tools;
+the MCP connection's own policy controls network and data access.
+
+#### Troubleshooting
+
+- `Unknown skill`: run `npx @sandbaseai/dsh-skills list` and use the exact name.
+- `already exists`: review the installed copy, then pass `--force` if replacing
+  it is intentional.
+- DSH cannot see the skill: run DSH from the project passed to `--project` and
+  verify `.dsh/skills/<name>/SKILL.md` exists.
+- SandBase tools are unavailable: configure the SandBase MCP connection before
+  invoking the skill.
 
 ## Use it in your agent
 
@@ -111,7 +148,8 @@ The endpoint list in `catalog/skills/<skill>.json` is display metadata. Resolve 
 
 ```bash
 python3 scripts/skillpack.py validate
-python3 -m unittest discover -s tests -v
+npm test
+npm run package:check
 ```
 
 These checks are offline. They do not make API calls or require credentials.
@@ -122,4 +160,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) before adding or changing a Skill.
 
 ## License
 
-Apache-2.0. See [LICENSE](LICENSE).
+Apache-2.0. See [LICENSE](LICENSE). Report security issues privately to the
+maintainers; never include API keys, private research inputs, or generated
+reports in a public issue.
