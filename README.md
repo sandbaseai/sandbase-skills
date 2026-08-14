@@ -88,6 +88,10 @@ offline fallback.
 - A configured SandBase MCP connection exposing `sandbase_describe_tool` and
   `sandbase_call_tool`
 
+Last verified on 2026-08-14 against DeepSeek Harness commit
+[`47f9438`](https://github.com/deepseek-ai/deepseek-harness/commit/47f943859bef60e4160492346772ded9b24f765a): the installer placed the complete
+skill bundle in the native discovery root and preserved its references.
+
 #### Uninstall
 
 ```bash
