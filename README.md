@@ -1,103 +1,232 @@
 # SandBase Skills
 
-Downloadable Agent Skills for practical research and growth workflows. Install one into your agent project, then let your agent use its existing SandBase connection to call the required capabilities.
+**100 production-ready Agent Skills** for research, social intelligence, marketing, and business workflows. One API key. Every data source. Install into any compatible agent (Claude Code, Codex, Cursor, Gemini CLI) and start working immediately.
 
-## Start here
+## What are Skills?
 
-1. Connect your agent to SandBase.
-2. Choose a Skill below.
-3. Run one `npx` command from your agent project.
-4. Ask your agent to use the installed Skill.
+A Skill is an instruction file that teaches an AI agent how to do one specific job. Each Skill defines which SandBase APIs to call, in what order, how to interpret results, and how to format the output. Your agent already knows how to work — Skills give it domain expertise.
 
-No API key belongs in a Skill, prompt, or report. The agent environment must already have SandBase API access configured.
-
-## Configure SandBase API access
-
-These Skills use SandBase API capabilities. Configure a SandBase API key before the first task, keeping it only in your secret manager or environment configuration under `SANDBASE_API_KEY`:
+## Quick Start
 
 ```bash
-export SANDBASE_API_KEY='your_sandbase_api_key'
+# 1. Set your SandBase API key
+export SANDBASE_API_KEY='sk-...'
+
+# 2. Install a Skill
+npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex
+
+# 3. Use it
+# "Research what people are saying about [brand] on Twitter this week"
 ```
 
-Never commit this value, add it to a repository `.env` file, paste it into a chat prompt, or include it in a report. The installed Skill discovers the current API schema through authorized SandBase API access; it never needs the raw key in its instructions.
+## Skill Catalog (100 Skills)
 
-## Choose a Skill
+### Social Intelligence (23 Skills)
 
-| Skill | Use it to | Install name |
+Research and monitor conversations across every major social platform.
+
+| Skill | Platform | Use it to |
 |---|---|---|
-| SEO Keyword Insights | Find evidence-backed keyword, content, and SERP opportunities. | `seo-keyword-insights` |
-| Reddit Customer Insights | Discover customer language, pain points, and objections from public Reddit discussions. | `reddit-customer-insights` |
-| Exa Deep Search | Find and extract reliable public sources for a research question. | `exa-deep-search` |
-| Backlink Gap Analysis | Compare backlink evidence and identify ethical outreach or digital-PR opportunities. | `backlink-gap-analysis` |
-| Competitor Content Intelligence | Identify differentiated content opportunities from public competitor coverage. | `competitor-content-intelligence` |
+| `twitter-intelligence` | Twitter/X | Search tweets, track trends, analyze users, monitor sentiment |
+| `youtube-research` | YouTube | Search videos, analyze channels, extract transcripts, read comments |
+| `instagram-research` | Instagram | Analyze profiles, track hashtags, research content strategies |
+| `tiktok-research` | TikTok | Search videos, analyze creators, track hashtag challenges |
+| `linkedin-research` | LinkedIn | Research companies, professionals, job markets |
+| `reddit-research` | Reddit | Search discussions, monitor communities, discover trends |
+| `xiaohongshu-research` | Xiaohongshu (RED) | Search notes, analyze creators, track consumer trends |
+| `weibo-research` | Weibo | Monitor hot searches, track trending topics, analyze sentiment |
+| `douyin-research` | Douyin | Search videos, analyze creators, track challenges |
+| `bilibili-research` | Bilibili | Search videos, analyze UP creators, read danmaku |
+| `zhihu-research` | Zhihu | Search Q&A, track hot topics, research experts |
+| `threads-research` | Threads | Search posts, analyze profiles, track conversations |
+| `facebook-research` | Facebook | Research pages, groups, ad library, events |
+| `pinterest-research` | Pinterest | Search pins, analyze boards, discover visual trends |
+| `telegram-research` | Telegram | Search channels, monitor posts, discover communities |
+| `kuaishou-research` | Kuaishou | Search videos, track trending, research live commerce |
+| `lemon8-research` | Lemon8 | Discover lifestyle content, track topics |
+| `wechat-channels-research` | WeChat Channels | Search videos, analyze live streams |
+| `wechat-mp-research` | WeChat Official Accounts | Research articles, analyze accounts |
+| `wechat-search` | WeChat | Search across WeChat ecosystem |
+| `toutiao-research` | Toutiao | Research trending articles and content |
+| `china-social-research` | Multi-platform | Cross-platform China social research |
+| `community-research` | Reddit + Telegram | Online community analysis |
 
-## Install a Skill
+### Search & Research (17 Skills)
 
-From your project root, install a Skill with the open `skills` CLI. `npx` downloads the CLI when needed; you do not need to clone this repository or run a local Python file.
+Find, validate, and synthesize information from multiple sources.
+
+| Skill | Use it to |
+|---|---|
+| `multi-source-search` | Cross-validate research across Tavily, Exa, Scholar, Cloudsway |
+| `tavily-deep-research` | Advanced web search with content extraction and site mapping |
+| `exa-deep-search` | Semantic search and source extraction with Exa |
+| `exa-similar-finder` | Find pages similar to any URL |
+| `academic-research` | Search scholarly papers with AI-powered explanations |
+| `academic-trend-research` | Track emerging research areas and breakthrough papers |
+| `google-news-research` | Monitor news articles and media coverage |
+| `web-scraper` | Scrape pages, crawl sites, extract structured data |
+| `last30days-research` | Multi-platform research for the last 30 days |
+| `topic-deep-dive` | Exhaustive multi-source topic research |
+| `event-tracker` | Track events in real-time across platforms |
+| `trend-spotter` | Spot emerging trends across platforms |
+| `news-aggregator` | Aggregate news from multiple sources |
+| `market-research` | Comprehensive market intelligence |
+| `newsletter-research` | Discover industry newsletters and publications |
+| `podcast-research` | Find podcasts and episodes by topic |
+| `content-ideation` | Generate data-backed content ideas |
+
+### Business Intelligence (22 Skills)
+
+Company research, sales intelligence, and competitive analysis.
+
+| Skill | Use it to |
+|---|---|
+| `apollo-company-research` | Search companies, enrich profiles, track hiring |
+| `akta-company-research` | Research companies via employee and product reviews |
+| `company-enrichment` | Enrich company data from multiple sources |
+| `amazon-product-research` | Research products and reviews on Amazon |
+| `google-shopping-research` | Compare products and prices on Google Shopping |
+| `google-maps-reviews` | Analyze local business reviews |
+| `product-intelligence` | Cross-platform product market research |
+| `product-review-extractor` | Extract and analyze product reviews at scale |
+| `competitive-pricing` | Benchmark pricing against competitors |
+| `pricing-page-analyzer` | Extract and analyze competitor pricing |
+| `review-aggregator` | Aggregate reviews from multiple platforms |
+| `startup-research` | Research startups with funding, team, and traction |
+| `hiring-intelligence` | Analyze hiring patterns and talent competition |
+| `talent-sourcing` | Source candidates by skills and expertise |
+| `lead-research` | Build complete prospect profiles |
+| `outreach-builder` | Build verified outreach lists |
+| `email-outreach-prep` | Prepare personalized email outreach |
+| `sales-intelligence` | Account intelligence for sales conversations |
+| `partnership-research` | Qualify potential partners with data |
+| `industry-landscape` | Map any industry's competitive landscape |
+| `local-market-research` | Research local markets with reviews and social data |
+| `data-enrichment` | Fill data gaps with verified intelligence |
+
+### Marketing & Content (14 Skills)
+
+Brand monitoring, influencer marketing, and content strategy.
+
+| Skill | Use it to |
+|---|---|
+| `brand-monitoring` | Track brand mentions across all platforms |
+| `kol-discovery` | Find and evaluate influencers across platforms |
+| `influencer-analytics` | Analyze influencer performance with engagement data |
+| `social-listening` | Monitor conversations about any topic globally |
+| `competitor-content-intelligence` | Find differentiated content opportunities |
+| `thought-leadership-monitor` | Track industry voices and their content |
+| `pr-media-monitor` | Track press mentions and media narrative |
+| `content-performance` | Analyze content performance across platforms |
+| `audience-research` | Understand target audiences from community data |
+| `social-proof-research` | Find authentic testimonials and endorsements |
+| `competitor-ad-research` | Research competitor advertising strategies |
+| `hashtag-tracker` | Track hashtag performance across platforms |
+| `crisis-monitor` | Detect and assess crises before they escalate |
+| `reddit-customer-insights` | Discover customer language and pain points |
+
+### Marketing & SEO (5 Skills)
+
+Search engine optimization, SERP analysis, and technical auditing.
+
+| Skill | Use it to |
+|---|---|
+| `seo-keyword-insights` | Build evidence-backed keyword strategies with DataForSEO |
+| `backlink-gap-analysis` | Find ethical backlink gaps against competitors |
+| `serp-analysis` | Analyze live Google SERP results and features |
+| `seo-content-brief` | Generate SERP-backed content briefs |
+| `site-audit` | Audit website content, structure, and SEO health |
+
+### Tools & Utilities (17 Skills)
+
+Practical tools for everyday agent tasks.
+
+| Skill | Use it to |
+|---|---|
+| `email-validator` | Verify email deliverability and reputation |
+| `domain-intelligence` | Research domains (WHOIS, DNS, SSL, security) |
+| `domain-analyzer` | Complete domain analysis from DNS to SEO |
+| `tech-stack-detector` | Identify what tech powers any website |
+| `screenshot-capture` | Capture screenshots of any URL |
+| `url-to-markdown` | Convert web pages to clean Markdown |
+| `youtube-transcript` | Extract transcripts from YouTube videos |
+| `document-parser` | Parse PDFs and documents to text |
+| `content-translator` | Translate text between languages |
+| `sentiment-analyzer` | Analyze sentiment in any text |
+| `weather-lookup` | Check weather conditions worldwide |
+| `flight-tracker` | Track flight status in real time |
+| `currency-converter` | Convert currencies with live rates |
+| `github-profile-research` | Research developer GitHub profiles |
+| `npm-package-research` | Evaluate npm packages before installing |
+| `cve-lookup` | Look up security vulnerabilities by CVE |
+| `website-monitor` | Monitor websites for changes and health |
+
+## Install
 
 ```bash
-npx skills add sandbaseai/sandbase-skills \
-  --skill exa-deep-search \
-  --agent codex
-```
+# Install any Skill by name
+npx skills add sandbaseai/sandbase-skills --skill <skill-name> --agent codex
 
-The default install is project-scoped. Add `--global` when you want the Skill available across all of your Codex projects:
+# Global install (available across all projects)
+npx skills add sandbaseai/sandbase-skills --skill <skill-name> --agent codex --global
 
-```bash
-npx skills add sandbaseai/sandbase-skills \
-  --skill exa-deep-search \
-  --agent codex \
-  --global
-```
-
-To browse the available Skills before installing, run:
-
-```bash
+# Browse available Skills
 npx skills add sandbaseai/sandbase-skills --list
 ```
 
-## Use it in your agent
+## Supported Agents
 
-After installation, use the Skill by name. For example:
+Skills work with any agent that implements the Agent Skills specification:
 
-```text
-Use $exa-deep-search to research how enterprise teams evaluate AI agents. Prefer primary sources and cite every finding.
+- **Claude Code** — `~/.claude/skills/`
+- **OpenAI Codex** — `~/.codex/skills/`
+- **Cursor** — `~/.cursor/skills/`
+- **Gemini CLI** — `~/.gemini/skills/`
+- **OpenClaw, Hermes, Amp, Devin** — via `npx skills add`
+
+## How It Works
+
+```
+User Question → Agent reads SKILL.md → Calls SandBase APIs → Synthesizes Answer
 ```
 
-Each Skill describes its workflow, evidence standards, expected output, and the SandBase capabilities it needs. Every endpoint is documented in the installed Skill's API map; parameters are resolved at runtime with `sandbase_describe_tool`. Your agent performs the analysis; the Skill does not depend on a separate third-party LLM.
+1. You ask a question or give a task
+2. Your agent reads the installed Skill's instructions
+3. The Skill tells it which SandBase APIs to call (via `sandbase_describe_tool` → `sandbase_call_tool`)
+4. The agent executes the workflow and delivers structured results
+5. One `SANDBASE_API_KEY` covers all 2000+ data endpoints
 
-## Repository layout
+## Pricing
 
-```text
-marketing/<skill>/SKILL.md       The downloadable Agent instruction
-marketing/<skill>/references/    Optional capability maps and deeper guidance
-skills.json                      Machine-readable index of all public Skills
-catalog/skills/                  Optional data for a website or marketplace
-integrations/sandbase-registry/  Optional SandBase Registry import manifests
-scripts/skillpack.py             Maintainer-only validation and inspection helper
+Skills themselves are free and open source (Apache-2.0). The underlying SandBase API calls are usage-based — typically $0.001–$0.01 per call. A typical research task costs $0.05–$0.20.
+
+See [sandbase.ai/pricing](https://sandbase.ai/pricing) for current rates.
+
+## Repository Layout
+
+```
+research/<skill>/SKILL.md           Agent instruction file
+research/<skill>/references/        API maps and workflow guidance
+marketing/<skill>/                  Original marketing skills
+catalog/skills/                     Web display metadata
+integrations/sandbase-registry/     Platform registry manifests
+scripts/skillpack.py                Validation helper
 ```
 
-Most users only need the `npx skills add` command above. `catalog/` is for teams that run a Skill website; `integrations/` is for teams that import Skills into a platform.
+## Contributing
 
-## For website and registry integrators
-
-`skills.json` is the repository index. Each entry points to the downloadable Skill, its display metadata, and its optional SandBase Registry manifest under `integrations/`.
-
-The endpoint list in `catalog/skills/<skill>.json` is display metadata. Resolve current endpoint parameters from the SandBase Capability Registry at runtime with `sandbase_describe_tool`; do not copy API parameter snapshots, prices, or credentials into this repository. The validator ensures that every catalog endpoint list exactly matches its registry manifest.
-
-## For contributors: validate locally
+See [CONTRIBUTING.md](CONTRIBUTING.md) before adding or changing a Skill.
 
 ```bash
+# Validate locally
 python3 scripts/skillpack.py validate
 python3 -m unittest discover -s tests -v
 ```
 
-These checks are offline. They do not make API calls or require credentials.
-
-## Contribute
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) before adding or changing a Skill.
-
 ## License
 
 Apache-2.0. See [LICENSE](LICENSE).
+
+---
+
+**Built for [SandBase](https://sandbase.ai)** — One API key. Every data source. 100+ agent skills.
