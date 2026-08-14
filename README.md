@@ -56,6 +56,28 @@ To browse the available Skills before installing, run:
 npx skills add sandbaseai/sandbase-skills --list
 ```
 
+### DeepSeek Harness
+
+DeepSeek Harness discovers project skills from `.dsh/skills/<skill-name>/SKILL.md`.
+Install a SandBase skill, including its references, into that native discovery
+root with:
+
+```bash
+git clone https://github.com/sandbaseai/sandbase-skills.git
+python3 sandbase-skills/scripts/install_dsh.py exa-deep-search --project /path/to/dsh-project
+```
+
+Then start DSH from the target project and invoke the installed skill by name,
+for example `$exa-deep-search`. The skill expects the SandBase MCP tools
+`sandbase_describe_tool` and `sandbase_call_tool` to already be available in
+the agent environment. The installer never reads or writes API keys.
+
+List every installable skill with:
+
+```bash
+python3 sandbase-skills/scripts/install_dsh.py --list
+```
+
 ## Use it in your agent
 
 After installation, use the Skill by name. For example:
