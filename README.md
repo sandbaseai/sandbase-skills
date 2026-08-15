@@ -208,6 +208,12 @@ User Question → Agent reads SKILL.md → Calls SandBase APIs → Synthesizes A
 4. The agent executes the workflow and delivers structured results
 5. One `SANDBASE_API_KEY` covers all 2000+ data endpoints
 
+## SandBase Ecosystem
+
+- [SandBase Harness](https://github.com/sandbaseai/sandbase-harness) — run
+  persistent agent sessions with sandboxed tools, resumable streams, artifacts,
+  cancellation, audit, and replay in your own infrastructure.
+
 ## Pricing
 
 Skills themselves are free and open source (Apache-2.0). The underlying SandBase API calls are usage-based — typically $0.001–$0.01 per call. A typical research task costs $0.05–$0.20.
