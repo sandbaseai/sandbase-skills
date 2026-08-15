@@ -116,6 +116,15 @@ class SkillpackTests(unittest.TestCase):
             for endpoint in metadata["api"]["endpoints"]:
                 self.assertIn(endpoint["tool_name"], text)
 
+    def test_multi_source_search_has_a_no_account_host_tool_path(self):
+        skill_text = (ROOT / "research" / "multi-source-search" / "SKILL.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("Do not stop merely because SandBase is unavailable", skill_text)
+        self.assertIn("host agent's native web search", skill_text)
+        self.assertIn("sandbase_describe_tool", skill_text)
+        self.assertIn("validate_report.py", skill_text)
+
 
 if __name__ == "__main__":
     unittest.main()

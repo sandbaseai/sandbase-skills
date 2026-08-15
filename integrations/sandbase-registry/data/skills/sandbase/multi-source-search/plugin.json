@@ -4,7 +4,7 @@
   "vendor": "sandbase",
   "vendor_slug": "sandbase",
   "model_slug": "multi-source-search",
-  "description": "Parallel multi-source research with confidence scoring.",
+  "description": "Portable multi-source research with an offline evidence ledger.",
   "type": "skill",
   "capability_tags": ["multi-source", "research", "cross-validation", "confidence"],
   "unified_schema": {

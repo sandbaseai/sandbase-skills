@@ -260,9 +260,9 @@
       "display_name": "Multi-Source Search",
       "short_description": "Parallel multi-source search with cross-validation.",
       "status": "ready",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "tags": ["multi-source", "research", "cross-validation"],
-      "description": "Parallel multi-source research with confidence scoring."
+      "description": "Portable multi-source research with an offline evidence ledger."
     },
     {
       "name": "brand-monitoring",
