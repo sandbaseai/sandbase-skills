@@ -18,7 +18,9 @@
   "scripts": {
     "test": "node --test tests/install-dsh.test.mjs && python3 -m unittest discover -s tests -v",
     "validate": "python3 scripts/skillpack.py validate",
-    "package:check": "npm pack --dry-run"
+    "package:check": "npm pack --dry-run",
+    "marketplace:build": "node scripts/build-claude-marketplace.mjs",
+    "marketplace:check": "node scripts/check-claude-marketplace.mjs"
   },
   "repository": {
     "type": "git",
