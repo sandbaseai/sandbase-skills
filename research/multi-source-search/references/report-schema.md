@@ -6,7 +6,7 @@ Save the research ledger as one UTF-8 JSON object:
 {
   "question": "What is being investigated?",
   "searched_at": "2026-08-15",
-  "providers": ["tavily_search", "exa_search", "scholar_search_mixed"],
+  "providers": ["host_web_search", "host_page_open", "scholar_search_mixed"],
   "unavailable_providers": [],
   "sources": [
     {
@@ -33,7 +33,9 @@ Save the research ledger as one UTF-8 JSON object:
 
 Rules:
 
-- Record at least two unique provider capabilities. List unavailable providers separately.
+- Record the actual capability names used, including native host tools. Record at least
+  two unique capabilities; repeated queries to one capability still count as one. List
+  unavailable capabilities separately.
 - Source IDs and URLs must be unique. Source type is `primary`, `secondary`, or `aggregator`.
 - Claims reference existing source IDs and declare `kind` as `sourced` or `inference`.
 - High confidence requires at least three independent sources; medium requires two; low requires one.
@@ -41,4 +43,3 @@ Rules:
 - Every source must support at least one claim, and every evidence gap must be explicit.
 
 The validator does not fetch URLs, judge credibility, detect hidden shared sources, or prove claims true.
-

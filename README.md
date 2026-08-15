@@ -9,7 +9,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**88 installable Agent Skills** for research, social intelligence, marketing, and business workflows. One API key. Every data source. Install into any compatible agent (Claude Code, Codex, Cursor, Gemini CLI) and start working immediately.
+**88 installable Agent Skills** for research, social intelligence, marketing, and business workflows. Install into any compatible agent (Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
 
 ## What are Skills?
 
@@ -18,15 +18,16 @@ A Skill is an instruction file that teaches an AI agent how to do one specific j
 ## Quick Start
 
 ```bash
-# 1. Set your SandBase API key
-export SANDBASE_API_KEY='sk-...'
+# 1. Install the no-account research Skill
+npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Install a Skill
-npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex
-
-# 3. Use it
-# "Research what people are saying about [brand] on Twitter this week"
+# 2. Use it with your agent's existing web/search tools
+# "Fact-check this claim with independent sources and validate the evidence ledger"
 ```
+
+`multi-source-search` needs no SandBase account when the host agent already provides
+search and page-reading tools. For specialized social, market, and data-provider Skills,
+set `SANDBASE_API_KEY` in your environment—never in a prompt or committed file.
 
 ### Claude Code marketplace
 
@@ -226,14 +227,14 @@ Skills work with any agent that implements the Agent Skills specification:
 ## How It Works
 
 ```
-User Question → Agent reads SKILL.md → Calls SandBase APIs → Synthesizes Answer
+User Question → Agent reads SKILL.md → Uses host tools and/or SandBase → Validates evidence → Answer
 ```
 
 1. You ask a question or give a task
 2. Your agent reads the installed Skill's instructions
-3. The Skill tells it which SandBase APIs to call (via `sandbase_describe_tool` → `sandbase_call_tool`)
-4. The agent executes the workflow and delivers structured results
-5. One `SANDBASE_API_KEY` covers all 2000+ data endpoints
+3. The Skill starts with compatible search or browser tools already available to the host
+4. When configured, SandBase adds provider-specific capabilities via `sandbase_describe_tool` → `sandbase_call_tool`
+5. The agent executes the workflow, validates structured evidence, and delivers the result
 
 ## SandBase Ecosystem
 
@@ -243,7 +244,10 @@ User Question → Agent reads SKILL.md → Calls SandBase APIs → Synthesizes A
 
 ## Pricing
 
-Skills themselves are free and open source (Apache-2.0). The underlying SandBase API calls are usage-based — typically $0.001–$0.01 per call. A typical research task costs $0.05–$0.20.
+Skills themselves are free and open source (Apache-2.0). `multi-source-search`
+can use compatible host-provided tools without a SandBase account. Optional SandBase
+API calls are usage-based — typically $0.001–$0.01 per call. A typical research task
+using those calls costs $0.05–$0.20.
 
 See [sandbase.ai/pricing](https://sandbase.ai/pricing) for current rates.
 
