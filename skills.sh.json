@@ -1,0 +1,36 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Social Intelligence",
+      "description": "Research and monitor conversations across major social platforms.",
+      "skills": ["twitter-intelligence", "youtube-research", "instagram-research", "tiktok-research", "linkedin-research", "reddit-research", "xiaohongshu-research", "weibo-research", "douyin-research", "wechat-channels-research", "wechat-mp-research", "wechat-search", "china-social-research", "community-research"]
+    },
+    {
+      "title": "Search & Research",
+      "description": "Find, validate, and synthesize information from multiple sources.",
+      "skills": ["multi-source-search", "tavily-deep-research", "exa-deep-search", "exa-similar-finder", "academic-research", "academic-trend-research", "google-news-research", "web-scraper", "last30days-research", "topic-deep-dive", "event-tracker", "trend-spotter", "news-aggregator", "market-research", "newsletter-research", "podcast-research", "content-ideation"]
+    },
+    {
+      "title": "Business Intelligence",
+      "description": "Research companies, markets, prospects, and competitors.",
+      "skills": ["apollo-company-research", "akta-company-research", "company-enrichment", "google-maps-reviews", "product-intelligence", "product-review-extractor", "competitive-pricing", "pricing-page-analyzer", "review-aggregator", "startup-research", "hiring-intelligence", "talent-sourcing", "lead-research", "outreach-builder", "email-outreach-prep", "sales-intelligence", "partnership-research", "industry-landscape", "local-market-research", "data-enrichment"]
+    },
+    {
+      "title": "Marketing & Content",
+      "description": "Monitor brands and audiences and improve content strategy.",
+      "skills": ["brand-monitoring", "kol-discovery", "influencer-analytics", "social-listening", "competitor-content-intelligence", "competitor-monitor", "thought-leadership-monitor", "pr-media-monitor", "content-performance", "audience-research", "social-proof-research", "competitor-ad-research", "hashtag-tracker", "crisis-monitor", "reddit-customer-insights"]
+    },
+    {
+      "title": "Marketing & SEO",
+      "description": "Analyze search results, keywords, backlinks, and site health.",
+      "skills": ["seo-keyword-insights", "backlink-gap-analysis", "serp-analysis", "seo-content-brief", "site-audit"]
+    },
+    {
+      "title": "Tools & Utilities",
+      "description": "Handle practical research, conversion, validation, and monitoring tasks.",
+      "skills": ["email-validator", "domain-intelligence", "domain-analyzer", "tech-stack-detector", "screenshot-capture", "url-to-markdown", "youtube-transcript", "document-parser", "content-translator", "sentiment-analyzer", "weather-lookup", "flight-tracker", "currency-converter", "github-profile-research", "npm-package-research", "cve-lookup", "website-monitor"]
+    }
+  ]
+}
