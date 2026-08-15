@@ -2,7 +2,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | 한국어 | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**100개의 프로덕션 Agent Skill** — 리서치, 소셜 인텔리전스, 마케팅, 비즈니스 워크플로우용. 하나의 API 키로 모든 데이터 소스에 접근. 호환 Agent(Claude Code, Codex, Cursor, Gemini CLI)에 설치하면 바로 사용 가능합니다.
+**설치 가능한 Agent Skill 88개** — 리서치, 소셜 인텔리전스, 마케팅, 비즈니스 워크플로우용. 하나의 API 키로 모든 데이터 소스에 접근. 호환 Agent(Claude Code, Codex, Cursor, Gemini CLI)에 설치하면 바로 사용 가능합니다.
 
 ## 빠른 시작
 
@@ -17,18 +17,18 @@ npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent c
 # "이번 주 [브랜드]에 대한 Twitter 대화를 분석해줘"
 ```
 
-## Skill 카테고리 (100개)
+## Skill 카테고리 (88개)
 
 | 카테고리 | 수 | 용도 |
 |---------|-----|------|
-| **소셜 인텔리전스** | 23 | Twitter, YouTube, Instagram, TikTok, Weibo, Bilibili 등 |
+| **소셜 인텔리전스** | 14 | Twitter, YouTube, Instagram, TikTok, Weibo, Bilibili 등 |
 | **검색 & 리서치** | 17 | 멀티소스 검색, 학술 논문, 트렌드 발견 |
-| **비즈니스 인텔리전스** | 22 | 기업 조사, 경쟁 분석, 영업 인텔리전스 |
-| **마케팅** | 14 | 브랜드 모니터링, KOL 발굴, 소셜 리스닝 |
+| **비즈니스 인텔리전스** | 20 | 기업 조사, 경쟁 분석, 영업 인텔리전스 |
+| **마케팅** | 15 | 브랜드 모니터링, KOL 발굴, 소셜 리스닝 |
 | **SEO** | 5 | 키워드 전략, 백링크 분석, SERP 분석 |
 | **도구** | 17 | 이메일 검증, 도메인 분석, 스크린샷, 번역 |
 
-전체 Skill 목록은 [영어 README](./README.md#skill-catalog-100-skills)를 참조하세요.
+전체 Skill 목록은 [영어 README](./README.md#skill-catalog-88-skills)를 참조하세요.
 
 ## 지원 Agent
 

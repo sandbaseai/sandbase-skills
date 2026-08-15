@@ -7,7 +7,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**100 production-ready Agent Skills** for research, social intelligence, marketing, and business workflows. One API key. Every data source. Install into any compatible agent (Claude Code, Codex, Cursor, Gemini CLI) and start working immediately.
+**88 installable Agent Skills** for research, social intelligence, marketing, and business workflows. One API key. Every data source. Install into any compatible agent (Claude Code, Codex, Cursor, Gemini CLI) and start working immediately.
 
 ## What are Skills?
 
@@ -26,9 +26,9 @@ npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent c
 # "Research what people are saying about [brand] on Twitter this week"
 ```
 
-## Skill Catalog (100 Skills)
+## Skill Catalog (88 Skills)
 
-### Social Intelligence (23 Skills)
+### Social Intelligence (14 Skills)
 
 Research and monitor conversations across every major social platform.
 
@@ -43,18 +43,9 @@ Research and monitor conversations across every major social platform.
 | `xiaohongshu-research` | Xiaohongshu (RED) | Search notes, analyze creators, track consumer trends |
 | `weibo-research` | Weibo | Monitor hot searches, track trending topics, analyze sentiment |
 | `douyin-research` | Douyin | Search videos, analyze creators, track challenges |
-| `bilibili-research` | Bilibili | Search videos, analyze UP creators, read danmaku |
-| `zhihu-research` | Zhihu | Search Q&A, track hot topics, research experts |
-| `threads-research` | Threads | Search posts, analyze profiles, track conversations |
-| `facebook-research` | Facebook | Research pages, groups, ad library, events |
-| `pinterest-research` | Pinterest | Search pins, analyze boards, discover visual trends |
-| `telegram-research` | Telegram | Search channels, monitor posts, discover communities |
-| `kuaishou-research` | Kuaishou | Search videos, track trending, research live commerce |
-| `lemon8-research` | Lemon8 | Discover lifestyle content, track topics |
 | `wechat-channels-research` | WeChat Channels | Search videos, analyze live streams |
 | `wechat-mp-research` | WeChat Official Accounts | Research articles, analyze accounts |
 | `wechat-search` | WeChat | Search across WeChat ecosystem |
-| `toutiao-research` | Toutiao | Research trending articles and content |
 | `china-social-research` | Multi-platform | Cross-platform China social research |
 | `community-research` | Reddit + Telegram | Online community analysis |
 
@@ -82,7 +73,7 @@ Find, validate, and synthesize information from multiple sources.
 | `podcast-research` | Find podcasts and episodes by topic |
 | `content-ideation` | Generate data-backed content ideas |
 
-### Business Intelligence (22 Skills)
+### Business Intelligence (20 Skills)
 
 Company research, sales intelligence, and competitive analysis.
 
@@ -91,8 +82,6 @@ Company research, sales intelligence, and competitive analysis.
 | `apollo-company-research` | Search companies, enrich profiles, track hiring |
 | `akta-company-research` | Research companies via employee and product reviews |
 | `company-enrichment` | Enrich company data from multiple sources |
-| `amazon-product-research` | Research products and reviews on Amazon |
-| `google-shopping-research` | Compare products and prices on Google Shopping |
 | `google-maps-reviews` | Analyze local business reviews |
 | `product-intelligence` | Cross-platform product market research |
 | `product-review-extractor` | Extract and analyze product reviews at scale |
@@ -111,7 +100,7 @@ Company research, sales intelligence, and competitive analysis.
 | `local-market-research` | Research local markets with reviews and social data |
 | `data-enrichment` | Fill data gaps with verified intelligence |
 
-### Marketing & Content (14 Skills)
+### Marketing & Content (15 Skills)
 
 Brand monitoring, influencer marketing, and content strategy.
 
@@ -122,6 +111,7 @@ Brand monitoring, influencer marketing, and content strategy.
 | `influencer-analytics` | Analyze influencer performance with engagement data |
 | `social-listening` | Monitor conversations about any topic globally |
 | `competitor-content-intelligence` | Find differentiated content opportunities |
+| `competitor-monitor` | Monitor competitor launches, pricing, campaigns, and market signals |
 | `thought-leadership-monitor` | Track industry voices and their content |
 | `pr-media-monitor` | Track press mentions and media narrative |
 | `content-performance` | Analyze content performance across platforms |

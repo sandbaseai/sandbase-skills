@@ -2,7 +2,7 @@
 
 [English](./README.md) | 中文 | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**100 个生产级 Agent Skill** — 覆盖调研、社交媒体情报、营销和商业工作流。一个 API Key，所有数据源。安装到任何兼容 Agent（Claude Code、Codex、Cursor、Gemini CLI）即可使用。
+**88 个可安装 Agent Skill** — 覆盖调研、社交媒体情报、营销和商业工作流。一个 API Key，所有数据源。安装到任何兼容 Agent（Claude Code、Codex、Cursor、Gemini CLI）即可使用。
 
 ## 什么是 Skill？
 
@@ -21,18 +21,18 @@ npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent c
 # "调研一下人们本周在 Twitter 上对 [品牌] 的讨论"
 ```
 
-## Skill 分类 (100 个)
+## Skill 分类 (88 个)
 
 | 分类 | 数量 | 场景 |
 |------|------|------|
-| **社交媒体情报** | 23 | Twitter、YouTube、Instagram、TikTok、小红书、微博、B站、抖音等 |
+| **社交媒体情报** | 14 | Twitter、YouTube、Instagram、TikTok、小红书、微博、B站、抖音等 |
 | **搜索与调研** | 17 | 多源搜索、学术论文、趋势发现、新闻聚合 |
-| **商业情报** | 22 | 公司调研、竞品分析、人才情报、销售线索 |
-| **营销与内容** | 14 | 品牌监控、KOL 发现、社交聆听、危机监控 |
+| **商业情报** | 20 | 公司调研、竞品分析、人才情报、销售线索 |
+| **营销与内容** | 15 | 品牌监控、KOL 发现、社交聆听、危机监控 |
 | **SEO** | 5 | 关键词策略、反链分析、SERP 分析、站点审计 |
 | **工具** | 17 | 邮箱验证、域名分析、截图、YouTube 转写、天气 |
 
-完整 Skill 列表请查看 [英文 README](./README.md#skill-catalog-100-skills)。
+完整 Skill 列表请查看 [英文 README](./README.md#skill-catalog-88-skills)。
 
 ## 支持的 Agent
 
