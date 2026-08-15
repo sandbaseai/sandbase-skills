@@ -28,6 +28,18 @@ npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent c
 # "Research what people are saying about [brand] on Twitter this week"
 ```
 
+### Claude Code marketplace
+
+Install all 88 Skills as a native Claude Code plugin:
+
+```text
+/plugin marketplace add sandbaseai/sandbase-skills
+/plugin install sandbase-skills@sandbase-agent-skills
+```
+
+The marketplace manifest lists every Skill explicitly, so Claude Code can discover
+them on demand without copying directories by hand.
+
 ## Try a Real Workflow
 
 Install the matching Skill, then give your agent one of these tasks:
