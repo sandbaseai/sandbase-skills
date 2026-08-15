@@ -1,0 +1,44 @@
+{
+  "question": "Does the result replicate independently?",
+  "searched_at": "2026-08-15",
+  "providers": [
+    "tavily_search",
+    "exa_search",
+    "scholar_search_mixed"
+  ],
+  "unavailable_providers": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://example.org/a",
+      "publisher": "Publisher A",
+      "source_type": "primary"
+    },
+    {
+      "id": "s2",
+      "url": "https://example.net/b",
+      "publisher": "Publisher B",
+      "source_type": "secondary"
+    },
+    {
+      "id": "s3",
+      "url": "https://example.com/c",
+      "publisher": "Publisher C",
+      "source_type": "primary"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Three independent sources report the result.",
+      "kind": "sourced",
+      "confidence": "high",
+      "source_ids": ["s1", "s2", "s3"],
+      "independent_source_count": 3,
+      "conflict": false
+    }
+  ],
+  "gaps": [
+    "Raw benchmark data is not public."
+  ]
+}
