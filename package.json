@@ -1,6 +1,6 @@
 {
   "name": "@sandbaseai/dsh-skills",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Install SandBase Agent Skills into DeepSeek Harness projects.",
   "type": "module",
   "bin": {
