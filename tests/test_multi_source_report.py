@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "research" / "multi-source-search" / "scripts" / "validate_report.py"
+EXAMPLE = ROOT / "examples" / "verifiable-research-report.json"
 
 
 def report():
@@ -40,6 +41,16 @@ class MultiSourceReportTests(unittest.TestCase):
 
     def test_valid_report(self):
         result = self.run_report(report())
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout.strip(), "VALID: 3 source(s), 1 claim(s), 3 provider(s)")
+
+    def test_committed_example(self):
+        result = subprocess.run(
+            [sys.executable, str(SCRIPT), str(EXAMPLE)],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(result.stdout.strip(), "VALID: 3 source(s), 1 claim(s), 3 provider(s)")
 

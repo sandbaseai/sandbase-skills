@@ -40,6 +40,21 @@ Install all 88 Skills as a native Claude Code plugin:
 The marketplace manifest lists every Skill explicitly, so Claude Code can discover
 them on demand without copying directories by hand.
 
+### Verify research output offline
+
+The [`multi-source-search`](research/multi-source-search/SKILL.md) Skill produces an
+evidence ledger that can be checked before you trust or share its synthesis:
+
+```bash
+python3 research/multi-source-search/scripts/validate_report.py \
+  examples/verifiable-research-report.json
+# VALID: 3 source(s), 1 claim(s), 3 provider(s)
+```
+
+The validator rejects unknown or duplicate sources, inflated confidence, unused
+evidence, and high-confidence claims that still have a declared conflict. It runs
+offline and checks internal consistency; it does not claim that a source is true.
+
 ## Try a Real Workflow
 
 Install the matching Skill, then give your agent one of these tasks:
