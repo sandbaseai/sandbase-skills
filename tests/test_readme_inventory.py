@@ -67,6 +67,10 @@ class ReadmeInventoryTests(unittest.TestCase):
             readme,
         )
         self.assertNotIn(
+            "https://skills.sh/b/sandbaseai/sandbase-skills",
+            readme,
+        )
+        self.assertNotIn(
             "](https://skills.sh/sandbaseai/sandbase-skills)\n",
             readme,
         )
