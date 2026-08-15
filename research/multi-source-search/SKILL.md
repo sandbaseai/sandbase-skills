@@ -34,6 +34,19 @@ Then call `sandbase_call_tool` with the exact `tool_name`.
 
 ## Workflow
 
+### 0. Set a search budget and stop condition
+
+Before the first query, state the claim or decision being researched and set a finite
+budget. Unless the user asks for exhaustive research, use at most six search calls and
+six page opens. Stop early when every material claim has enough independent sources for
+its declared confidence and another query is unlikely to add a new publisher, source
+type, or contradiction.
+
+Never repeat the same query after it returns no new evidence. Change the hypothesis,
+source type, date window, or domain constraint; otherwise stop and report the gap. If
+the budget is exhausted, return the best supported result with lower confidence instead
+of continuing a tool loop.
+
 ### 1. Search across sources
 
 Run at least two distinct available search capabilities. Native host search tools count;

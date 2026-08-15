@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "research" / "multi-source-search" / "scripts" / "validate_report.py"
 EXAMPLE = ROOT / "examples" / "verifiable-research-report.json"
+WORKED_EXAMPLE = ROOT / "examples" / "branch-protection-research.md"
 
 
 def report():
@@ -44,6 +45,17 @@ class MultiSourceReportTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(result.stdout.strip(), "VALID: 3 source(s), 1 claim(s), 3 provider(s)")
 
+    def test_worked_example_links_the_same_primary_sources(self):
+        payload = json.loads(EXAMPLE.read_text(encoding="utf-8"))
+        markdown = WORKED_EXAMPLE.read_text(encoding="utf-8")
+        for source in payload["sources"]:
+            with self.subTest(source=source["id"]):
+                self.assertEqual(source["source_type"], "primary")
+                self.assertIn(source["url"], markdown)
+
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("examples/branch-protection-research.md", readme)
+
     def test_committed_example(self):
         result = subprocess.run(
             [sys.executable, str(SCRIPT), str(EXAMPLE)],
@@ -52,7 +64,7 @@ class MultiSourceReportTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(result.stdout.strip(), "VALID: 3 source(s), 1 claim(s), 3 provider(s)")
+        self.assertEqual(result.stdout.strip(), "VALID: 3 source(s), 1 claim(s), 2 provider(s)")
 
     def test_rejects_inflated_confidence(self):
         payload = report()
