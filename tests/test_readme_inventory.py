@@ -60,6 +60,15 @@ class ReadmeInventoryTests(unittest.TestCase):
                 content = (ROOT / name).read_text(encoding="utf-8")
                 self.assertIn(command, content)
 
+    def test_every_readme_documents_deepseek_harness_installation(self) -> None:
+        command = "npx --yes github:sandbaseai/sandbase-skills add multi-source-search"
+        destination = ".dsh/skills/multi-source-search"
+        for name in ("README.md", *self.LOCALIZED_READMES):
+            with self.subTest(readme=name):
+                content = (ROOT / name).read_text(encoding="utf-8")
+                self.assertIn(command, content)
+                self.assertIn(destination, content)
+
     def test_skills_sh_badge_links_to_the_indexed_flagship_skill(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn(

@@ -9,7 +9,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**88 installable Agent Skills** for research, social intelligence, marketing, and business workflows. Install into any compatible agent (Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
+**88 installable Agent Skills** for research, social intelligence, marketing, and business workflows. Install into any compatible agent (DeepSeek Harness, Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
 
 ## What are Skills?
 
@@ -31,6 +31,19 @@ npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent co
 `multi-source-search` needs no SandBase account when the host agent already provides
 search and page-reading tools. For specialized social, market, and data-provider Skills,
 set `SANDBASE_API_KEY` in your environment—never in a prompt or committed file.
+
+### DeepSeek Harness
+
+From the root of a DeepSeek Harness project:
+
+```bash
+npx --yes github:sandbaseai/sandbase-skills add multi-source-search
+dsh web
+```
+
+The installer copies the complete Skill to `.dsh/skills/multi-source-search`,
+DeepSeek Harness's project-scoped discovery directory. It runs directly from the
+GitHub source, so no npm publication or SandBase account is required.
 
 ### Claude Code marketplace
 
