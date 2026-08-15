@@ -2,7 +2,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | Português
 
-**100 Skills de Agent prontos para produção** — Para pesquisa, inteligência social, marketing e workflows de negócios. Uma chave API. Todas as fontes de dados. Instale em qualquer agent compatível (Claude Code, Codex, Cursor, Gemini CLI) e comece a trabalhar imediatamente.
+**88 Skills de Agent instaláveis** — Para pesquisa, inteligência social, marketing e workflows de negócios. Uma chave API. Todas as fontes de dados. Instale em qualquer agent compatível (Claude Code, Codex, Cursor, Gemini CLI) e comece a trabalhar imediatamente.
 
 ## Início Rápido
 
@@ -17,18 +17,18 @@ npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent c
 # "Pesquise o que estão dizendo sobre [marca] no Twitter esta semana"
 ```
 
-## Categorias (100 Skills)
+## Categorias (88 Skills)
 
 | Categoria | Quantidade | Casos de uso |
 |-----------|-----------|--------------|
-| **Inteligência Social** | 23 | Twitter, YouTube, Instagram, TikTok, Reddit, Xiaohongshu |
+| **Inteligência Social** | 14 | Twitter, YouTube, Instagram, TikTok, Reddit, Xiaohongshu |
 | **Busca & Pesquisa** | 17 | Multi-fonte, acadêmico, tendências, notícias |
-| **Inteligência de Negócios** | 22 | Empresas, competição, vendas, talentos |
-| **Marketing** | 14 | Marca, influenciadores, escuta social, crise |
+| **Inteligência de Negócios** | 20 | Empresas, competição, vendas, talentos |
+| **Marketing** | 15 | Marca, influenciadores, escuta social, crise |
 | **SEO** | 5 | Keywords, backlinks, SERP, auditoria |
 | **Ferramentas** | 17 | Email, domínios, screenshots, tradução |
 
-Lista completa no [README em inglês](./README.md#skill-catalog-100-skills).
+Lista completa no [README em inglês](./README.md#skill-catalog-88-skills).
 
 ## Agents Suportados
 
