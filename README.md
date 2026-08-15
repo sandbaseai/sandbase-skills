@@ -228,4 +228,4 @@ Apache-2.0. See [LICENSE](LICENSE).
 
 ---
 
-**Built for [SandBase](https://sandbase.ai)** — One API key. Every data source. 100+ agent skills.
+**Built for [SandBase](https://sandbase.ai)** — One API key. Every data source. 88 installable agent skills.
