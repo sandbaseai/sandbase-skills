@@ -1,5 +1,7 @@
 # SandBase Skills
 
+[English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
+
 **100 production-ready Agent Skills** for research, social intelligence, marketing, and business workflows. One API key. Every data source. Install into any compatible agent (Claude Code, Codex, Cursor, Gemini CLI) and start working immediately.
 
 ## What are Skills?
