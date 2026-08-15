@@ -2,19 +2,16 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | Português
 
-**88 Skills de Agent instaláveis** — Para pesquisa, inteligência social, marketing e workflows de negócios. Uma chave API. Todas as fontes de dados. Instale em qualquer agent compatível (Claude Code, Codex, Cursor, Gemini CLI) e comece a trabalhar imediatamente.
+**88 Skills de Agent instaláveis** — Para pesquisa, inteligência social, marketing e workflows de negócios. O principal Skill de pesquisa funciona com as ferramentas de busca do agent e não exige uma conta SandBase; conecte o SandBase apenas quando precisar de fontes especializadas.
 
 ## Início Rápido
 
 ```bash
-# 1. Configure sua chave API SandBase
-export SANDBASE_API_KEY='sk-...'
+# 1. Instale o Skill de pesquisa sem conta
+npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Instale um Skill
-npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex
-
-# 3. Use
-# "Pesquise o que estão dizendo sobre [marca] no Twitter esta semana"
+# 2. Use com as ferramentas web e de leitura de páginas do agent
+# "Verifique esta afirmação com fontes independentes e valide o registro de evidências"
 ```
 
 ## Categorias (88 Skills)
@@ -36,8 +33,8 @@ Claude Code, Codex, Cursor, Gemini CLI, OpenClaw, Hermes, Amp, Devin
 
 ## Preços
 
-Skills são gratuitos e open source (Apache-2.0). Chamadas API SandBase são por uso — tipicamente $0,001–$0,01/chamada.
+Os Skills são gratuitos e open source (Apache-2.0). `multi-source-search` não exige conta nem custos de API SandBase quando usa as ferramentas do agent; Skills especializados podem adicionar o SandBase conforme o uso.
 
 ---
 
-**[SandBase](https://sandbase.ai)** — Uma chave API. Todas as fontes. 100+ Agent Skills.
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 88 Skills de Agent open source com fontes especializadas opcionais.

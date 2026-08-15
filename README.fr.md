@@ -2,19 +2,16 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | Français | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**88 Skills Agent installables** — Recherche, intelligence sociale, marketing et workflows métier. Une seule clé API. Toutes les sources de données. Installez dans n'importe quel agent compatible (Claude Code, Codex, Cursor, Gemini CLI) et commencez immédiatement.
+**88 Skills Agent installables** — Recherche, intelligence sociale, marketing et workflows métier. Le Skill de recherche principal fonctionne avec les outils de recherche de l'agent et ne nécessite pas de compte SandBase ; connectez SandBase uniquement pour ajouter des sources spécialisées.
 
 ## Démarrage Rapide
 
 ```bash
-# 1. Configurez votre clé API SandBase
-export SANDBASE_API_KEY='sk-...'
+# 1. Installez le Skill de recherche sans compte
+npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Installez un Skill
-npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex
-
-# 3. Utilisez-le
-# "Recherche ce que les gens disent sur [marque] sur Twitter cette semaine"
+# 2. Utilisez-le avec les outils Web et de lecture de pages de l'agent
+# "Vérifie cette affirmation avec des sources indépendantes et valide le registre de preuves"
 ```
 
 ## Catégories (88 Skills)
@@ -36,8 +33,8 @@ Claude Code, Codex, Cursor, Gemini CLI, OpenClaw, Hermes, Amp, Devin
 
 ## Tarification
 
-Les Skills sont gratuits et open source (Apache-2.0). Les appels API SandBase sont à l'usage — généralement 0,001–0,01 $/appel.
+Les Skills sont gratuits et open source (Apache-2.0). `multi-source-search` ne nécessite ni compte ni frais d'API SandBase lorsqu'il utilise les outils de l'agent ; les Skills spécialisés peuvent ajouter SandBase selon l'usage.
 
 ---
 
-**[SandBase](https://sandbase.ai)** — Une clé API. Toutes les sources. 100+ Skills.
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 88 Skills open source avec des sources spécialisées facultatives.

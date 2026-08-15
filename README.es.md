@@ -2,19 +2,16 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | Español | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**88 Skills de Agent instalables** — Para investigación, inteligencia social, marketing y flujos de trabajo empresariales. Una clave API. Todas las fuentes de datos. Instala en cualquier agente compatible (Claude Code, Codex, Cursor, Gemini CLI) y empieza a trabajar inmediatamente.
+**88 Skills de Agent instalables** — Para investigación, inteligencia social, marketing y flujos de trabajo empresariales. El Skill principal de investigación funciona con las herramientas de búsqueda del agente y no requiere una cuenta de SandBase; conecta SandBase solo cuando necesites fuentes especializadas.
 
 ## Inicio Rápido
 
 ```bash
-# 1. Configura tu clave API de SandBase
-export SANDBASE_API_KEY='sk-...'
+# 1. Instala el Skill de investigación sin cuenta
+npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Instala un Skill
-npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex
-
-# 3. Úsalo
-# "Investiga qué dicen sobre [marca] en Twitter esta semana"
+# 2. Úsalo con las herramientas web y de lectura de páginas del agente
+# "Verifica esta afirmación con fuentes independientes y valida el registro de evidencias"
 ```
 
 ## Categorías (88 Skills)
@@ -36,8 +33,8 @@ Claude Code, Codex, Cursor, Gemini CLI, OpenClaw, Hermes, Amp, Devin
 
 ## Precios
 
-Los Skills son gratuitos y open source (Apache-2.0). Las llamadas a SandBase API son por uso — típicamente $0.001–$0.01/llamada.
+Los Skills son gratuitos y open source (Apache-2.0). `multi-source-search` no requiere una cuenta ni costes de API de SandBase cuando utiliza las herramientas del agente; los Skills con fuentes especializadas pueden añadir SandBase según el uso.
 
 ---
 
-**[SandBase](https://sandbase.ai)** — Una clave API. Todas las fuentes. 100+ Skills.
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 88 Skills open source con fuentes especializadas opcionales.

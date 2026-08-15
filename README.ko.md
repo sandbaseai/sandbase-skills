@@ -2,19 +2,16 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | 한국어 | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**설치 가능한 Agent Skill 88개** — 리서치, 소셜 인텔리전스, 마케팅, 비즈니스 워크플로우용. 하나의 API 키로 모든 데이터 소스에 접근. 호환 Agent(Claude Code, Codex, Cursor, Gemini CLI)에 설치하면 바로 사용 가능합니다.
+**설치 가능한 Agent Skill 88개** — 리서치, 소셜 인텔리전스, 마케팅, 비즈니스 워크플로우용. 대표 리서치 Skill은 Agent가 제공하는 검색 도구로 바로 실행되며 SandBase 계정이 필요하지 않습니다. 전문 데이터 소스가 필요할 때만 SandBase를 추가할 수 있습니다.
 
 ## 빠른 시작
 
 ```bash
-# 1. SandBase API 키 설정
-export SANDBASE_API_KEY='sk-...'
+# 1. 계정이 필요 없는 멀티소스 리서치 Skill 설치
+npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Skill 설치
-npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex
-
-# 3. 사용하기
-# "이번 주 [브랜드]에 대한 Twitter 대화를 분석해줘"
+# 2. Agent의 기존 웹 검색 및 페이지 읽기 도구로 사용
+# "여러 독립 출처로 이 주장을 검증하고 증거 원장도 확인해줘"
 ```
 
 ## Skill 카테고리 (88개)
@@ -37,13 +34,13 @@ Claude Code, Codex, Cursor, Gemini CLI, OpenClaw, Hermes, Amp, Devin
 ## 작동 방식
 
 ```
-사용자 질문 → Agent가 SKILL.md 읽기 → SandBase API 호출 → 결과 종합 및 응답
+사용자 질문 → Agent가 SKILL.md 읽기 → 기존 도구(선택적으로 SandBase) 사용 → 결과 종합 및 응답
 ```
 
 ## 가격
 
-Skill 자체는 무료 오픈소스 (Apache-2.0). SandBase API 호출은 사용량 기반 — 일반적으로 $0.001~$0.01/회.
+Skill 자체는 무료 오픈소스 (Apache-2.0)입니다. Agent의 기존 도구로 `multi-source-search`를 사용할 때는 SandBase 계정이나 SandBase API 비용이 필요하지 않습니다. 전문 데이터 소스용 Skill에는 사용량 기반 SandBase를 선택적으로 연결할 수 있습니다.
 
 ---
 
-**[SandBase](https://sandbase.ai)** — 하나의 API 키. 모든 데이터 소스. 100+ Agent Skill.
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 88개의 오픈소스 Agent Skill과 선택형 데이터 소스 확장.

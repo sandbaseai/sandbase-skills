@@ -2,19 +2,16 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | 日本語 | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**88個のインストール可能なAgent Skill** — リサーチ、ソーシャルインテリジェンス、マーケティング、ビジネスワークフロー向け。1つのAPIキーで全データソースにアクセス。対応Agent（Claude Code、Codex、Cursor、Gemini CLI）にインストールしてすぐに使えます。
+**88個のインストール可能なAgent Skill** — リサーチ、ソーシャルインテリジェンス、マーケティング、ビジネスワークフロー向け。主力のリサーチSkillはAgent標準の検索ツールで動作し、SandBaseアカウントは不要です。専門データソースが必要な場合のみSandBaseを追加できます。
 
 ## クイックスタート
 
 ```bash
-# 1. SandBase APIキーを設定
-export SANDBASE_API_KEY='sk-...'
+# 1. アカウント不要のマルチソース調査Skillをインストール
+npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Skillをインストール
-npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex
-
-# 3. 使う
-# 「今週[ブランド]についてTwitterで何が言われているか調べて」
+# 2. Agent標準のWeb検索・ページ読み取りツールで使う
+# 「複数の独立した情報源でこの主張を検証し、証拠台帳も検証して」
 ```
 
 ## Skillカテゴリ (88個)
@@ -37,13 +34,13 @@ Claude Code、Codex、Cursor、Gemini CLI、OpenClaw、Hermes、Amp、Devin
 ## 仕組み
 
 ```
-ユーザーの質問 → AgentがSKILL.mdを読む → SandBase APIを呼び出す → 結果を整理して回答
+ユーザーの質問 → AgentがSKILL.mdを読む → 標準ツール（必要に応じてSandBase）を使う → 結果を整理して回答
 ```
 
 ## 料金
 
-Skill自体は無料・オープンソース (Apache-2.0)。SandBase API呼び出しは従量制 — 通常$0.001〜$0.01/回。
+Skill自体は無料・オープンソース (Apache-2.0)。`multi-source-search`をAgent標準ツールで使う場合、SandBaseアカウントやSandBase API料金は不要です。専門データソースを使うSkillでは従量制のSandBaseを追加できます。
 
 ---
 
-**[SandBase](https://sandbase.ai)** — 1つのAPIキー。全データソース。100+ Agent Skill。
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 88個のオープンソースAgent Skill。必要に応じてデータソースを追加。
