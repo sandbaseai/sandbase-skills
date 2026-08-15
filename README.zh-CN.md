@@ -11,10 +11,13 @@ Skill 是一个指令文件，教会 AI Agent 如何完成特定工作。每个 
 ## 快速开始
 
 ```bash
-# 1. 安装无需账号的多源调研 Skill
+# 无需安装，先生成完整 Skill 提示词
+npx skills use sandbaseai/sandbase-skills@multi-source-search
+
+# 或安装到 Codex
 npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. 使用 Agent 已有的网页搜索和页面读取工具
+# 使用 Agent 已有的网页搜索和页面读取工具
 # "用多个独立来源核实这个说法，并验证证据账本"
 ```
 

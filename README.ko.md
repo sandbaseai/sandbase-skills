@@ -7,10 +7,13 @@
 ## 빠른 시작
 
 ```bash
-# 1. 계정이 필요 없는 멀티소스 리서치 Skill 설치
+# 설치 없이 전체 Skill 프롬프트 생성
+npx skills use sandbaseai/sandbase-skills@multi-source-search
+
+# 또는 Codex에 설치
 npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Agent의 기존 웹 검색 및 페이지 읽기 도구로 사용
+# Agent의 기존 웹 검색 및 페이지 읽기 도구로 사용
 # "여러 독립 출처로 이 주장을 검증하고 증거 원장도 확인해줘"
 ```
 
