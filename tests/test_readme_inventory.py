@@ -60,6 +60,17 @@ class ReadmeInventoryTests(unittest.TestCase):
                 content = (ROOT / name).read_text(encoding="utf-8")
                 self.assertIn(command, content)
 
+    def test_skills_sh_badge_links_to_the_indexed_flagship_skill(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn(
+            "](https://skills.sh/sandbaseai/sandbase-skills/multi-source-search)",
+            readme,
+        )
+        self.assertNotIn(
+            "](https://skills.sh/sandbaseai/sandbase-skills)\n",
+            readme,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
