@@ -2,23 +2,20 @@
 
 [English](./README.md) | 中文 | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**88 个可安装 Agent Skill** — 覆盖调研、社交媒体情报、营销和商业工作流。一个 API Key，所有数据源。安装到任何兼容 Agent（Claude Code、Codex、Cursor、Gemini CLI）即可使用。
+**88 个可安装 Agent Skill** — 覆盖调研、社交媒体情报、营销和商业工作流。旗舰调研 Skill 可直接使用 Agent 自带的搜索工具，无需 SandBase 账号；需要更多专业数据源时再连接 SandBase。
 
 ## 什么是 Skill？
 
-Skill 是一个指令文件，教会 AI Agent 如何完成特定工作。每个 Skill 定义了调用哪些 SandBase API、按什么顺序、如何解读结果、如何格式化输出。你的 Agent 已经知道怎么工作 — Skill 给它领域专业知识。
+Skill 是一个指令文件，教会 AI Agent 如何完成特定工作。每个 Skill 定义可复用的工作流、证据规则和输出格式。通用 Skill 可使用 Agent 已有能力，专业社交、市场和数据工作流则可按需接入 SandBase。
 
 ## 快速开始
 
 ```bash
-# 1. 设置 SandBase API Key
-export SANDBASE_API_KEY='sk-...'
+# 1. 安装无需账号的多源调研 Skill
+npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. 安装一个 Skill
-npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent codex
-
-# 3. 开始使用
-# "调研一下人们本周在 Twitter 上对 [品牌] 的讨论"
+# 2. 使用 Agent 已有的网页搜索和页面读取工具
+# "用多个独立来源核实这个说法，并验证证据账本"
 ```
 
 ## Skill 分类 (88 个)
@@ -45,13 +42,13 @@ npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent c
 ## 工作原理
 
 ```
-用户提问 → Agent 读取 SKILL.md → 调用 SandBase API → 综合分析并输出结果
+用户提问 → Agent 读取 SKILL.md → 使用已有工具（可选 SandBase）→ 综合分析并输出结果
 ```
 
 ## 定价
 
-Skill 本身免费开源 (Apache-2.0)。底层 SandBase API 按用量计费 — 通常 $0.001–$0.01/次。一次典型的调研任务花费 $0.05–$0.20。
+Skill 本身免费开源 (Apache-2.0)。`multi-source-search` 使用 Agent 自带工具时无需 SandBase 账号或 SandBase API 费用；需要专业数据源的 Skill 可按用量调用 SandBase。
 
 ---
 
-**[SandBase](https://sandbase.ai)** — 一个 API Key，所有数据源，100+ Agent Skill。
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 88 个开源 Agent Skill，按需连接更多数据源。
