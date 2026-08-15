@@ -32,14 +32,14 @@ npx skills add sandbaseai/sandbase-skills --skill twitter-intelligence --agent c
 
 Install the matching Skill, then give your agent one of these tasks:
 
-| Skill | Example task | What you get |
-| --- | --- | --- |
-| [`twitter-intelligence`](research/twitter-intelligence/SKILL.md) | “Compare sentiment and recurring complaints for Brand A and Brand B on X this month.” | Source-linked posts, trends, accounts, and a structured comparison |
-| [`multi-source-search`](research/multi-source-search/SKILL.md) | “Verify the strongest evidence for and against this market claim.” | Cross-checked web and academic findings with disagreements called out |
-| [`competitor-monitor`](research/competitor-monitor/SKILL.md) | “Track three competitors’ pricing, launches, content, and social activity.” | A dated competitive-intelligence brief with observed changes |
-| [`seo-content-brief`](research/seo-content-brief/SKILL.md) | “Build a writer-ready brief for this target keyword.” | Search intent, competing pages, required subtopics, and differentiation angles |
-| [`github-profile-research`](research/github-profile-research/SKILL.md) | “Assess this engineering team’s open-source activity.” | Repository, language, contribution, star, and activity analysis |
-| [`youtube-research`](research/youtube-research/SKILL.md) | “Map the leading channels and audience questions in this niche.” | Video and channel discovery, transcript evidence, and comment themes |
+| Skill | Example task | What you get | Install |
+| --- | --- | --- | --- |
+| [`twitter-intelligence`](research/twitter-intelligence/SKILL.md) | “Compare sentiment and recurring complaints for Brand A and Brand B on X this month.” | Source-linked posts, trends, accounts, and a structured comparison | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/twitter-intelligence) |
+| [`multi-source-search`](research/multi-source-search/SKILL.md) | “Verify the strongest evidence for and against this market claim.” | Cross-checked web and academic findings with disagreements called out | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/multi-source-search) |
+| [`competitor-monitor`](research/competitor-monitor/SKILL.md) | “Track three competitors’ pricing, launches, content, and social activity.” | A dated competitive-intelligence brief with observed changes | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/competitor-monitor) |
+| [`seo-content-brief`](research/seo-content-brief/SKILL.md) | “Build a writer-ready brief for this target keyword.” | Search intent, competing pages, required subtopics, and differentiation angles | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/seo-content-brief) |
+| [`github-profile-research`](research/github-profile-research/SKILL.md) | “Assess this engineering team’s open-source activity.” | Repository, language, contribution, star, and activity analysis | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/github-profile-research) |
+| [`youtube-research`](research/youtube-research/SKILL.md) | “Map the leading channels and audience questions in this niche.” | Video and channel discovery, transcript evidence, and comment themes | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/youtube-research) |
 
 ## Skill Catalog (88 Skills)
 
