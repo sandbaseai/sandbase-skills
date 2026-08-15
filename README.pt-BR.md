@@ -17,6 +17,17 @@ npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent co
 # "Verifique esta afirmação com fontes independentes e valide o registro de evidências"
 ```
 
+### DeepSeek Harness
+
+Na raiz de um projeto DeepSeek Harness, execute:
+
+```bash
+npx --yes github:sandbaseai/sandbase-skills add multi-source-search
+dsh web
+```
+
+O instalador copia o Skill completo para `.dsh/skills/multi-source-search`, o diretório de descoberta do projeto. Ele é executado diretamente do GitHub, sem publicação no npm nem conta SandBase.
+
 ## Categorias (88 Skills)
 
 | Categoria | Quantidade | Casos de uso |
