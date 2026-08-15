@@ -13,7 +13,7 @@
 
 ## What are Skills?
 
-A Skill is an instruction file that teaches an AI agent how to do one specific job. Each Skill defines which SandBase APIs to call, in what order, how to interpret results, and how to format the output. Your agent already knows how to work — Skills give it domain expertise.
+A Skill is an instruction file that teaches an AI agent how to do one specific job. Each Skill defines a repeatable workflow, evidence rules, and output format. Portable Skills can use capabilities already provided by the host agent; specialized social, market, and data workflows can add SandBase providers when configured.
 
 ## Quick Start
 
@@ -98,7 +98,7 @@ Find, validate, and synthesize information from multiple sources.
 
 | Skill | Use it to |
 |---|---|
-| `multi-source-search` | Cross-validate research across Tavily, Exa, Scholar, Cloudsway |
+| `multi-source-search` | Cross-validate research with host search tools and optional Tavily, Exa, Scholar, and Cloudsway coverage |
 | `tavily-deep-research` | Advanced web search with content extraction and site mapping |
 | `exa-deep-search` | Semantic search and source extraction with Exa |
 | `exa-similar-finder` | Find pages similar to any URL |
