@@ -1,36 +1,39 @@
 {
-  "question": "Does the result replicate independently?",
+  "question": "Do GitHub, GitLab, and Bitbucket Cloud all provide branch protection controls?",
   "searched_at": "2026-08-15",
   "providers": [
-    "tavily_search",
-    "exa_search",
-    "scholar_search_mixed"
+    "host_web_search",
+    "host_page_open"
   ],
-  "unavailable_providers": [],
+  "unavailable_providers": [
+    "sandbase_tavily",
+    "sandbase_exa",
+    "sandbase_scholar"
+  ],
   "sources": [
     {
       "id": "s1",
-      "url": "https://example.org/a",
-      "publisher": "Publisher A",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches",
+      "publisher": "GitHub Docs",
       "source_type": "primary"
     },
     {
       "id": "s2",
-      "url": "https://example.net/b",
-      "publisher": "Publisher B",
-      "source_type": "secondary"
+      "url": "https://docs.gitlab.com/user/project/repository/branches/protected/",
+      "publisher": "GitLab Docs",
+      "source_type": "primary"
     },
     {
       "id": "s3",
-      "url": "https://example.com/c",
-      "publisher": "Publisher C",
+      "url": "https://support.atlassian.com/bitbucket-cloud/docs/use-branch-permissions/",
+      "publisher": "Atlassian Support",
       "source_type": "primary"
     }
   ],
   "claims": [
     {
       "id": "c1",
-      "text": "Three independent sources report the result.",
+      "text": "GitHub, GitLab, and Bitbucket Cloud each document controls that restrict changes to selected branches.",
       "kind": "sourced",
       "confidence": "high",
       "source_ids": ["s1", "s2", "s3"],
@@ -39,6 +42,7 @@
     }
   ],
   "gaps": [
-    "Raw benchmark data is not public."
+    "The platforms use different names and plan-specific feature boundaries.",
+    "This report establishes feature availability, not equivalence between every protection option."
   ]
 }

@@ -62,10 +62,13 @@ them on demand without copying directories by hand.
 The [`multi-source-search`](research/multi-source-search/SKILL.md) Skill produces an
 evidence ledger that can be checked before you trust or share its synthesis:
 
+See the [complete worked example](examples/branch-protection-research.md), which
+cross-checks one claim against primary documentation from GitHub, GitLab, and Atlassian.
+
 ```bash
 python3 research/multi-source-search/scripts/validate_report.py \
   examples/verifiable-research-report.json
-# VALID: 3 source(s), 1 claim(s), 3 provider(s)
+# VALID: 3 source(s), 1 claim(s), 2 provider(s)
 ```
 
 The validator rejects unknown or duplicate sources, inflated confidence, unused
