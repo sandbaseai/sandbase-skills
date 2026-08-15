@@ -8,6 +8,16 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReadmeInventoryTests(unittest.TestCase):
+    LOCALIZED_READMES = (
+        "README.zh-CN.md",
+        "README.ja.md",
+        "README.ko.md",
+        "README.es.md",
+        "README.fr.md",
+        "README.de.md",
+        "README.pt-BR.md",
+    )
+
     @staticmethod
     def installable_skills() -> set[str]:
         return {
@@ -42,6 +52,13 @@ class ReadmeInventoryTests(unittest.TestCase):
         )
         self.assertEqual(len(grouped), len(set(grouped)), "skills.sh groups contain duplicates")
         self.assertEqual(set(grouped), self.installable_skills())
+
+    def test_every_readme_has_the_no_install_multi_source_command(self) -> None:
+        command = "npx skills use sandbaseai/sandbase-skills@multi-source-search"
+        for name in ("README.md", *self.LOCALIZED_READMES):
+            with self.subTest(readme=name):
+                content = (ROOT / name).read_text(encoding="utf-8")
+                self.assertIn(command, content)
 
 
 if __name__ == "__main__":

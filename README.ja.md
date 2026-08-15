@@ -7,10 +7,13 @@
 ## クイックスタート
 
 ```bash
-# 1. アカウント不要のマルチソース調査Skillをインストール
+# インストールせずに完全なSkillプロンプトを生成
+npx skills use sandbaseai/sandbase-skills@multi-source-search
+
+# またはCodexにインストール
 npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Agent標準のWeb検索・ページ読み取りツールで使う
+# Agent標準のWeb検索・ページ読み取りツールで使う
 # 「複数の独立した情報源でこの主張を検証し、証拠台帳も検証して」
 ```
 

@@ -18,10 +18,13 @@ A Skill is an instruction file that teaches an AI agent how to do one specific j
 ## Quick Start
 
 ```bash
-# 1. Install the no-account research Skill
+# Try it without installing: generate the complete Skill prompt
+npx skills use sandbaseai/sandbase-skills@multi-source-search
+
+# Or install it into Codex
 npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Use it with your agent's existing web/search tools
+# Use it with your agent's existing web/search tools
 # "Fact-check this claim with independent sources and validate the evidence ledger"
 ```
 

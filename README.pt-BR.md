@@ -7,10 +7,13 @@
 ## Início Rápido
 
 ```bash
-# 1. Instale o Skill de pesquisa sem conta
+# Gere o prompt completo do Skill sem instalar
+npx skills use sandbaseai/sandbase-skills@multi-source-search
+
+# Ou instale no Codex
 npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
 
-# 2. Use com as ferramentas web e de leitura de páginas do agent
+# Use com as ferramentas web e de leitura de páginas do agent
 # "Verifique esta afirmação com fontes independentes e valide o registro de evidências"
 ```
 
