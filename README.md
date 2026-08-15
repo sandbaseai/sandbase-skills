@@ -1,5 +1,10 @@
 # SandBase Skills
 
+[![GitHub stars](https://img.shields.io/github/stars/sandbaseai/sandbase-skills?style=social)](https://github.com/sandbaseai/sandbase-skills/stargazers)
+[![Release](https://img.shields.io/github/v/release/sandbaseai/sandbase-skills)](https://github.com/sandbaseai/sandbase-skills/releases/latest)
+[![Discussions](https://img.shields.io/github/discussions/sandbaseai/sandbase-skills)](https://github.com/sandbaseai/sandbase-skills/discussions)
+[![License](https://img.shields.io/github/license/sandbaseai/sandbase-skills)](LICENSE)
+
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
 **100 production-ready Agent Skills** for research, social intelligence, marketing, and business workflows. One API key. Every data source. Install into any compatible agent (Claude Code, Codex, Cursor, Gemini CLI) and start working immediately.
