@@ -125,6 +125,14 @@ class SkillpackTests(unittest.TestCase):
         self.assertIn("sandbase_describe_tool", skill_text)
         self.assertIn("validate_report.py", skill_text)
 
+    def test_multi_source_search_bounds_tool_loops(self):
+        skill_text = (ROOT / "research" / "multi-source-search" / "SKILL.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("at most six search calls", skill_text)
+        self.assertIn("Never repeat the same query", skill_text)
+        self.assertIn("budget is exhausted", skill_text)
+
 
 if __name__ == "__main__":
     unittest.main()
