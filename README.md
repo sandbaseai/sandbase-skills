@@ -49,16 +49,25 @@ Replace `codex` with another client ID from the
 
 ### DeepSeek Harness
 
-From the root of a DeepSeek Harness project:
+Install all 88 Skills as a native DSH bundle:
 
 ```bash
-npx --yes github:sandbaseai/sandbase-skills add multi-source-search
+dsh plugin --profile web add github:sandbaseai/sandbase-skills
 dsh web
 ```
 
-The installer copies the complete Skill to `.dsh/skills/multi-source-search`,
-DeepSeek Harness's project-scoped discovery directory. It runs directly from the
-GitHub source, so no npm publication or SandBase account is required.
+The bundle mounts the packaged `marketing/` and `research/` directories through
+DSH's filesystem Skill provider while preserving the default Skill roots.
+
+To copy only the flagship Skill into one project's
+`.dsh/skills/multi-source-search` directory:
+
+```bash
+npx --yes github:sandbaseai/sandbase-skills add multi-source-search
+```
+
+The single-Skill installer and the bundle both run directly from the GitHub source,
+so no npm publication or SandBase account is required.
 
 ### Claude Code marketplace
 

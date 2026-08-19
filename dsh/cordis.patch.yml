@@ -1,0 +1,13 @@
+# SandBase Skills bundle layer for DeepSeek Harness.
+#
+# The bundle keeps the default Skill roots and mounts both directories shipped
+# by this package. Paths are resolved relative to this installed patch file, so
+# source and packaged GitHub installs behave the same way.
+- id: skill-filesystem
+  name: '@deepseek-ai/dsh-skill-filesystem'
+  config:
+    providerName: filesystem
+    includeDefaultRoots: true
+    customSkillDirs:
+      - !!js "process.getBuiltinModule('node:url').fileURLToPath(new URL('../marketing/', baseUrl))"
+      - !!js "process.getBuiltinModule('node:url').fileURLToPath(new URL('../research/', baseUrl))"
