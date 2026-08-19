@@ -21,6 +21,18 @@ npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent co
 # "用多个独立来源核实这个说法，并验证证据账本"
 ```
 
+### 为同一个 Agent 增加 SandBase MCP 工具
+
+Skill 提供可复用的工作流指令；[SandBase CLI](https://github.com/sandbaseai/cli)
+则为 Agent 增加 6 个 MCP 工具，用于发现和运行 2,000+ 模型与 API。连接 25 个
+受支持客户端目标中的任意一个，即可在同一个 Agent 中组合使用 Skill 和 MCP 工具：
+
+```bash
+npx -y https://github.com/sandbaseai/cli/releases/download/v0.1.17/sandbaseai-cli-0.1.17.tgz connect --client codex
+```
+
+其他客户端 ID 可查看[已验证目录](https://github.com/sandbaseai/cli/blob/main/llms-install.md)。
+
 ### DeepSeek Harness
 
 在 DeepSeek Harness 项目根目录运行：

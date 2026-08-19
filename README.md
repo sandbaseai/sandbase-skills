@@ -32,6 +32,19 @@ npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent co
 search and page-reading tools. For specialized social, market, and data-provider Skills,
 set `SANDBASE_API_KEY` in your environment—never in a prompt or committed file.
 
+### Add SandBase MCP tools to the same agent
+
+Skills provide repeatable instructions; [SandBase CLI](https://github.com/sandbaseai/cli)
+adds six MCP tools for discovering and running 2,000+ models and APIs. Connect one of
+the 25 supported client targets, then use these Skills and MCP tools in the same agent:
+
+```bash
+npx -y https://github.com/sandbaseai/cli/releases/download/v0.1.17/sandbaseai-cli-0.1.17.tgz connect --client codex
+```
+
+Replace `codex` with another client ID from the
+[verified catalog](https://github.com/sandbaseai/cli/blob/main/llms-install.md).
+
 ### DeepSeek Harness
 
 From the root of a DeepSeek Harness project:
