@@ -1,0 +1,4 @@
+interface:
+  display_name: "Exa Deep Search"
+  short_description: "Build source-backed research briefs with Exa"
+  default_prompt: "Use $exa-deep-search to investigate this topic with current, citation-ready public sources."
