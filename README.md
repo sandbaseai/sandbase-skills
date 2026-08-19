@@ -24,7 +24,7 @@ A Skill is an instruction file that teaches an AI agent how to do one specific j
 npx skills use sandbaseai/sandbase-skills@multi-source-search
 
 # Or install it into Codex
-npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent codex
+npx skills add sandbaseai/sandbase-skills@multi-source-search --agent codex
 
 # Use it with your agent's existing web/search tools
 # "Fact-check this claim with independent sources and validate the evidence ledger"
@@ -278,12 +278,15 @@ Practical tools for everyday agent tasks.
 
 ```bash
 # Install any Skill by name
-npx skills add sandbaseai/sandbase-skills --skill <skill-name> --agent codex
+npx skills add sandbaseai/sandbase-skills@<skill-name> --agent codex
 
 # Global install (available across all projects)
-npx skills add sandbaseai/sandbase-skills --skill <skill-name> --agent codex --global
+npx skills add sandbaseai/sandbase-skills@<skill-name> --agent codex --global
 
-# Browse available Skills
+# Find indexed SandBase Skills by topic
+npx skills find "research" --owner sandbaseai
+
+# Browse every Skill in the repository
 npx skills add sandbaseai/sandbase-skills --list
 ```
 
