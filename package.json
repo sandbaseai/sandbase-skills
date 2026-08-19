@@ -7,8 +7,14 @@
     "sandbase-dsh-skills": "bin/sandbase-dsh-skills.mjs"
   },
   "exports": "./lib/dsh-installer.mjs",
+  "dsh": {
+    "bundle": {
+      "patch": "./dsh/cordis.patch.yml"
+    }
+  },
   "files": [
     "bin",
+    "dsh",
     "lib",
     "marketing",
     "research",
@@ -16,7 +22,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test tests/install-dsh.test.mjs && python3 -m unittest discover -s tests -v",
+    "test": "node --test tests/*.test.mjs && python3 -m unittest discover -s tests -v",
     "validate": "python3 scripts/skillpack.py validate",
     "package:check": "npm pack --dry-run",
     "marketplace:build": "node scripts/build-claude-marketplace.mjs",
