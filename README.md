@@ -52,6 +52,18 @@ Replace the final path with another linked Skill path from the catalog below. Se
 GitHub's [`gh skill` documentation](https://cli.github.com/manual/gh_skill) for
 supported agents, version pinning, updates, and security guidance.
 
+### Portable Agent Plugin (Copilot CLI and compatible clients)
+
+Install the curated, account-free research plugin directly from this repository:
+
+```bash
+copilot plugin install sandbaseai/sandbase-skills:agent-plugin
+```
+
+The plugin follows the vendor-neutral [Agent Plugins 1.0 specification](https://agent-plugins.org/)
+and currently packages `multi-source-search` with its references and offline evidence-ledger
+validator. Its generated Skill copy is checked against the canonical source in CI.
+
 ### Add SandBase MCP tools to the same agent
 
 Skills provide repeatable instructions; [SandBase CLI](https://github.com/sandbaseai/cli)
