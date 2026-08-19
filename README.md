@@ -34,6 +34,24 @@ npx skills add sandbaseai/sandbase-skills --skill multi-source-search --agent co
 search and page-reading tools. For specialized social, market, and data-provider Skills,
 set `SANDBASE_API_KEY` in your environment—never in a prompt or committed file.
 
+### GitHub CLI (official Agent Skills workflow)
+
+GitHub CLI 2.90.0 or later can preview a Skill before installing it. Because this
+repository groups Skills by domain, pass the exact path shown in the catalog:
+
+```bash
+# Inspect the instructions and bundled files without installing anything
+gh skill preview sandbaseai/sandbase-skills research/multi-source-search
+
+# Install it for Codex at user scope
+gh skill install sandbaseai/sandbase-skills research/multi-source-search \
+  --agent codex --scope user
+```
+
+Replace the final path with another linked Skill path from the catalog below. See
+GitHub's [`gh skill` documentation](https://cli.github.com/manual/gh_skill) for
+supported agents, version pinning, updates, and security guidance.
+
 ### Add SandBase MCP tools to the same agent
 
 Skills provide repeatable instructions; [SandBase CLI](https://github.com/sandbaseai/cli)
