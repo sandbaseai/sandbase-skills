@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sandbase-research",
+  "version": "0.1.0",
+  "description": "Evidence-led multi-source research with bounded search, independent-source validation, and an offline evidence ledger.",
+  "author": {
+    "name": "SandBase AI",
+    "url": "https://github.com/sandbaseai"
+  },
+  "homepage": "https://github.com/sandbaseai/sandbase-skills",
+  "repository": "https://github.com/sandbaseai/sandbase-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-skills",
+    "fact-checking",
+    "multi-source-research",
+    "evidence-led-research"
+  ]
+}
