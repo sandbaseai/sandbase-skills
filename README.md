@@ -13,6 +13,11 @@
 
 **88 installable Agent Skills** for research, social intelligence, marketing, and business workflows. Install into any compatible agent (DeepSeek Harness, Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
 
+Start with `multi-source-search`: it runs with your agent's existing search tools,
+ships a worked evidence-ledger example, and includes an offline validator. If it
+improves a real workflow, [star the repository](https://github.com/sandbaseai/sandbase-skills)
+so other builders can discover it.
+
 ## What are Skills?
 
 A Skill is an instruction file that teaches an AI agent how to do one specific job. Each Skill defines a repeatable workflow, evidence rules, and output format. Portable Skills can use capabilities already provided by the host agent; specialized social, market, and data workflows can add SandBase providers when configured.
