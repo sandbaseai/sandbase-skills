@@ -1,0 +1,4 @@
+interface:
+  display_name: "Twitter Intelligence"
+  short_description: "Analyze public X conversations and trends safely"
+  default_prompt: "Use $twitter-intelligence to analyze this topic on X with source links, dates, and clear limits."
