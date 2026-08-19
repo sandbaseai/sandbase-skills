@@ -1,11 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "sandbase-agent-skills",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Installable SandBase Agent Skills for research, social intelligence, marketing, and business workflows.",
   "metadata": {
     "description": "Installable SandBase Agent Skills for research, social intelligence, marketing, and business workflows.",
-    "version": "0.3.3"
+    "version": "0.3.4"
   },
   "owner": {
     "name": "SandBase AI",
@@ -14,7 +14,7 @@
   "plugins": [
     {
       "name": "sandbase-skills",
-      "version": "0.3.3",
+      "version": "0.3.4",
       "description": "88 Agent Skills for evidence-led research, social intelligence, marketing, and business workflows.",
       "author": {
         "name": "SandBase AI",
