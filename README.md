@@ -134,6 +134,10 @@ The validator rejects unknown or duplicate sources, inflated confidence, unused
 evidence, and high-confidence claims that still have a declared conflict. It runs
 offline and checks internal consistency; it does not claim that a source is true.
 
+For an end-to-end example that runs this research contract inside a governed,
+sandboxed runtime, read
+[Build an Auditable Research Agent](https://blog.sandbase.ai/auditable-research-agent-evidence-ledger-sandbox-replay/).
+
 ## Try a Real Workflow
 
 Install the matching Skill, then give your agent one of these tasks:
