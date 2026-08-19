@@ -257,6 +257,9 @@ User Question → Agent reads SKILL.md → Uses host tools and/or SandBase → V
 
 ## SandBase Ecosystem
 
+- [SandBase CLI](https://github.com/sandbaseai/cli) — connect Codex, Claude Code,
+  Cursor, Gemini CLI, and other MCP clients to 2,000+ AI models with one
+  onboarding command.
 - [SandBase Harness](https://github.com/sandbaseai/sandbase-harness) — run
   persistent agent sessions with sandboxed tools, resumable streams, artifacts,
   cancellation, audit, and replay in your own infrastructure.
