@@ -7,7 +7,7 @@
 [![Discussions](https://img.shields.io/github/discussions/sandbaseai/sandbase-skills)](https://github.com/sandbaseai/sandbase-skills/discussions)
 [![License](https://img.shields.io/github/license/sandbaseai/sandbase-skills)](LICENSE)
 
-**Browse the flagship Skill:** [skills.sh](https://skills.sh/sandbaseai/sandbase-skills/multi-source-search) · [Agent Skill Exchange](https://github.com/agentskillexchange/skills/tree/main/skills/cross-validate-research-with-sandbase-multi-source-search) · [skills.re](https://skills.re/skills/sandbaseai/sandbase-skills/multi-source-search) · [SkillsCat](https://skills.cat/skills/sandbaseai/sandbase-skills/multi-source-search) · [OpenAgentSkill](https://www.openagentskill.com/skills/sandbaseai-sandbase-skills-multi-source-search) · [AgentSkill.sh](https://agentskill.sh/@sandbaseai)
+**Browse the flagship Skill:** [skills.sh](https://skills.sh/sandbaseai/sandbase-skills/multi-source-search) · [Agent Skill Exchange](https://github.com/agentskillexchange/skills/tree/main/skills/cross-validate-research-with-sandbase-multi-source-search) · [askill](https://askill.sh/skills/gh/sandbaseai/sandbase-skills/@multi-source-search) · [skills.re](https://skills.re/skills/sandbaseai/sandbase-skills/multi-source-search) · [SkillsCat](https://skills.cat/skills/sandbaseai/sandbase-skills/multi-source-search) · [OpenAgentSkill](https://www.openagentskill.com/skills/sandbaseai-sandbase-skills-multi-source-search) · [AgentSkill.sh](https://agentskill.sh/@sandbaseai)
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
