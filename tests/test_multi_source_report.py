@@ -86,6 +86,26 @@ class MultiSourceReportTests(unittest.TestCase):
         result = self.run_report(payload)
         self.assertIn("duplicate source URL", result.stderr)
 
+    def test_rejects_duplicate_url_identities(self):
+        variants = [
+            "https://EXAMPLE.org:443/a#results",
+            "https://example.org/a?utm_source=newsletter",
+            "https://example.org/a?gclid=campaign",
+        ]
+        for variant in variants:
+            with self.subTest(variant=variant):
+                payload = copy.deepcopy(report())
+                payload["sources"][2]["url"] = variant
+                result = self.run_report(payload)
+                self.assertEqual(result.returncode, 1)
+                self.assertIn("duplicate source URL", result.stderr)
+
+    def test_preserves_meaningful_query_parameters(self):
+        payload = copy.deepcopy(report())
+        payload["sources"][2]["url"] = "https://example.org/a?version=2"
+        result = self.run_report(payload)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_rejects_high_confidence_conflict(self):
         payload = report()
         payload["claims"][0]["conflict"] = True

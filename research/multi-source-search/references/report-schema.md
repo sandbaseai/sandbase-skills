@@ -36,10 +36,14 @@ Rules:
 - Record the actual capability names used, including native host tools. Record at least
   two unique capabilities; repeated queries to one capability still count as one. List
   unavailable capabilities separately.
-- Source IDs and URLs must be unique. Source type is `primary`, `secondary`, or `aggregator`.
+- Source IDs and URL identities must be unique. The offline validator treats host and
+  scheme case, default ports, fragments, and common tracking parameters (`utm_*`,
+  `gclid`, `fbclid`, `mc_cid`, `mc_eid`) as non-distinguishing while preserving
+  meaningful query parameters. Source type is `primary`, `secondary`, or `aggregator`.
 - Claims reference existing source IDs and declare `kind` as `sourced` or `inference`.
 - High confidence requires at least three independent sources; medium requires two; low requires one.
 - A conflicting claim cannot be high confidence.
 - Every source must support at least one claim, and every evidence gap must be explicit.
 
-The validator does not fetch URLs, judge credibility, detect hidden shared sources, or prove claims true.
+The validator does not fetch URLs, follow redirects, judge credibility, detect hidden
+shared sources, or prove claims true.

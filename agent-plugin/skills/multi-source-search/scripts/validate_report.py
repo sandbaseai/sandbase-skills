@@ -4,11 +4,13 @@
 import json
 import sys
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 
 SOURCE_TYPES = {"primary", "secondary", "aggregator"}
 CLAIM_KINDS = {"sourced", "inference"}
 CONFIDENCE_MINIMUMS = {"low": 1, "medium": 2, "high": 3}
+TRACKING_QUERY_KEYS = {"fbclid", "gclid", "mc_cid", "mc_eid"}
 
 
 def nonempty(value):
@@ -20,6 +22,31 @@ def valid_url(value):
         return False
     authority = value.split("://", 1)[1].split("/", 1)[0]
     return bool(authority) and "." in authority and not any(char.isspace() for char in authority)
+
+
+def canonical_url_identity(value):
+    """Return a conservative identity key without fetching or resolving the URL."""
+    parsed = urlsplit(value)
+    hostname = (parsed.hostname or "").lower()
+    try:
+        port = parsed.port
+    except ValueError:
+        return value
+    default_port = (parsed.scheme.lower(), port) in {("http", 80), ("https", 443)}
+    host = f"[{hostname}]" if ":" in hostname else hostname
+    if port is not None and not default_port:
+        host = f"{host}:{port}"
+    if parsed.username is not None:
+        credentials = parsed.username
+        if parsed.password is not None:
+            credentials += f":{parsed.password}"
+        host = f"{credentials}@{host}"
+    query = urlencode([
+        (key, item)
+        for key, item in parse_qsl(parsed.query, keep_blank_values=True)
+        if not key.lower().startswith("utm_") and key.lower() not in TRACKING_QUERY_KEYS
+    ], doseq=True)
+    return urlunsplit((parsed.scheme.lower(), host, parsed.path or "/", query, ""))
 
 
 def validate(report):
@@ -61,10 +88,10 @@ def validate(report):
             source_ids.add(source_id)
         if not valid_url(url):
             errors.append(f"{label}.url must be an HTTP(S) URL")
-        elif url in source_urls:
+        elif canonical_url_identity(url) in source_urls:
             errors.append(f"duplicate source URL: {url}")
         else:
-            source_urls.add(url)
+            source_urls.add(canonical_url_identity(url))
         if not nonempty(source.get("publisher")):
             errors.append(f"{label}.publisher must be a non-empty string")
         if source.get("source_type") not in SOURCE_TYPES:
@@ -148,4 +175,3 @@ def main(argv=None):
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
