@@ -4,6 +4,8 @@
 
 **88 installierbare Agent Skills** — Für Recherche, Social Intelligence, Marketing und Business-Workflows. Der zentrale Recherche-Skill nutzt die vorhandenen Suchwerkzeuge des Agents und benötigt kein SandBase-Konto; SandBase ist nur für zusätzliche spezialisierte Datenquellen erforderlich.
 
+![Workflow für die Suche aus mehreren Quellen: Suchfunktionen, Quellenverfolgung, Evidenzregister und Offline-Validierung](assets/multi-source-search-workflow.svg)
+
 ## Schnellstart
 
 ```bash

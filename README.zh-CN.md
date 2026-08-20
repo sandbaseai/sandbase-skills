@@ -4,6 +4,8 @@
 
 **88 个可安装 Agent Skill** — 覆盖调研、社交媒体情报、营销和商业工作流。旗舰调研 Skill 可直接使用 Agent 自带的搜索工具，无需 SandBase 账号；需要更多专业数据源时再连接 SandBase。
 
+![多源搜索工作流：搜索能力、来源追踪、证据账本和离线验证](assets/multi-source-search-workflow.svg)
+
 ## 什么是 Skill？
 
 Skill 是一个指令文件，教会 AI Agent 如何完成特定工作。每个 Skill 定义可复用的工作流、证据规则和输出格式。通用 Skill 可使用 Agent 已有能力，专业社交、市场和数据工作流则可按需接入 SandBase。
