@@ -1,5 +1,8 @@
 # SandBase Skills
 
+[![GitHub Stars](https://img.shields.io/github/stars/sandbaseai/sandbase-skills?style=social)](https://github.com/sandbaseai/sandbase-skills/stargazers)
+[![skills.sh 설치 수](https://skills.sh/b/sandbaseai/sandbase-skills)](https://skills.sh/sandbaseai/sandbase-skills)
+
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | 한국어 | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
 **설치 가능한 Agent Skill 88개** — 리서치, 소셜 인텔리전스, 마케팅, 비즈니스 워크플로우용. 대표 리서치 Skill은 Agent가 제공하는 검색 도구로 바로 실행되며 SandBase 계정이 필요하지 않습니다. 전문 데이터 소스가 필요할 때만 SandBase를 추가할 수 있습니다.

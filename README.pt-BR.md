@@ -1,5 +1,8 @@
 # SandBase Skills
 
+[![Estrelas no GitHub](https://img.shields.io/github/stars/sandbaseai/sandbase-skills?style=social)](https://github.com/sandbaseai/sandbase-skills/stargazers)
+[![Instalações no skills.sh](https://skills.sh/b/sandbaseai/sandbase-skills)](https://skills.sh/sandbaseai/sandbase-skills)
+
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | Português
 
 **88 Skills de Agent instaláveis** — Para pesquisa, inteligência social, marketing e workflows de negócios. O principal Skill de pesquisa funciona com as ferramentas de busca do agent e não exige uma conta SandBase; conecte o SandBase apenas quando precisar de fontes especializadas.
