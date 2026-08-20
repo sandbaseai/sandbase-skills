@@ -18,6 +18,8 @@ ships a worked evidence-ledger example, and includes an offline validator. If it
 improves a real workflow, [star the repository](https://github.com/sandbaseai/sandbase-skills)
 so other builders can discover it.
 
+![Multi-source search workflow: search capabilities, source-origin tracing, evidence ledger, and offline validation](assets/multi-source-search-workflow.svg)
+
 ## What are Skills?
 
 A Skill is an instruction file that teaches an AI agent how to do one specific job. Each Skill defines a repeatable workflow, evidence rules, and output format. Portable Skills can use capabilities already provided by the host agent; specialized social, market, and data workflows can add SandBase providers when configured.
