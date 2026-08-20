@@ -9,6 +9,8 @@
 
 **Browse the flagship Skill:** [skills.sh](https://skills.sh/sandbaseai/sandbase-skills/multi-source-search) · [Agentic Awesome Skills](https://github.com/sickn33/agentic-awesome-skills/tree/main/skills/multi-source-search) · [Agent Skill Exchange](https://github.com/agentskillexchange/skills/tree/main/skills/cross-validate-research-with-sandbase-multi-source-search) · [askill](https://askill.sh/skills/gh/sandbaseai/sandbase-skills/@multi-source-search) · [Awesome Skills](https://www.awesomeskills.dev/en/skill/sandbase-skills-multi-source-search) · [skills.re](https://skills.re/skills/sandbaseai/sandbase-skills/multi-source-search) · [SkillsCat](https://skills.cat/skills/sandbaseai/sandbase-skills/multi-source-search) · [OpenAgentSkill](https://www.openagentskill.com/skills/sandbaseai-sandbase-skills-multi-source-search) · [AgentSkill.sh](https://agentskill.sh/@sandbaseai)
 
+Have a repeatable workflow that is missing? [Request a Skill](https://github.com/sandbaseai/sandbase-skills/issues/new?template=skill_request.yml) with a public example and acceptance criteria.
+
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
 **88 installable Agent Skills** for research, social intelligence, marketing, and business workflows. Install into any compatible agent (DeepSeek Harness, Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.

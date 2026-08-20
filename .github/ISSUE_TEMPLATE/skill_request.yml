@@ -1,0 +1,72 @@
+name: Request a Skill
+description: Propose a reusable Agent Skill for a concrete workflow
+title: "skill: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the job, evidence, and validation—not only a tool or provider. Please remove secrets, private data, and customer information.
+
+  - type: textarea
+    id: job
+    attributes:
+      label: Job to be done
+      description: What should an agent be able to accomplish, and for whom?
+      placeholder: When I ask an agent to ..., it should ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output
+      description: Describe the artifact, schema, report, or decision the Skill should produce.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and validation
+      description: What sources, checks, or acceptance criteria would make the result trustworthy?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Primary agent
+      options:
+        - Any Agent Skills-compatible client
+        - OpenAI Codex
+        - Claude Code
+        - GitHub Copilot CLI
+        - Cursor
+        - Gemini CLI
+        - DeepSeek Harness
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Available capabilities
+      description: List host tools, MCP servers, APIs, local files, or commands the workflow may use. Say "host tools only" if no provider should be required.
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Example prompt or fixture
+      description: Provide a public, non-sensitive example that maintainers can use to test the Skill.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched the catalog and existing requests for a matching Skill.
+          required: true
+        - label: This request contains no secrets, personal data, or confidential material.
+          required: true
