@@ -1,6 +1,7 @@
 ---
 name: multi-source-search
 description: Portable multi-source research with cross-source validation and an offline evidence ledger. Use for fact-checking, comprehensive research, or any question requiring multiple independent perspectives; work with the host agent's search tools and optionally add SandBase Tavily, Exa, Scholar, and Cloudsway coverage.
+compatibility: Requires an Agent Skills-compatible host with web search and page-reading tools plus network access for live research. The optional offline evidence-ledger validator requires Python 3.9+. No SandBase account is required when the host provides search.
 ---
 
 # Multi-Source Search

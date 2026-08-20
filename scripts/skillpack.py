@@ -59,6 +59,9 @@ def validate_skill(entry: dict) -> list[str]:
         errors.append(f"{name}: frontmatter name must equal catalog name")
     elif not fields.get("description"):
         errors.append(f"{name}: frontmatter description is required")
+    compatibility = fields.get("compatibility") if fields else None
+    if compatibility is not None and not 1 <= len(compatibility) <= 500:
+        errors.append(f"{name}: frontmatter compatibility must be 1-500 characters")
     metadata_path = entry.get("metadata_path")
     if not isinstance(metadata_path, str):
         errors.append(f"{name}: metadata_path is required")
