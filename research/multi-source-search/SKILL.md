@@ -91,7 +91,11 @@ Read [the report schema](references/report-schema.md), save the result as JSON, 
 python3 scripts/validate_report.py research-report.json
 ```
 
-The validator runs offline. It checks structure, URL shape, unique IDs, source references, provider diversity, and whether confidence exceeds the declared independent-source count. Validation establishes internal consistency, not source credibility or truth.
+The validator runs offline. It checks structure, canonical URL identity, unique IDs,
+source references, provider diversity, and whether confidence exceeds the declared
+independent-source count. It strips fragments and common tracking parameters without
+following redirects or making network requests. Validation establishes internal
+consistency, not source credibility or truth.
 
 ## Output
 
