@@ -331,6 +331,9 @@ User Question → Agent reads SKILL.md → Uses host tools and/or SandBase → V
 - [SandBase Harness](https://github.com/sandbaseai/sandbase-harness) — run
   persistent agent sessions with sandboxed tools, resumable streams, artifacts,
   cancellation, audit, and replay in your own infrastructure.
+- [DSH Plugin Store](https://github.com/sandbaseai/dsh-plugin-store) — discover
+  runtime-verified DeepSeek Harness plugins, install them into a local Web
+  profile, and inspect active loader state from Settings.
 
 ## Pricing
 
