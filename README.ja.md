@@ -4,6 +4,8 @@
 
 **88個のインストール可能なAgent Skill** — リサーチ、ソーシャルインテリジェンス、マーケティング、ビジネスワークフロー向け。主力のリサーチSkillはAgent標準の検索ツールで動作し、SandBaseアカウントは不要です。専門データソースが必要な場合のみSandBaseを追加できます。
 
+まず `multi-source-search` を試してください。Agent 既存の検索ツールを使い、証拠台帳の実例とオフライン検証ツールも含まれています。実際のワークフローに役立った場合は、他の開発者も見つけられるよう[リポジトリに Star](https://github.com/sandbaseai/sandbase-skills)をお願いします。
+
 ![マルチソース検索ワークフロー：検索機能、出典追跡、エビデンス台帳、オフライン検証](assets/multi-source-search-workflow.svg)
 
 ## クイックスタート
