@@ -69,18 +69,15 @@ class ReadmeInventoryTests(unittest.TestCase):
                 self.assertIn(command, content)
                 self.assertIn(destination, content)
 
-    def test_skills_sh_badge_links_to_the_indexed_flagship_skill(self) -> None:
+    def test_skills_sh_badge_shows_install_count_and_links_to_repository(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn(
+            "[![skills.sh installs](https://skills.sh/b/sandbaseai/sandbase-skills)]"
+            "(https://skills.sh/sandbaseai/sandbase-skills)",
+            readme,
+        )
+        self.assertIn(
             "](https://skills.sh/sandbaseai/sandbase-skills/multi-source-search)",
-            readme,
-        )
-        self.assertNotIn(
-            "https://skills.sh/b/sandbaseai/sandbase-skills",
-            readme,
-        )
-        self.assertNotIn(
-            "](https://skills.sh/sandbaseai/sandbase-skills)\n",
             readme,
         )
 

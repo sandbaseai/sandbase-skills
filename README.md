@@ -1,7 +1,7 @@
 # SandBase Skills
 
 [![GitHub stars](https://img.shields.io/github/stars/sandbaseai/sandbase-skills?style=social)](https://github.com/sandbaseai/sandbase-skills/stargazers)
-[![skills.sh flagship](https://img.shields.io/badge/skills.sh-flagship%20indexed-000000)](https://skills.sh/sandbaseai/sandbase-skills/multi-source-search)
+[![skills.sh installs](https://skills.sh/b/sandbaseai/sandbase-skills)](https://skills.sh/sandbaseai/sandbase-skills)
 [![AgentSkill.sh directory](https://img.shields.io/badge/AgentSkill.sh-security--scanned_directory-0f766e)](https://agentskill.sh/@sandbaseai)
 [![Release](https://img.shields.io/github/v/release/sandbaseai/sandbase-skills)](https://github.com/sandbaseai/sandbase-skills/releases/latest)
 [![Discussions](https://img.shields.io/github/discussions/sandbaseai/sandbase-skills)](https://github.com/sandbaseai/sandbase-skills/discussions)
