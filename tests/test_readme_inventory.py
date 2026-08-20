@@ -81,6 +81,15 @@ class ReadmeInventoryTests(unittest.TestCase):
             readme,
         )
 
+    def test_every_localized_readme_shows_star_and_install_signals(self) -> None:
+        stars = "https://img.shields.io/github/stars/sandbaseai/sandbase-skills?style=social"
+        installs = "https://skills.sh/b/sandbaseai/sandbase-skills"
+        for name in self.LOCALIZED_READMES:
+            with self.subTest(readme=name):
+                content = (ROOT / name).read_text(encoding="utf-8")
+                self.assertIn(stars, content)
+                self.assertIn(installs, content)
+
 
 if __name__ == "__main__":
     unittest.main()
