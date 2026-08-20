@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Multi-source search workflow</title>
+  <desc id="desc">Host and optional SandBase search tools feed source-origin tracing, an evidence ledger, and an offline validator before a source-linked answer is returned.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#11152b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#36d7c4"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" rx="28" fill="url(#background)"/>
+  <text x="60" y="62" fill="#f7f9ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">Evidence-led research, with a checkable stopping point</text>
+  <text x="60" y="94" fill="#9eabc2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17">Portable across Codex, Claude Code, Copilot, Cursor, Gemini CLI, and DeepSeek Harness</text>
+
+  <path d="M267 211 H322 M547 211 H602 M827 211 H882" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M310 201 L322 211 L310 221 M590 201 L602 211 L590 221 M870 201 L882 211 L870 221" fill="none" stroke="#67e8d4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <rect x="42" y="139" width="225" height="144" rx="18" fill="#111c30" stroke="#2d4262"/>
+    <circle cx="78" cy="176" r="15" fill="#36d7c4" opacity=".18"/>
+    <path d="M71 176h14M78 169v14" stroke="#67e8d4" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="104" y="184" fill="#f7f9ff" font-size="20" font-weight="700">Search capabilities</text>
+    <text x="66" y="226" fill="#aab6ca" font-size="16">Host search + optional</text>
+    <text x="66" y="250" fill="#aab6ca" font-size="16">Tavily, Exa, Scholar</text>
+
+    <rect x="322" y="139" width="225" height="144" rx="18" fill="#111c30" stroke="#2d4262"/>
+    <circle cx="358" cy="176" r="15" fill="#36d7c4" opacity=".18"/>
+    <path d="M350 181l8-10 8 10M358 171v14" fill="none" stroke="#67e8d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="384" y="184" fill="#f7f9ff" font-size="20" font-weight="700">Trace origins</text>
+    <text x="346" y="226" fill="#aab6ca" font-size="16">Prefer primary sources</text>
+    <text x="346" y="250" fill="#aab6ca" font-size="16">Collapse circular reporting</text>
+
+    <rect x="602" y="139" width="225" height="144" rx="18" fill="#111c30" stroke="#2d4262"/>
+    <circle cx="638" cy="176" r="15" fill="#8b5cf6" opacity=".2"/>
+    <path d="M631 169h14v14h-14zM634 173h8M634 178h6" fill="none" stroke="#bda5ff" stroke-width="2" stroke-linecap="round"/>
+    <text x="664" y="184" fill="#f7f9ff" font-size="20" font-weight="700">Evidence ledger</text>
+    <text x="626" y="226" fill="#aab6ca" font-size="16">Claims, sources, conflicts</text>
+    <text x="626" y="250" fill="#aab6ca" font-size="16">Confidence + research gaps</text>
+
+    <rect x="882" y="139" width="276" height="144" rx="18" fill="#151a36" stroke="#7656d8"/>
+    <circle cx="918" cy="176" r="15" fill="#8b5cf6" opacity=".2"/>
+    <path d="M910 176l6 6 11-13" fill="none" stroke="#bda5ff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="944" y="184" fill="#f7f9ff" font-size="20" font-weight="700">Validate offline</text>
+    <text x="906" y="226" fill="#aab6ca" font-size="16">Reject unsupported confidence</text>
+    <text x="906" y="250" fill="#aab6ca" font-size="16">Return a source-linked answer</text>
+  </g>
+
+  <rect x="42" y="314" width="1116" height="3" rx="1.5" fill="url(#accent)" opacity=".75"/>
+</svg>
