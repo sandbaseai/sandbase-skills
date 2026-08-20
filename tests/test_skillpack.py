@@ -120,6 +120,16 @@ class SkillpackTests(unittest.TestCase):
         skill_text = (ROOT / "research" / "multi-source-search" / "SKILL.md").read_text(
             encoding="utf-8"
         )
+        compatibility = next(
+            line.removeprefix("compatibility: ")
+            for line in skill_text.splitlines()
+            if line.startswith("compatibility: ")
+        )
+        self.assertLessEqual(len(compatibility), 500)
+        self.assertIn("Agent Skills-compatible host", compatibility)
+        self.assertIn("network access", compatibility)
+        self.assertIn("Python 3.9+", compatibility)
+        self.assertIn("No SandBase account is required", compatibility)
         self.assertIn("Do not stop merely because SandBase is unavailable", skill_text)
         self.assertIn("host agent's native web search", skill_text)
         self.assertIn("sandbase_describe_tool", skill_text)
