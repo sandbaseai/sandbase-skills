@@ -4,6 +4,8 @@
 
 **88 Skills de Agent instaláveis** — Para pesquisa, inteligência social, marketing e workflows de negócios. O principal Skill de pesquisa funciona com as ferramentas de busca do agent e não exige uma conta SandBase; conecte o SandBase apenas quando precisar de fontes especializadas.
 
+Comece com `multi-source-search`: ele usa as ferramentas de busca existentes do agent e inclui um exemplo de registro de evidências e um validador offline. Se ele melhorar um workflow real, [dê uma estrela ao repositório](https://github.com/sandbaseai/sandbase-skills) para ajudar outros desenvolvedores a encontrá-lo.
+
 ![Fluxo de pesquisa em múltiplas fontes: recursos de busca, rastreamento de origem, registro de evidências e validação offline](assets/multi-source-search-workflow.svg)
 
 ## Início Rápido

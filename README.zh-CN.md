@@ -4,6 +4,8 @@
 
 **88 个可安装 Agent Skill** — 覆盖调研、社交媒体情报、营销和商业工作流。旗舰调研 Skill 可直接使用 Agent 自带的搜索工具，无需 SandBase 账号；需要更多专业数据源时再连接 SandBase。
 
+从 `multi-source-search` 开始：它使用 Agent 现有的搜索工具，附带证据账本示例和离线验证器。如果它改善了你的实际工作流，请[给仓库加 Star](https://github.com/sandbaseai/sandbase-skills)，帮助其他开发者发现它。
+
 ![多源搜索工作流：搜索能力、来源追踪、证据账本和离线验证](assets/multi-source-search-workflow.svg)
 
 ## 什么是 Skill？
