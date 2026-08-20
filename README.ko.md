@@ -4,6 +4,8 @@
 
 **설치 가능한 Agent Skill 88개** — 리서치, 소셜 인텔리전스, 마케팅, 비즈니스 워크플로우용. 대표 리서치 Skill은 Agent가 제공하는 검색 도구로 바로 실행되며 SandBase 계정이 필요하지 않습니다. 전문 데이터 소스가 필요할 때만 SandBase를 추가할 수 있습니다.
 
+![다중 소스 검색 워크플로: 검색 기능, 출처 추적, 증거 원장, 오프라인 검증](assets/multi-source-search-workflow.svg)
+
 ## 빠른 시작
 
 ```bash
