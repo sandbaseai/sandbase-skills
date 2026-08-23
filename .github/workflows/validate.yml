@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '20'
       - name: Install dependencies
-        run: npm ci
+        run: npm install --ignore-scripts --no-audit --no-fund
       - name: Validate skill catalog and contracts
         run: npm run validate
       - name: Run JavaScript and Python tests
