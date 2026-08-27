@@ -91,6 +91,8 @@ npx -y https://github.com/sandbaseai/cli/releases/download/v0.1.17/sandbaseai-cl
 
 Replace `codex` with another client ID from the
 [verified catalog](https://github.com/sandbaseai/cli/blob/main/llms-install.md).
+If the bridge is useful in your workflow, [star SandBase CLI](https://github.com/sandbaseai/cli/stargazers)
+so other agent users can discover it.
 
 ### DeepSeek Harness
 
@@ -334,7 +336,7 @@ User Question → Agent reads SKILL.md → Uses host tools and/or SandBase → V
 ## SandBase Ecosystem
 
 - [SandBase CLI](https://github.com/sandbaseai/cli) — connect Codex, Claude Code,
-  Cursor, Gemini CLI, and other MCP clients to 2,000+ AI models with one
+  Cursor, Gemini CLI, and other MCP clients to 2,000+ AI models and APIs with one
   onboarding command.
 - [SandBase Harness](https://github.com/sandbaseai/sandbase-harness) — run
   persistent agent sessions with sandboxed tools, resumable streams, artifacts,
