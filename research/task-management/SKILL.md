@@ -1,27 +1,33 @@
 ---
 name: task-management
-description: "Manage a shared TASKS.md file for project tasks, commitments, waiting items, and completed work. Use when the user asks to add, review, update, prioritize, or complete repository-local tasks."
+description: Simple task management using a shared TASKS.md file. Reference this when the user asks about their tasks, wants to add/complete tasks, or needs help tracking commitments.
 license: Apache-2.0
 metadata:
+  user-invocable: false
   source: "https://github.com/anthropics/knowledge-work-plugins/tree/77961df00a4626bc3b83850064289decd5a3b977/productivity/skills/task-management"
-  modified: "Adapted for host-neutral file operations and non-destructive retention."
+  modified: "Added provenance, removed the unavailable Claude dashboard dependency, and made file creation and cleanup non-destructive."
 ---
 
 # Task Management
 
-Use a `TASKS.md` file as a small, human-editable task tracker. Work with the file directly using the host's ordinary file tools; no dashboard, plugin, or external service is required.
+Tasks are tracked in a simple `TASKS.md` file that both you and the user can edit.
 
-## Scope and authorization
+## File Location
 
-- Use `TASKS.md` in the current project unless the user names another file.
-- Read-only questions do not authorize creating or editing the file. If it is missing, report that and offer the template.
-- A request to add, update, move, or complete a task authorizes only that requested edit.
-- Preserve user-authored sections, comments, ordering, and fields that this Skill does not understand.
-- Never delete old completed tasks automatically. Archive or remove them only when the user asks.
+**Always use `TASKS.md` in the current working directory.**
 
-## Default format
+- If it exists, read it and make only user-requested edits
+- If it doesn't exist, offer the template below; create it when the user asks to add or manage tasks
 
-Create this structure only when an edit is requested and no task file exists:
+## Optional Dashboard
+
+If the project already provides a task dashboard, it may be used with the same
+`TASKS.md` file. Do not create or copy dashboard assets unless the user requests
+that separately and a valid source asset is available.
+
+## Format & Template
+
+When creating a new TASKS.md, use this exact template (without example tasks):
 
 ```markdown
 # Tasks
@@ -35,41 +41,47 @@ Create this structure only when an edit is requested and no task file exists:
 ## Done
 ```
 
-Use compact task records:
+Task format:
+- `- [ ] **Task title** - context, for whom, due date`
+- Sub-bullets for additional details
+- Completed: `- [x] ~~Task~~ (date)`
 
-```markdown
-- [ ] **Task title** — context; owner: Name; due: YYYY-MM-DD
-  - Optional detail or dependency
-```
+## How to Interact
 
-Omit fields the user did not provide. Do not invent owners or deadlines. Mark completed tasks as:
+**When user asks "what's on my plate" / "my tasks":**
+- Read TASKS.md
+- Summarize Active and Waiting On sections
+- Highlight anything overdue or urgent
 
-```markdown
-- [x] ~~Task title~~ — completed: YYYY-MM-DD
-```
+**When user says "add a task" / "remind me to":**
+- Add to Active section with `- [ ] **Task**` format
+- Include context if provided (who it's for, due date)
 
-## Workflow
+**When user says "done with X" / "finished X":**
+- Find the task
+- Change `[ ]` to `[x]`
+- Add strikethrough: `~~task~~`
+- Add completion date
+- Move to Done section
 
-1. Read the current file before answering or editing.
-2. Identify the requested task unambiguously. If multiple tasks match a completion or move request, ask which one.
-3. Apply the smallest possible change. Keep valid custom formatting when practical.
-4. Re-read the changed section and confirm that the task appears exactly once.
-5. Summarize what changed and surface overdue or blocked work only when relevant.
+**When user asks "what am I waiting on":**
+- Read the Waiting On section
+- Note how long each item has been waiting
 
-For a status request, summarize `Active` and `Waiting On` first, call out explicit deadlines, and distinguish overdue dates from dates that are merely approaching.
+## Conventions
 
-When extracting tasks from a meeting or conversation, propose a list before writing it. Add the tasks only after the user approves or explicitly requests the addition.
+- **Bold** the task title for scannability
+- Include "for [person]" when it's a commitment to someone
+- Include "due [date]" for deadlines
+- Include "since [date]" for waiting items
+- Sub-bullets for additional context
+- Keep completed items for at least ~1 week; clear or archive them only when the user requests it
 
-## Quality gate
+## Extracting Tasks
 
-- Every added task has a clear action, not a vague topic.
-- Dates use ISO `YYYY-MM-DD` when an exact date is known.
-- Completed tasks are not duplicated in `Active`.
-- Unknown details remain omitted or explicitly unknown rather than guessed.
-- No unrelated file content changed.
+When summarizing meetings or conversations, offer to add extracted tasks:
+- Commitments the user made ("I'll send that over")
+- Action items assigned to them
+- Follow-ups mentioned
 
-## Failure handling
-
-- If the task file cannot be parsed safely, show the ambiguous portion and ask before restructuring it.
-- If an edit conflicts with newer file content, re-read and reapply only the intended change.
-- If the user requests reminders or external task synchronization, explain that this Skill manages the file only and use another available capability only with the user's authorization.
+Ask before adding - don't auto-add without confirmation.

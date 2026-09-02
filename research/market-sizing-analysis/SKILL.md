@@ -1,108 +1,71 @@
 ---
 name: market-sizing-analysis
-description: "Estimate TAM, SAM, and SOM with top-down, bottom-up, and value-based methods. Use for market opportunity analysis, business cases, startup planning, or investor-ready market sizing."
+description: Calculate TAM/SAM/SOM for market opportunities using top-down, bottom-up, and value theory methodologies. Use this skill when sizing markets, estimating addressable revenue, validating market opportunity for a new venture, or building investor-ready market analysis for a startup pitch or business plan.
 license: MIT
 metadata:
+  version: 1.0.0
   source: "https://github.com/wshobson/agents/tree/a30778f8c4e6b0a87567941b7cca4f534bf642b6/plugins/startup-business-analyst/skills/market-sizing-analysis"
-  modified: "Condensed, made evidence-first, and removed universal venture-size assumptions."
+  modified: "Added provenance and evidence safeguards while retaining the upstream methods, references, and worked example."
 ---
 
 # Market Sizing Analysis
 
-Produce a transparent range for Total Addressable Market (TAM), Serviceable Available Market (SAM), and Serviceable Obtainable Market (SOM). Show the calculation, evidence, assumptions, date, geography, and uncertainty; a precise number without those elements is not a defensible estimate.
+Comprehensive market sizing methodologies for calculating Total Addressable Market (TAM), Serviceable Available Market (SAM), and Serviceable Obtainable Market (SOM) for startup opportunities.
 
-## Frame the market
+## Overview
 
-Define before calculating:
+Market sizing provides the foundation for startup strategy, fundraising, and business planning. Calculate market opportunity using three complementary methodologies: top-down (industry reports), bottom-up (customer segment calculations), and value theory (willingness to pay).
 
-- customer or user and the problem being solved;
-- product category and revenue model;
-- geography, industry, company-size, and eligibility constraints;
-- annual versus cumulative value and base currency;
-- current year and forecast horizon;
-- whether TAM describes revenue, transaction value, spend, users, or another unit.
+Treat percentages, thresholds, named sources, and numerical results in the supporting references and worked example as illustrations, not verified defaults. For a real analysis, cite current sources with date, geography, units, and assumptions; do not invent inaccessible data.
 
-Avoid category definitions so broad that unrelated spend enters the estimate. Keep different currencies, years, geographies, and market definitions separate until explicitly normalized.
+## Core Concepts
 
-## Choose methods
+### The Three-Tier Market Framework
 
-Use at least two methods when reliable inputs exist.
+**TAM (Total Addressable Market)**
 
-### Bottom-up
+- Total revenue opportunity if achieving 100% market share
+- Defines the universe of potential customers
+- Used for long-term vision and market validation
+- Example: All email marketing software revenue globally
 
-Prefer for a specific reachable customer set:
+**SAM (Serviceable Available Market)**
 
-```text
-TAM = sum(segment customer count × annual revenue per customer)
-SAM = sum(serviceable segment count × serviceable annual revenue per customer)
-SOM = reachable customers × expected annual revenue per customer
-```
+- Portion of TAM targetable with current product/service
+- Accounts for geographic, segment, or capability constraints
+- Represents realistic addressable opportunity
+- Example: AI-powered email marketing for e-commerce in North America
 
-Derive reachable customers from sales capacity, acquisition economics, channel access, adoption, retention, and time—not from an unexplained percentage of SAM.
+**SOM (Serviceable Obtainable Market)**
 
-### Top-down
+- Realistic market share achievable in 3-5 years
+- Accounts for competition, resources, and market dynamics
+- Used for financial projections and fundraising
+- Example: 2-5% of SAM based on competitive landscape
 
-Use a reputable category total and apply non-overlapping filters:
+### When to Use Each Methodology
 
-```text
-SAM = category total × geographic share × eligible-segment share × product-fit share
-```
+**Top-Down Analysis**
 
-Document the source definition for every factor. Do not multiply correlated filters as if they were independent without explaining the limitation.
+- Use when established market research exists
+- Best for mature, well-defined markets
+- Validates market existence and growth
+- Starts with industry reports and narrows down
 
-### Value-based
+**Bottom-Up Analysis**
 
-Use when the category is new or existing spend understates value:
+- Use when targeting specific customer segments
+- Best for new or niche markets
+- Most credible for investors
+- Builds from customer data and pricing
 
-```text
-annual value/customer = avoidable cost or gain × realistically captured share
-annual revenue/customer = annual value/customer × willingness-to-pay share
-TAM = eligible customers × annual revenue/customer
-```
+**Value Theory**
 
-Treat willingness to pay as a hypothesis unless supported by pricing research or observed transactions.
+- Use when creating new market categories
+- Best for disruptive innovations
+- Estimates based on value creation
+- Calculates willingness to pay for problem solution
 
-## Evidence workflow
+## Detailed patterns and worked examples
 
-1. Reuse user-supplied customer, CRM, pricing, and conversion data first.
-2. Use authorized host search or research tools for external counts and category benchmarks when available.
-3. Prefer primary sources: official statistics, filings, company disclosures, and original research methodology.
-4. Record publisher, title, publication date, data year, URL, geography, unit, and any transformation.
-5. Normalize currency and inflation only when needed, showing the rate and date.
-6. Triangulate methods and investigate material differences instead of averaging them automatically.
-
-## Scenarios and sensitivity
-
-Use conservative, base, and upside scenarios for uncertain inputs. Identify which assumptions drive the result most. For each scenario show customer count, price or value, serviceability, capture logic, TAM, SAM, SOM, and horizon.
-
-Do not use universal rules such as “SOM is always 2–5%” or “a venture market must exceed a fixed size.” Benchmarks can be context, not substitutes for company-specific reachability.
-
-## Output
-
-```markdown
-## Market definition
-## Executive range
-| Metric | Conservative | Base | Upside | Unit/year |
-## Bottom-up calculation
-## Top-down or value-based cross-check
-## SAM filters and SOM reachability model
-## Sensitivity and scenario drivers
-## Evidence ledger
-| Input | Value | Year/market | Source | Confidence | Transformation |
-## Assumptions, gaps, and next validations
-```
-
-## Quality gate
-
-- TAM, SAM, and SOM use the same market definition and annualization basis.
-- Every external numeric input has a traceable source and date.
-- Calculations reconcile and units are visible.
-- SOM is connected to operational capacity and a stated time horizon.
-- Ranges reflect uncertainty; unsupported precision is removed.
-- Conflicting estimates and weak evidence are disclosed.
-
-## Failure handling
-
-- If source data is unavailable, provide the formula and missing-input checklist rather than inventing values.
-- If methods differ materially, explain definition and assumption differences and present both ranges.
-- If only paid or inaccessible evidence is cited, mark it unverified and seek an accessible corroborating source.
+Detailed pattern documentation lives in `references/details.md`. Read that file when the navigation tier above is insufficient.

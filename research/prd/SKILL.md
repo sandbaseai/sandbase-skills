@@ -1,78 +1,146 @@
 ---
 name: prd
-description: "Create decision-ready product requirements documents for software and AI features, including scope, user flows, measurable requirements, acceptance criteria, risks, rollout, and evaluation."
+description: 'Generate high-quality Product Requirements Documents (PRDs) for software systems and AI-powered features. Includes executive summaries, user stories, technical specifications, and risk analysis.'
 license: MIT
 metadata:
   source: "https://github.com/github/awesome-copilot/tree/6a8fa297b0fe652bd3d7c8946554dc146846b20e/skills/prd"
-  modified: "Adapted for host-neutral discovery, evidence handling, and flexible PRD depth."
+  modified: "Added provenance, limited discovery questions to material gaps, and made example tool requirements host-neutral."
 ---
 
-# Product Requirements Document
+# Product Requirements Document (PRD)
 
-Convert a product idea or existing brief into requirements that product, design, engineering, data, security, and go-to-market stakeholders can review and implement.
+## Overview
 
-## Intake
+Design comprehensive, production-grade Product Requirements Documents (PRDs) that bridge the gap between business vision and technical execution. This skill works for modern software systems, ensuring that requirements are clearly defined.
 
-Collect or infer:
+## When to Use
 
-- problem, affected users, current workflow, and urgency;
-- desired outcome and measurable success signals;
-- in-scope and out-of-scope behavior;
-- platform, integrations, data, privacy, accessibility, budget, and timeline constraints;
-- known dependencies, risks, and unresolved decisions.
+Use this skill when:
 
-Read supplied research, tickets, specifications, and repository context before asking questions. Ask only when a missing choice would materially change scope. Mark unresolved product decisions `TBD` with an owner or validation step; do not invent constraints.
+- Starting a new product or feature development cycle
+- Translating a vague idea into a concrete technical specification
+- Defining requirements for AI-powered features
+- Stakeholders need a unified "source of truth" for project scope
+- User asks to "write a PRD", "document requirements", or "plan a feature"
 
-## Workflow
+---
 
-1. State the problem and evidence without prescribing a solution prematurely.
-2. Define personas or actors and their end-to-end flows.
-3. Separate goals, requirements, non-goals, assumptions, and open questions.
-4. Write testable functional and non-functional requirements.
-5. Define success metrics with baseline, target, measurement window, and owner when known.
-6. Identify dependencies, failure modes, security/privacy concerns, rollout controls, and rollback conditions.
-7. For AI features, specify data boundaries, model/tool behavior, evaluation cases, human review, latency/cost targets, and unsafe or abstention behavior.
-8. Review for contradictions, unmeasurable language, and hidden scope.
+## Operational Workflow
 
-## Output
+### Phase 1: Discovery (The Interview)
 
-Scale the document to the decision. Use this full structure for substantial work:
+Before drafting the PRD, identify material knowledge gaps and ask only for information that cannot be safely inferred or marked `TBD`.
 
-```markdown
-# PRD: [Product or feature]
+**Ask about:**
 
-## Executive summary
-## Problem and evidence
-## Goals and success metrics
-## Users and user journeys
-## Scope
-### In scope
-### Non-goals
-## Requirements
-### Functional
-### Non-functional
-## Acceptance criteria
-## Data, integrations, security, privacy, and accessibility
-## AI behavior and evaluation (when applicable)
-## Dependencies and operational readiness
-## Rollout, rollback, and monitoring
-## Risks and mitigations
-## Open questions and decisions
+- **The Core Problem**: Why are we building this now?
+- **Success Metrics**: How do we know it worked?
+- **Constraints**: Budget, tech stack, or deadline?
+
+### Phase 2: Analysis & Scoping
+
+Synthesize the user's input. Identify dependencies and hidden complexities.
+
+- Map out the **User Flow**.
+- Define **Non-Goals** to protect the timeline.
+
+### Phase 3: Technical Drafting
+
+Generate the document using the **Strict PRD Schema** below.
+
+---
+
+## PRD Quality Standards
+
+### Requirements Quality
+
+Use concrete, measurable criteria. Avoid "fast", "easy", or "intuitive".
+
+```diff
+# Vague (BAD)
+- The search should be fast and return relevant results.
+- The UI must look modern and be easy to use.
+
+# Concrete (GOOD)
++ The search must return results within 200ms for a 10k record dataset.
++ The search algorithm must achieve >= 85% Precision@10 in benchmark evals.
++ The UI must follow the 'Vercel/Next.js' design system and achieve 100% Lighthouse Accessibility score.
 ```
 
-Use stable requirement IDs such as `FR-1`, `NFR-1`, and `AC-1` when traceability matters. Link acceptance criteria to requirements rather than duplicating them.
+---
 
-## Quality gate
+## Strict PRD Schema
 
-- Requirements describe observable behavior and avoid vague words such as “fast,” “easy,” or “smart” without a measure.
-- Success metrics distinguish business outcomes from operational health metrics.
-- Every critical user flow has failure and recovery behavior.
-- Non-goals protect the agreed scope.
-- AI quality claims have an evaluation method and dataset or sampling plan.
-- Facts from research or repository inspection are cited; assumptions are labeled.
+You **MUST** follow this exact structure for the output:
 
-## Failure handling
+### 1. Executive Summary
 
-- If evidence is insufficient, write a clearly labeled draft and a prioritized discovery list.
-- If stakeholders or sources conflict, preserve both positions and identify the decision owner.
-- If the user requests implementation as well as a PRD, finish or confirm the requirements boundary before making code changes that depend on unresolved choices.
+- **Problem Statement**: 1-2 sentences on the pain point.
+- **Proposed Solution**: 1-2 sentences on the fix.
+- **Success Criteria**: 3-5 measurable KPIs.
+
+### 2. User Experience & Functionality
+
+- **User Personas**: Who is this for?
+- **User Stories**: `As a [user], I want to [action] so that [benefit].`
+- **Acceptance Criteria**: Bulleted list of "Done" definitions for each story.
+- **Non-Goals**: What are we NOT building?
+
+### 3. AI System Requirements (If Applicable)
+
+- **Tool Requirements**: What tools and APIs are needed?
+- **Evaluation Strategy**: How to measure output quality and accuracy.
+
+### 4. Technical Specifications
+
+- **Architecture Overview**: Data flow and component interaction.
+- **Integration Points**: APIs, DBs, and Auth.
+- **Security & Privacy**: Data handling and compliance.
+
+### 5. Risks & Roadmap
+
+- **Phased Rollout**: MVP -> v1.1 -> v2.0.
+- **Technical Risks**: Latency, cost, or dependency failures.
+
+---
+
+## Implementation Guidelines
+
+### DO (Always)
+
+- **Define Testing**: For AI systems, specify how to test and validate output quality.
+- **Iterate**: Present a draft and ask for feedback on specific sections.
+
+### DON'T (Avoid)
+
+- **Skip Discovery**: Do not hide unresolved critical gaps; ask focused questions or mark non-critical unknowns as `TBD`.
+- **Hallucinate Constraints**: If the user didn't specify a tech stack, ask or label it as `TBD`.
+
+---
+
+## Example: Intelligent Search System
+
+### 1. Executive Summary
+
+**Problem**: Users struggle to find specific documentation snippets in massive repositories.
+**Solution**: An intelligent search system that provides direct answers with source citations.
+**Success**:
+
+- Reduce search time by 50%.
+- Citation accuracy >= 95%.
+
+### 2. User Stories
+
+- **Story**: As a developer, I want to ask natural language questions so I don't have to guess keywords.
+- **AC**:
+  - Supports multi-turn clarification.
+  - Returns code blocks with "Copy" button.
+
+### 3. AI System Architecture
+
+- **Tools Required**: repository search, text search, and authorized web-retrieval capabilities.
+
+### 4. Evaluation
+
+- **Benchmark**: Test with 50 common developer questions.
+- **Pass Rate**: 90% must match expected citations.

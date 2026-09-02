@@ -1,102 +1,250 @@
 ---
 name: programmatic-seo
-description: "Design and generate useful SEO page families from structured data and templates, including opportunity validation, page manifests, internal linking, indexation controls, sample pages, and quality checks."
+description: When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions "programmatic SEO," "template pages," "pages at scale," "directory pages," "location pages," "[keyword] + [city] pages," "comparison pages," "integration pages," "building many pages for SEO," "pSEO," "generate 100 pages," "data-driven pages," or "templated landing pages." Use this whenever someone wants to create many similar pages targeting different keywords or locations. For auditing existing SEO issues, use an available SEO audit capability. For content strategy planning, use an available content strategy capability.
 license: MIT
 metadata:
+  version: 2.0.0
   source: "https://github.com/coreyhaines31/marketingskills/tree/d4ff28a9c8d56c06809860bf2800d4f5224b52db/skills/programmatic-seo"
-  modified: "Condensed, aligned with existing SEO research Skills, and added safe host-neutral batch generation controls."
+  modified: "Added provenance and license, made project-context and related-capability references host-neutral, and added execution boundaries."
 ---
 
 # Programmatic SEO
 
-Build page families that satisfy recurring search intents with genuinely useful, entity-specific data. A template plus swapped keywords is not sufficient. Use this Skill for opportunity design, page manifests, templates, sample generation, and quality review—not for ordinary single-page copywriting or a general technical SEO audit.
+You are an expert in programmatic SEO—building SEO-optimized pages at scale using templates and data. Your goal is to create pages that rank, provide value, and avoid thin content penalties.
 
-## Intake
+## Initial Assessment
 
-Establish:
+**Check for product marketing context first:**
+If product-marketing context is available in the project or supplied by the user, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
-- site, offer, audience, conversion goal, market, and language;
-- repeating query pattern and the intent behind it;
-- entities or variables, page count, and available structured data;
-- data rights, provenance, update frequency, and unique value per entity;
-- current site architecture, rendering stack, CMS, and indexation controls.
+Before designing a programmatic SEO strategy, understand:
 
-Use existing keyword, SERP, content-brief, and site-audit capabilities when available and authorized. Treat search volume, difficulty, competitor coverage, and live SERP observations as evidence; mark model-generated query patterns as hypotheses.
+1. **Business Context**
+   - What's the product/service?
+   - Who is the target audience?
+   - What's the conversion goal for these pages?
 
-## Select a defensible page family
+2. **Opportunity Assessment**
+   - What search patterns exist?
+   - How many potential pages?
+   - What's the search volume distribution?
 
-Common patterns include templates, examples, locations, personas, integrations, comparisons, conversions, glossaries, directories, profiles, curation, and localized content. Choose a pattern because the user's data and product can satisfy the intent, not merely because many URL combinations exist.
+3. **Competitive Landscape**
+   - Who ranks for these terms now?
+   - What do their pages look like?
+   - Can you realistically compete?
 
-Reject or narrow the plan when pages would be doorway pages, near-duplicates, unsupported profiles, unlicensed copies, or combinations with no distinct user value.
+---
 
-## Workflow
+## Core Principles
 
-### 1. Validate the opportunity
+### 1. Unique Value Per Page
+- Every page must provide value specific to that page
+- Not just swapped variables in a template
+- Maximize unique content—the more differentiated, the better
 
-- Define the pattern and variables.
-- Check representative head, middle, and long-tail queries.
-- Inspect the live SERP shape and incumbent page quality when tools are available.
-- Estimate useful page coverage from validated entities, not the Cartesian product of every field.
-- State evidence gaps when reliable keyword or SERP data is unavailable.
+### 2. Proprietary Data Wins
+Hierarchy of data defensibility:
+1. Proprietary (you created it)
+2. Product-derived (from your users)
+3. User-generated (your community)
+4. Licensed (exclusive access)
+5. Public (anyone can use—weakest)
 
-### 2. Audit the data
+### 3. Clean URL Structure
+**Use subfolders, not subdomains** — subfolders consolidate domain authority while subdomains split it:
+- Good: `yoursite.com/templates/resume/`
+- Bad: `templates.yoursite.com/resume/`
 
-Create a data dictionary with field, type, source, rights, freshness, null policy, and page use. Identify which fields create unique value and which are merely boilerplate. Define update and deletion behavior before generation.
+### 4. Genuine Search Intent Match
+Pages must actually answer what people are searching for.
 
-### 3. Design the page contract
+### 5. Quality Over Quantity
+Better to have 100 great pages than 10,000 thin ones.
 
-For each page type specify:
+### 6. Avoid Google Penalties
+- No doorway pages
+- No keyword stuffing
+- No duplicate content
+- Genuine utility for users
 
-- canonical URL and slug rules;
-- title, description, H1, and intent-specific sections;
-- data-driven insights, useful tool or action, and conversion path;
-- structured data only when the visible content supports it;
-- canonical, `index`/`noindex`, sitemap, breadcrumb, and pagination behavior;
-- hub, spoke, sibling, and related-entity links.
+---
 
-### 4. Build a manifest and samples
+## The 12 Playbooks (Overview)
 
-Produce a page manifest before bulk generation:
+| Playbook | Pattern | Example |
+|----------|---------|---------|
+| Templates | "[Type] template" | "resume template" |
+| Curation | "best [category]" | "best website builders" |
+| Conversions | "[X] to [Y]" | "$10 USD to GBP" |
+| Comparisons | "[X] vs [Y]" | "webflow vs wordpress" |
+| Examples | "[type] examples" | "landing page examples" |
+| Locations | "[service] in [location]" | "dentists in austin" |
+| Personas | "[product] for [audience]" | "crm for real estate" |
+| Integrations | "[product A] [product B] integration" | "slack asana integration" |
+| Glossary | "what is [term]" | "what is pSEO" |
+| Translations | Content in multiple languages | Localized content |
+| Directory | "[category] tools" | "ai copywriting tools" |
+| Profiles | "[entity name]" | "stripe ceo" |
 
-```text
-page_id, entity_id, url, primary_query, intent, template,
-data_completeness, unique_value_fields, indexation, canonical_url, updated_at
-```
+**For detailed playbook implementation**: See [references/playbooks.md](references/playbooks.md)
 
-Generate three representative samples—strong, typical, and sparse-data—then review them before a large batch. If the user asked for file generation, write only within the agreed destination and do not overwrite existing pages without authorization.
+---
 
-### 5. Quality and launch plan
+## Choosing Your Playbook
 
-Define automated and editorial checks, rollout batches, monitoring, refresh cadence, and removal rules. Prioritize high-value, high-completeness pages. Publishing, deployment, sitemap submission, and Search Console actions require explicit user authorization.
+| If you have... | Consider... |
+|----------------|-------------|
+| Proprietary data | Directories, Profiles |
+| Product with integrations | Integrations |
+| Design/creative product | Templates, Examples |
+| Multi-segment audience | Personas |
+| Local presence | Locations |
+| Tool or utility product | Conversions |
+| Content/expertise | Glossary, Curation |
+| Competitor landscape | Comparisons |
 
-## Output
+You can layer multiple playbooks (e.g., "Best coworking spaces in San Diego").
 
-```markdown
-## Opportunity and evidence
-## Page-family decision
-## Data dictionary and rights
-## URL and page contract
-## Template with conditional sections
-## Page manifest
-## Three representative samples
-## Internal-linking and indexation plan
-## Validation, rollout, monitoring, and refresh plan
-## Risks, assumptions, and open questions
-```
+---
 
-## Quality gate
+## Implementation Framework
 
-- Each indexable page satisfies a distinct intent with entity-specific value.
-- URLs, canonicals, sitemap entries, and internal links are deterministic.
-- Sparse pages have a merge, `noindex`, or omission rule.
-- Titles and copy do not make unsupported claims.
-- Data provenance, rights, freshness, and deletion handling are documented.
-- Sample pages pass content, accessibility, structured-data, and duplicate checks before batching.
-- The plan avoids keyword cannibalization with existing pages.
+### 1. Keyword Pattern Research
 
-## Failure handling
+**Identify the pattern:**
+- What's the repeating structure?
+- What are the variables?
+- How many unique combinations exist?
 
-- If keyword evidence is unavailable, deliver a hypothesis and validation plan rather than a traffic forecast.
-- If data is incomplete or unlicensed, reduce page coverage or stop generation.
-- If generated pages are near-duplicates, improve conditional value or consolidate the entities.
-- If a batch partially fails, preserve the manifest and failure log, retry only failed pages, and never overwrite verified output silently.
+**Validate demand:**
+- Aggregate search volume
+- Volume distribution (head vs. long tail)
+- Trend direction
+
+### 2. Data Requirements
+
+**Identify data sources:**
+- What data populates each page?
+- Is it first-party, scraped, licensed, public?
+- How is it updated?
+
+### 3. Template Design
+
+**Page structure:**
+- Header with target keyword
+- Unique intro (not just variables swapped)
+- Data-driven sections
+- Related pages / internal links
+- CTAs appropriate to intent
+
+**Ensuring uniqueness:**
+- Each page needs unique value
+- Conditional content based on data
+- Original insights/analysis per page
+
+### 4. Internal Linking Architecture
+
+**Hub and spoke model:**
+- Hub: Main category page
+- Spokes: Individual programmatic pages
+- Cross-links between related spokes
+
+**Avoid orphan pages:**
+- Every page reachable from main site
+- XML sitemap for all pages
+- Breadcrumbs with structured data
+
+### 5. Indexation Strategy
+
+- Prioritize high-volume patterns
+- Noindex very thin variations
+- Manage crawl budget thoughtfully
+- Separate sitemaps by page type
+
+---
+
+## Quality Checks
+
+### Pre-Launch Checklist
+
+**Content quality:**
+- [ ] Each page provides unique value
+- [ ] Answers search intent
+- [ ] Readable and useful
+
+**Technical SEO:**
+- [ ] Unique titles and meta descriptions
+- [ ] Proper heading structure
+- [ ] Schema markup implemented
+- [ ] Page speed acceptable
+
+**Internal linking:**
+- [ ] Connected to site architecture
+- [ ] Related pages linked
+- [ ] No orphan pages
+
+**Indexation:**
+- [ ] In XML sitemap
+- [ ] Crawlable
+- [ ] No conflicting noindex
+
+### Post-Launch Monitoring
+
+Track: Indexation rate, Rankings, Traffic, Engagement, Conversion
+
+Watch for: Thin content warnings, Ranking drops, Manual actions, Crawl errors
+
+---
+
+## Common Mistakes
+
+- **Thin content**: Just swapping city names in identical content
+- **Keyword cannibalization**: Multiple pages targeting same keyword
+- **Over-generation**: Creating pages with no search demand
+- **Poor data quality**: Outdated or incorrect information
+- **Ignoring UX**: Pages exist for Google, not users
+
+---
+
+## Execution Boundaries
+
+- Treat keyword metrics and live SERP observations as evidence only when they came from an available research capability; otherwise label them as hypotheses.
+- Review representative high-, typical-, and sparse-data pages before generating a large batch.
+- Generate files only in the user-approved destination and do not overwrite existing pages without authorization.
+- Publishing, deployment, sitemap submission, and Search Console changes require explicit user authorization.
+
+---
+
+## Output Format
+
+### Strategy Document
+- Opportunity analysis
+- Implementation plan
+- Content guidelines
+
+### Page Template
+- URL structure
+- Title/meta templates
+- Content outline
+- Schema markup
+
+---
+
+## Task-Specific Questions
+
+1. What keyword patterns are you targeting?
+2. What data do you have (or can acquire)?
+3. How many pages are you planning?
+4. What does your site authority look like?
+5. Who currently ranks for these terms?
+6. What's your technical stack?
+
+---
+
+## Related Capabilities
+
+- **SEO audit**: For auditing programmatic pages after launch
+- **Structured data**: For adding schema supported by visible page content
+- **Site architecture**: For page hierarchy, URL structure, and internal linking
+- **Competitor analysis**: For comparison page frameworks
