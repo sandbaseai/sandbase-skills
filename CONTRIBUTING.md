@@ -23,18 +23,47 @@ Do not push directly to the upstream repository. Keep one pull request focused o
 
 ## Add a new Skill
 
-1. Create `marketing/<skill-id>/SKILL.md` with `name` and `description` YAML frontmatter.
-2. Add a `references/sandbase-api-map.md` file that documents every tool available to the installed Skill.
-3. Add one entry to `skills.json`.
-4. Add one display record under `catalog/skills/` and, when SandBase Registry import is needed, one manifest under `integrations/sandbase-registry/data/skills/sandbase/`.
-5. Set the catalog `install.cli` to `npx skills add sandbaseai/sandbase-skills --skill <skill-id> --agent codex`.
-6. Declare the same `tool_name` values in the catalog, installed API map, and registry manifest.
+Every installable Skill needs a `research/<skill-id>/SKILL.md` or
+`marketing/<skill-id>/SKILL.md` with matching `name` and a discriminating
+`description` in YAML frontmatter. Add it to the English README catalog and to
+exactly one group in `skills.sh.json`, then rebuild the Claude marketplace.
+
+Choose one of these integration tracks:
+
+### Host-only Skill
+
+Use this track when the workflow operates on user-provided files or uses
+capabilities supplied by the host agent and has no required SandBase endpoint.
+
+1. Keep tool selection host-neutral and document optional dependencies in the Skill.
+2. Do not add the Skill to `skills.json`, `catalog/skills/`, or the SandBase Registry.
+3. Do not invent a placeholder endpoint merely to enroll the Skill in the API catalog.
+
+### SandBase-backed Skill
+
+Use this track when the installed workflow calls one or more SandBase capabilities.
+
+1. Add `references/sandbase-api-map.md` documenting every available capability.
+2. Add one entry to `skills.json`.
+3. Add one display record under `catalog/skills/` and one manifest under
+   `integrations/sandbase-registry/data/skills/sandbase/`.
+4. Set the catalog `install.cli` to
+   `npx skills add sandbaseai/sandbase-skills --skill <skill-id> --agent codex`.
+5. Declare the same `tool_name` values in the catalog, installed API map, and
+   registry manifest.
+
+For adapted third-party work, record the upstream URL, pinned revision,
+original license, and modifications in `THIRD_PARTY_NOTICES.md` and preserve
+any notices required by the upstream license.
 
 ## Validate before opening a pull request
 
 ```bash
 python3 scripts/skillpack.py validate
 python3 -m unittest discover -s tests -v
+npm test
+npm run marketplace:build
+npm run marketplace:check
 ```
 
 Changes to the DeepSeek Harness installer must also preserve the native DSH

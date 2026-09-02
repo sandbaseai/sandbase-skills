@@ -15,7 +15,7 @@
     {
       "title": "Business Intelligence",
       "description": "Research companies, markets, prospects, and competitors.",
-      "skills": ["apollo-company-research", "akta-company-research", "company-enrichment", "google-maps-reviews", "product-intelligence", "product-review-extractor", "competitive-pricing", "pricing-page-analyzer", "review-aggregator", "startup-research", "hiring-intelligence", "talent-sourcing", "lead-research", "outreach-builder", "email-outreach-prep", "sales-intelligence", "partnership-research", "industry-landscape", "local-market-research", "data-enrichment"]
+      "skills": ["apollo-company-research", "akta-company-research", "company-enrichment", "google-maps-reviews", "product-intelligence", "product-review-extractor", "competitive-pricing", "pricing-page-analyzer", "review-aggregator", "startup-research", "hiring-intelligence", "talent-sourcing", "lead-research", "outreach-builder", "email-outreach-prep", "sales-intelligence", "partnership-research", "industry-landscape", "local-market-research", "data-enrichment", "market-sizing-analysis", "variance-analysis", "reconciliation", "cash-flow-snapshot", "sales-enablement", "prd"]
     },
     {
       "title": "Marketing & Content",
@@ -25,12 +25,12 @@
     {
       "title": "Marketing & SEO",
       "description": "Analyze search results, keywords, backlinks, and site health.",
-      "skills": ["seo-keyword-insights", "backlink-gap-analysis", "serp-analysis", "seo-content-brief", "site-audit"]
+      "skills": ["seo-keyword-insights", "backlink-gap-analysis", "serp-analysis", "seo-content-brief", "site-audit", "programmatic-seo"]
     },
     {
       "title": "Tools & Utilities",
       "description": "Handle practical research, conversion, validation, and monitoring tasks.",
-      "skills": ["email-validator", "domain-intelligence", "domain-analyzer", "tech-stack-detector", "screenshot-capture", "url-to-markdown", "youtube-transcript", "document-parser", "content-translator", "sentiment-analyzer", "weather-lookup", "flight-tracker", "currency-converter", "github-profile-research", "npm-package-research", "cve-lookup", "website-monitor"]
+      "skills": ["email-validator", "domain-intelligence", "domain-analyzer", "tech-stack-detector", "screenshot-capture", "url-to-markdown", "youtube-transcript", "document-parser", "content-translator", "sentiment-analyzer", "weather-lookup", "flight-tracker", "currency-converter", "github-profile-research", "npm-package-research", "cve-lookup", "website-monitor", "task-management", "meeting-minutes", "ticket-triage"]
     }
   ]
 }

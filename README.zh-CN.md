@@ -5,7 +5,7 @@
 
 [English](./README.md) | 中文 | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**88 个可安装 Agent Skill** — 覆盖调研、社交媒体情报、营销和商业工作流。旗舰调研 Skill 可直接使用 Agent 自带的搜索工具，无需 SandBase 账号；需要更多专业数据源时再连接 SandBase。
+**98 个可安装 Agent Skill** — 覆盖调研、社交媒体情报、营销、效率和商业工作流。旗舰调研 Skill 可直接使用 Agent 自带的搜索工具，无需 SandBase 账号；需要更多专业数据源时再连接 SandBase。
 
 从 `multi-source-search` 开始：它使用 Agent 现有的搜索工具，附带证据账本示例和离线验证器。如果它改善了你的实际工作流，请[给仓库加 Star](https://github.com/sandbaseai/sandbase-skills)，帮助其他开发者发现它。
 
@@ -53,18 +53,18 @@ dsh web
 `.dsh/skills/multi-source-search`。命令直接使用 GitHub 源码，无需发布到 npm，
 也无需 SandBase 账号。
 
-## Skill 分类 (88 个)
+## Skill 分类 (98 个)
 
 | 分类 | 数量 | 场景 |
 |------|------|------|
 | **社交媒体情报** | 14 | Twitter、YouTube、Instagram、TikTok、小红书、微博、B站、抖音等 |
 | **搜索与调研** | 17 | 多源搜索、学术论文、趋势发现、新闻聚合 |
-| **商业情报** | 20 | 公司调研、竞品分析、人才情报、销售线索 |
+| **商业情报** | 26 | 公司调研、竞品分析、财务分析、销售物料、产品需求 |
 | **营销与内容** | 15 | 品牌监控、KOL 发现、社交聆听、危机监控 |
-| **SEO** | 5 | 关键词策略、反链分析、SERP 分析、站点审计 |
-| **工具** | 17 | 邮箱验证、域名分析、截图、YouTube 转写、天气 |
+| **SEO** | 6 | 关键词策略、反链分析、SERP 分析、站点审计、程序化 SEO |
+| **工具** | 20 | 邮箱验证、域名分析、截图、会议纪要、任务管理、工单分流 |
 
-完整 Skill 列表请查看 [英文 README](./README.md#skill-catalog-88-skills)。
+完整 Skill 列表请查看 [英文 README](./README.md#skill-catalog-98-skills)。
 
 ## 支持的 Agent
 
@@ -82,8 +82,8 @@ dsh web
 
 ## 定价
 
-Skill 本身免费开源 (Apache-2.0)。`multi-source-search` 使用 Agent 自带工具时无需 SandBase 账号或 SandBase API 费用；需要专业数据源的 Skill 可按用量调用 SandBase。
+Skill 本身免费开源。仓库采用 Apache-2.0；改编的第三方 Skill 保留 `THIRD_PARTY_NOTICES.md` 中记录的兼容上游许可证。`multi-source-search` 使用 Agent 自带工具时无需 SandBase 账号或 SandBase API 费用；需要专业数据源的 Skill 可按用量调用 SandBase。
 
 ---
 
-**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 88 个开源 Agent Skill，按需连接更多数据源。
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 98 个开源 Agent Skill，按需连接更多数据源。

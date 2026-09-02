@@ -5,7 +5,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | 한국어 | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**설치 가능한 Agent Skill 88개** — 리서치, 소셜 인텔리전스, 마케팅, 비즈니스 워크플로우용. 대표 리서치 Skill은 Agent가 제공하는 검색 도구로 바로 실행되며 SandBase 계정이 필요하지 않습니다. 전문 데이터 소스가 필요할 때만 SandBase를 추가할 수 있습니다.
+**설치 가능한 Agent Skill 98개** — 리서치, 소셜 인텔리전스, 마케팅, 생산성, 비즈니스 워크플로우용. 대표 리서치 Skill은 Agent가 제공하는 검색 도구로 바로 실행되며 SandBase 계정이 필요하지 않습니다. 전문 데이터 소스가 필요할 때만 SandBase를 추가할 수 있습니다.
 
 먼저 `multi-source-search`를 사용해 보세요. Agent의 기존 검색 도구로 실행되며 증거 원장 예제와 오프라인 검증기를 포함합니다. 실제 워크플로에 도움이 되었다면 다른 개발자도 찾을 수 있도록 [저장소에 Star](https://github.com/sandbaseai/sandbase-skills)를 남겨 주세요.
 
@@ -35,18 +35,18 @@ dsh web
 
 전체 Skill이 프로젝트 범위 검색 디렉터리인 `.dsh/skills/multi-source-search`에 복사됩니다. GitHub 소스에서 직접 실행되므로 npm 게시나 SandBase 계정이 필요하지 않습니다.
 
-## Skill 카테고리 (88개)
+## Skill 카테고리 (98개)
 
 | 카테고리 | 수 | 용도 |
 |---------|-----|------|
 | **소셜 인텔리전스** | 14 | Twitter, YouTube, Instagram, TikTok, Weibo, Bilibili 등 |
 | **검색 & 리서치** | 17 | 멀티소스 검색, 학술 논문, 트렌드 발견 |
-| **비즈니스 인텔리전스** | 20 | 기업 조사, 경쟁 분석, 영업 인텔리전스 |
+| **비즈니스 인텔리전스** | 26 | 기업 조사, 경쟁 분석, 재무 분석, 영업 자료, 제품 요구사항 |
 | **마케팅** | 15 | 브랜드 모니터링, KOL 발굴, 소셜 리스닝 |
-| **SEO** | 5 | 키워드 전략, 백링크 분석, SERP 분석 |
-| **도구** | 17 | 이메일 검증, 도메인 분석, 스크린샷, 번역 |
+| **SEO** | 6 | 키워드 전략, 백링크 분석, SERP 분석, 프로그래매틱 SEO |
+| **도구** | 20 | 이메일 검증, 도메인 분석, 회의록, 작업 관리, 티켓 분류 |
 
-전체 Skill 목록은 [영어 README](./README.md#skill-catalog-88-skills)를 참조하세요.
+전체 Skill 목록은 [영어 README](./README.md#skill-catalog-98-skills)를 참조하세요.
 
 ## 지원 Agent
 
@@ -60,8 +60,8 @@ Claude Code, Codex, Cursor, Gemini CLI, OpenClaw, Hermes, Amp, Devin
 
 ## 가격
 
-Skill 자체는 무료 오픈소스 (Apache-2.0)입니다. Agent의 기존 도구로 `multi-source-search`를 사용할 때는 SandBase 계정이나 SandBase API 비용이 필요하지 않습니다. 전문 데이터 소스용 Skill에는 사용량 기반 SandBase를 선택적으로 연결할 수 있습니다.
+Skill은 무료 오픈소스입니다. 저장소는 Apache-2.0이며, 수정된 타사 Skill은 `THIRD_PARTY_NOTICES.md`에 기록된 호환 업스트림 라이선스를 유지합니다. Agent의 기존 도구로 `multi-source-search`를 사용할 때는 SandBase 계정이나 SandBase API 비용이 필요하지 않습니다. 전문 데이터 소스용 Skill에는 사용량 기반 SandBase를 선택적으로 연결할 수 있습니다.
 
 ---
 
-**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 88개의 오픈소스 Agent Skill과 선택형 데이터 소스 확장.
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 98개의 오픈소스 Agent Skill과 선택형 데이터 소스 확장.

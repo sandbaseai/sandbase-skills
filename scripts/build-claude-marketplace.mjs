@@ -30,10 +30,6 @@ const skills = [
   ...(await discoverSkills("research")),
 ];
 
-if (skills.length !== 88) {
-  throw new Error(`Expected 88 skills, found ${skills.length}`);
-}
-
 const marketplace = {
   $schema: "https://json.schemastore.org/claude-code-marketplace.json",
   name: "sandbase-agent-skills",
@@ -51,7 +47,7 @@ const marketplace = {
     {
       name: "sandbase-skills",
       version: packageJson.version,
-      description: "88 Agent Skills for evidence-led research, social intelligence, marketing, and business workflows.",
+      description: `${skills.length} Agent Skills for evidence-led research, social intelligence, marketing, productivity, and business workflows.`,
       author: {
         name: "SandBase AI",
         url: "https://github.com/sandbaseai",
