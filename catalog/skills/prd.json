@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "id": "prd",
+  "display_name": "Product Requirements Document",
+  "short_description": "Turn product ideas into testable requirements.",
+  "description": "Create product requirements documents with scope, user stories, measurable acceptance criteria, technical constraints, and risk analysis.",
+  "category": {
+    "id": "product-management",
+    "label": "Product Management"
+  },
+  "tags": [
+    "PRD",
+    "requirements",
+    "product"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/prd",
+    "skill_file": "marketing/prd/SKILL.md",
+    "readme_anchor": "#prd"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for capability calls"
+    ]
+  },
+  "install": {
+    "prompt": "Use $prd to turn this product idea into an implementation-ready PRD.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill prd --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill prd --agent codex --global",
+    "source_path": "marketing/prd"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/prd"
+    }
+  ],
+  "examples": [
+    "Write a PRD for this feature idea.",
+    "Research current technical constraints and mark unresolved decisions as TBD."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "product idea",
+      "target users",
+      "constraints",
+      "reference URLs"
+    ]
+  },
+  "notes": [
+    "Call sandbase_describe_tool before each capability and pass only current schema-defined arguments.",
+    "Do not mutate external systems without explicit user authorization."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "tavily/search",
+        "tool_name": "tavily_search",
+        "summary": "Search current public web sources."
+      },
+      {
+        "method": "POST",
+        "operation": "context-dev/scrape-markdown",
+        "tool_name": "context_dev_scrape_markdown",
+        "summary": "Read a selected page as clean Markdown."
+      }
+    ]
+  },
+  "related_skills": []
+}

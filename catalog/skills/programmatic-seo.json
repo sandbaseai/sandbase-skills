@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "id": "programmatic-seo",
+  "display_name": "Programmatic SEO",
+  "short_description": "Design validated SEO page families at scale.",
+  "description": "Design useful data-driven page families and validate keyword demand, difficulty, seasonality, and live SERPs before scaling.",
+  "category": {
+    "id": "marketing-seo",
+    "label": "Marketing & SEO"
+  },
+  "tags": [
+    "SEO",
+    "programmatic SEO",
+    "keywords"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/programmatic-seo",
+    "skill_file": "marketing/programmatic-seo/SKILL.md",
+    "readme_anchor": "#programmatic-seo"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for capability calls"
+    ]
+  },
+  "install": {
+    "prompt": "Use $programmatic-seo to validate and design this page family.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill programmatic-seo --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill programmatic-seo --agent codex --global",
+    "source_path": "marketing/programmatic-seo"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/programmatic-seo"
+    }
+  ],
+  "examples": [
+    "Validate a location-page opportunity before generating templates.",
+    "Compare demand and SERPs for this candidate page family."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "site or product",
+      "page-family hypothesis",
+      "market and language",
+      "seed keywords"
+    ]
+  },
+  "notes": [
+    "Call sandbase_describe_tool before each capability and pass only current schema-defined arguments.",
+    "Do not mutate external systems without explicit user authorization."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/keyword_suggestions/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live",
+        "summary": "Discover keyword patterns and variations."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/keywords_data/google_ads/search_volume/live",
+        "tool_name": "dataforseo_v3_keywords_data_google_ads_search_volume_live",
+        "summary": "Validate search volume for shortlisted keywords."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/bulk_keyword_difficulty/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_bulk_keyword_difficulty_live",
+        "summary": "Score keyword difficulty in bulk."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/keywords_data/google_trends/explore/live",
+        "tool_name": "dataforseo_v3_keywords_data_google_trends_explore_live",
+        "summary": "Review historical and seasonal interest."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/dataforseo_labs/google/keywords_for_site/live",
+        "tool_name": "dataforseo_v3_dataforseo_labs_google_keywords_for_site_live",
+        "summary": "Find keywords associated with a target site."
+      },
+      {
+        "method": "POST",
+        "operation": "dataforseo/v3/serp/google/organic/live/advanced",
+        "tool_name": "dataforseo_v3_serp_google_organic_live_advanced",
+        "summary": "Inspect live Google organic results and SERP features."
+      }
+    ]
+  },
+  "related_skills": []
+}

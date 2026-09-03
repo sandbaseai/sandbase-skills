@@ -1,0 +1,53 @@
+{
+  "name": "sandbase/prd",
+  "display_name": "Product Requirements Document",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "prd",
+  "description": "Create product requirements documents with scope, user stories, measurable acceptance criteria, technical constraints, and risk analysis.",
+  "type": "skill",
+  "capability_tags": [
+    "PRD",
+    "requirements",
+    "product"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "product-management"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/prd",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/prd/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/prd.json",
+    "skill_path": "marketing/prd",
+    "catalog_path": "catalog/skills/prd.json",
+    "required_endpoints": [
+      "tavily_search",
+      "context_dev_scrape_markdown"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 500,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Product Management",
+    "endpoint_count": 2,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

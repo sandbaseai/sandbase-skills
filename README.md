@@ -14,7 +14,7 @@ Have a repeatable workflow that is missing? [Request a Skill](https://github.com
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**88 installable Agent Skills** for research, social intelligence, marketing, and business workflows. Install into any compatible agent (DeepSeek Harness, Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
+**98 installable Agent Skills** for research, social intelligence, marketing, and business workflows. Install into any compatible agent (DeepSeek Harness, Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
 
 SandBase also exposes [2,000+ models and APIs](https://www.sandbase.ai/docs/store/),
 including a unified surface for [LLM, image, and video generation](https://blog.sandbase.ai/unified-ai-api-llm-image-video-2026/).
@@ -96,7 +96,7 @@ so other agent users can discover it.
 
 ### DeepSeek Harness
 
-Install all 88 Skills as a native DSH bundle:
+Install all 98 Skills as a native DSH bundle:
 
 ```bash
 dsh plugin --profile web add github:sandbaseai/sandbase-skills
@@ -118,7 +118,7 @@ so no npm publication or SandBase account is required.
 
 ### Claude Code marketplace
 
-Install all 88 Skills as a native Claude Code plugin:
+Install all 98 Skills as a native Claude Code plugin:
 
 ```text
 /plugin marketplace add sandbaseai/sandbase-skills
@@ -163,7 +163,7 @@ Install the matching Skill, then give your agent one of these tasks:
 | [`github-profile-research`](research/github-profile-research/SKILL.md) | “Assess this engineering team’s open-source activity.” | Repository, language, contribution, star, and activity analysis | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/github-profile-research) |
 | [`youtube-research`](research/youtube-research/SKILL.md) | “Map the leading channels and audience questions in this niche.” | Video and channel discovery, transcript evidence, and comment themes | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/youtube-research) |
 
-## Skill Catalog (88 Skills)
+## Skill Catalog (98 Skills)
 
 ### Social Intelligence (14 Skills)
 
@@ -210,7 +210,7 @@ Find, validate, and synthesize information from multiple sources.
 | `podcast-research` | Find podcasts and episodes by topic |
 | `content-ideation` | Generate data-backed content ideas |
 
-### Business Intelligence (20 Skills)
+### Business Intelligence (26 Skills)
 
 Company research, sales intelligence, and competitive analysis.
 
@@ -236,6 +236,12 @@ Company research, sales intelligence, and competitive analysis.
 | `industry-landscape` | Map any industry's competitive landscape |
 | `local-market-research` | Research local markets with reviews and social data |
 | `data-enrichment` | Fill data gaps with verified intelligence |
+| `market-sizing-analysis` | Calculate evidence-backed TAM, SAM, and SOM ranges |
+| `variance-analysis` | Decompose financial variances into business drivers |
+| `reconciliation` | Match account data and classify open differences |
+| `cash-flow-snapshot` | Forecast 30/60/90-day cash flow and liquidity risks |
+| `sales-enablement` | Create buyer-specific sales collateral |
+| `prd` | Turn product ideas into measurable requirements |
 
 ### Marketing & Content (15 Skills)
 
@@ -259,7 +265,7 @@ Brand monitoring, influencer marketing, and content strategy.
 | `crisis-monitor` | Detect and assess crises before they escalate |
 | `reddit-customer-insights` | Discover customer language and pain points |
 
-### Marketing & SEO (5 Skills)
+### Marketing & SEO (6 Skills)
 
 Search engine optimization, SERP analysis, and technical auditing.
 
@@ -270,8 +276,9 @@ Search engine optimization, SERP analysis, and technical auditing.
 | `serp-analysis` | Analyze live Google SERP results and features |
 | `seo-content-brief` | Generate SERP-backed content briefs |
 | `site-audit` | Audit website content, structure, and SEO health |
+| `programmatic-seo` | Design and validate data-driven SEO page families |
 
-### Tools & Utilities (17 Skills)
+### Tools & Utilities (20 Skills)
 
 Practical tools for everyday agent tasks.
 
@@ -294,6 +301,9 @@ Practical tools for everyday agent tasks.
 | `npm-package-research` | Evaluate npm packages before installing |
 | `cve-lookup` | Look up security vulnerabilities by CVE |
 | `website-monitor` | Monitor websites for changes and health |
+| `task-management` | Maintain a shared repository-local task tracker |
+| `meeting-minutes` | Turn meeting inputs into decisions and action items |
+| `ticket-triage` | Classify, prioritize, and route support issues |
 
 ## Install
 
@@ -377,8 +387,10 @@ python3 -m unittest discover -s tests -v
 
 ## License
 
-Apache-2.0. See [LICENSE](LICENSE).
+Apache-2.0. See [LICENSE](LICENSE). Adapted third-party Skills retain their
+original licenses and pinned source revisions in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ---
 
-**Built for [SandBase](https://sandbase.ai)** — One API key. Every data source. 88 installable agent skills.
+**Built for [SandBase](https://sandbase.ai)** — One API key. Every data source. 98 installable agent skills.

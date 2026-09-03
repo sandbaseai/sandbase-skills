@@ -15,7 +15,7 @@
     {
       "name": "sandbase-skills",
       "version": "0.3.5",
-      "description": "88 Agent Skills for evidence-led research, social intelligence, marketing, and business workflows.",
+      "description": "98 Agent Skills for evidence-led research, social intelligence, marketing, and business workflows.",
       "author": {
         "name": "SandBase AI",
         "url": "https://github.com/sandbaseai"
@@ -34,10 +34,20 @@
       "strict": false,
       "skills": [
         "./marketing/backlink-gap-analysis",
+        "./marketing/cash-flow-snapshot",
         "./marketing/competitor-content-intelligence",
         "./marketing/exa-deep-search",
+        "./marketing/market-sizing-analysis",
+        "./marketing/meeting-minutes",
+        "./marketing/prd",
+        "./marketing/programmatic-seo",
+        "./marketing/reconciliation",
         "./marketing/reddit-customer-insights",
+        "./marketing/sales-enablement",
         "./marketing/seo-keyword-insights",
+        "./marketing/task-management",
+        "./marketing/ticket-triage",
+        "./marketing/variance-analysis",
         "./research/academic-research",
         "./research/academic-trend-research",
         "./research/akta-company-research",

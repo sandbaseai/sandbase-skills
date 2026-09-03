@@ -1,0 +1,53 @@
+{
+  "name": "sandbase/sales-enablement",
+  "display_name": "Sales Enablement",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "sales-enablement",
+  "description": "Create buyer-specific sales decks, one-pagers, objection guides, and demo scripts grounded in verified product and competitor evidence.",
+  "type": "skill",
+  "capability_tags": [
+    "sales",
+    "collateral",
+    "enablement"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "sales"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/sales-enablement",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/sales-enablement/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/sales-enablement.json",
+    "skill_path": "marketing/sales-enablement",
+    "catalog_path": "catalog/skills/sales-enablement.json",
+    "required_endpoints": [
+      "context_dev_scrape_markdown",
+      "tavily_search"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 500,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Sales",
+    "endpoint_count": 2,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

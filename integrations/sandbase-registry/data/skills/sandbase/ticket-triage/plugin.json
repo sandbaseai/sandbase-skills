@@ -1,0 +1,53 @@
+{
+  "name": "sandbase/ticket-triage",
+  "display_name": "Ticket Triage",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "ticket-triage",
+  "description": "Triage support tickets with P1-P4 priority, evidence-backed routing, duplicate checks, and a suggested initial response.",
+  "type": "skill",
+  "capability_tags": [
+    "support",
+    "triage",
+    "incidents"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "customer-support"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/ticket-triage",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/ticket-triage/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/ticket-triage.json",
+    "skill_path": "marketing/ticket-triage",
+    "catalog_path": "catalog/skills/ticket-triage.json",
+    "required_endpoints": [
+      "tavily_search",
+      "context_dev_scrape_markdown"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 500,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Customer Support",
+    "endpoint_count": 2,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}
