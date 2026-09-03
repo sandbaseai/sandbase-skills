@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "id": "meeting-minutes",
+  "display_name": "Meeting Minutes",
+  "short_description": "Turn meeting inputs into actionable minutes.",
+  "description": "Create concise meeting minutes with decisions, owners, due dates, and follow-ups from notes, transcript pages, or published video captions.",
+  "category": {
+    "id": "business-operations",
+    "label": "Business Operations"
+  },
+  "tags": [
+    "meetings",
+    "minutes",
+    "action items"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/meeting-minutes",
+    "skill_file": "marketing/meeting-minutes/SKILL.md",
+    "readme_anchor": "#meeting-minutes"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for capability calls"
+    ]
+  },
+  "install": {
+    "prompt": "Use $meeting-minutes to turn this transcript into decisions and action items.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill meeting-minutes --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill meeting-minutes --agent codex --global",
+    "source_path": "marketing/meeting-minutes"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/meeting-minutes"
+    }
+  ],
+  "examples": [
+    "Create minutes from these meeting notes.",
+    "Use this published meeting video to extract decisions and assigned actions."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "meeting notes",
+      "transcript URL",
+      "published video URL",
+      "attendees"
+    ]
+  },
+  "notes": [
+    "Call sandbase_describe_tool before each capability and pass only current schema-defined arguments.",
+    "Do not mutate external systems without explicit user authorization."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "context-dev/scrape-markdown",
+        "tool_name": "context_dev_scrape_markdown",
+        "summary": "Read a selected page as clean Markdown."
+      },
+      {
+        "method": "GET",
+        "operation": "youtube/web-v2/video-captions",
+        "tool_name": "youtube_web_v2_video_captions",
+        "summary": "Retrieve captions for a published YouTube video."
+      }
+    ]
+  },
+  "related_skills": []
+}

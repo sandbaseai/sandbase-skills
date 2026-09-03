@@ -1,0 +1,53 @@
+{
+  "name": "sandbase/variance-analysis",
+  "display_name": "Variance Analysis",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "variance-analysis",
+  "description": "Decompose budget, forecast, and period variances into reconciled drivers with sign conventions and management commentary.",
+  "type": "skill",
+  "capability_tags": [
+    "finance",
+    "variance",
+    "budget"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "finance"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/variance-analysis",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/variance-analysis/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/variance-analysis.json",
+    "skill_path": "marketing/variance-analysis",
+    "catalog_path": "catalog/skills/variance-analysis.json",
+    "required_endpoints": [
+      "context_dev_extract_structured_data",
+      "context_dev_scrape_markdown"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 500,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Finance",
+    "endpoint_count": 2,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

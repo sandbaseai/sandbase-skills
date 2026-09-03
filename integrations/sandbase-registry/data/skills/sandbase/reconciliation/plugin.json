@@ -1,0 +1,53 @@
+{
+  "name": "sandbase/reconciliation",
+  "display_name": "Reconciliation",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "reconciliation",
+  "description": "Reconcile GL, subledger, bank, or third-party balances and produce a traceable list of open reconciling items.",
+  "type": "skill",
+  "capability_tags": [
+    "finance",
+    "reconciliation",
+    "accounting"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "finance"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/reconciliation",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/reconciliation/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/reconciliation.json",
+    "skill_path": "marketing/reconciliation",
+    "catalog_path": "catalog/skills/reconciliation.json",
+    "required_endpoints": [
+      "context_dev_extract_structured_data",
+      "context_dev_scrape_markdown"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 500,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Finance",
+    "endpoint_count": 2,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

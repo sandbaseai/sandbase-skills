@@ -5,7 +5,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | 日本語 | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**98個のインストール可能なAgent Skill** — リサーチ、ソーシャルインテリジェンス、マーケティング、生産性、ビジネスワークフロー向け。主力のリサーチSkillはAgent標準の検索ツールで動作し、SandBaseアカウントは不要です。専門データソースが必要な場合のみSandBaseを追加できます。
+**98個のインストール可能なAgent Skill** — リサーチ、ソーシャルインテリジェンス、マーケティング、ビジネスワークフロー向け。主力のリサーチSkillはAgent標準の検索ツールで動作し、SandBaseアカウントは不要です。専門データソースが必要な場合のみSandBaseを追加できます。
 
 まず `multi-source-search` を試してください。Agent 既存の検索ツールを使い、証拠台帳の実例とオフライン検証ツールも含まれています。実際のワークフローに役立った場合は、他の開発者も見つけられるよう[リポジトリに Star](https://github.com/sandbaseai/sandbase-skills)をお願いします。
 
@@ -42,10 +42,10 @@ dsh web
 |---------|-----|-------------|
 | **ソーシャルインテリジェンス** | 14 | Twitter、YouTube、Instagram、TikTok、Weibo、Bilibili等 |
 | **検索・リサーチ** | 17 | マルチソース検索、学術論文、トレンド発見 |
-| **ビジネスインテリジェンス** | 26 | 企業調査、競合分析、財務分析、営業資料、製品要件 |
+| **ビジネスインテリジェンス** | 26 | 企業調査、競合分析、セールスインテリジェンス |
 | **マーケティング** | 15 | ブランドモニタリング、KOL発見、ソーシャルリスニング |
-| **SEO** | 6 | キーワード戦略、被リンク分析、SERP分析、プログラマティックSEO |
-| **ツール** | 20 | メール検証、ドメイン分析、会議議事録、タスク管理、チケット分類 |
+| **SEO** | 6 | キーワード戦略、被リンク分析、SERP分析 |
+| **ツール** | 20 | メール検証、ドメイン分析、スクリーンショット、翻訳 |
 
 全Skillリストは[英語README](./README.md#skill-catalog-98-skills)をご覧ください。
 
@@ -61,7 +61,7 @@ Claude Code、Codex、Cursor、Gemini CLI、OpenClaw、Hermes、Amp、Devin
 
 ## 料金
 
-Skill自体は無料・オープンソースです。リポジトリはApache-2.0で、改変した第三者Skillは`THIRD_PARTY_NOTICES.md`に記録された互換性のある元ライセンスを保持します。`multi-source-search`をAgent標準ツールで使う場合、SandBaseアカウントやSandBase API料金は不要です。専門データソースを使うSkillでは従量制のSandBaseを追加できます。
+Skill自体は無料・オープンソース (Apache-2.0)。`multi-source-search`をAgent標準ツールで使う場合、SandBaseアカウントやSandBase API料金は不要です。専門データソースを使うSkillでは従量制のSandBaseを追加できます。
 
 ---
 

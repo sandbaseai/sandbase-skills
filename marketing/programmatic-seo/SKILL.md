@@ -1,16 +1,13 @@
 ---
 name: programmatic-seo
 description: When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions "programmatic SEO," "template pages," "pages at scale," "directory pages," "location pages," "[keyword] + [city] pages," "comparison pages," "integration pages," "building many pages for SEO," "pSEO," "generate 100 pages," "data-driven pages," or "templated landing pages." Use this whenever someone wants to create many similar pages targeting different keywords or locations. For auditing existing SEO issues, use an available SEO audit capability. For content strategy planning, use an available content strategy capability.
-license: MIT
-metadata:
-  version: 2.0.0
-  source: "https://github.com/coreyhaines31/marketingskills/tree/d4ff28a9c8d56c06809860bf2800d4f5224b52db/skills/programmatic-seo"
-  modified: "Added provenance and license, made project-context and related-capability references host-neutral, and added execution boundaries."
 ---
 
 # Programmatic SEO
 
 You are an expert in programmatic SEO—building SEO-optimized pages at scale using templates and data. Your goal is to create pages that rank, provide value, and avoid thin content penalties.
+
+Read [the SandBase API map](references/sandbase-api-map.md) before collecting keyword, demand, trend, or SERP evidence. Resolve the current schema with `sandbase_describe_tool` before using a listed capability through `sandbase_call_tool`.
 
 ## Initial Assessment
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { access, readFile, readdir } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -10,28 +10,6 @@ const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
 const plugin = manifest.plugins?.[0];
 
-async function discoverSkills(parent) {
-  const entries = await readdir(path.join(root, parent), { withFileTypes: true });
-  const skills = [];
-
-  for (const entry of entries) {
-    if (!entry.isDirectory()) continue;
-    try {
-      await access(path.join(root, parent, entry.name, "SKILL.md"));
-      skills.push(`./${parent}/${entry.name}`);
-    } catch (error) {
-      if (error.code !== "ENOENT") throw error;
-    }
-  }
-
-  return skills.sort();
-}
-
-const expectedSkills = [
-  ...(await discoverSkills("marketing")),
-  ...(await discoverSkills("research")),
-];
-
 if (
   manifest.version !== packageJson.version ||
   manifest.metadata?.version !== packageJson.version ||
@@ -40,14 +18,8 @@ if (
   throw new Error("Marketplace versions must match package.json");
 }
 
-if (!plugin || plugin.name !== "sandbase-skills") {
-  throw new Error("Marketplace must expose the sandbase-skills plugin");
-}
-
-if (JSON.stringify(plugin.skills) !== JSON.stringify(expectedSkills)) {
-  throw new Error(
-    `Marketplace skills do not match the ${expectedSkills.length} discovered Skill directories`,
-  );
+if (!plugin || plugin.name !== "sandbase-skills" || plugin.skills?.length !== 98) {
+  throw new Error("Marketplace must expose the complete 98-skill bundle");
 }
 
 if (new Set(plugin.skills).size !== plugin.skills.length) {

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "id": "sales-enablement",
+  "display_name": "Sales Enablement",
+  "short_description": "Create evidence-backed sales collateral.",
+  "description": "Create buyer-specific sales decks, one-pagers, objection guides, and demo scripts grounded in verified product and competitor evidence.",
+  "category": {
+    "id": "sales",
+    "label": "Sales"
+  },
+  "tags": [
+    "sales",
+    "collateral",
+    "enablement"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/sales-enablement",
+    "skill_file": "marketing/sales-enablement/SKILL.md",
+    "readme_anchor": "#sales-enablement"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for capability calls"
+    ]
+  },
+  "install": {
+    "prompt": "Use $sales-enablement to create buyer-specific collateral for this deal.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill sales-enablement --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill sales-enablement --agent codex --global",
+    "source_path": "marketing/sales-enablement"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/sales-enablement"
+    }
+  ],
+  "examples": [
+    "Create a one-pager for this buyer persona.",
+    "Research public competitor claims before drafting an objection guide."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "product context",
+      "buyer persona",
+      "sales stage",
+      "competitor URLs"
+    ]
+  },
+  "notes": [
+    "Call sandbase_describe_tool before each capability and pass only current schema-defined arguments.",
+    "Do not mutate external systems without explicit user authorization."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "context-dev/scrape-markdown",
+        "tool_name": "context_dev_scrape_markdown",
+        "summary": "Read a selected page as clean Markdown."
+      },
+      {
+        "method": "POST",
+        "operation": "tavily/search",
+        "tool_name": "tavily_search",
+        "summary": "Search current public web sources."
+      }
+    ]
+  },
+  "related_skills": []
+}

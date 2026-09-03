@@ -1,0 +1,54 @@
+{
+  "name": "sandbase/market-sizing-analysis",
+  "display_name": "Market Sizing Analysis",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "market-sizing-analysis",
+  "description": "Size markets with top-down, bottom-up, and value-theory methods using current, cited public evidence.",
+  "type": "skill",
+  "capability_tags": [
+    "market sizing",
+    "TAM",
+    "SAM",
+    "SOM"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "market-research"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/market-sizing-analysis",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/market-sizing-analysis/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/market-sizing-analysis.json",
+    "skill_path": "marketing/market-sizing-analysis",
+    "catalog_path": "catalog/skills/market-sizing-analysis.json",
+    "required_endpoints": [
+      "tavily_search",
+      "exa_search"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 500,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Market Research",
+    "endpoint_count": 2,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

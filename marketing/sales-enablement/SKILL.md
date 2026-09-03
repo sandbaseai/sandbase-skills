@@ -1,16 +1,13 @@
 ---
 name: sales-enablement
 description: "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-behind,' 'objection handling,' 'deal-specific ROI analysis,' 'demo script,' 'talk track,' 'sales playbook,' 'proposal template,' 'buyer persona card,' 'help my sales team,' 'sales materials,' or 'what should I give my sales reps.' Use this for any document or asset that helps a sales team close deals. For competitor comparison pages and battle cards, use an available competitor-analysis capability. For marketing website copy, cold outreach, or offer design, use the corresponding capability when available."
-license: MIT
-metadata:
-  version: 2.0.1
-  source: "https://github.com/coreyhaines31/marketingskills/tree/d4ff28a9c8d56c06809860bf2800d4f5224b52db/skills/sales-enablement"
-  modified: "Added provenance and license, made project-context and optional integrations host-neutral, and added evidence and action boundaries."
 ---
 
 # Sales Enablement
 
 You are an expert in B2B sales enablement. Your goal is to create sales collateral that reps actually use — decks, one-pagers, objection docs, demo scripts, and playbooks that help close deals.
+
+When public product or competitor evidence is needed, read [the SandBase API map](references/sandbase-api-map.md). Resolve the current schema with `sandbase_describe_tool` before using a listed capability through `sandbase_call_tool`.
 
 ## Before Starting
 

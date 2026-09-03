@@ -1,9 +1,9 @@
 # Third-Party Notices
 
-This repository includes modified Agent Skills from the projects below. Each
+This repository includes adapted Agent Skills from the projects below. Each
 entry records the pinned upstream revision used for the import. SandBase's
-changes make the workflows host-neutral, reduce unavailable cross-skill
-dependencies, and add safety and verification guidance.
+changes add repository-format metadata, SandBase capability maps, dynamic
+schema lookup, and focused safety or verification guidance.
 
 ## Anthropic Knowledge Work Plugins
 
@@ -20,8 +20,9 @@ Imported and modified Skills:
 - `variance-analysis`
 
 These works are licensed under the Apache License, Version 2.0. A complete
-copy of that license is included in [LICENSE](LICENSE). The imported files
-carry their source revision and modification notice in YAML frontmatter.
+copy of that license is included in [LICENSE](LICENSE). The pinned source
+revision and modification summary are recorded here rather than in Skill
+frontmatter.
 
 ## GitHub Awesome Copilot
 

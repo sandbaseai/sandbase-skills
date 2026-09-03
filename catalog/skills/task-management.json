@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "id": "task-management",
+  "display_name": "Task Management",
+  "short_description": "Maintain a shared task tracker.",
+  "description": "Maintain a repository-local TASKS.md tracker and import tasks from authorized web sources through SandBase.",
+  "category": {
+    "id": "business-operations",
+    "label": "Business Operations"
+  },
+  "tags": [
+    "tasks",
+    "productivity",
+    "planning"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/task-management",
+    "skill_file": "marketing/task-management/SKILL.md",
+    "readme_anchor": "#task-management"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for capability calls"
+    ]
+  },
+  "install": {
+    "prompt": "Use $task-management to organize and update my tasks.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill task-management --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill task-management --agent codex --global",
+    "source_path": "marketing/task-management"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/task-management"
+    }
+  ],
+  "examples": [
+    "Create a TASKS.md tracker for this project.",
+    "Import action items from this project page and add only the ones I approve."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "task text",
+      "due dates",
+      "authorized task-source URLs"
+    ]
+  },
+  "notes": [
+    "Call sandbase_describe_tool before each capability and pass only current schema-defined arguments.",
+    "Do not mutate external systems without explicit user authorization."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "context-dev/scrape-markdown",
+        "tool_name": "context_dev_scrape_markdown",
+        "summary": "Read a selected page as clean Markdown."
+      },
+      {
+        "method": "POST",
+        "operation": "context-dev/extract-structured-data",
+        "tool_name": "context_dev_extract_structured_data",
+        "summary": "Extract requested structured fields from a selected page."
+      }
+    ]
+  },
+  "related_skills": []
+}

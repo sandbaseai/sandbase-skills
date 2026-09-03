@@ -14,7 +14,7 @@ Have a repeatable workflow that is missing? [Request a Skill](https://github.com
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**98 installable Agent Skills** for research, social intelligence, marketing, productivity, and business workflows. Install into any compatible agent (DeepSeek Harness, Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
+**98 installable Agent Skills** for research, social intelligence, marketing, and business workflows. Install into any compatible agent (DeepSeek Harness, Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
 
 SandBase also exposes [2,000+ models and APIs](https://www.sandbase.ai/docs/store/),
 including a unified surface for [LLM, image, and video generation](https://blog.sandbase.ai/unified-ai-api-llm-image-video-2026/).
@@ -212,7 +212,7 @@ Find, validate, and synthesize information from multiple sources.
 
 ### Business Intelligence (26 Skills)
 
-Company research, sales intelligence, commercial planning, and financial analysis.
+Company research, sales intelligence, and competitive analysis.
 
 | Skill | Use it to |
 |---|---|
@@ -237,11 +237,11 @@ Company research, sales intelligence, commercial planning, and financial analysi
 | `local-market-research` | Research local markets with reviews and social data |
 | `data-enrichment` | Fill data gaps with verified intelligence |
 | `market-sizing-analysis` | Calculate evidence-backed TAM, SAM, and SOM ranges |
-| `variance-analysis` | Decompose financial variances into reconciled business drivers |
-| `reconciliation` | Match account or transaction data and classify open differences |
-| `cash-flow-snapshot` | Forecast 30/60/90-day cash flow and named liquidity risks |
-| `sales-enablement` | Create buyer-specific sales collateral and ROI models |
-| `prd` | Turn product ideas into measurable, implementation-ready requirements |
+| `variance-analysis` | Decompose financial variances into business drivers |
+| `reconciliation` | Match account data and classify open differences |
+| `cash-flow-snapshot` | Forecast 30/60/90-day cash flow and liquidity risks |
+| `sales-enablement` | Create buyer-specific sales collateral |
+| `prd` | Turn product ideas into measurable requirements |
 
 ### Marketing & Content (15 Skills)
 
@@ -276,11 +276,11 @@ Search engine optimization, SERP analysis, and technical auditing.
 | `serp-analysis` | Analyze live Google SERP results and features |
 | `seo-content-brief` | Generate SERP-backed content briefs |
 | `site-audit` | Audit website content, structure, and SEO health |
-| `programmatic-seo` | Design useful data-driven page families and safe generation plans |
+| `programmatic-seo` | Design and validate data-driven SEO page families |
 
 ### Tools & Utilities (20 Skills)
 
-Practical tools for everyday agent and team workflows.
+Practical tools for everyday agent tasks.
 
 | Skill | Use it to |
 |---|---|
@@ -301,9 +301,9 @@ Practical tools for everyday agent and team workflows.
 | `npm-package-research` | Evaluate npm packages before installing |
 | `cve-lookup` | Look up security vulnerabilities by CVE |
 | `website-monitor` | Monitor websites for changes and health |
-| `task-management` | Maintain a shared repository-local TASKS.md tracker |
-| `meeting-minutes` | Turn meeting notes or transcripts into decisions and action items |
-| `ticket-triage` | Classify, prioritize, and route customer-support issues |
+| `task-management` | Maintain a shared repository-local task tracker |
+| `meeting-minutes` | Turn meeting inputs into decisions and action items |
+| `ticket-triage` | Classify, prioritize, and route support issues |
 
 ## Install
 
@@ -357,11 +357,9 @@ User Question → Agent reads SKILL.md → Uses host tools and/or SandBase → V
 
 ## Pricing
 
-Skills are free and open source. The repository is Apache-2.0; adapted Skills
-retain the compatible upstream licenses recorded in
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). `multi-source-search` can use
-compatible host-provided tools without a SandBase account. Optional SandBase API
-calls are usage-based — typically $0.001–$0.01 per call. A typical research task
+Skills themselves are free and open source (Apache-2.0). `multi-source-search`
+can use compatible host-provided tools without a SandBase account. Optional SandBase
+API calls are usage-based — typically $0.001–$0.01 per call. A typical research task
 using those calls costs $0.05–$0.20.
 
 See [sandbase.ai/pricing](https://sandbase.ai/pricing) for current rates.
@@ -371,7 +369,7 @@ See [sandbase.ai/pricing](https://sandbase.ai/pricing) for current rates.
 ```
 research/<skill>/SKILL.md           Agent instruction file
 research/<skill>/references/        API maps and workflow guidance
-marketing/<skill>/                  Marketing workflows
+marketing/<skill>/                  Original marketing skills
 catalog/skills/                     Web display metadata
 integrations/sandbase-registry/     Platform registry manifests
 scripts/skillpack.py                Validation helper

@@ -1,0 +1,53 @@
+{
+  "name": "sandbase/meeting-minutes",
+  "display_name": "Meeting Minutes",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "meeting-minutes",
+  "description": "Create concise meeting minutes with decisions, owners, due dates, and follow-ups from notes, transcript pages, or published video captions.",
+  "type": "skill",
+  "capability_tags": [
+    "meetings",
+    "minutes",
+    "action items"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "business-operations"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/meeting-minutes",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/meeting-minutes/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/meeting-minutes.json",
+    "skill_path": "marketing/meeting-minutes",
+    "catalog_path": "catalog/skills/meeting-minutes.json",
+    "required_endpoints": [
+      "context_dev_scrape_markdown",
+      "youtube_web_v2_video_captions"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 500,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Business Operations",
+    "endpoint_count": 2,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

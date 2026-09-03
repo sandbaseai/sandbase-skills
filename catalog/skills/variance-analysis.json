@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "id": "variance-analysis",
+  "display_name": "Variance Analysis",
+  "short_description": "Explain financial variances by driver.",
+  "description": "Decompose budget, forecast, and period variances into reconciled drivers with sign conventions and management commentary.",
+  "category": {
+    "id": "finance",
+    "label": "Finance"
+  },
+  "tags": [
+    "finance",
+    "variance",
+    "budget"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/variance-analysis",
+    "skill_file": "marketing/variance-analysis/SKILL.md",
+    "readme_anchor": "#variance-analysis"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for capability calls"
+    ]
+  },
+  "install": {
+    "prompt": "Use $variance-analysis to explain these actual-versus-budget results.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill variance-analysis --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill variance-analysis --agent codex --global",
+    "source_path": "marketing/variance-analysis"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/variance-analysis"
+    }
+  ],
+  "examples": [
+    "Decompose revenue variance into price and volume effects.",
+    "Extract this authorized report and draft variance commentary."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "actual values",
+      "comparison values",
+      "sign convention",
+      "authorized report URLs"
+    ]
+  },
+  "notes": [
+    "Call sandbase_describe_tool before each capability and pass only current schema-defined arguments.",
+    "Do not mutate external systems without explicit user authorization."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "context-dev/extract-structured-data",
+        "tool_name": "context_dev_extract_structured_data",
+        "summary": "Extract requested structured fields from a selected page."
+      },
+      {
+        "method": "POST",
+        "operation": "context-dev/scrape-markdown",
+        "tool_name": "context_dev_scrape_markdown",
+        "summary": "Read a selected page as clean Markdown."
+      }
+    ]
+  },
+  "related_skills": []
+}

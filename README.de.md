@@ -5,7 +5,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | Deutsch | [Português](./README.pt-BR.md)
 
-**98 installierbare Agent Skills** — Für Recherche, Social Intelligence, Marketing, Produktivität und Business-Workflows. Der zentrale Recherche-Skill nutzt die vorhandenen Suchwerkzeuge des Agents und benötigt kein SandBase-Konto; SandBase ist nur für zusätzliche spezialisierte Datenquellen erforderlich.
+**98 installierbare Agent Skills** — Für Recherche, Social Intelligence, Marketing und Business-Workflows. Der zentrale Recherche-Skill nutzt die vorhandenen Suchwerkzeuge des Agents und benötigt kein SandBase-Konto; SandBase ist nur für zusätzliche spezialisierte Datenquellen erforderlich.
 
 Beginnen Sie mit `multi-source-search`: Der Skill nutzt die vorhandenen Suchwerkzeuge des Agents und enthält ein Beispiel-Evidenzprotokoll sowie einen Offline-Validator. Wenn er einen echten Workflow verbessert, [geben Sie dem Repository einen Star](https://github.com/sandbaseai/sandbase-skills), damit andere Entwickler ihn leichter entdecken können.
 
@@ -41,10 +41,10 @@ Der Installer kopiert den vollständigen Skill nach `.dsh/skills/multi-source-se
 |-----------|--------|-----------------|
 | **Social Intelligence** | 14 | Twitter, YouTube, Instagram, TikTok, Reddit, Xiaohongshu |
 | **Suche & Recherche** | 17 | Multi-Source, Akademisch, Trends, News |
-| **Business Intelligence** | 26 | Unternehmen, Wettbewerb, Finanzen, Vertrieb und Produktanforderungen |
+| **Business Intelligence** | 26 | Unternehmen, Wettbewerb, Vertrieb, Talente |
 | **Marketing** | 15 | Marke, Influencer, Social Listening, Krise |
-| **SEO** | 6 | Keywords, Backlinks, SERP, Audit und programmatisches SEO |
-| **Tools** | 20 | E-Mail, Domains, Protokolle, Aufgaben und Ticket-Triage |
+| **SEO** | 6 | Keywords, Backlinks, SERP, Audit |
+| **Tools** | 20 | E-Mail, Domains, Screenshots, Übersetzung |
 
 Vollständige Liste im [englischen README](./README.md#skill-catalog-98-skills).
 
@@ -54,7 +54,7 @@ Claude Code, Codex, Cursor, Gemini CLI, OpenClaw, Hermes, Amp, Devin
 
 ## Preise
 
-Skills sind kostenlos und Open Source. Das Repository steht unter Apache-2.0; angepasste Drittanbieter-Skills behalten die in `THIRD_PARTY_NOTICES.md` dokumentierten kompatiblen Ursprungslizenzen. `multi-source-search` benötigt mit den vorhandenen Agent-Werkzeugen weder ein SandBase-Konto noch SandBase-API-Kosten; spezialisierte Skills können SandBase nutzungsbasiert ergänzen.
+Skills sind kostenlos und Open Source (Apache-2.0). `multi-source-search` benötigt mit den vorhandenen Agent-Werkzeugen weder ein SandBase-Konto noch SandBase-API-Kosten; spezialisierte Skills können SandBase nutzungsbasiert ergänzen.
 
 ---
 

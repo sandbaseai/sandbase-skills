@@ -1,0 +1,57 @@
+{
+  "name": "sandbase/programmatic-seo",
+  "display_name": "Programmatic SEO",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "programmatic-seo",
+  "description": "Design useful data-driven page families and validate keyword demand, difficulty, seasonality, and live SERPs before scaling.",
+  "type": "skill",
+  "capability_tags": [
+    "SEO",
+    "programmatic SEO",
+    "keywords"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-seo"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/programmatic-seo",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/programmatic-seo/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/programmatic-seo.json",
+    "skill_path": "marketing/programmatic-seo",
+    "catalog_path": "catalog/skills/programmatic-seo.json",
+    "required_endpoints": [
+      "dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live",
+      "dataforseo_v3_keywords_data_google_ads_search_volume_live",
+      "dataforseo_v3_dataforseo_labs_google_bulk_keyword_difficulty_live",
+      "dataforseo_v3_keywords_data_google_trends_explore_live",
+      "dataforseo_v3_dataforseo_labs_google_keywords_for_site_live",
+      "dataforseo_v3_serp_google_organic_live_advanced"
+    ]
+  },
+  "execution_mode": "sync",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 500,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & SEO",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

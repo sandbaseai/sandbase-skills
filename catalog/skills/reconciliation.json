@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "id": "reconciliation",
+  "display_name": "Reconciliation",
+  "short_description": "Match balances and classify differences.",
+  "description": "Reconcile GL, subledger, bank, or third-party balances and produce a traceable list of open reconciling items.",
+  "category": {
+    "id": "finance",
+    "label": "Finance"
+  },
+  "tags": [
+    "finance",
+    "reconciliation",
+    "accounting"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/reconciliation",
+    "skill_file": "marketing/reconciliation/SKILL.md",
+    "readme_anchor": "#reconciliation"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for capability calls"
+    ]
+  },
+  "install": {
+    "prompt": "Use $reconciliation to match these two reports and explain open differences.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill reconciliation --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill reconciliation --agent codex --global",
+    "source_path": "marketing/reconciliation"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/reconciliation"
+    }
+  ],
+  "examples": [
+    "Reconcile this GL balance to the subledger.",
+    "Classify unmatched bank items without posting adjustments."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "two comparison datasets",
+      "period",
+      "matching rules",
+      "authorized report URLs"
+    ]
+  },
+  "notes": [
+    "Call sandbase_describe_tool before each capability and pass only current schema-defined arguments.",
+    "Do not mutate external systems without explicit user authorization."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "context-dev/extract-structured-data",
+        "tool_name": "context_dev_extract_structured_data",
+        "summary": "Extract requested structured fields from a selected page."
+      },
+      {
+        "method": "POST",
+        "operation": "context-dev/scrape-markdown",
+        "tool_name": "context_dev_scrape_markdown",
+        "summary": "Read a selected page as clean Markdown."
+      }
+    ]
+  },
+  "related_skills": []
+}

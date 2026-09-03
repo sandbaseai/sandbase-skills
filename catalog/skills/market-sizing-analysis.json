@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "id": "market-sizing-analysis",
+  "display_name": "Market Sizing Analysis",
+  "short_description": "Calculate evidence-backed TAM, SAM, and SOM.",
+  "description": "Size markets with top-down, bottom-up, and value-theory methods using current, cited public evidence.",
+  "category": {
+    "id": "market-research",
+    "label": "Market Research"
+  },
+  "tags": [
+    "market sizing",
+    "TAM",
+    "SAM",
+    "SOM"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/market-sizing-analysis",
+    "skill_file": "marketing/market-sizing-analysis/SKILL.md",
+    "readme_anchor": "#market-sizing-analysis"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for capability calls"
+    ]
+  },
+  "install": {
+    "prompt": "Use $market-sizing-analysis to estimate TAM, SAM, and SOM with cited assumptions.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill market-sizing-analysis --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill market-sizing-analysis --agent codex --global",
+    "source_path": "marketing/market-sizing-analysis"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/market-sizing-analysis"
+    }
+  ],
+  "examples": [
+    "Size the US market for this B2B product.",
+    "Cross-check a bottom-up estimate against current market reports."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "market definition",
+      "geography",
+      "customer segment",
+      "pricing assumptions"
+    ]
+  },
+  "notes": [
+    "Call sandbase_describe_tool before each capability and pass only current schema-defined arguments.",
+    "Do not mutate external systems without explicit user authorization."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "usage-based/call",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_describe_tool"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_describe_tool",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_call_tool",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "POST",
+        "operation": "tavily/search",
+        "tool_name": "tavily_search",
+        "summary": "Search current public web sources."
+      },
+    {
+      "method": "POST",
+      "operation": "exa/search",
+      "tool_name": "exa_search",
+      "summary": "Find semantically relevant high-quality web sources."
+    }
+    ]
+  },
+  "related_skills": []
+}
