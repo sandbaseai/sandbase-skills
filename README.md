@@ -340,7 +340,7 @@ User Question → Agent reads SKILL.md → Uses host tools and/or SandBase → V
 1. You ask a question or give a task
 2. Your agent reads the installed Skill's instructions
 3. The Skill starts with compatible search or browser tools already available to the host
-4. When configured, SandBase adds provider-specific capabilities via `sandbase_describe_tool` → `sandbase_call_tool`
+4. When configured, SandBase adds provider-specific capabilities via `sandbase_discover` → `sandbase_inspect` → `sandbase_run` (poll async results with `sandbase_run_get`)
 5. The agent executes the workflow, validates structured evidence, and delivers the result
 
 ## SandBase Ecosystem

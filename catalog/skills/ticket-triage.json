@@ -70,7 +70,7 @@
     ]
   },
   "notes": [
-    "Call sandbase_describe_tool before each capability and pass only current schema-defined arguments.",
+    "Call sandbase_inspect before each capability and pass only current schema-defined arguments.",
     "Do not mutate external systems without explicit user authorization."
   ],
   "api": {
@@ -80,14 +80,15 @@
     "schema_resolution": {
       "source": "sandbase-capability-registry",
       "strategy": "dynamic",
-      "lookup": "sandbase_describe_tool"
+      "lookup": "sandbase_inspect",
+      "dynamic_lookup": "Use tool_name as a discovery hint with sandbase_discover; pass the matching returned name to sandbase_inspect and follow execute_as with the current inputSchema."
     },
     "schema_lookup": {
-      "tool": "sandbase_describe_tool",
+      "tool": "sandbase_inspect",
       "argument": "name"
     },
     "call": {
-      "tool": "sandbase_call_tool",
+      "tool": "sandbase_run",
       "arguments": [
         "name",
         "arguments"
@@ -106,7 +107,15 @@
         "tool_name": "context_dev_scrape_markdown",
         "summary": "Read a selected page as clean Markdown."
       }
-    ]
+    ],
+    "discovery": {
+      "tool": "sandbase_discover",
+      "argument": "q"
+    },
+    "async_result": {
+      "tool": "sandbase_run_get",
+      "argument": "run_id"
+    }
   },
   "related_skills": []
 }

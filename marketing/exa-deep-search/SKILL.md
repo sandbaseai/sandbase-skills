@@ -5,7 +5,7 @@ description: Search, extract, and compare high-quality public sources with Exa t
 
 # Exa Deep Search
 
-Turn Exa search into a focused, source-backed research brief. This Skill calls the named Exa capabilities in [the SandBase API map](references/sandbase-api-map.md) through the SandBase MCP gateway. In a SandBase Agent, run the capabilities directly. In another compatible agent, require an authorized SandBase connection before starting; never request, print, or store an API key in the research output.
+Turn Exa search into a focused, source-backed research brief. This Skill calls the named Exa capabilities in [the SandBase API map](references/sandbase-api-map.md) through the SandBase MCP gateway. Use an authorized SandBase MCP connection and the discover → inspect → run workflow below; never request, print, or store an API key in the research output.
 
 Read [example workflows](references/example-workflows.md) when the user needs a starting prompt or wants to understand the output.
 
@@ -28,39 +28,40 @@ When the research question is broad, propose 2–3 focused sub-queries and confi
 
 ### 2. Select and call SandBase capabilities
 
-Read [the SandBase API map](references/sandbase-api-map.md) before selecting tools. Use the listed `tool_name` through the SandBase gateway:
+Read [the SandBase API map](references/sandbase-api-map.md) before selecting tools. Treat each listed `tool_name` as a capability identifier to resolve through the SandBase gateway:
 
-1. Call `sandbase_describe_tool` for the selected `tool_name` and read its current input schema.
-2. Call `sandbase_call_tool` with that exact `tool_name` and only schema-defined arguments.
-3. Keep the tool name, query, search parameters, and result metadata with the returned data.
+1. Use `sandbase_discover` with the provider and capability to find the current endpoint name.
+2. Pass the returned `name` to `sandbase_inspect`; read `inputSchema`, pricing, and `execute_as`.
+3. Follow `execute_as` to call `sandbase_run` using `execute_as.arguments.name` and schema-defined `arguments`. If it returns a `run_id`, poll `sandbase_run_get` within the task budget until `completed` or `failed`; report pending or failed runs without automatically resubmitting them.
+4. Keep the returned endpoint name, query, search parameters, and result metadata with the returned data.
 
 ### 3. Search with Exa
 
-Use `exa_search` with parameters matched to the research need:
+Resolve `exa_search` with `sandbase_discover`, then map these research needs to the current `inputSchema` from `sandbase_inspect`. Use the discovered endpoint name and its `execute_as` template for execution:
 
-| Research need | Recommended parameters |
+| Research need | Search intent |
 |---|---|
-| Current landscape | `topic: "news"`, bounded `start_published_date`/`end_published_date`, `include_highlights: true` |
-| Deep evidence | `search_depth: "advanced"`, `include_summary: true`, request full text only for selected sources |
-| Trusted sources only | `include_domains` for first-party, academic, or approved publishers |
-| Competitive research | `exclude_domains` for the target's own site; separate queries per competitor |
-| Validation or quick check | `search_depth: "basic"`, `num_results: 3–5` |
+| Current landscape | News results within a bounded publication window, with relevant highlights |
+| Deep evidence | A supported deep search mode with summaries; request full text only for selected sources |
+| Trusted sources only | Restrict results to first-party, academic, or approved publisher domains |
+| Competitive research | Exclude the target's own domain; use separate queries per competitor |
+| Validation or quick check | A supported fast search mode with 3–5 results |
 
 Tips:
 - Write queries as natural-language statements of what a good result page would say, not short keyword strings. Exa responds best to semantic queries.
-- Use `category` when available (e.g., `"research paper"`, `"company"`, `"news"`) to narrow result types.
+- Use the inspected schema’s supported categories to narrow result types.
 - Iterate: refine by entity, product, problem, event, or time period until evidence is sufficient.
-- Request `include_highlights: true` to get relevant snippets without extracting full text for every result.
+- Request relevant highlights using the inspected schema’s content options, without extracting full text for every result.
 
 ### 4. Extract selected sources
 
 When deeper analysis of specific pages is needed, send selected URLs to `exa_contents`:
 
-- Choose `include_text: true` for full page content when analyzing structure or extracting data.
-- Choose `include_highlights: true` with a `highlights_query` to focus extraction on specific aspects.
-- Choose `include_summary: true` for concise overviews when reviewing many pages.
-- Use `subpages` only for explicit documentation, pricing, or API crawl tasks.
-- Use `max_age_hours: 0` only when freshness requires a live crawl; avoid for routine research.
+- Request full page content when analyzing structure or extracting data.
+- Request focused highlights when the inspected extraction schema supports them.
+- Request concise summaries when reviewing many pages, if supported.
+- Include subpages only for explicit documentation, pricing, or API crawl tasks and only when supported.
+- Request a live crawl only when freshness requires it and the inspected schema supports it.
 
 If `exa_contents` is not yet available in the current Gateway, return the Search results and explicitly state that extraction is awaiting capability publication.
 
@@ -83,7 +84,7 @@ Good Exa queries describe the content of the ideal result page:
 
 - Add temporal context: "in 2025", "since January", "latest announcement".
 - Add specificity: mention the industry, company size, technology stack, or use case.
-- Use `exclude_domains` to avoid results you already know about.
+- Use the inspected schema’s domain exclusion option to avoid results you already know about.
 
 ## Output
 
@@ -119,7 +120,7 @@ Follow-up Exa queries or alternative research paths.
 ## Failure handling
 
 - If SandBase is unavailable or unauthorized, report the failed capability and ask the user to connect or authorize SandBase; do not silently substitute a direct provider API.
-- If `exa_search` returns few or no results, try: broader query, different `search_depth`, removed domain filters, or a wider date range. Report if the topic genuinely lacks public coverage.
+- If `exa_search` returns few or no results, try: broader query, a different supported search mode, removed domain filters, or a wider date range. Report if the topic genuinely lacks public coverage.
 - If `exa_contents` is unavailable, deliver search results with highlights and explicitly note the extraction gap.
 - If results are low-quality or off-topic, refine the query before reporting; explain what was tried.
 

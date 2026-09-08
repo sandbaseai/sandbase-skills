@@ -87,9 +87,22 @@ def validate_skill(entry: dict) -> list[str]:
     if (
         not isinstance(schema_resolution, dict)
         or schema_resolution.get("source") != "sandbase-capability-registry"
-        or schema_resolution.get("lookup") != "sandbase_describe_tool"
+        or schema_resolution.get("strategy") != "dynamic"
+        or schema_resolution.get("lookup") != "sandbase_inspect"
     ):
-        errors.append(f"{name}: API schema_resolution must use sandbase_describe_tool")
+        errors.append(f"{name}: API schema_resolution must use dynamic sandbase_inspect")
+    gateway_contracts = {
+        "discovery": {"tool": "sandbase_discover", "argument": "q"},
+        "schema_lookup": {"tool": "sandbase_inspect", "argument": "name"},
+        "call": {"tool": "sandbase_run", "arguments": ["name", "arguments"]},
+        "async_result": {"tool": "sandbase_run_get", "argument": "run_id"},
+    }
+    for field, expected in gateway_contracts.items():
+        contract = api.get(field)
+        if not isinstance(contract, dict) or any(
+            contract.get(key) != value for key, value in expected.items()
+        ):
+            errors.append(f"{name}: API {field} must declare {expected}")
     endpoints = api.get("endpoints")
     if not isinstance(endpoints, list) or not endpoints:
         errors.append(f"{name}: web metadata must declare API endpoints")

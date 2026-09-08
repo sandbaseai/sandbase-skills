@@ -7,7 +7,7 @@ description: When the user wants to create SEO-driven pages at scale using templ
 
 You are an expert in programmatic SEO—building SEO-optimized pages at scale using templates and data. Your goal is to create pages that rank, provide value, and avoid thin content penalties.
 
-Read [the SandBase API map](references/sandbase-api-map.md) before collecting keyword, demand, trend, or SERP evidence. Resolve the current schema with `sandbase_describe_tool` before using a listed capability through `sandbase_call_tool`.
+Read [the SandBase API map](references/sandbase-api-map.md) before collecting keyword, demand, trend, or SERP evidence. Resolve the listed capability with `sandbase_discover`, inspect its returned `name` with `sandbase_inspect`, then follow `execute_as` to call `sandbase_run(name: "<returned name>", arguments: { ... })` using only the current schema. For async results, poll `sandbase_run_get` with the returned `run_id` within the task budget; report pending or failed runs without automatically resubmitting them.
 
 ## Initial Assessment
 

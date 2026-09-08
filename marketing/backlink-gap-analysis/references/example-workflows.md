@@ -1,6 +1,6 @@
 # Example Workflows
 
-Each example uses SandBase DataForSEO backlink capabilities as the evidence source. Inspect the current schema with `sandbase_describe_tool` before calling any listed tool.
+Each example uses SandBase DataForSEO backlink capabilities as the evidence source. Resolve capability identifiers with `sandbase_discover`, then use `sandbase_inspect` to read the current schema and pricing before executing its `execute_as` template through `sandbase_run`. Treat any example options as intent to map to the inspected schema; use `sandbase_run_get` for async results.
 
 ## 1. Full backlink gap analysis
 

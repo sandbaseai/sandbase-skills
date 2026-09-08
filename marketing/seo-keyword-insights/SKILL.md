@@ -5,7 +5,7 @@ description: Build evidence-backed SEO keyword insights and strategy using SandB
 
 # SEO Keyword Insights
 
-Build a decision-ready organic-search strategy from a site, product, seed topic, or competitor set. This Skill is a SandBase API workflow: it calls the named SEO capabilities in [the SandBase API map](references/sandbase-api-map.md) through the SandBase MCP gateway. In a SandBase Agent, run the capabilities directly. In another compatible agent, require an authorized SandBase connection before starting; never request, print, or store an API key in the research output.
+Build a decision-ready organic-search strategy from a site, product, seed topic, or competitor set. This Skill is a SandBase API workflow: it calls the named SEO capabilities in [the SandBase API map](references/sandbase-api-map.md) through the SandBase MCP gateway. Use an authorized SandBase MCP connection and the discover → inspect → run workflow below; never request, print, or store an API key in the research output.
 
 The primary capability is **DataForSEO keyword search through SandBase**: discover candidates, validate demand and difficulty, compare site visibility, and inspect live SERPs. Read [example workflows](references/example-workflows.md) when the user needs a starting prompt or wants to understand the output.
 
@@ -30,13 +30,14 @@ When market details are missing, choose a defensible default only if the site or
 
 ### 2. Select and call SandBase capabilities
 
-Read [the SandBase API map](references/sandbase-api-map.md) before selecting tools. Use the listed `tool_name` through the SandBase gateway:
+Read [the SandBase API map](references/sandbase-api-map.md) before selecting tools. Treat each listed `tool_name` as a capability identifier to resolve through the SandBase gateway:
 
-1. Call `sandbase_describe_tool` for the selected `tool_name` and read its current input schema.
-2. Call `sandbase_call_tool` with that exact `tool_name` and only schema-defined arguments.
-3. Keep the tool name, market, language, device, and timestamp with the returned data.
+1. Use `sandbase_discover` with the provider and capability to find the current endpoint name.
+2. Pass the returned `name` to `sandbase_inspect`; read `inputSchema`, pricing, and `execute_as`.
+3. Follow `execute_as` to call `sandbase_run` using `execute_as.arguments.name` and schema-defined `arguments`. If it returns a `run_id`, poll `sandbase_run_get` within the task budget until `completed` or `failed`; report pending or failed runs without automatically resubmitting them.
+4. Keep the returned endpoint name, market, language, device, and timestamp with the returned data.
 
-Use `sandbase_find_tools` only when the API map does not cover a needed capability or SandBase has added a relevant one. Do not replace a mapped SEO capability with an unverified guessed name.
+Use the API map to select the intended SEO capability and `sandbase_discover` to resolve its current name. If it is unavailable, search for a relevant alternative and verify it with `sandbase_inspect` before running it.
 
 Prefer this evidence ladder:
 
@@ -46,7 +47,7 @@ Prefer this evidence ladder:
 4. Ranked-keyword, competitor, and intersection data when a domain comparison is useful.
 5. Live organic SERPs for the leading candidates and each priority cluster.
 
-The API map intentionally fixes the product-facing capability names, while `sandbase_describe_tool` remains authoritative for payload shape, supported locations, and optional parameters. If an expected capability is unavailable, identify the evidence gap and continue only with evidence that is available.
+The API map intentionally fixes the product-facing capability names, while `sandbase_inspect` remains authoritative for payload shape, supported locations, and optional parameters. If an expected capability is unavailable, identify the evidence gap and continue only with evidence that is available.
 
 ### 3. Build and validate the keyword universe
 

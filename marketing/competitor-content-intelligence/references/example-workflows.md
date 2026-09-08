@@ -1,6 +1,6 @@
 # Example Workflows
 
-Each example uses SandBase content intelligence capabilities as the evidence source. Inspect the current schema with `sandbase_describe_tool` before calling any listed tool.
+Each example uses SandBase content intelligence capabilities as the evidence source. Resolve capability identifiers with `sandbase_discover`, then use `sandbase_inspect` to read the current schema and pricing before executing its `execute_as` template through `sandbase_run`. Treat any example options as intent to map to the inspected schema; use `sandbase_run_get` for async results.
 
 ## 1. Full competitor content gap analysis
 
@@ -12,7 +12,7 @@ Compare content coverage between our-domain.com and three competitors for the "A
 
 **Use these capabilities**
 
-1. `exa_search` with `include_domains` for each competitor to find their content on this topic.
+1. the discovered `exa_search` capability with the inspected schema’s domain restriction option for each competitor to find their content on this topic.
 2. `context_dev_scrape_markdown` for the top 2–3 pages per competitor to analyze depth and angle.
 3. `dataforseo_v3_on_page_content_parsing_live` for structured content analysis.
 4. `dataforseo_v3_content_analysis_search_live` to check broader market coverage.

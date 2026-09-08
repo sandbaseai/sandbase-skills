@@ -1,8 +1,8 @@
 # SandBase 小红书 API Map
 
-通过 SandBase gateway 调用。每次调用前先用 `sandbase_describe_tool` 获取参数，再用 `sandbase_call_tool` 传入准确的 tool name。
+下列能力标识仅用于检索，不是直接调用的 MCP 工具名。先用 `sandbase_discover(q: "<供应商和能力>")` 查找匹配端点，再将返回的 `name` 传给 `sandbase_inspect`，读取当前 `inputSchema`、价格和 `execute_as`。按模板调用 `sandbase_run`，将 `execute_as.arguments.name` 作为 `name`，并传入符合 schema 的 `arguments`。若返回 `run_id`，在任务预算内通过 `sandbase_run_get(run_id: "<返回的 run_id>")` 查询至 `completed` 或 `failed`；超出预算时报告待完成状态，失败时报告错误，不自动重复提交。
 
-| Tool name | 用途 |
+| Capability identifier | 用途 |
 |---|---|
 | `xiaohongshu_app_v2_search_notes` | 按关键词搜索笔记。 |
 | `xiaohongshu_app_v2_search_users` | 搜索用户/创作者。 |

@@ -9,7 +9,7 @@ description: 'Generate high-quality Product Requirements Documents (PRDs) for so
 
 Design comprehensive, production-grade Product Requirements Documents (PRDs) that bridge the gap between business vision and technical execution. This skill works for modern software systems, ensuring that requirements are clearly defined.
 
-When external product, market, or technical evidence is needed, read [the SandBase API map](references/sandbase-api-map.md). Resolve the current schema with `sandbase_describe_tool` before using a listed capability through `sandbase_call_tool`.
+When external product, market, or technical evidence is needed, read [the SandBase API map](references/sandbase-api-map.md). Resolve the listed capability with `sandbase_discover`, inspect its returned `name` with `sandbase_inspect`, then follow `execute_as` to call `sandbase_run(name: "<returned name>", arguments: { ... })` using only the current schema. For async results, poll `sandbase_run_get` with the returned `run_id` within the task budget; report pending or failed runs without automatically resubmitting them.
 
 ## When to Use
 

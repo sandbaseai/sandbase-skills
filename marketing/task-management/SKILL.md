@@ -7,7 +7,7 @@ description: Simple task management using a shared TASKS.md file. Reference this
 
 Tasks are tracked in a simple `TASKS.md` file that both you and the user can edit.
 
-When task sources are supplied as web pages, read [the SandBase API map](references/sandbase-api-map.md) and use only the capabilities listed there. Resolve each current input schema with `sandbase_describe_tool` before calling it through `sandbase_call_tool`.
+When task sources are supplied as web pages, read [the SandBase API map](references/sandbase-api-map.md) and use only the capabilities listed there. Resolve the listed capability with `sandbase_discover`, inspect its returned `name` with `sandbase_inspect`, then follow `execute_as` to call `sandbase_run(name: "<returned name>", arguments: { ... })` using only the current schema. For async results, poll `sandbase_run_get` with the returned `run_id` within the task budget; report pending or failed runs without automatically resubmitting them.
 
 ## File Location
 

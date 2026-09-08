@@ -5,7 +5,7 @@ description: Analyze competitor content coverage and uncover differentiated cont
 
 # Competitor Content Intelligence
 
-Compare public content evidence to identify differentiated editorial and landing-page opportunities. This Skill calls the named search, extraction, and analysis capabilities in [the SandBase API map](references/sandbase-api-map.md) through the SandBase MCP gateway. In a SandBase Agent, run the capabilities directly. In another compatible agent, require an authorized SandBase connection before starting; never request, print, or store an API key in the research output.
+Compare public content evidence to identify differentiated editorial and landing-page opportunities. This Skill calls the named search, extraction, and analysis capabilities in [the SandBase API map](references/sandbase-api-map.md) through the SandBase MCP gateway. Use an authorized SandBase MCP connection and the discover → inspect → run workflow below; never request, print, or store an API key in the research output.
 
 Read [example workflows](references/example-workflows.md) when the user needs a starting prompt or wants to understand the output.
 
@@ -33,11 +33,12 @@ Classify the request as one or more of:
 
 ### 2. Select and call SandBase capabilities
 
-Read [the SandBase API map](references/sandbase-api-map.md) before selecting tools. Use the listed `tool_name` through the SandBase gateway:
+Read [the SandBase API map](references/sandbase-api-map.md) before selecting tools. Treat each listed `tool_name` as a capability identifier to resolve through the SandBase gateway:
 
-1. Call `sandbase_describe_tool` for the selected `tool_name` and read its current input schema.
-2. Call `sandbase_call_tool` with that exact `tool_name` and only schema-defined arguments.
-3. Keep the tool name, query parameters, and result metadata with the returned data.
+1. Use `sandbase_discover` with the provider and capability to find the current endpoint name.
+2. Pass the returned `name` to `sandbase_inspect`; read `inputSchema`, pricing, and `execute_as`.
+3. Follow `execute_as` to call `sandbase_run` using `execute_as.arguments.name` and schema-defined `arguments`. If it returns a `run_id`, poll `sandbase_run_get` within the task budget until `completed` or `failed`; report pending or failed runs without automatically resubmitting them.
+4. Keep the returned endpoint name, query parameters, and result metadata with the returned data.
 
 ### 3. Discover competitor content
 
@@ -51,7 +52,7 @@ Use `exa_search` and `cloudsway_search` to map the competitor content landscape:
 | Freshness gaps | Search with date filters to find where competitor content is outdated |
 
 Tips:
-- Use `include_domains` to search within a specific competitor's site.
+- Use the domain restriction option from the inspected schema to search within a specific competitor’s site.
 - Use semantic queries that describe the ideal content (Exa responds well to this).
 - Search for the same topic across multiple competitors to build a coverage matrix.
 - Search for "[category] + [buyer question]" to find question-gap opportunities.

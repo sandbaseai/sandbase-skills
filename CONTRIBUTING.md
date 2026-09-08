@@ -30,6 +30,15 @@ Do not push directly to the upstream repository. Keep one pull request focused o
 5. Set the catalog `install.cli` to `npx skills add sandbaseai/sandbase-skills --skill <skill-id> --agent codex`.
 6. Declare the same `tool_name` values in the catalog, installed API map, and registry manifest.
 
+SandBase `tool_name` values identify registry capabilities for discovery; they are not
+MCP functions to call directly. Use `sandbase_discover` to resolve a capability, pass
+the returned `name` to `sandbase_inspect`, and follow `execute_as` with `sandbase_run`.
+Read the current `inputSchema` and pricing before execution. Poll async results with
+`sandbase_run_get(run_id: "<returned run_id>")` within the task budget and report
+pending or failed runs without automatically resubmitting them. Catalog API contracts
+must declare discovery, schema lookup, execution, and async result lookup using these
+tools and their current argument names.
+
 ## Validate before opening a pull request
 
 ```bash

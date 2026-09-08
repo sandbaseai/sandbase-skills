@@ -9,7 +9,7 @@ description: Reconcile accounts by comparing GL balances to subledgers, bank sta
 
 Methodology and best practices for account reconciliation, including GL-to-subledger, bank reconciliations, and intercompany. Covers reconciling item categorization, aging analysis, and escalation.
 
-When inputs are supplied through report URLs, read [the SandBase API map](references/sandbase-api-map.md). Resolve the current schema with `sandbase_describe_tool` before using a listed capability through `sandbase_call_tool`.
+When inputs are supplied through report URLs, read [the SandBase API map](references/sandbase-api-map.md). Resolve the listed capability with `sandbase_discover`, inspect its returned `name` with `sandbase_inspect`, then follow `execute_as` to call `sandbase_run(name: "<returned name>", arguments: { ... })` using only the current schema. For async results, poll `sandbase_run_get` with the returned `run_id` within the task budget; report pending or failed runs without automatically resubmitting them.
 
 ## Reconciliation Types
 

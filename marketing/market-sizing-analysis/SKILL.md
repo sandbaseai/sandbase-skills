@@ -13,7 +13,7 @@ Market sizing provides the foundation for startup strategy, fundraising, and bus
 
 Treat percentages, thresholds, named sources, and numerical results in the supporting references and worked example as illustrations, not verified defaults. For a real analysis, cite current sources with date, geography, units, and assumptions; do not invent inaccessible data.
 
-For current market evidence, read [the SandBase API map](references/sandbase-api-map.md). Resolve the current schema with `sandbase_describe_tool` before using a listed capability through `sandbase_call_tool`.
+For current market evidence, read [the SandBase API map](references/sandbase-api-map.md). Resolve the listed capability with `sandbase_discover`, inspect its returned `name` with `sandbase_inspect`, then follow `execute_as` to call `sandbase_run(name: "<returned name>", arguments: { ... })` using only the current schema. For async results, poll `sandbase_run_get` with the returned `run_id` within the task budget; report pending or failed runs without automatically resubmitting them.
 
 ## Core Concepts
 

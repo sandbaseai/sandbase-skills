@@ -1,12 +1,20 @@
+import copy
+import importlib.util
 import json
+import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CLI = ROOT / "scripts" / "skillpack.py"
+SPEC = importlib.util.spec_from_file_location("skillpack", CLI)
+SKILLPACK = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(SKILLPACK)
 
 
 class SkillpackTests(unittest.TestCase):
@@ -28,8 +36,10 @@ class SkillpackTests(unittest.TestCase):
         skill_dir = ROOT / "marketing" / "seo-keyword-insights"
         skill_text = (skill_dir / "SKILL.md").read_text(encoding="utf-8")
         api_map = (skill_dir / "references" / "sandbase-api-map.md").read_text(encoding="utf-8")
-        self.assertIn("sandbase_call_tool", skill_text)
-        self.assertIn("sandbase_describe_tool", skill_text)
+        self.assertIn("sandbase_discover", skill_text)
+        self.assertIn("sandbase_inspect", skill_text)
+        self.assertIn("sandbase_run", skill_text)
+        self.assertIn("sandbase_run_get", skill_text)
         self.assertIn("dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live", api_map)
         self.assertIn("dataforseo_v3_serp_google_autocomplete_live_advanced", api_map)
         self.assertTrue((skill_dir / "references" / "example-workflows.md").is_file())
@@ -132,7 +142,7 @@ class SkillpackTests(unittest.TestCase):
         self.assertIn("No SandBase account is required", compatibility)
         self.assertIn("Do not stop merely because SandBase is unavailable", skill_text)
         self.assertIn("host agent's native web search", skill_text)
-        self.assertIn("sandbase_describe_tool", skill_text)
+        self.assertIn("sandbase_inspect", skill_text)
         self.assertIn("validate_report.py", skill_text)
 
     def test_multi_source_search_bounds_tool_loops(self):
@@ -142,6 +152,38 @@ class SkillpackTests(unittest.TestCase):
         self.assertIn("at most six search calls", skill_text)
         self.assertIn("Never repeat the same query", skill_text)
         self.assertIn("budget is exhausted", skill_text)
+
+    def test_validator_rejects_incompatible_mcp_contracts(self):
+        entry = SKILLPACK.load_catalog()["skills"][0]
+        with tempfile.TemporaryDirectory() as directory:
+            temporary_root = Path(directory)
+            shutil.copytree(ROOT / entry["path"], temporary_root / entry["path"])
+            for key in ("metadata_path", "registry_path"):
+                destination = temporary_root / entry[key]
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(ROOT / entry[key], destination)
+            metadata_path = temporary_root / entry["metadata_path"]
+            original = json.loads(metadata_path.read_text(encoding="utf-8"))
+            cases = [
+                ("discovery", None),
+                ("discovery", {"tool": "sandbase_discover", "argument": "name"}),
+                ("schema_lookup", {"tool": "sandbase_describe_tool", "argument": "name"}),
+                ("schema_lookup", {"tool": "sandbase_inspect", "argument": "tool_name"}),
+                ("call", {"tool": "sandbase_call_tool", "arguments": ["name", "arguments"]}),
+                ("call", {"tool": "sandbase_run", "arguments": ["tool_name", "arguments"]}),
+                ("async_result", {"tool": "sandbase_run_get", "argument": "id"}),
+                ("schema_resolution", {**original["api"]["schema_resolution"], "lookup": "sandbase_describe_tool"}),
+            ]
+            with patch.object(SKILLPACK, "REPO_ROOT", temporary_root):
+                self.assertEqual(SKILLPACK.validate_skill(entry), [])
+                for field, value in cases:
+                    with self.subTest(field=field, value=value):
+                        metadata = copy.deepcopy(original)
+                        metadata["api"][field] = value
+                        metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+                        errors = SKILLPACK.validate_skill(entry)
+                        self.assertEqual(len(errors), 1, errors)
+                        self.assertIn(f"API {field}", errors[0])
 
 
 if __name__ == "__main__":

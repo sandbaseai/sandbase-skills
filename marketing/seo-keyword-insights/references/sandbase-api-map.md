@@ -1,10 +1,10 @@
 # SandBase DataForSEO Keyword Search API Map
 
-Use these SandBase `tool_name` values through `sandbase_call_tool`. They are the SEO capability set observed for this Skill. Before each call, use `sandbase_describe_tool` for the current input schema; SandBase owns authentication, API routing, and provider credentials.
+Use the capability identifiers below as discovery hints, not MCP tool names. Find the matching endpoint with `sandbase_discover(q: "<provider and capability>")`; use its returned `name` in `sandbase_inspect(name: "<returned name>")`. Read `inputSchema`, pricing, and `execute_as`, then call `sandbase_run` using `execute_as.arguments.name` and schema-defined `arguments`. If a `run_id` is returned, poll `sandbase_run_get(run_id: "<returned run_id>")` within the task budget until `completed` or `failed`; report pending or failed runs without resubmitting them automatically. SandBase owns authentication, API routing, and provider credentials.
 
 ## Site understanding
 
-| Purpose | tool_name |
+| Purpose | Capability identifier (`tool_name`) |
 |---|---|
 | Parse a page into structured content or Markdown | `dataforseo_v3_on_page_content_parsing_live` |
 | Analyze existing page keyword density | `dataforseo_v3_on_page_keyword_density_live` |
@@ -13,7 +13,7 @@ Start a site-based research request with `dataforseo_v3_on_page_content_parsing_
 
 ## Keyword discovery
 
-| Purpose | tool_name |
+| Purpose | Capability identifier (`tool_name`) |
 |---|---|
 | Expand a seed with keyword suggestions and metrics | `dataforseo_v3_dataforseo_labs_google_keyword_suggestions_live` |
 | Generate keyword ideas with volume and CPC | `dataforseo_v3_dataforseo_labs_google_keyword_ideas_live` |
@@ -25,7 +25,7 @@ Start a site-based research request with `dataforseo_v3_on_page_content_parsing_
 
 ## Demand and feasibility
 
-| Purpose | tool_name |
+| Purpose | Capability identifier (`tool_name`) |
 |---|---|
 | Retrieve Google Ads search volume and competition | `dataforseo_v3_keywords_data_google_ads_search_volume_live` |
 | Retrieve Bing seed-keyword ideas | `dataforseo_v3_keywords_data_bing_keywords_for_keywords_live` |
@@ -39,7 +39,7 @@ Use a small, diverse seed set for discovery. Validate only shortlisted candidate
 
 ## Target-site visibility and competitor intelligence
 
-| Purpose | tool_name |
+| Purpose | Capability identifier (`tool_name`) |
 |---|---|
 | Find keywords a site ranks for | `dataforseo_v3_dataforseo_labs_google_keywords_for_site_live` |
 | Retrieve a domain's ranked keywords | `dataforseo_v3_dataforseo_labs_google_ranked_keywords_live` |
@@ -51,7 +51,7 @@ For domain tools, normalize domains to the schema's expected form, typically wit
 
 ## SERP validation
 
-| Market / engine | tool_name |
+| Market / engine | Capability identifier (`tool_name`) |
 |---|---|
 | Google organic | `dataforseo_v3_serp_google_organic_live_advanced` |
 | Google related searches | `dataforseo_v3_serp_google_related_searches_live_advanced` |
@@ -66,11 +66,13 @@ Inspect organic SERPs for priority terms and the strongest term in each cluster.
 ## Gateway call pattern
 
 ```text
-1. sandbase_describe_tool({ name: "<tool_name>" })
-2. sandbase_call_tool({
-     name: "<tool_name>",
-     arguments: { /* only current schema-defined fields */ }
+1. sandbase_discover({ q: "dataforseo keyword suggestions", type: "api" })
+2. sandbase_inspect({ name: "<name returned by discover>" })
+3. sandbase_run({
+     name: "<name from execute_as.arguments>",
+     arguments: { /* only fields from the inspected inputSchema */ }
    })
+4. sandbase_run_get({ run_id: "<run_id returned by run, if async>" })
 ```
 
 Do not call provider URLs directly. Do not expose authorization values, generated credentials, or raw customer exports.
