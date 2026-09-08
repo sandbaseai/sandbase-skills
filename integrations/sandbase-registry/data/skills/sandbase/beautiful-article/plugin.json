@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/beautiful-article",
+  "display_name": "Beautiful Article",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "beautiful-article",
+  "description": "Create, implement, or review beautiful article work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on beautiful article.",
+  "type": "skill",
+  "capability_tags": [
+    "Beautiful Article",
+    "Design & Media"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "design-media"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/beautiful-article",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/beautiful-article/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/beautiful-article.json",
+    "skill_path": "marketing/beautiful-article",
+    "catalog_path": "catalog/skills/beautiful-article.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 611,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Design & Media",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

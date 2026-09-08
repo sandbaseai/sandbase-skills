@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/data-context-extractor",
+  "display_name": "Data Context Extractor",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "data-context-extractor",
+  "description": "Apply data context extractor in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses data context extractor or its strengths fit the task.",
+  "type": "skill",
+  "capability_tags": [
+    "Data Context Extractor",
+    "Data Science & Analytics"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "data-science-analytics"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/data-context-extractor",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/data-context-extractor/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/data-context-extractor.json",
+    "skill_path": "marketing/data-context-extractor",
+    "catalog_path": "catalog/skills/data-context-extractor.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 630,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Data Science & Analytics",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

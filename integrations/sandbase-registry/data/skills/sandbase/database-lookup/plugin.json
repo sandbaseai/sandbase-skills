@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/database-lookup",
+  "display_name": "Database Lookup",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "database-lookup",
+  "description": "Research and evaluate database lookup with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for database lookup findings or verification.",
+  "type": "skill",
+  "capability_tags": [
+    "Database Lookup",
+    "Search & Research"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "search-research"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/database-lookup",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/database-lookup/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/database-lookup.json",
+    "skill_path": "marketing/database-lookup",
+    "catalog_path": "catalog/skills/database-lookup.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 632,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Search & Research",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

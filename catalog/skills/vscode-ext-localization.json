@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "id": "vscode-ext-localization",
+  "display_name": "VS Code Extension Localization",
+  "short_description": "Apply VS Code Extension Localization with explicit validation and safety boundaries.",
+  "description": "Plan, implement, or review vs code extension localization work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests vs code extension localization work.",
+  "category": {
+    "id": "software-engineering-devops",
+    "label": "Software Engineering & DevOps"
+  },
+  "tags": [
+    "VS Code Extension Localization",
+    "Software Engineering & DevOps"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/vscode-ext-localization",
+    "skill_file": "marketing/vscode-ext-localization/SKILL.md",
+    "readme_anchor": "#vscode-ext-localization"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Local tools appropriate to the requested task",
+      "An authorized SandBase connection only for optional external capabilities"
+    ]
+  },
+  "install": {
+    "prompt": "Use $vscode-ext-localization to complete and verify this VS Code Extension Localization task.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill vscode-ext-localization --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill vscode-ext-localization --agent codex --global",
+    "source_path": "marketing/vscode-ext-localization"
+  },
+  "notes": [
+    "Core work remains local.",
+    "Optional external calls use dynamic SandBase inspection and paid-call confirmation."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current optional capabilities."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live schemas, limits, and pricing."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute a user-approved capability."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent status and observed cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before an approved batch."
+      }
+    ]
+  },
+  "related_skills": []
+}

@@ -5,7 +5,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | Português
 
-**98 Skills de Agent instaláveis** — Para pesquisa, inteligência social, marketing e workflows de negócios. O principal Skill de pesquisa funciona com as ferramentas de busca do agent e não exige uma conta SandBase; conecte o SandBase apenas quando precisar de fontes especializadas.
+**245 Skills de Agent instaláveis** — Para pesquisa, inteligência social, marketing, geração de mídia, engenharia de software, ciência de dados e workflows de negócios. O principal Skill de pesquisa funciona com as ferramentas de busca do agent e não exige uma conta SandBase; conecte o SandBase quando precisar de fontes especializadas ou modelos generativos.
 
 Comece com `multi-source-search`: ele usa as ferramentas de busca existentes do agent e inclui um exemplo de registro de evidências e um validador offline. Se ele melhorar um workflow real, [dê uma estrela ao repositório](https://github.com/sandbaseai/sandbase-skills) para ajudar outros desenvolvedores a encontrá-lo.
 
@@ -35,18 +35,19 @@ dsh web
 
 O instalador copia o Skill completo para `.dsh/skills/multi-source-search`, o diretório de descoberta do projeto. Ele é executado diretamente do GitHub, sem publicação no npm nem conta SandBase.
 
-## Categorias (98 Skills)
+## Categorias (245 Skills)
 
 | Categoria | Quantidade | Casos de uso |
 |-----------|-----------|--------------|
 | **Inteligência Social** | 14 | Twitter, YouTube, Instagram, TikTok, Reddit, Xiaohongshu |
 | **Busca & Pesquisa** | 17 | Multi-fonte, acadêmico, tendências, notícias |
-| **Inteligência de Negócios** | 26 | Empresas, competição, vendas, talentos |
-| **Marketing** | 15 | Marca, influenciadores, escuta social, crise |
+| **Inteligência de Negócios** | 28 | Empresas, competição, vendas, talentos |
+| **Marketing** | 16 | Marca, influenciadores, escuta social, crise |
 | **SEO** | 6 | Keywords, backlinks, SERP, auditoria |
+| **Geração de mídia** | 3 | Imagens, vídeo, música e voz |
 | **Ferramentas** | 20 | Email, domínios, screenshots, tradução |
 
-Lista completa no [README em inglês](./README.md#skill-catalog-98-skills).
+Lista completa no [README em inglês](./README.md#skill-catalog-245-skills).
 
 ## Agents Suportados
 
@@ -58,4 +59,4 @@ Os Skills são gratuitos e open source (Apache-2.0). `multi-source-search` não 
 
 ---
 
-**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 98 Skills de Agent open source com fontes especializadas opcionais.
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 245 Skills de Agent open source com fontes especializadas e modelos generativos opcionais.

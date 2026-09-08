@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/dbt-transformation-patterns",
+  "display_name": "dbt Transformation Patterns",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "dbt-transformation-patterns",
+  "description": "Apply dbt transformation patterns in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses dbt transformation patterns or its strengths fit the task.",
+  "type": "skill",
+  "capability_tags": [
+    "dbt Transformation Patterns",
+    "Data Science & Analytics"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "data-science-analytics"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/dbt-transformation-patterns",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/dbt-transformation-patterns/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/dbt-transformation-patterns.json",
+    "skill_path": "marketing/dbt-transformation-patterns",
+    "catalog_path": "catalog/skills/dbt-transformation-patterns.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 633,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Data Science & Analytics",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

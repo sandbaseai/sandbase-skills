@@ -458,6 +458,2331 @@
       "version": "0.1.0",
       "tags": ["website audit", "SEO", "content"],
       "description": "Comprehensive website auditing with SEO analysis."
+    },
+    {
+      "name": "video-generator",
+      "path": "marketing/video-generator",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/video-generator/plugin.json",
+      "category": "media-generation",
+      "metadata_path": "catalog/skills/video-generator.json",
+      "display_name": "AI Video Generator",
+      "short_description": "Plan and produce multi-shot AI videos with SandBase.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": ["video generation", "image generation", "storyboard", "audio"],
+      "description": "Plan, generate, assemble, and verify short videos with dynamically selected SandBase media models."
+    },
+    {
+      "name": "stock-analysis",
+      "path": "marketing/stock-analysis",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/stock-analysis/plugin.json",
+      "category": "finance",
+      "metadata_path": "catalog/skills/stock-analysis.json",
+      "display_name": "Stock Analysis",
+      "short_description": "Research public companies with current SandBase market data.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": ["stocks", "company research", "market data", "SEC filings"],
+      "description": "Analyze public companies and listed securities with dynamically discovered SandBase data."
+    },
+    {
+      "name": "similarweb-analytics",
+      "path": "marketing/similarweb-analytics",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/similarweb-analytics/plugin.json",
+      "category": "marketing-research",
+      "metadata_path": "catalog/skills/similarweb-analytics.json",
+      "display_name": "Website Traffic Analytics",
+      "short_description": "Compare estimated website traffic and acquisition signals.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": ["website traffic", "Similarweb", "competitive analysis", "acquisition channels"],
+      "description": "Analyze website traffic, engagement, rankings, channel mix, and geography with SandBase."
+    },
+    {
+      "name": "music-prompter",
+      "path": "marketing/music-prompter",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/music-prompter/plugin.json",
+      "category": "media-generation",
+      "metadata_path": "catalog/skills/music-prompter.json",
+      "display_name": "Music Prompter",
+      "short_description": "Design and generate structured music with SandBase.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": ["music generation", "audio", "prompting", "soundtrack"],
+      "description": "Craft production-ready prompts and generate approved music with dynamically selected SandBase models."
+    },
+    {
+      "name": "listicle-blog-writer",
+      "path": "marketing/listicle-blog-writer",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/listicle-blog-writer/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/listicle-blog-writer.json",
+      "display_name": "Listicle Blog Writer",
+      "short_description": "Research and write defensible best-of articles.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": ["listicles", "comparison content", "SEO", "GEO"],
+      "description": "Create evidence-backed listicles with transparent ranking criteria and optional SandBase research."
+    },
+    {
+      "name": "manim-animator",
+      "path": "marketing/manim-animator",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/manim-animator/plugin.json",
+      "category": "media-generation",
+      "metadata_path": "catalog/skills/manim-animator.json",
+      "display_name": "Manim Animator",
+      "short_description": "Build reproducible explanatory animation videos.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": ["Manim", "animation", "mathematics", "explainers"],
+      "description": "Plan, code, render, and verify Manim animations with optional SandBase-generated media."
+    },
+    {
+      "name": "game-dev",
+      "path": "marketing/game-dev",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/game-dev/plugin.json",
+      "category": "media-generation",
+      "metadata_path": "catalog/skills/game-dev.json",
+      "display_name": "Game Dev",
+      "short_description": "Build and verify playable browser games.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": ["game development", "browser games", "Babylon.js", "image generation"],
+      "description": "Build, tune, and verify browser games with optional SandBase-generated assets."
+    },
+    {
+      "name": "excel-generator",
+      "path": "marketing/excel-generator",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/excel-generator/plugin.json",
+      "category": "tools-utilities",
+      "metadata_path": "catalog/skills/excel-generator.json",
+      "display_name": "Excel Generator",
+      "short_description": "Create polished, verified Excel workbooks.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": ["Excel", "spreadsheets", "data analysis", "reporting"],
+      "description": "Create and verify professional workbooks with optional SandBase external-data retrieval."
+    },
+    {
+      "name": "internet-skill-finder",
+      "path": "marketing/internet-skill-finder",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/internet-skill-finder/plugin.json",
+      "category": "search-research",
+      "metadata_path": "catalog/skills/internet-skill-finder.json",
+      "display_name": "Internet Skill Finder",
+      "short_description": "Find and verify installable Agent Skills.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": ["Agent Skills", "GitHub", "discovery", "software supply chain"],
+      "description": "Discover and compare current Agent Skills with verified provenance and install paths."
+    },
+    {
+      "name": "accessibility-review",
+      "path": "marketing/accessibility-review",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/accessibility-review/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/accessibility-review.json",
+      "display_name": "Accessibility Review",
+      "short_description": "Apply Accessibility Review with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Accessibility Review",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review accessibility review work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on accessibility review."
+    },
+    {
+      "name": "agentic-eval",
+      "path": "marketing/agentic-eval",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/agentic-eval/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/agentic-eval.json",
+      "display_name": "Agentic Eval",
+      "short_description": "Apply Agentic Eval with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Agentic Eval",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review agentic eval work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests agentic eval work."
+    },
+    {
+      "name": "ai-seo",
+      "path": "marketing/ai-seo",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/ai-seo/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/ai-seo.json",
+      "display_name": "AI SEO",
+      "short_description": "Apply AI SEO with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "AI SEO",
+        "Marketing & Content"
+      ],
+      "description": "Create or review ai seo deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for ai seo work."
+    },
+    {
+      "name": "airflow-dag-patterns",
+      "path": "marketing/airflow-dag-patterns",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/airflow-dag-patterns/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/airflow-dag-patterns.json",
+      "display_name": "Airflow Dag Patterns",
+      "short_description": "Apply Airflow Dag Patterns with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Airflow Dag Patterns",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply airflow dag patterns in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses airflow dag patterns or its strengths fit the task."
+    },
+    {
+      "name": "alternative-blog-writer",
+      "path": "marketing/alternative-blog-writer",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/alternative-blog-writer/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/alternative-blog-writer.json",
+      "display_name": "Alternative Blog Writer",
+      "short_description": "Apply Alternative Blog Writer with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Alternative Blog Writer",
+        "Marketing & Content"
+      ],
+      "description": "Create or review alternative blog writer deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for alternative blog writer work."
+    },
+    {
+      "name": "api-designer",
+      "path": "marketing/api-designer",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/api-designer/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/api-designer.json",
+      "display_name": "API Designer",
+      "short_description": "Apply API Designer with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "API Designer",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review api designer work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests api designer work."
+    },
+    {
+      "name": "appinsights-instrumentation",
+      "path": "marketing/appinsights-instrumentation",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/appinsights-instrumentation/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/appinsights-instrumentation.json",
+      "display_name": "Application Insights Instrumentation",
+      "short_description": "Apply Application Insights Instrumentation with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Application Insights Instrumentation",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review application insights instrumentation work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests application insights instrumentation work."
+    },
+    {
+      "name": "audit-support",
+      "path": "marketing/audit-support",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/audit-support/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/audit-support.json",
+      "display_name": "Audit Support",
+      "short_description": "Apply Audit Support with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Audit Support",
+        "Business & Operations"
+      ],
+      "description": "Create or review audit support deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for audit support planning or analysis."
+    },
+    {
+      "name": "azure-role-selector",
+      "path": "marketing/azure-role-selector",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/azure-role-selector/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/azure-role-selector.json",
+      "display_name": "Azure Role Selector",
+      "short_description": "Apply Azure Role Selector with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Azure Role Selector",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review azure role selector work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests azure role selector work."
+    },
+    {
+      "name": "backlink-analysis",
+      "path": "marketing/backlink-analysis",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/backlink-analysis/plugin.json",
+      "category": "marketing-seo",
+      "metadata_path": "catalog/skills/backlink-analysis.json",
+      "display_name": "Backlink Analysis",
+      "short_description": "Apply Backlink Analysis with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Backlink Analysis",
+        "Marketing & SEO"
+      ],
+      "description": "Research and evaluate backlink analysis with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for backlink analysis findings or verification."
+    },
+    {
+      "name": "backtesting-frameworks",
+      "path": "marketing/backtesting-frameworks",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/backtesting-frameworks/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/backtesting-frameworks.json",
+      "display_name": "Backtesting Frameworks",
+      "short_description": "Apply Backtesting Frameworks with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Backtesting Frameworks",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply backtesting frameworks in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses backtesting frameworks or its strengths fit the task."
+    },
+    {
+      "name": "beautiful-article",
+      "path": "marketing/beautiful-article",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/beautiful-article/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/beautiful-article.json",
+      "display_name": "Beautiful Article",
+      "short_description": "Apply Beautiful Article with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Beautiful Article",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review beautiful article work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on beautiful article."
+    },
+    {
+      "name": "behave-skill",
+      "path": "marketing/behave-skill",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/behave-skill/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/behave-skill.json",
+      "display_name": "Behave BDD",
+      "short_description": "Apply Behave BDD with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Behave BDD",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review behave bdd work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests behave bdd work."
+    },
+    {
+      "name": "brainstorm-experiments-new",
+      "path": "marketing/brainstorm-experiments-new",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/brainstorm-experiments-new/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/brainstorm-experiments-new.json",
+      "display_name": "Brainstorm Experiments New",
+      "short_description": "Apply Brainstorm Experiments New with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Brainstorm Experiments New",
+        "Business & Operations"
+      ],
+      "description": "Create or review brainstorm experiments new deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for brainstorm experiments new planning or analysis."
+    },
+    {
+      "name": "business-model",
+      "path": "marketing/business-model",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/business-model/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/business-model.json",
+      "display_name": "Business Model",
+      "short_description": "Apply Business Model with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Business Model",
+        "Business & Operations"
+      ],
+      "description": "Create or review business model deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for business model planning or analysis."
+    },
+    {
+      "name": "call-prep",
+      "path": "marketing/call-prep",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/call-prep/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/call-prep.json",
+      "display_name": "Call Prep",
+      "short_description": "Apply Call Prep with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Call Prep",
+        "Business & Operations"
+      ],
+      "description": "Create or review call prep deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for call prep planning or analysis."
+    },
+    {
+      "name": "captions-overlay",
+      "path": "marketing/captions-overlay",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/captions-overlay/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/captions-overlay.json",
+      "display_name": "Captions Overlay",
+      "short_description": "Apply Captions Overlay with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Captions Overlay",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review captions overlay work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on captions overlay."
+    },
+    {
+      "name": "chrome-devtools",
+      "path": "marketing/chrome-devtools",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/chrome-devtools/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/chrome-devtools.json",
+      "display_name": "Chrome Devtools",
+      "short_description": "Apply Chrome Devtools with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Chrome Devtools",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review chrome devtools work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests chrome devtools work."
+    },
+    {
+      "name": "churn-prevention",
+      "path": "marketing/churn-prevention",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/churn-prevention/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/churn-prevention.json",
+      "display_name": "Churn Prevention",
+      "short_description": "Apply Churn Prevention with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Churn Prevention",
+        "Marketing & Content"
+      ],
+      "description": "Create or review churn prevention deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for churn prevention work."
+    },
+    {
+      "name": "ci-cd-and-automation",
+      "path": "marketing/ci-cd-and-automation",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/ci-cd-and-automation/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/ci-cd-and-automation.json",
+      "display_name": "CI/CD and Automation",
+      "short_description": "Apply CI/CD and Automation with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "CI/CD and Automation",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review ci/cd and automation work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests ci/cd and automation work."
+    },
+    {
+      "name": "claude-automation-recommender",
+      "path": "marketing/claude-automation-recommender",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/claude-automation-recommender/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/claude-automation-recommender.json",
+      "display_name": "Claude Automation Recommender",
+      "short_description": "Apply Claude Automation Recommender with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Claude Automation Recommender",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review claude automation recommender work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests claude automation recommender work."
+    },
+    {
+      "name": "claude-md-improver",
+      "path": "marketing/claude-md-improver",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/claude-md-improver/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/claude-md-improver.json",
+      "display_name": "CLAUDE.md Improver",
+      "short_description": "Apply CLAUDE.md Improver with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "CLAUDE.md Improver",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review claude.md improver work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests claude.md improver work."
+    },
+    {
+      "name": "close-management",
+      "path": "marketing/close-management",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/close-management/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/close-management.json",
+      "display_name": "Close Management",
+      "short_description": "Apply Close Management with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Close Management",
+        "Business & Operations"
+      ],
+      "description": "Create or review close management deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for close management planning or analysis."
+    },
+    {
+      "name": "code-documenter",
+      "path": "marketing/code-documenter",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/code-documenter/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/code-documenter.json",
+      "display_name": "Code Documenter",
+      "short_description": "Apply Code Documenter with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Code Documenter",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review code documenter work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests code documenter work."
+    },
+    {
+      "name": "comparison-article-writer",
+      "path": "marketing/comparison-article-writer",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/comparison-article-writer/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/comparison-article-writer.json",
+      "display_name": "Comparison Article Writer",
+      "short_description": "Apply Comparison Article Writer with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Comparison Article Writer",
+        "Marketing & Content"
+      ],
+      "description": "Create or review comparison article writer deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for comparison article writer work."
+    },
+    {
+      "name": "copy-editing",
+      "path": "marketing/copy-editing",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/copy-editing/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/copy-editing.json",
+      "display_name": "Copy Editing",
+      "short_description": "Apply Copy Editing with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Copy Editing",
+        "Marketing & Content"
+      ],
+      "description": "Create or review copy editing deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for copy editing work."
+    },
+    {
+      "name": "cowork-plugin-customizer",
+      "path": "marketing/cowork-plugin-customizer",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/cowork-plugin-customizer/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/cowork-plugin-customizer.json",
+      "display_name": "Cowork Plugin Customizer",
+      "short_description": "Apply Cowork Plugin Customizer with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Cowork Plugin Customizer",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review cowork plugin customizer work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests cowork plugin customizer work."
+    },
+    {
+      "name": "cut-the-curve",
+      "path": "marketing/cut-the-curve",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/cut-the-curve/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/cut-the-curve.json",
+      "display_name": "Cut The Curve",
+      "short_description": "Apply Cut The Curve with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Cut The Curve",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review cut the curve work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on cut the curve."
+    },
+    {
+      "name": "daily-briefing",
+      "path": "marketing/daily-briefing",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/daily-briefing/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/daily-briefing.json",
+      "display_name": "Daily Briefing",
+      "short_description": "Apply Daily Briefing with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Daily Briefing",
+        "Business & Operations"
+      ],
+      "description": "Create or review daily briefing deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for daily briefing planning or analysis."
+    },
+    {
+      "name": "dask",
+      "path": "marketing/dask",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/dask/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/dask.json",
+      "display_name": "Dask",
+      "short_description": "Apply Dask with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Dask",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply dask in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses dask or its strengths fit the task."
+    },
+    {
+      "name": "data-context-extractor",
+      "path": "marketing/data-context-extractor",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/data-context-extractor/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/data-context-extractor.json",
+      "display_name": "Data Context Extractor",
+      "short_description": "Apply Data Context Extractor with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Data Context Extractor",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply data context extractor in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses data context extractor or its strengths fit the task."
+    },
+    {
+      "name": "data-visualization",
+      "path": "marketing/data-visualization",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/data-visualization/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/data-visualization.json",
+      "display_name": "Data Visualization",
+      "short_description": "Apply Data Visualization with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Data Visualization",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply data visualization in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses data visualization or its strengths fit the task."
+    },
+    {
+      "name": "database-lookup",
+      "path": "marketing/database-lookup",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/database-lookup/plugin.json",
+      "category": "search-research",
+      "metadata_path": "catalog/skills/database-lookup.json",
+      "display_name": "Database Lookup",
+      "short_description": "Apply Database Lookup with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Database Lookup",
+        "Search & Research"
+      ],
+      "description": "Research and evaluate database lookup with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for database lookup findings or verification."
+    },
+    {
+      "name": "dbt-transformation-patterns",
+      "path": "marketing/dbt-transformation-patterns",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/dbt-transformation-patterns/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/dbt-transformation-patterns.json",
+      "display_name": "dbt Transformation Patterns",
+      "short_description": "Apply dbt Transformation Patterns with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "dbt Transformation Patterns",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply dbt transformation patterns in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses dbt transformation patterns or its strengths fit the task."
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "path": "marketing/dispatching-parallel-agents",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/dispatching-parallel-agents/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/dispatching-parallel-agents.json",
+      "display_name": "Dispatching Parallel Agents",
+      "short_description": "Apply Dispatching Parallel Agents with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Dispatching Parallel Agents",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review dispatching parallel agents work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests dispatching parallel agents work."
+    },
+    {
+      "name": "emil-design-eng",
+      "path": "marketing/emil-design-eng",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/emil-design-eng/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/emil-design-eng.json",
+      "display_name": "Design Engineering Craft",
+      "short_description": "Apply Design Engineering Craft with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Design Engineering Craft",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review design engineering craft work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on design engineering craft."
+    },
+    {
+      "name": "excalidraw-diagram-generator",
+      "path": "marketing/excalidraw-diagram-generator",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/excalidraw-diagram-generator/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/excalidraw-diagram-generator.json",
+      "display_name": "Excalidraw Diagram Generator",
+      "short_description": "Apply Excalidraw Diagram Generator with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Excalidraw Diagram Generator",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review excalidraw diagram generator work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on excalidraw diagram generator."
+    },
+    {
+      "name": "experimental-design",
+      "path": "marketing/experimental-design",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/experimental-design/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/experimental-design.json",
+      "display_name": "Experimental Design",
+      "short_description": "Apply Experimental Design with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Experimental Design",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply experimental design in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses experimental design or its strengths fit the task."
+    },
+    {
+      "name": "final-release-review",
+      "path": "marketing/final-release-review",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/final-release-review/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/final-release-review.json",
+      "display_name": "Final Release Review",
+      "short_description": "Apply Final Release Review with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Final Release Review",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review final release review work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests final release review work."
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "path": "marketing/finishing-a-development-branch",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/finishing-a-development-branch/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/finishing-a-development-branch.json",
+      "display_name": "Finishing A Development Branch",
+      "short_description": "Apply Finishing A Development Branch with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Finishing A Development Branch",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review finishing a development branch work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests finishing a development branch work."
+    },
+    {
+      "name": "gemini-api",
+      "path": "marketing/gemini-api",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/gemini-api/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/gemini-api.json",
+      "display_name": "Gemini API",
+      "short_description": "Apply Gemini API with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Gemini API",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review gemini api work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests gemini api work."
+    },
+    {
+      "name": "git-commit",
+      "path": "marketing/git-commit",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/git-commit/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/git-commit.json",
+      "display_name": "Git Commit",
+      "short_description": "Apply Git Commit with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Git Commit",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review git commit work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests git commit work."
+    },
+    {
+      "name": "git-workflow-and-versioning",
+      "path": "marketing/git-workflow-and-versioning",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/git-workflow-and-versioning/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/git-workflow-and-versioning.json",
+      "display_name": "Git Workflow And Versioning",
+      "short_description": "Apply Git Workflow And Versioning with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Git Workflow And Versioning",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review git workflow and versioning work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests git workflow and versioning work."
+    },
+    {
+      "name": "github-gem-seeker",
+      "path": "marketing/github-gem-seeker",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/github-gem-seeker/plugin.json",
+      "category": "search-research",
+      "metadata_path": "catalog/skills/github-gem-seeker.json",
+      "display_name": "GitHub Gem Seeker",
+      "short_description": "Apply GitHub Gem Seeker with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "GitHub Gem Seeker",
+        "Search & Research"
+      ],
+      "description": "Research and evaluate github gem seeker with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for github gem seeker findings or verification."
+    },
+    {
+      "name": "google-cloud-waf-cost-optimization",
+      "path": "marketing/google-cloud-waf-cost-optimization",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/google-cloud-waf-cost-optimization/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/google-cloud-waf-cost-optimization.json",
+      "display_name": "Google Cloud WAF Cost Optimization",
+      "short_description": "Apply Google Cloud WAF Cost Optimization with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Google Cloud WAF Cost Optimization",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review google cloud waf cost optimization work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests google cloud waf cost optimization work."
+    },
+    {
+      "name": "google-cloud-waf-operational-excellence",
+      "path": "marketing/google-cloud-waf-operational-excellence",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/google-cloud-waf-operational-excellence/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/google-cloud-waf-operational-excellence.json",
+      "display_name": "Google Cloud WAF Operational Excellence",
+      "short_description": "Apply Google Cloud WAF Operational Excellence with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Google Cloud WAF Operational Excellence",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review google cloud waf operational excellence work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests google cloud waf operational excellence work."
+    },
+    {
+      "name": "google-cloud-waf-performance-optimization",
+      "path": "marketing/google-cloud-waf-performance-optimization",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/google-cloud-waf-performance-optimization/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/google-cloud-waf-performance-optimization.json",
+      "display_name": "Google Cloud WAF Performance Optimization",
+      "short_description": "Apply Google Cloud WAF Performance Optimization with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Google Cloud WAF Performance Optimization",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review google cloud waf performance optimization work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests google cloud waf performance optimization work."
+    },
+    {
+      "name": "google-cloud-waf-reliability",
+      "path": "marketing/google-cloud-waf-reliability",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/google-cloud-waf-reliability/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/google-cloud-waf-reliability.json",
+      "display_name": "Google Cloud WAF Reliability",
+      "short_description": "Apply Google Cloud WAF Reliability with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Google Cloud WAF Reliability",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review google cloud waf reliability work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests google cloud waf reliability work."
+    },
+    {
+      "name": "google-cloud-waf-security",
+      "path": "marketing/google-cloud-waf-security",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/google-cloud-waf-security/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/google-cloud-waf-security.json",
+      "display_name": "Google Cloud WAF Security",
+      "short_description": "Apply Google Cloud WAF Security with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Google Cloud WAF Security",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review google cloud waf security work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests google cloud waf security work."
+    },
+    {
+      "name": "google-cloud-waf-sustainability",
+      "path": "marketing/google-cloud-waf-sustainability",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/google-cloud-waf-sustainability/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/google-cloud-waf-sustainability.json",
+      "display_name": "Google Cloud WAF Sustainability",
+      "short_description": "Apply Google Cloud WAF Sustainability with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Google Cloud WAF Sustainability",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review google cloud waf sustainability work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests google cloud waf sustainability work."
+    },
+    {
+      "name": "grafana-dashboards",
+      "path": "marketing/grafana-dashboards",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/grafana-dashboards/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/grafana-dashboards.json",
+      "display_name": "Grafana Dashboards",
+      "short_description": "Apply Grafana Dashboards with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Grafana Dashboards",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review grafana dashboards work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests grafana dashboards work."
+    },
+    {
+      "name": "grammar-check",
+      "path": "marketing/grammar-check",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/grammar-check/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/grammar-check.json",
+      "display_name": "Grammar Check",
+      "short_description": "Apply Grammar Check with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Grammar Check",
+        "Marketing & Content"
+      ],
+      "description": "Create or review grammar check deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for grammar check work."
+    },
+    {
+      "name": "graphql-architect",
+      "path": "marketing/graphql-architect",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/graphql-architect/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/graphql-architect.json",
+      "display_name": "GraphQL Architect",
+      "short_description": "Apply GraphQL Architect with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "GraphQL Architect",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review graphql architect work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests graphql architect work."
+    },
+    {
+      "name": "gsap-core",
+      "path": "marketing/gsap-core",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/gsap-core/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/gsap-core.json",
+      "display_name": "GSAP Core",
+      "short_description": "Apply GSAP Core with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "GSAP Core",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review gsap core work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on gsap core."
+    },
+    {
+      "name": "gsap-frameworks",
+      "path": "marketing/gsap-frameworks",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/gsap-frameworks/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/gsap-frameworks.json",
+      "display_name": "GSAP Framework Integrations",
+      "short_description": "Apply GSAP Framework Integrations with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "GSAP Framework Integrations",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review gsap framework integrations work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on gsap framework integrations."
+    },
+    {
+      "name": "gsap-plugins",
+      "path": "marketing/gsap-plugins",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/gsap-plugins/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/gsap-plugins.json",
+      "display_name": "GSAP Plugins",
+      "short_description": "Apply GSAP Plugins with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "GSAP Plugins",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review gsap plugins work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on gsap plugins."
+    },
+    {
+      "name": "gsap-react",
+      "path": "marketing/gsap-react",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/gsap-react/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/gsap-react.json",
+      "display_name": "GSAP React",
+      "short_description": "Apply GSAP React with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "GSAP React",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review gsap react work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on gsap react."
+    },
+    {
+      "name": "gsap-scrolltrigger",
+      "path": "marketing/gsap-scrolltrigger",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/gsap-scrolltrigger/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/gsap-scrolltrigger.json",
+      "display_name": "GSAP ScrollTrigger",
+      "short_description": "Apply GSAP ScrollTrigger with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "GSAP ScrollTrigger",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review gsap scrolltrigger work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on gsap scrolltrigger."
+    },
+    {
+      "name": "gsap-timeline",
+      "path": "marketing/gsap-timeline",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/gsap-timeline/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/gsap-timeline.json",
+      "display_name": "GSAP Timeline",
+      "short_description": "Apply GSAP Timeline with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "GSAP Timeline",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review gsap timeline work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on gsap timeline."
+    },
+    {
+      "name": "gsap-utils",
+      "path": "marketing/gsap-utils",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/gsap-utils/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/gsap-utils.json",
+      "display_name": "GSAP Utilities",
+      "short_description": "Apply GSAP Utilities with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "GSAP Utilities",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review gsap utilities work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on gsap utilities."
+    },
+    {
+      "name": "hackernews-frontpage",
+      "path": "marketing/hackernews-frontpage",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/hackernews-frontpage/plugin.json",
+      "category": "search-research",
+      "metadata_path": "catalog/skills/hackernews-frontpage.json",
+      "display_name": "Hacker News Front Page",
+      "short_description": "Apply Hacker News Front Page with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Hacker News Front Page",
+        "Search & Research"
+      ],
+      "description": "Research and evaluate hacker news front page with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for hacker news front page findings or verification."
+    },
+    {
+      "name": "html-video-production",
+      "path": "marketing/html-video-production",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/html-video-production/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/html-video-production.json",
+      "display_name": "HTML Video Production",
+      "short_description": "Apply HTML Video Production with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "HTML Video Production",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review html video production work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on html video production."
+    },
+    {
+      "name": "huggingface-datasets",
+      "path": "marketing/huggingface-datasets",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/huggingface-datasets/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/huggingface-datasets.json",
+      "display_name": "Hugging Face Datasets",
+      "short_description": "Apply Hugging Face Datasets with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Hugging Face Datasets",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply hugging face datasets in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses hugging face datasets or its strengths fit the task."
+    },
+    {
+      "name": "huggingface-gradio",
+      "path": "marketing/huggingface-gradio",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/huggingface-gradio/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/huggingface-gradio.json",
+      "display_name": "Hugging Face Gradio",
+      "short_description": "Apply Hugging Face Gradio with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Hugging Face Gradio",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review hugging face gradio work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests hugging face gradio work."
+    },
+    {
+      "name": "humanizer",
+      "path": "marketing/humanizer",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/humanizer/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/humanizer.json",
+      "display_name": "Humanizer",
+      "short_description": "Apply Humanizer with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Humanizer",
+        "Marketing & Content"
+      ],
+      "description": "Create or review humanizer deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for humanizer work."
+    },
+    {
+      "name": "hybrid-search-implementation",
+      "path": "marketing/hybrid-search-implementation",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/hybrid-search-implementation/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/hybrid-search-implementation.json",
+      "display_name": "Hybrid Search Implementation",
+      "short_description": "Apply Hybrid Search Implementation with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Hybrid Search Implementation",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review hybrid search implementation work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests hybrid search implementation work."
+    },
+    {
+      "name": "hyperframes-keyframes",
+      "path": "marketing/hyperframes-keyframes",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/hyperframes-keyframes/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/hyperframes-keyframes.json",
+      "display_name": "Hyperframes Keyframes",
+      "short_description": "Apply Hyperframes Keyframes with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Hyperframes Keyframes",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review hyperframes keyframes work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on hyperframes keyframes."
+    },
+    {
+      "name": "hyperframes-registry",
+      "path": "marketing/hyperframes-registry",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/hyperframes-registry/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/hyperframes-registry.json",
+      "display_name": "Hyperframes Registry",
+      "short_description": "Apply Hyperframes Registry with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Hyperframes Registry",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review hyperframes registry work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on hyperframes registry."
+    },
+    {
+      "name": "i-have-adhd",
+      "path": "marketing/i-have-adhd",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/i-have-adhd/plugin.json",
+      "category": "tools-utilities",
+      "metadata_path": "catalog/skills/i-have-adhd.json",
+      "display_name": "ADHD-Friendly Communication",
+      "short_description": "Apply ADHD-Friendly Communication with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "ADHD-Friendly Communication",
+        "Tools & Utilities"
+      ],
+      "description": "Apply adhd-friendly communication as a bounded agent workflow while preserving user intent, privacy, and host capabilities. Use when the user explicitly requests adhd-friendly communication behavior or files."
+    },
+    {
+      "name": "image-manipulation-image-magick",
+      "path": "marketing/image-manipulation-image-magick",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/image-manipulation-image-magick/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/image-manipulation-image-magick.json",
+      "display_name": "ImageMagick Image Manipulation",
+      "short_description": "Apply ImageMagick Image Manipulation with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "ImageMagick Image Manipulation",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review imagemagick image manipulation work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on imagemagick image manipulation."
+    },
+    {
+      "name": "journal-entry-prep",
+      "path": "marketing/journal-entry-prep",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/journal-entry-prep/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/journal-entry-prep.json",
+      "display_name": "Journal Entry Prep",
+      "short_description": "Apply Journal Entry Prep with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Journal Entry Prep",
+        "Business & Operations"
+      ],
+      "description": "Create or review journal entry prep deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for journal entry prep planning or analysis."
+    },
+    {
+      "name": "json-canvas",
+      "path": "marketing/json-canvas",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/json-canvas/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/json-canvas.json",
+      "display_name": "JSON Canvas",
+      "short_description": "Apply JSON Canvas with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "JSON Canvas",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review json canvas work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on json canvas."
+    },
+    {
+      "name": "k8s-security-policies",
+      "path": "marketing/k8s-security-policies",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/k8s-security-policies/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/k8s-security-policies.json",
+      "display_name": "Kubernetes Security Policies",
+      "short_description": "Apply Kubernetes Security Policies with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Kubernetes Security Policies",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review kubernetes security policies work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests kubernetes security policies work."
+    },
+    {
+      "name": "langchain-architecture",
+      "path": "marketing/langchain-architecture",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/langchain-architecture/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/langchain-architecture.json",
+      "display_name": "LangChain Architecture",
+      "short_description": "Apply LangChain Architecture with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "LangChain Architecture",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review langchain architecture work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests langchain architecture work."
+    },
+    {
+      "name": "lean-canvas",
+      "path": "marketing/lean-canvas",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/lean-canvas/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/lean-canvas.json",
+      "display_name": "Lean Canvas",
+      "short_description": "Apply Lean Canvas with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Lean Canvas",
+        "Business & Operations"
+      ],
+      "description": "Create or review lean canvas deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for lean canvas planning or analysis."
+    },
+    {
+      "name": "legacy-circuit-mockups",
+      "path": "marketing/legacy-circuit-mockups",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/legacy-circuit-mockups/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/legacy-circuit-mockups.json",
+      "display_name": "Legacy Circuit Mockups",
+      "short_description": "Apply Legacy Circuit Mockups with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Legacy Circuit Mockups",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review legacy circuit mockups work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on legacy circuit mockups."
+    },
+    {
+      "name": "legal-risk-assessment",
+      "path": "marketing/legal-risk-assessment",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/legal-risk-assessment/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/legal-risk-assessment.json",
+      "display_name": "Legal Risk Assessment",
+      "short_description": "Apply Legal Risk Assessment with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Legal Risk Assessment",
+        "Business & Operations"
+      ],
+      "description": "Create or review legal risk assessment deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for legal risk assessment planning or analysis."
+    },
+    {
+      "name": "make-repo-contribution",
+      "path": "marketing/make-repo-contribution",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/make-repo-contribution/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/make-repo-contribution.json",
+      "display_name": "Make Repo Contribution",
+      "short_description": "Apply Make Repo Contribution with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Make Repo Contribution",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review make repo contribution work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests make repo contribution work."
+    },
+    {
+      "name": "markdown-mermaid-writing",
+      "path": "marketing/markdown-mermaid-writing",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/markdown-mermaid-writing/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/markdown-mermaid-writing.json",
+      "display_name": "Markdown and Mermaid Writing",
+      "short_description": "Apply Markdown and Mermaid Writing with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Markdown and Mermaid Writing",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review markdown and mermaid writing work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on markdown and mermaid writing."
+    },
+    {
+      "name": "markdown-to-html",
+      "path": "marketing/markdown-to-html",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/markdown-to-html/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/markdown-to-html.json",
+      "display_name": "Markdown To Html",
+      "short_description": "Apply Markdown To Html with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Markdown To Html",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review markdown to html work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on markdown to html."
+    },
+    {
+      "name": "marketing-ideas",
+      "path": "marketing/marketing-ideas",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/marketing-ideas/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/marketing-ideas.json",
+      "display_name": "Marketing Ideas",
+      "short_description": "Apply Marketing Ideas with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Marketing Ideas",
+        "Marketing & Content"
+      ],
+      "description": "Create or review marketing ideas deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for marketing ideas work."
+    },
+    {
+      "name": "marketing-psychology",
+      "path": "marketing/marketing-psychology",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/marketing-psychology/plugin.json",
+      "category": "marketing-content",
+      "metadata_path": "catalog/skills/marketing-psychology.json",
+      "display_name": "Marketing Psychology",
+      "short_description": "Apply Marketing Psychology with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Marketing Psychology",
+        "Marketing & Content"
+      ],
+      "description": "Create or review marketing psychology deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for marketing psychology work."
+    },
+    {
+      "name": "matplotlib",
+      "path": "marketing/matplotlib",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/matplotlib/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/matplotlib.json",
+      "display_name": "Matplotlib",
+      "short_description": "Apply Matplotlib with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Matplotlib",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply matplotlib in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses matplotlib or its strengths fit the task."
+    },
+    {
+      "name": "mcp-cli",
+      "path": "marketing/mcp-cli",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/mcp-cli/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/mcp-cli.json",
+      "display_name": "MCP CLI",
+      "short_description": "Apply MCP CLI with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "MCP CLI",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review mcp cli work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests mcp cli work."
+    },
+    {
+      "name": "meeting-briefing",
+      "path": "marketing/meeting-briefing",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/meeting-briefing/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/meeting-briefing.json",
+      "display_name": "Meeting Briefing",
+      "short_description": "Apply Meeting Briefing with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Meeting Briefing",
+        "Business & Operations"
+      ],
+      "description": "Create or review meeting briefing deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for meeting briefing planning or analysis."
+    },
+    {
+      "name": "memory-management",
+      "path": "marketing/memory-management",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/memory-management/plugin.json",
+      "category": "tools-utilities",
+      "metadata_path": "catalog/skills/memory-management.json",
+      "display_name": "Memory Management",
+      "short_description": "Apply Memory Management with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Memory Management",
+        "Tools & Utilities"
+      ],
+      "description": "Apply memory management as a bounded agent workflow while preserving user intent, privacy, and host capabilities. Use when the user explicitly requests memory management behavior or files."
+    },
+    {
+      "name": "microsoft-code-reference",
+      "path": "marketing/microsoft-code-reference",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/microsoft-code-reference/plugin.json",
+      "category": "search-research",
+      "metadata_path": "catalog/skills/microsoft-code-reference.json",
+      "display_name": "Microsoft Code Reference",
+      "short_description": "Apply Microsoft Code Reference with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Microsoft Code Reference",
+        "Search & Research"
+      ],
+      "description": "Research and evaluate microsoft code reference with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for microsoft code reference findings or verification."
+    },
+    {
+      "name": "microsoft-docs",
+      "path": "marketing/microsoft-docs",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/microsoft-docs/plugin.json",
+      "category": "search-research",
+      "metadata_path": "catalog/skills/microsoft-docs.json",
+      "display_name": "Microsoft Docs",
+      "short_description": "Apply Microsoft Docs with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Microsoft Docs",
+        "Search & Research"
+      ],
+      "description": "Research and evaluate microsoft docs with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for microsoft docs findings or verification."
+    },
+    {
+      "name": "ml-pipeline",
+      "path": "marketing/ml-pipeline",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/ml-pipeline/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/ml-pipeline.json",
+      "display_name": "ML Pipeline",
+      "short_description": "Apply ML Pipeline with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "ML Pipeline",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review ml pipeline work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests ml pipeline work."
+    },
+    {
+      "name": "networkx",
+      "path": "marketing/networkx",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/networkx/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/networkx.json",
+      "display_name": "NetworkX",
+      "short_description": "Apply NetworkX with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "NetworkX",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply networkx in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses networkx or its strengths fit the task."
+    },
+    {
+      "name": "nuget-manager",
+      "path": "marketing/nuget-manager",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/nuget-manager/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/nuget-manager.json",
+      "display_name": "NuGet Manager",
+      "short_description": "Apply NuGet Manager with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "NuGet Manager",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review nuget manager work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests nuget manager work."
+    },
+    {
+      "name": "observability-and-instrumentation",
+      "path": "marketing/observability-and-instrumentation",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/observability-and-instrumentation/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/observability-and-instrumentation.json",
+      "display_name": "Observability And Instrumentation",
+      "short_description": "Apply Observability And Instrumentation with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Observability And Instrumentation",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review observability and instrumentation work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests observability and instrumentation work."
+    },
+    {
+      "name": "obsidian-bases",
+      "path": "marketing/obsidian-bases",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/obsidian-bases/plugin.json",
+      "category": "tools-utilities",
+      "metadata_path": "catalog/skills/obsidian-bases.json",
+      "display_name": "Obsidian Bases",
+      "short_description": "Apply Obsidian Bases with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Obsidian Bases",
+        "Tools & Utilities"
+      ],
+      "description": "Apply obsidian bases as a bounded agent workflow while preserving user intent, privacy, and host capabilities. Use when the user explicitly requests obsidian bases behavior or files."
+    },
+    {
+      "name": "obsidian-markdown",
+      "path": "marketing/obsidian-markdown",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/obsidian-markdown/plugin.json",
+      "category": "tools-utilities",
+      "metadata_path": "catalog/skills/obsidian-markdown.json",
+      "display_name": "Obsidian Markdown",
+      "short_description": "Apply Obsidian Markdown with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Obsidian Markdown",
+        "Tools & Utilities"
+      ],
+      "description": "Apply obsidian markdown as a bounded agent workflow while preserving user intent, privacy, and host capabilities. Use when the user explicitly requests obsidian markdown behavior or files."
+    },
+    {
+      "name": "oversized-cursor",
+      "path": "marketing/oversized-cursor",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/oversized-cursor/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/oversized-cursor.json",
+      "display_name": "Oversized Cursor",
+      "short_description": "Apply Oversized Cursor with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Oversized Cursor",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review oversized cursor work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on oversized cursor."
+    },
+    {
+      "name": "penpot-uiux-design",
+      "path": "marketing/penpot-uiux-design",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/penpot-uiux-design/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/penpot-uiux-design.json",
+      "display_name": "Penpot UI/UX Design",
+      "short_description": "Apply Penpot UI/UX Design with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Penpot UI/UX Design",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review penpot ui/ux design work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on penpot ui/ux design."
+    },
+    {
+      "name": "plantuml-ascii",
+      "path": "marketing/plantuml-ascii",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/plantuml-ascii/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/plantuml-ascii.json",
+      "display_name": "PlantUML ASCII",
+      "short_description": "Apply PlantUML ASCII with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "PlantUML ASCII",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review plantuml ascii work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on plantuml ascii."
+    },
+    {
+      "name": "playground",
+      "path": "marketing/playground",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/playground/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/playground.json",
+      "display_name": "Playground",
+      "short_description": "Apply Playground with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Playground",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review playground work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on playground."
+    },
+    {
+      "name": "polars",
+      "path": "marketing/polars",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/polars/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/polars.json",
+      "display_name": "Polars",
+      "short_description": "Apply Polars with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Polars",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply polars in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses polars or its strengths fit the task."
+    },
+    {
+      "name": "powerbi-modeling",
+      "path": "marketing/powerbi-modeling",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/powerbi-modeling/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/powerbi-modeling.json",
+      "display_name": "Power BI Modeling",
+      "short_description": "Apply Power BI Modeling with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Power BI Modeling",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply power bi modeling in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses power bi modeling or its strengths fit the task."
+    },
+    {
+      "name": "pr-draft-summary",
+      "path": "marketing/pr-draft-summary",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/pr-draft-summary/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/pr-draft-summary.json",
+      "display_name": "PR Draft Summary",
+      "short_description": "Apply PR Draft Summary with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "PR Draft Summary",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review pr draft summary work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests pr draft summary work."
+    },
+    {
+      "name": "prometheus-configuration",
+      "path": "marketing/prometheus-configuration",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/prometheus-configuration/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/prometheus-configuration.json",
+      "display_name": "Prometheus Configuration",
+      "short_description": "Apply Prometheus Configuration with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Prometheus Configuration",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review prometheus configuration work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests prometheus configuration work."
+    },
+    {
+      "name": "refactor",
+      "path": "marketing/refactor",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/refactor/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/refactor.json",
+      "display_name": "Refactor",
+      "short_description": "Apply Refactor with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Refactor",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review refactor work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests refactor work."
+    },
+    {
+      "name": "review-animations",
+      "path": "marketing/review-animations",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/review-animations/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/review-animations.json",
+      "display_name": "Review Animations",
+      "short_description": "Apply Review Animations with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Review Animations",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review review animations work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on review animations."
+    },
+    {
+      "name": "revops",
+      "path": "marketing/revops",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/revops/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/revops.json",
+      "display_name": "Revenue Operations",
+      "short_description": "Apply Revenue Operations with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Revenue Operations",
+        "Business & Operations"
+      ],
+      "description": "Create or review revenue operations deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for revenue operations planning or analysis."
+    },
+    {
+      "name": "risk-metrics-calculation",
+      "path": "marketing/risk-metrics-calculation",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/risk-metrics-calculation/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/risk-metrics-calculation.json",
+      "display_name": "Risk Metrics Calculation",
+      "short_description": "Apply Risk Metrics Calculation with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Risk Metrics Calculation",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply risk metrics calculation in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses risk metrics calculation or its strengths fit the task."
+    },
+    {
+      "name": "seaborn",
+      "path": "marketing/seaborn",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/seaborn/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/seaborn.json",
+      "display_name": "Seaborn",
+      "short_description": "Apply Seaborn with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Seaborn",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply seaborn in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses seaborn or its strengths fit the task."
+    },
+    {
+      "name": "seam-craft",
+      "path": "marketing/seam-craft",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/seam-craft/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/seam-craft.json",
+      "display_name": "Seam Craft",
+      "short_description": "Apply Seam Craft with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Seam Craft",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review seam craft work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on seam craft."
+    },
+    {
+      "name": "seo-competitor-analysis",
+      "path": "marketing/seo-competitor-analysis",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/seo-competitor-analysis/plugin.json",
+      "category": "marketing-seo",
+      "metadata_path": "catalog/skills/seo-competitor-analysis.json",
+      "display_name": "Seo Competitor Analysis",
+      "short_description": "Apply Seo Competitor Analysis with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Seo Competitor Analysis",
+        "Marketing & SEO"
+      ],
+      "description": "Research and evaluate seo competitor analysis with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for seo competitor analysis findings or verification."
+    },
+    {
+      "name": "shap",
+      "path": "marketing/shap",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/shap/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/shap.json",
+      "display_name": "SHAP",
+      "short_description": "Apply SHAP with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "SHAP",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply shap in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses shap or its strengths fit the task."
+    },
+    {
+      "name": "similarity-search-patterns",
+      "path": "marketing/similarity-search-patterns",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/similarity-search-patterns/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/similarity-search-patterns.json",
+      "display_name": "Similarity Search Patterns",
+      "short_description": "Apply Similarity Search Patterns with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Similarity Search Patterns",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review similarity search patterns work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests similarity search patterns work."
+    },
+    {
+      "name": "single-cell-rna-qc",
+      "path": "marketing/single-cell-rna-qc",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/single-cell-rna-qc/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/single-cell-rna-qc.json",
+      "display_name": "Single-Cell RNA QC",
+      "short_description": "Apply Single-Cell RNA QC with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Single-Cell RNA QC",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply single-cell rna qc in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses single-cell rna qc or its strengths fit the task."
+    },
+    {
+      "name": "slo-implementation",
+      "path": "marketing/slo-implementation",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/slo-implementation/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/slo-implementation.json",
+      "display_name": "SLO Implementation",
+      "short_description": "Apply SLO Implementation with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "SLO Implementation",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review slo implementation work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests slo implementation work."
+    },
+    {
+      "name": "source-management",
+      "path": "marketing/source-management",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/source-management/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/source-management.json",
+      "display_name": "Source Management",
+      "short_description": "Apply Source Management with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Source Management",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review source management work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests source management work."
+    },
+    {
+      "name": "spark-optimization",
+      "path": "marketing/spark-optimization",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/spark-optimization/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/spark-optimization.json",
+      "display_name": "Spark Optimization",
+      "short_description": "Apply Spark Optimization with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Spark Optimization",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply spark optimization in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses spark optimization or its strengths fit the task."
+    },
+    {
+      "name": "spec-driven-development",
+      "path": "marketing/spec-driven-development",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/spec-driven-development/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/spec-driven-development.json",
+      "display_name": "Spec Driven Development",
+      "short_description": "Apply Spec Driven Development with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Spec Driven Development",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review spec driven development work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests spec driven development work."
+    },
+    {
+      "name": "sql-optimization-patterns",
+      "path": "marketing/sql-optimization-patterns",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/sql-optimization-patterns/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/sql-optimization-patterns.json",
+      "display_name": "SQL Optimization Patterns",
+      "short_description": "Apply SQL Optimization Patterns with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "SQL Optimization Patterns",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply sql optimization patterns in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses sql optimization patterns or its strengths fit the task."
+    },
+    {
+      "name": "sql-queries",
+      "path": "marketing/sql-queries",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/sql-queries/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/sql-queries.json",
+      "display_name": "SQL Queries",
+      "short_description": "Apply SQL Queries with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "SQL Queries",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply sql queries in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses sql queries or its strengths fit the task."
+    },
+    {
+      "name": "stable-baselines3",
+      "path": "marketing/stable-baselines3",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/stable-baselines3/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/stable-baselines3.json",
+      "display_name": "Stable-Baselines3",
+      "short_description": "Apply Stable-Baselines3 with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Stable-Baselines3",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply stable-baselines3 in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses stable-baselines3 or its strengths fit the task."
+    },
+    {
+      "name": "statistical-power",
+      "path": "marketing/statistical-power",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/statistical-power/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/statistical-power.json",
+      "display_name": "Statistical Power",
+      "short_description": "Apply Statistical Power with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Statistical Power",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply statistical power in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses statistical power or its strengths fit the task."
+    },
+    {
+      "name": "statsmodels",
+      "path": "marketing/statsmodels",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/statsmodels/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/statsmodels.json",
+      "display_name": "Statsmodels",
+      "short_description": "Apply Statsmodels with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Statsmodels",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply statsmodels in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses statsmodels or its strengths fit the task."
+    },
+    {
+      "name": "sympy",
+      "path": "marketing/sympy",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/sympy/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/sympy.json",
+      "display_name": "SymPy",
+      "short_description": "Apply SymPy with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "SymPy",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply sympy in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses sympy or its strengths fit the task."
+    },
+    {
+      "name": "systematic-debugging",
+      "path": "marketing/systematic-debugging",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/systematic-debugging/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/systematic-debugging.json",
+      "display_name": "Systematic Debugging",
+      "short_description": "Apply Systematic Debugging with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Systematic Debugging",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review systematic debugging work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests systematic debugging work."
+    },
+    {
+      "name": "tailwind-design-system",
+      "path": "marketing/tailwind-design-system",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/tailwind-design-system/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/tailwind-design-system.json",
+      "display_name": "Tailwind Design System",
+      "short_description": "Apply Tailwind Design System with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Tailwind Design System",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review tailwind design system work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on tailwind design system."
+    },
+    {
+      "name": "team-composition-analysis",
+      "path": "marketing/team-composition-analysis",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/team-composition-analysis/plugin.json",
+      "category": "business-operations",
+      "metadata_path": "catalog/skills/team-composition-analysis.json",
+      "display_name": "Team Composition Analysis",
+      "short_description": "Apply Team Composition Analysis with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Team Composition Analysis",
+        "Business & Operations"
+      ],
+      "description": "Create or review team composition analysis deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for team composition analysis planning or analysis."
+    },
+    {
+      "name": "test-driven-development",
+      "path": "marketing/test-driven-development",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/test-driven-development/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/test-driven-development.json",
+      "display_name": "Test Driven Development",
+      "short_description": "Apply Test Driven Development with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Test Driven Development",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review test driven development work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests test driven development work."
+    },
+    {
+      "name": "torch-geometric",
+      "path": "marketing/torch-geometric",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/torch-geometric/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/torch-geometric.json",
+      "display_name": "PyTorch Geometric",
+      "short_description": "Apply PyTorch Geometric with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "PyTorch Geometric",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply pytorch geometric in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses pytorch geometric or its strengths fit the task."
+    },
+    {
+      "name": "turborepo",
+      "path": "marketing/turborepo",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/turborepo/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/turborepo.json",
+      "display_name": "Turborepo",
+      "short_description": "Apply Turborepo with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Turborepo",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review turborepo work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests turborepo work."
+    },
+    {
+      "name": "umap-learn",
+      "path": "marketing/umap-learn",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/umap-learn/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/umap-learn.json",
+      "display_name": "UMAP-learn",
+      "short_description": "Apply UMAP-learn with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "UMAP-learn",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply umap-learn in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses umap-learn or its strengths fit the task."
+    },
+    {
+      "name": "usfiscaldata",
+      "path": "marketing/usfiscaldata",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/usfiscaldata/plugin.json",
+      "category": "search-research",
+      "metadata_path": "catalog/skills/usfiscaldata.json",
+      "display_name": "U.S. Fiscal Data",
+      "short_description": "Apply U.S. Fiscal Data with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "U.S. Fiscal Data",
+        "Search & Research"
+      ],
+      "description": "Research and evaluate u.s. fiscal data with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for u.s. fiscal data findings or verification."
+    },
+    {
+      "name": "vaex",
+      "path": "marketing/vaex",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/vaex/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/vaex.json",
+      "display_name": "Vaex",
+      "short_description": "Apply Vaex with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Vaex",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply vaex in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses vaex or its strengths fit the task."
+    },
+    {
+      "name": "validate-data",
+      "path": "marketing/validate-data",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/validate-data/plugin.json",
+      "category": "data-science-analytics",
+      "metadata_path": "catalog/skills/validate-data.json",
+      "display_name": "Validate Data",
+      "short_description": "Apply Validate Data with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Validate Data",
+        "Data Science & Analytics"
+      ],
+      "description": "Apply validate data in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses validate data or its strengths fit the task."
+    },
+    {
+      "name": "vector-index-tuning",
+      "path": "marketing/vector-index-tuning",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/vector-index-tuning/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/vector-index-tuning.json",
+      "display_name": "Vector Index Tuning",
+      "short_description": "Apply Vector Index Tuning with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Vector Index Tuning",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review vector index tuning work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests vector index tuning work."
+    },
+    {
+      "name": "verification-before-completion",
+      "path": "marketing/verification-before-completion",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/verification-before-completion/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/verification-before-completion.json",
+      "display_name": "Verification Before Completion",
+      "short_description": "Apply Verification Before Completion with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Verification Before Completion",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review verification before completion work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests verification before completion work."
+    },
+    {
+      "name": "video-template-frame-glitch-title",
+      "path": "marketing/video-template-frame-glitch-title",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/video-template-frame-glitch-title/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/video-template-frame-glitch-title.json",
+      "display_name": "Video Template Frame Glitch Title",
+      "short_description": "Apply Video Template Frame Glitch Title with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Video Template Frame Glitch Title",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review video template frame glitch title work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on video template frame glitch title."
+    },
+    {
+      "name": "video-template-frame-light-leak-cinema",
+      "path": "marketing/video-template-frame-light-leak-cinema",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/video-template-frame-light-leak-cinema/plugin.json",
+      "category": "design-media",
+      "metadata_path": "catalog/skills/video-template-frame-light-leak-cinema.json",
+      "display_name": "Video Template Frame Light Leak Cinema",
+      "short_description": "Apply Video Template Frame Light Leak Cinema with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Video Template Frame Light Leak Cinema",
+        "Design & Media"
+      ],
+      "description": "Create, implement, or review video template frame light leak cinema work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on video template frame light leak cinema."
+    },
+    {
+      "name": "vscode-ext-localization",
+      "path": "marketing/vscode-ext-localization",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/vscode-ext-localization/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/vscode-ext-localization.json",
+      "display_name": "VS Code Extension Localization",
+      "short_description": "Apply VS Code Extension Localization with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "VS Code Extension Localization",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review vs code extension localization work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests vs code extension localization work."
+    },
+    {
+      "name": "writing-plans",
+      "path": "marketing/writing-plans",
+      "registry_path": "integrations/sandbase-registry/data/skills/sandbase/writing-plans/plugin.json",
+      "category": "software-engineering-devops",
+      "metadata_path": "catalog/skills/writing-plans.json",
+      "display_name": "Writing Plans",
+      "short_description": "Apply Writing Plans with explicit validation and safety boundaries.",
+      "status": "ready",
+      "version": "0.1.0",
+      "tags": [
+        "Writing Plans",
+        "Software Engineering & DevOps"
+      ],
+      "description": "Plan, implement, or review writing plans work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests writing plans work."
     }
   ]
 }

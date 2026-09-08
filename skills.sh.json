@@ -10,27 +10,52 @@
     {
       "title": "Search & Research",
       "description": "Find, validate, and synthesize information from multiple sources.",
-      "skills": ["multi-source-search", "tavily-deep-research", "exa-deep-search", "exa-similar-finder", "academic-research", "academic-trend-research", "google-news-research", "web-scraper", "last30days-research", "topic-deep-dive", "event-tracker", "trend-spotter", "news-aggregator", "market-research", "newsletter-research", "podcast-research", "content-ideation"]
+      "skills": ["multi-source-search","tavily-deep-research","exa-deep-search","exa-similar-finder","academic-research","academic-trend-research","google-news-research","web-scraper","last30days-research","topic-deep-dive","event-tracker","trend-spotter","news-aggregator","market-research","newsletter-research","podcast-research","content-ideation","internet-skill-finder","database-lookup","github-gem-seeker","hackernews-frontpage","microsoft-code-reference","microsoft-docs","usfiscaldata"]
     },
     {
       "title": "Business Intelligence",
       "description": "Research companies, markets, prospects, and competitors.",
-      "skills": ["apollo-company-research", "akta-company-research", "company-enrichment", "google-maps-reviews", "product-intelligence", "product-review-extractor", "competitive-pricing", "pricing-page-analyzer", "review-aggregator", "startup-research", "hiring-intelligence", "talent-sourcing", "lead-research", "outreach-builder", "email-outreach-prep", "sales-intelligence", "partnership-research", "industry-landscape", "local-market-research", "data-enrichment", "market-sizing-analysis", "variance-analysis", "reconciliation", "cash-flow-snapshot", "sales-enablement", "prd"]
+      "skills": ["apollo-company-research", "akta-company-research", "company-enrichment", "google-maps-reviews", "product-intelligence", "product-review-extractor", "competitive-pricing", "pricing-page-analyzer", "review-aggregator", "startup-research", "hiring-intelligence", "talent-sourcing", "lead-research", "outreach-builder", "email-outreach-prep", "sales-intelligence", "partnership-research", "industry-landscape", "local-market-research", "data-enrichment", "stock-analysis", "similarweb-analytics", "market-sizing-analysis", "variance-analysis", "reconciliation", "cash-flow-snapshot", "sales-enablement", "prd"]
+    },
+    {
+      "title": "Business & Operations",
+      "description": "Plan, analyze, and verify operational and decision-support workflows.",
+      "skills": ["audit-support","brainstorm-experiments-new","business-model","call-prep","close-management","daily-briefing","journal-entry-prep","lean-canvas","legal-risk-assessment","meeting-briefing","revops","team-composition-analysis"]
     },
     {
       "title": "Marketing & Content",
       "description": "Monitor brands and audiences and improve content strategy.",
-      "skills": ["brand-monitoring", "kol-discovery", "influencer-analytics", "social-listening", "competitor-content-intelligence", "competitor-monitor", "thought-leadership-monitor", "pr-media-monitor", "content-performance", "audience-research", "social-proof-research", "competitor-ad-research", "hashtag-tracker", "crisis-monitor", "reddit-customer-insights"]
+      "skills": ["brand-monitoring","kol-discovery","influencer-analytics","social-listening","competitor-content-intelligence","competitor-monitor","thought-leadership-monitor","pr-media-monitor","content-performance","audience-research","social-proof-research","competitor-ad-research","hashtag-tracker","crisis-monitor","reddit-customer-insights","listicle-blog-writer","ai-seo","alternative-blog-writer","comparison-article-writer","copy-editing","grammar-check","humanizer","marketing-ideas","marketing-psychology","churn-prevention"]
     },
     {
       "title": "Marketing & SEO",
       "description": "Analyze search results, keywords, backlinks, and site health.",
-      "skills": ["seo-keyword-insights", "backlink-gap-analysis", "serp-analysis", "seo-content-brief", "site-audit", "programmatic-seo"]
+      "skills": ["seo-keyword-insights","backlink-gap-analysis","serp-analysis","seo-content-brief","site-audit","programmatic-seo","backlink-analysis","seo-competitor-analysis"]
+    },
+    {
+      "title": "Media Generation",
+      "description": "Plan and produce generated video, image, and audio assets.",
+      "skills": ["video-generator", "music-prompter", "manim-animator", "game-dev"]
+    },
+    {
+      "title": "Design & Media",
+      "description": "Create and review interfaces, diagrams, animation, and editable media.",
+      "skills": ["accessibility-review","beautiful-article","captions-overlay","cut-the-curve","emil-design-eng","excalidraw-diagram-generator","gsap-core","gsap-frameworks","gsap-plugins","gsap-react","gsap-scrolltrigger","gsap-timeline","gsap-utils","html-video-production","hyperframes-keyframes","hyperframes-registry","image-manipulation-image-magick","json-canvas","legacy-circuit-mockups","markdown-mermaid-writing","markdown-to-html","oversized-cursor","penpot-uiux-design","plantuml-ascii","playground","review-animations","seam-craft","tailwind-design-system","video-template-frame-glitch-title","video-template-frame-light-leak-cinema"]
+    },
+    {
+      "title": "Data Science & Analytics",
+      "description": "Build reproducible analysis, statistics, machine learning, and data pipelines.",
+      "skills": ["airflow-dag-patterns","backtesting-frameworks","dask","data-context-extractor","data-visualization","dbt-transformation-patterns","experimental-design","huggingface-datasets","matplotlib","networkx","polars","powerbi-modeling","risk-metrics-calculation","seaborn","shap","single-cell-rna-qc","spark-optimization","sql-optimization-patterns","sql-queries","stable-baselines3","statistical-power","statsmodels","sympy","torch-geometric","umap-learn","vaex","validate-data"]
+    },
+    {
+      "title": "Software Engineering & DevOps",
+      "description": "Design, implement, test, document, and operate software systems.",
+      "skills": ["agentic-eval","api-designer","appinsights-instrumentation","azure-role-selector","behave-skill","chrome-devtools","ci-cd-and-automation","claude-automation-recommender","claude-md-improver","code-documenter","cowork-plugin-customizer","dispatching-parallel-agents","final-release-review","finishing-a-development-branch","gemini-api","git-commit","git-workflow-and-versioning","google-cloud-waf-cost-optimization","google-cloud-waf-operational-excellence","google-cloud-waf-performance-optimization","google-cloud-waf-reliability","google-cloud-waf-security","google-cloud-waf-sustainability","grafana-dashboards","graphql-architect","huggingface-gradio","hybrid-search-implementation","k8s-security-policies","langchain-architecture","make-repo-contribution","mcp-cli","ml-pipeline","nuget-manager","observability-and-instrumentation","pr-draft-summary","prometheus-configuration","refactor","similarity-search-patterns","slo-implementation","source-management","spec-driven-development","systematic-debugging","test-driven-development","turborepo","vector-index-tuning","verification-before-completion","vscode-ext-localization","writing-plans"]
     },
     {
       "title": "Tools & Utilities",
       "description": "Handle practical research, conversion, validation, and monitoring tasks.",
-      "skills": ["email-validator", "domain-intelligence", "domain-analyzer", "tech-stack-detector", "screenshot-capture", "url-to-markdown", "youtube-transcript", "document-parser", "content-translator", "sentiment-analyzer", "weather-lookup", "flight-tracker", "currency-converter", "github-profile-research", "npm-package-research", "cve-lookup", "website-monitor", "task-management", "meeting-minutes", "ticket-triage"]
+      "skills": ["email-validator","domain-intelligence","domain-analyzer","tech-stack-detector","screenshot-capture","url-to-markdown","youtube-transcript","document-parser","content-translator","sentiment-analyzer","weather-lookup","flight-tracker","currency-converter","github-profile-research","npm-package-research","cve-lookup","website-monitor","task-management","meeting-minutes","ticket-triage","excel-generator","i-have-adhd","memory-management","obsidian-bases","obsidian-markdown"]
     }
   ]
 }

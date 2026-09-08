@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/excalidraw-diagram-generator",
+  "display_name": "Excalidraw Diagram Generator",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "excalidraw-diagram-generator",
+  "description": "Create, implement, or review excalidraw diagram generator work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on excalidraw diagram generator.",
+  "type": "skill",
+  "capability_tags": [
+    "Excalidraw Diagram Generator",
+    "Design & Media"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "design-media"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/excalidraw-diagram-generator",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/excalidraw-diagram-generator/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/excalidraw-diagram-generator.json",
+    "skill_path": "marketing/excalidraw-diagram-generator",
+    "catalog_path": "catalog/skills/excalidraw-diagram-generator.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 636,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Design & Media",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

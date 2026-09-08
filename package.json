@@ -16,6 +16,7 @@
     "bin",
     "dsh",
     "lib",
+    "imports",
     "marketing",
     "research",
     "README.md",

@@ -1,0 +1,58 @@
+{
+  "name": "sandbase/excel-generator",
+  "display_name": "Excel Generator",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "excel-generator",
+  "description": "Create and verify Excel workbooks with optional SandBase external-data retrieval.",
+  "type": "skill",
+  "capability_tags": [
+    "Excel",
+    "spreadsheets",
+    "data analysis",
+    "reporting"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "tools-utilities"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/excel-generator",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/excel-generator/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/excel-generator.json",
+    "skill_path": "marketing/excel-generator",
+    "catalog_path": "catalog/skills/excel-generator.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 560,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Tools & Utilities",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

@@ -39,7 +39,7 @@ class ReadmeInventoryTests(unittest.TestCase):
 
         category_total = sum(
             int(count)
-            for count in re.findall(r"^### .+ \((\d+) Skills\)$", readme, re.MULTILINE)
+            for count in re.findall(r"^### .+ \((\d+) Skills?\)$", readme, re.MULTILINE)
         )
         self.assertEqual(category_total, len(installable))
 

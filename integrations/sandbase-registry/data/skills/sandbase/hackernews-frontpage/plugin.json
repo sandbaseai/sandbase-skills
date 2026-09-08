@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/hackernews-frontpage",
+  "display_name": "Hacker News Front Page",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "hackernews-frontpage",
+  "description": "Research and evaluate hacker news front page with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for hacker news front page findings or verification.",
+  "type": "skill",
+  "capability_tags": [
+    "Hacker News Front Page",
+    "Search & Research"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "search-research"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/hackernews-frontpage",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/hackernews-frontpage/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/hackernews-frontpage.json",
+    "skill_path": "marketing/hackernews-frontpage",
+    "catalog_path": "catalog/skills/hackernews-frontpage.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 660,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Search & Research",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

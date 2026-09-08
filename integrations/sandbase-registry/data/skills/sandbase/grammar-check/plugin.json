@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/grammar-check",
+  "display_name": "Grammar Check",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "grammar-check",
+  "description": "Create or review grammar check deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for grammar check work.",
+  "type": "skill",
+  "capability_tags": [
+    "Grammar Check",
+    "Marketing & Content"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-content"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/grammar-check",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/grammar-check/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/grammar-check.json",
+    "skill_path": "marketing/grammar-check",
+    "catalog_path": "catalog/skills/grammar-check.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 651,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & Content",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

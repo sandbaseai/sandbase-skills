@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "id": "manim-animator",
+  "display_name": "Manim Animator",
+  "short_description": "Build reproducible explanatory animation videos.",
+  "description": "Plan, code, render, and verify Manim animations, with optional SandBase image, narration, music, and transcription assets.",
+  "category": {
+    "id": "media-generation",
+    "label": "Media Generation"
+  },
+  "tags": [
+    "Manim",
+    "animation",
+    "mathematics",
+    "explainers"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/manim-animator",
+    "skill_file": "marketing/manim-animator/SKILL.md",
+    "readme_anchor": "#manim-animator"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "A local Manim environment for rendering",
+      "An authorized SandBase connection only for optional generated media"
+    ]
+  },
+  "install": {
+    "prompt": "Use $manim-animator to plan, code, render, and verify this explanatory animation.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill manim-animator --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill manim-animator --agent codex --global",
+    "source_path": "marketing/manim-animator"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/manim-animator"
+    }
+  ],
+  "examples": [
+    "Animate a geometric proof with equations that transform between steps.",
+    "Create a narrated explanation of gradient descent and verify the final MP4.",
+    "Build a three-scene scientific animation with one generated background image."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "local_runtime",
+        "label": "Compatible Python and Manim runtime for rendering",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "concept and audience",
+      "duration, aspect ratio, resolution, and frame rate",
+      "narration, caption, and music requirements",
+      "existing Manim project and framework choice",
+      "authorized SandBase connection for generated media"
+    ]
+  },
+  "notes": [
+    "Manim code and vector rendering are local and do not require SandBase.",
+    "Optional AI media uses dynamically discovered SandBase capabilities with cost confirmation.",
+    "Do not mix Manim Community and ManimGL APIs in one project.",
+    "Verify low-quality previews before final rendering."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current image and audio-generation capabilities."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live media schemas, formats, timing controls, limits, and pricing."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute an approved image, speech, music, effect, or transcription model."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous generated-media run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent run status and actual cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before a multi-call media batch."
+      }
+    ]
+  },
+  "related_skills": [
+    "video-generator",
+    "music-prompter"
+  ]
+}

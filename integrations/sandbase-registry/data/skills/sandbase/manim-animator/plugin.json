@@ -1,0 +1,58 @@
+{
+  "name": "sandbase/manim-animator",
+  "display_name": "Manim Animator",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "manim-animator",
+  "description": "Create reproducible Manim animations with optional SandBase-generated media.",
+  "type": "skill",
+  "capability_tags": [
+    "Manim",
+    "animation",
+    "mathematics",
+    "explainers"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "media-generation"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/manim-animator",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/manim-animator/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/manim-animator.json",
+    "skill_path": "marketing/manim-animator",
+    "catalog_path": "catalog/skills/manim-animator.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 540,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Media Generation",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

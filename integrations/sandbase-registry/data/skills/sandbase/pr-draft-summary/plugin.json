@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/pr-draft-summary",
+  "display_name": "PR Draft Summary",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "pr-draft-summary",
+  "description": "Plan, implement, or review pr draft summary work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests pr draft summary work.",
+  "type": "skill",
+  "capability_tags": [
+    "PR Draft Summary",
+    "Software Engineering & DevOps"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "software-engineering-devops"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/pr-draft-summary",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/pr-draft-summary/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/pr-draft-summary.json",
+    "skill_path": "marketing/pr-draft-summary",
+    "catalog_path": "catalog/skills/pr-draft-summary.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 700,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Software Engineering & DevOps",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

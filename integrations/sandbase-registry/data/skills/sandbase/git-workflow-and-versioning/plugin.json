@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/git-workflow-and-versioning",
+  "display_name": "Git Workflow And Versioning",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "git-workflow-and-versioning",
+  "description": "Plan, implement, or review git workflow and versioning work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests git workflow and versioning work.",
+  "type": "skill",
+  "capability_tags": [
+    "Git Workflow And Versioning",
+    "Software Engineering & DevOps"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "software-engineering-devops"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/git-workflow-and-versioning",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/git-workflow-and-versioning/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/git-workflow-and-versioning.json",
+    "skill_path": "marketing/git-workflow-and-versioning",
+    "catalog_path": "catalog/skills/git-workflow-and-versioning.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 642,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Software Engineering & DevOps",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "id": "listicle-blog-writer",
+  "display_name": "Listicle Blog Writer",
+  "short_description": "Research and write defensible best-of articles.",
+  "description": "Create evidence-backed listicles and product roundups with transparent ranking criteria and optional SandBase SERP, page, review, and screenshot research.",
+  "category": {
+    "id": "marketing-content",
+    "label": "Marketing & Content"
+  },
+  "tags": [
+    "listicles",
+    "comparison content",
+    "SEO",
+    "GEO"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/listicle-blog-writer",
+    "skill_file": "marketing/listicle-blog-writer/SKILL.md",
+    "readme_anchor": "#listicle-blog-writer"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "User-provided evidence or an authorized SandBase connection for live research"
+    ]
+  },
+  "install": {
+    "prompt": "Use $listicle-blog-writer to research and draft this best-of article.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill listicle-blog-writer --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill listicle-blog-writer --agent codex --global",
+    "source_path": "marketing/listicle-blog-writer"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/listicle-blog-writer"
+    }
+  ],
+  "examples": [
+    "Compare the best CRM tools for a five-person sales team using transparent criteria.",
+    "Turn these product test notes into a current best-of article without new web research.",
+    "Research and draft an answer-engine-friendly roundup with verified prices and screenshots."
+  ],
+  "configuration": {
+    "required": [],
+    "optional_inputs": [
+      "topic, audience, market, and language",
+      "must-include products and commercial disclosures",
+      "ranking criteria and hands-on test notes",
+      "keyword or analytics exports",
+      "live-research and screenshot requirements"
+    ]
+  },
+  "notes": [
+    "A publisher-owned or sponsored product is not automatically ranked first.",
+    "Official pages support feature and price facts but are not independent reviews.",
+    "Live research uses dynamically discovered SandBase capabilities and requires cost confirmation.",
+    "Without live evidence, current claims remain explicitly marked as unverified."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current SERP, keyword, scraping, review, and screenshot capabilities."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live schemas, market controls, pricing, and execution behavior."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute an approved research or screenshot capability."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous listicle-research run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent run status and actual cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before a paid research batch."
+      }
+    ]
+  },
+  "related_skills": [
+    "seo-keyword-insights",
+    "competitor-content-intelligence"
+  ]
+}

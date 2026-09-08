@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/marketing-psychology",
+  "display_name": "Marketing Psychology",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "marketing-psychology",
+  "description": "Create or review marketing psychology deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for marketing psychology work.",
+  "type": "skill",
+  "capability_tags": [
+    "Marketing Psychology",
+    "Marketing & Content"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-content"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/marketing-psychology",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/marketing-psychology/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/marketing-psychology.json",
+    "skill_path": "marketing/marketing-psychology",
+    "catalog_path": "catalog/skills/marketing-psychology.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 681,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & Content",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

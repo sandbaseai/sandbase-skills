@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "id": "game-dev",
+  "display_name": "Game Dev",
+  "short_description": "Build and verify playable browser games.",
+  "description": "Design, implement, tune, and verify browser games with optional SandBase-generated concept art and game assets.",
+  "category": {
+    "id": "media-generation",
+    "label": "Media Generation"
+  },
+  "tags": [
+    "game development",
+    "browser games",
+    "Babylon.js",
+    "image generation"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/game-dev",
+    "skill_file": "marketing/game-dev/SKILL.md",
+    "readme_anchor": "#game-dev"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "A local browser-game project and runtime",
+      "An authorized SandBase connection only for optional generated assets"
+    ]
+  },
+  "install": {
+    "prompt": "Use $game-dev to build and verify this playable browser game.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill game-dev --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill game-dev --agent codex --global",
+    "source_path": "marketing/game-dev"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/game-dev"
+    }
+  ],
+  "examples": [
+    "Build a playable 3D browser game from this short design brief.",
+    "Add a deterministic demo mode and verify the core loop in screenshots.",
+    "Create an approved SandBase concept-art batch, then integrate the assets into the game."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "local_runtime",
+        "label": "Browser-game development and build runtime",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "game brief and target audience",
+      "controls, mechanics, art direction, and target devices",
+      "existing project or engine",
+      "authorized SandBase connection for generated assets"
+    ]
+  },
+  "notes": [
+    "Game code, builds, tests, and deterministic asset processing remain local.",
+    "Optional generated assets use dynamically inspected SandBase capabilities with paid-call confirmation.",
+    "Deployment is separate unless the user explicitly requests it."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current image and game-asset generation capabilities."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live asset schemas, formats, limits, and pricing."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute a user-approved asset-generation call."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous asset-generation run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent run status and observed cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before an approved asset batch."
+      }
+    ]
+  },
+  "related_skills": [
+    "video-generator",
+    "manim-animator"
+  ]
+}

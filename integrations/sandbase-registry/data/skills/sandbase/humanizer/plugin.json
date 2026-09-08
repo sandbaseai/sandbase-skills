@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/humanizer",
+  "display_name": "Humanizer",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "humanizer",
+  "description": "Create or review humanizer deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for humanizer work.",
+  "type": "skill",
+  "capability_tags": [
+    "Humanizer",
+    "Marketing & Content"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-content"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/humanizer",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/humanizer/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/humanizer.json",
+    "skill_path": "marketing/humanizer",
+    "catalog_path": "catalog/skills/humanizer.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 664,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & Content",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/markdown-to-html",
+  "display_name": "Markdown To Html",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "markdown-to-html",
+  "description": "Create, implement, or review markdown to html work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on markdown to html.",
+  "type": "skill",
+  "capability_tags": [
+    "Markdown To Html",
+    "Design & Media"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "design-media"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/markdown-to-html",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/markdown-to-html/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/markdown-to-html.json",
+    "skill_path": "marketing/markdown-to-html",
+    "catalog_path": "catalog/skills/markdown-to-html.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 679,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Design & Media",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

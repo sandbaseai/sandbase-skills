@@ -1,0 +1,58 @@
+{
+  "name": "sandbase/stock-analysis",
+  "display_name": "Stock Analysis",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "stock-analysis",
+  "description": "Research public companies with current market, company, ownership, and filing data through SandBase.",
+  "type": "skill",
+  "capability_tags": [
+    "stocks",
+    "company research",
+    "market data",
+    "SEC filings"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "finance"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/stock-analysis",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/stock-analysis/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/stock-analysis.json",
+    "skill_path": "marketing/stock-analysis",
+    "catalog_path": "catalog/skills/stock-analysis.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 520,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Finance",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

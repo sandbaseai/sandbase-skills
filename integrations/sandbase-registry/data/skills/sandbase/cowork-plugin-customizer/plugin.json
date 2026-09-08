@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/cowork-plugin-customizer",
+  "display_name": "Cowork Plugin Customizer",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "cowork-plugin-customizer",
+  "description": "Plan, implement, or review cowork plugin customizer work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests cowork plugin customizer work.",
+  "type": "skill",
+  "capability_tags": [
+    "Cowork Plugin Customizer",
+    "Software Engineering & DevOps"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "software-engineering-devops"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/cowork-plugin-customizer",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/cowork-plugin-customizer/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/cowork-plugin-customizer.json",
+    "skill_path": "marketing/cowork-plugin-customizer",
+    "catalog_path": "catalog/skills/cowork-plugin-customizer.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 626,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Software Engineering & DevOps",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

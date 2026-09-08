@@ -5,7 +5,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | 日本語 | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**98個のインストール可能なAgent Skill** — リサーチ、ソーシャルインテリジェンス、マーケティング、ビジネスワークフロー向け。主力のリサーチSkillはAgent標準の検索ツールで動作し、SandBaseアカウントは不要です。専門データソースが必要な場合のみSandBaseを追加できます。
+**245個のインストール可能なAgent Skill** — リサーチ、ソーシャルインテリジェンス、マーケティング、メディア生成、ソフトウェアエンジニアリング、データサイエンス、ビジネスワークフロー向け。主力のリサーチSkillはAgent標準の検索ツールで動作し、SandBaseアカウントは不要です。専門データソースや生成モデルが必要な場合にSandBaseを追加できます。
 
 まず `multi-source-search` を試してください。Agent 既存の検索ツールを使い、証拠台帳の実例とオフライン検証ツールも含まれています。実際のワークフローに役立った場合は、他の開発者も見つけられるよう[リポジトリに Star](https://github.com/sandbaseai/sandbase-skills)をお願いします。
 
@@ -36,18 +36,19 @@ dsh web
 完全なSkillがプロジェクト用の検出ディレクトリ
 `.dsh/skills/multi-source-search`にコピーされます。GitHubソースから直接実行するため、npm公開やSandBaseアカウントは不要です。
 
-## Skillカテゴリ (98個)
+## Skillカテゴリ (245個)
 
 | カテゴリ | 数 | ユースケース |
 |---------|-----|-------------|
 | **ソーシャルインテリジェンス** | 14 | Twitter、YouTube、Instagram、TikTok、Weibo、Bilibili等 |
 | **検索・リサーチ** | 17 | マルチソース検索、学術論文、トレンド発見 |
-| **ビジネスインテリジェンス** | 26 | 企業調査、競合分析、セールスインテリジェンス |
-| **マーケティング** | 15 | ブランドモニタリング、KOL発見、ソーシャルリスニング |
+| **ビジネスインテリジェンス** | 28 | 企業調査、競合分析、セールスインテリジェンス |
+| **マーケティング** | 16 | ブランドモニタリング、KOL発見、ソーシャルリスニング |
 | **SEO** | 6 | キーワード戦略、被リンク分析、SERP分析 |
+| **メディア生成** | 3 | 画像、動画、音楽、音声の生成と編集 |
 | **ツール** | 20 | メール検証、ドメイン分析、スクリーンショット、翻訳 |
 
-全Skillリストは[英語README](./README.md#skill-catalog-98-skills)をご覧ください。
+全Skillリストは[英語README](./README.md#skill-catalog-245-skills)をご覧ください。
 
 ## 対応Agent
 
@@ -65,4 +66,4 @@ Skill自体は無料・オープンソース (Apache-2.0)。`multi-source-search
 
 ---
 
-**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 98個のオープンソースAgent Skill。必要に応じてデータソースを追加。
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 245個のオープンソースAgent Skill。必要に応じてデータソースや生成モデルを追加。

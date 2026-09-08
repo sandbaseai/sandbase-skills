@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "id": "excel-generator",
+  "display_name": "Excel Generator",
+  "short_description": "Create polished, verified Excel workbooks.",
+  "description": "Create, edit, analyze, and verify professional Excel workbooks with optional SandBase retrieval for requested external data.",
+  "category": {
+    "id": "tools-utilities",
+    "label": "Tools & Utilities"
+  },
+  "tags": [
+    "Excel",
+    "spreadsheets",
+    "data analysis",
+    "reporting"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/excel-generator",
+    "skill_file": "marketing/excel-generator/SKILL.md",
+    "readme_anchor": "#excel-generator"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "A local workbook-writing runtime",
+      "An authorized SandBase connection only for optional external data"
+    ]
+  },
+  "install": {
+    "prompt": "Use $excel-generator to create and verify this Excel workbook.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill excel-generator --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill excel-generator --agent codex --global",
+    "source_path": "marketing/excel-generator"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/excel-generator"
+    }
+  ],
+  "examples": [
+    "Create a multi-sheet operational dashboard from these CSV files.",
+    "Build an editable planning workbook with formulas, validations, and a summary chart.",
+    "Retrieve an approved external dataset through SandBase and document its freshness in the workbook."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "local_runtime",
+        "label": "Workbook creation and validation runtime",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "source data and business question",
+      "locale, currency, units, and target Excel version",
+      "required calculations, charts, and editable inputs",
+      "authorized SandBase connection for external data"
+    ]
+  },
+  "notes": [
+    "Workbook construction and formula authoring remain local.",
+    "SandBase is not used for data already supplied by the user.",
+    "Generated workbooks must be reopened and visually inspected when the host supports it."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current external-data capabilities when retrieval is required."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live data coverage, schema, limits, and pricing."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute a user-approved external-data retrieval."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous external-data retrieval."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent run status and observed cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before an approved retrieval batch."
+      }
+    ]
+  },
+  "related_skills": [
+    "variance-analysis",
+    "reconciliation",
+    "cash-flow-snapshot"
+  ]
+}

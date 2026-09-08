@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/emil-design-eng",
+  "display_name": "Design Engineering Craft",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "emil-design-eng",
+  "description": "Create, implement, or review design engineering craft work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on design engineering craft.",
+  "type": "skill",
+  "capability_tags": [
+    "Design Engineering Craft",
+    "Design & Media"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "design-media"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/emil-design-eng",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/emil-design-eng/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/emil-design-eng.json",
+    "skill_path": "marketing/emil-design-eng",
+    "catalog_path": "catalog/skills/emil-design-eng.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 635,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Design & Media",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

@@ -84,12 +84,21 @@ def validate_skill(entry: dict) -> list[str]:
         errors.append(f"{name}: web metadata must declare the standard npx install command")
     api = metadata.get("api", {})
     schema_resolution = api.get("schema_resolution")
+    schema_lookup_tool = schema_resolution.get("lookup") if isinstance(schema_resolution, dict) else None
     if (
         not isinstance(schema_resolution, dict)
         or schema_resolution.get("source") != "sandbase-capability-registry"
-        or schema_resolution.get("lookup") != "sandbase_describe_tool"
+        or schema_lookup_tool not in {"sandbase_describe_tool", "sandbase_inspect"}
     ):
-        errors.append(f"{name}: API schema_resolution must use sandbase_describe_tool")
+        errors.append(
+            f"{name}: API schema_resolution must use sandbase_describe_tool or sandbase_inspect"
+        )
+    declared_schema_lookup = api.get("schema_lookup")
+    if (
+        not isinstance(declared_schema_lookup, dict)
+        or declared_schema_lookup.get("tool") != schema_lookup_tool
+    ):
+        errors.append(f"{name}: API schema_lookup must match schema_resolution.lookup")
     endpoints = api.get("endpoints")
     if not isinstance(endpoints, list) or not endpoints:
         errors.append(f"{name}: web metadata must declare API endpoints")

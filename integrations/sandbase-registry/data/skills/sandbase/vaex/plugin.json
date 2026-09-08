@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/vaex",
+  "display_name": "Vaex",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "vaex",
+  "description": "Apply vaex in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses vaex or its strengths fit the task.",
+  "type": "skill",
+  "capability_tags": [
+    "Vaex",
+    "Data Science & Analytics"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "data-science-analytics"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/vaex",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/vaex/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/vaex.json",
+    "skill_path": "marketing/vaex",
+    "catalog_path": "catalog/skills/vaex.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 730,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Data Science & Analytics",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

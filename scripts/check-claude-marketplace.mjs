@@ -18,8 +18,8 @@ if (
   throw new Error("Marketplace versions must match package.json");
 }
 
-if (!plugin || plugin.name !== "sandbase-skills" || plugin.skills?.length !== 98) {
-  throw new Error("Marketplace must expose the complete 98-skill bundle");
+if (!plugin || plugin.name !== "sandbase-skills" || plugin.skills?.length !== 245) {
+  throw new Error("Marketplace must expose the complete 245-skill bundle");
 }
 
 if (new Set(plugin.skills).size !== plugin.skills.length) {

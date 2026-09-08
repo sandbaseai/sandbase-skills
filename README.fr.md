@@ -5,7 +5,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | Français | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**98 Skills Agent installables** — Recherche, intelligence sociale, marketing et workflows métier. Le Skill de recherche principal fonctionne avec les outils de recherche de l'agent et ne nécessite pas de compte SandBase ; connectez SandBase uniquement pour ajouter des sources spécialisées.
+**245 Skills Agent installables** — Recherche, intelligence sociale, marketing, génération multimédia, ingénierie logicielle, science des données et workflows métier. Le Skill de recherche principal fonctionne avec les outils de recherche de l'agent et ne nécessite pas de compte SandBase ; connectez SandBase pour ajouter des sources spécialisées ou des modèles génératifs.
 
 Commencez avec `multi-source-search` : il utilise les outils de recherche existants de l'agent et inclut un exemple de registre de preuves ainsi qu'un validateur hors ligne. S'il améliore un workflow réel, [ajoutez une étoile au dépôt](https://github.com/sandbaseai/sandbase-skills) pour aider d'autres développeurs à le découvrir.
 
@@ -35,18 +35,19 @@ dsh web
 
 L'installateur copie le Skill complet dans `.dsh/skills/multi-source-search`, le répertoire de découverte du projet. Il s'exécute directement depuis GitHub, sans publication npm ni compte SandBase.
 
-## Catégories (98 Skills)
+## Catégories (245 Skills)
 
 | Catégorie | Nombre | Cas d'usage |
 |-----------|--------|-------------|
 | **Intelligence Sociale** | 14 | Twitter, YouTube, Instagram, TikTok, Reddit, Xiaohongshu |
 | **Recherche** | 17 | Multi-sources, académique, tendances, actualités |
-| **Intelligence Business** | 26 | Entreprises, concurrence, ventes, talents |
-| **Marketing** | 15 | Marque, influenceurs, écoute sociale, crise |
+| **Intelligence Business** | 28 | Entreprises, concurrence, ventes, talents |
+| **Marketing** | 16 | Marque, influenceurs, écoute sociale, crise |
 | **SEO** | 6 | Mots-clés, backlinks, SERP, audit |
+| **Génération multimédia** | 3 | Images, vidéo, musique et voix |
 | **Outils** | 20 | Email, domaines, captures d'écran, traduction |
 
-Liste complète dans le [README anglais](./README.md#skill-catalog-98-skills).
+Liste complète dans le [README anglais](./README.md#skill-catalog-245-skills).
 
 ## Agents Supportés
 
@@ -58,4 +59,4 @@ Les Skills sont gratuits et open source (Apache-2.0). `multi-source-search` ne n
 
 ---
 
-**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 98 Skills open source avec des sources spécialisées facultatives.
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 245 Skills open source avec des sources spécialisées et des modèles génératifs facultatifs.

@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/hybrid-search-implementation",
+  "display_name": "Hybrid Search Implementation",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "hybrid-search-implementation",
+  "description": "Plan, implement, or review hybrid search implementation work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests hybrid search implementation work.",
+  "type": "skill",
+  "capability_tags": [
+    "Hybrid Search Implementation",
+    "Software Engineering & DevOps"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "software-engineering-devops"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/hybrid-search-implementation",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/hybrid-search-implementation/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/hybrid-search-implementation.json",
+    "skill_path": "marketing/hybrid-search-implementation",
+    "catalog_path": "catalog/skills/hybrid-search-implementation.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 665,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Software Engineering & DevOps",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

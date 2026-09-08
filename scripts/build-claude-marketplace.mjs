@@ -30,8 +30,8 @@ const skills = [
   ...(await discoverSkills("research")),
 ];
 
-if (skills.length !== 98) {
-  throw new Error(`Expected 98 skills, found ${skills.length}`);
+if (skills.length !== 245) {
+  throw new Error(`Expected 245 skills, found ${skills.length}`);
 }
 
 const marketplace = {
@@ -51,7 +51,7 @@ const marketplace = {
     {
       name: "sandbase-skills",
       version: packageJson.version,
-      description: "98 Agent Skills for evidence-led research, social intelligence, marketing, and business workflows.",
+      description: "245 Agent Skills for evidence-led research, social intelligence, marketing, media generation, software engineering, data science, and business workflows.",
       author: {
         name: "SandBase AI",
         url: "https://github.com/sandbaseai",
