@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/close-management",
+  "display_name": "Close Management",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "close-management",
+  "description": "Create or review close management deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for close management planning or analysis.",
+  "type": "skill",
+  "capability_tags": [
+    "Close Management",
+    "Business & Operations"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "business-operations"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/close-management",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/close-management/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/close-management.json",
+    "skill_path": "marketing/close-management",
+    "catalog_path": "catalog/skills/close-management.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 622,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Business & Operations",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

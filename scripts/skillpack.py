@@ -84,6 +84,7 @@ def validate_skill(entry: dict) -> list[str]:
         errors.append(f"{name}: web metadata must declare the standard npx install command")
     api = metadata.get("api", {})
     schema_resolution = api.get("schema_resolution")
+    schema_lookup_tool = schema_resolution.get("lookup") if isinstance(schema_resolution, dict) else None
     if (
         not isinstance(schema_resolution, dict)
         or schema_resolution.get("source") != "sandbase-capability-registry"
@@ -91,18 +92,26 @@ def validate_skill(entry: dict) -> list[str]:
         or schema_resolution.get("lookup") != "sandbase_inspect"
     ):
         errors.append(f"{name}: API schema_resolution must use dynamic sandbase_inspect")
+    else:
+        declared_schema_lookup = api.get("schema_lookup")
+        if not any(field in api for field in ("discovery", "async_result")) and (
+            not isinstance(declared_schema_lookup, dict)
+            or declared_schema_lookup.get("tool") != schema_lookup_tool
+        ):
+            errors.append(f"{name}: API schema_lookup must match schema_resolution.lookup")
     gateway_contracts = {
         "discovery": {"tool": "sandbase_discover", "argument": "q"},
         "schema_lookup": {"tool": "sandbase_inspect", "argument": "name"},
         "call": {"tool": "sandbase_run", "arguments": ["name", "arguments"]},
         "async_result": {"tool": "sandbase_run_get", "argument": "run_id"},
     }
-    for field, expected in gateway_contracts.items():
-        contract = api.get(field)
-        if not isinstance(contract, dict) or any(
-            contract.get(key) != value for key, value in expected.items()
-        ):
-            errors.append(f"{name}: API {field} must declare {expected}")
+    if any(field in api for field in ("discovery", "async_result")):
+        for field, expected in gateway_contracts.items():
+            contract = api.get(field)
+            if not isinstance(contract, dict) or any(
+                contract.get(key) != value for key, value in expected.items()
+            ):
+                errors.append(f"{name}: API {field} must declare {expected}")
     endpoints = api.get("endpoints")
     if not isinstance(endpoints, list) or not endpoints:
         errors.append(f"{name}: web metadata must declare API endpoints")

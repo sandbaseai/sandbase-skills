@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/google-cloud-waf-sustainability",
+  "display_name": "Google Cloud WAF Sustainability",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "google-cloud-waf-sustainability",
+  "description": "Plan, implement, or review google cloud waf sustainability work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests google cloud waf sustainability work.",
+  "type": "skill",
+  "capability_tags": [
+    "Google Cloud WAF Sustainability",
+    "Software Engineering & DevOps"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "software-engineering-devops"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/google-cloud-waf-sustainability",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/google-cloud-waf-sustainability/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/google-cloud-waf-sustainability.json",
+    "skill_path": "marketing/google-cloud-waf-sustainability",
+    "catalog_path": "catalog/skills/google-cloud-waf-sustainability.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 649,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Software Engineering & DevOps",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

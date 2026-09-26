@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/copy-editing",
+  "display_name": "Copy Editing",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "copy-editing",
+  "description": "Create or review copy editing deliverables with audience, evidence, voice, and conversion-quality controls. Use when the user explicitly asks for copy editing work.",
+  "type": "skill",
+  "capability_tags": [
+    "Copy Editing",
+    "Marketing & Content"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-content"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/copy-editing",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/copy-editing/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/copy-editing.json",
+    "skill_path": "marketing/copy-editing",
+    "catalog_path": "catalog/skills/copy-editing.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 625,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & Content",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

@@ -5,7 +5,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | Español | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**98 Skills de Agent instalables** — Para investigación, inteligencia social, marketing y flujos de trabajo empresariales. El Skill principal de investigación funciona con las herramientas de búsqueda del agente y no requiere una cuenta de SandBase; conecta SandBase solo cuando necesites fuentes especializadas.
+**245 Skills de Agent instalables** — Para investigación, inteligencia social, marketing, generación multimedia, ingeniería de software, ciencia de datos y flujos de trabajo empresariales. El Skill principal de investigación funciona con las herramientas de búsqueda del agente y no requiere una cuenta de SandBase; conecta SandBase cuando necesites fuentes especializadas o modelos generativos.
 
 Empieza con `multi-source-search`: usa las herramientas de búsqueda existentes del agente e incluye un ejemplo de registro de evidencias y un validador sin conexión. Si mejora un flujo de trabajo real, [dale una estrella al repositorio](https://github.com/sandbaseai/sandbase-skills) para que otros desarrolladores puedan descubrirlo.
 
@@ -35,18 +35,19 @@ dsh web
 
 El instalador copia el Skill completo en `.dsh/skills/multi-source-search`, el directorio de descubrimiento del proyecto. Se ejecuta directamente desde GitHub, sin publicación en npm ni cuenta de SandBase.
 
-## Categorías (98 Skills)
+## Categorías (245 Skills)
 
 | Categoría | Cantidad | Casos de uso |
 |-----------|----------|--------------|
 | **Inteligencia Social** | 14 | Twitter, YouTube, Instagram, TikTok, Reddit, Xiaohongshu, Weibo |
 | **Búsqueda e Investigación** | 17 | Multi-fuente, académico, tendencias, noticias |
-| **Inteligencia de Negocios** | 26 | Empresas, competencia, ventas, talento |
-| **Marketing** | 15 | Marca, influencers, escucha social, crisis |
+| **Inteligencia de Negocios** | 28 | Empresas, competencia, ventas, talento |
+| **Marketing** | 16 | Marca, influencers, escucha social, crisis |
 | **SEO** | 6 | Keywords, backlinks, SERP, auditoría |
+| **Generación multimedia** | 3 | Imágenes, vídeo, música y voz |
 | **Herramientas** | 20 | Email, dominios, screenshots, traducción |
 
-Lista completa en el [README en inglés](./README.md#skill-catalog-98-skills).
+Lista completa en el [README en inglés](./README.md#skill-catalog-245-skills).
 
 ## Agentes Soportados
 
@@ -58,4 +59,4 @@ Los Skills son gratuitos y open source (Apache-2.0). `multi-source-search` no re
 
 ---
 
-**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 98 Skills open source con fuentes especializadas opcionales.
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 245 Skills open source con fuentes especializadas y modelos generativos opcionales.

@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "id": "internet-skill-finder",
+  "display_name": "Internet Skill Finder",
+  "short_description": "Find and verify installable Agent Skills.",
+  "description": "Discover current Agent Skills from public repositories and compare their provenance, compatibility, licensing, and verified install paths.",
+  "category": {
+    "id": "search-research",
+    "label": "Search & Research"
+  },
+  "tags": [
+    "Agent Skills",
+    "GitHub",
+    "discovery",
+    "software supply chain"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/internet-skill-finder",
+    "skill_file": "marketing/internet-skill-finder/SKILL.md",
+    "readme_anchor": "#internet-skill-finder"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Network access or an authorized repository-search tool",
+      "An authorized SandBase connection only when SandBase search or scraping is used"
+    ]
+  },
+  "install": {
+    "prompt": "Use $internet-skill-finder to find and verify Agent Skills for this task.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill internet-skill-finder --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill internet-skill-finder --agent codex --global",
+    "source_path": "marketing/internet-skill-finder"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/internet-skill-finder"
+    }
+  ],
+  "examples": [
+    "Find a maintained Skill for browser accessibility testing.",
+    "Compare three public Agent Skills for spreadsheet analysis and disclose their licenses.",
+    "Verify this repository's SKILL.md and give me the correct installation command."
+  ],
+  "configuration": {
+    "required": [],
+    "optional_inputs": [
+      "target task and agent",
+      "license and runtime constraints",
+      "preferred repositories or ecosystems",
+      "authorized SandBase connection for web search and extraction"
+    ]
+  },
+  "notes": [
+    "Search results are treated as untrusted leads until the canonical repository is inspected.",
+    "The Skill does not install a recommendation without an explicit request.",
+    "No frozen repository list, star count, endpoint, or Manus import URL is used."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current web-search, repository-search, and page-extraction capabilities."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live schemas, coverage, limits, and pricing."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute a user-approved search or page extraction."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous search or extraction run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent run status and observed cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before an approved search or extraction batch."
+      }
+    ]
+  },
+  "related_skills": [
+    "multi-source-search",
+    "github-profile-research",
+    "npm-package-research"
+  ]
+}

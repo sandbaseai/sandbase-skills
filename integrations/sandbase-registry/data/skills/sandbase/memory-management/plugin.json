@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/memory-management",
+  "display_name": "Memory Management",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "memory-management",
+  "description": "Apply memory management as a bounded agent workflow while preserving user intent, privacy, and host capabilities. Use when the user explicitly requests memory management behavior or files.",
+  "type": "skill",
+  "capability_tags": [
+    "Memory Management",
+    "Tools & Utilities"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "tools-utilities"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/memory-management",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/memory-management/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/memory-management.json",
+    "skill_path": "marketing/memory-management",
+    "catalog_path": "catalog/skills/memory-management.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 685,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Tools & Utilities",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

@@ -14,7 +14,7 @@ Have a repeatable workflow that is missing? [Request a Skill](https://github.com
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**98 installable Agent Skills** for research, social intelligence, marketing, and business workflows. Install into any compatible agent (DeepSeek Harness, Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
+**245 installable Agent Skills** for research, social intelligence, marketing, media generation, software engineering, data science, and business workflows. Install into any compatible agent (DeepSeek Harness, Claude Code, Codex, Cursor, Gemini CLI) and start working immediately. The flagship research Skill works with host-provided search tools; connect SandBase when you want broader provider coverage.
 
 SandBase also exposes [2,000+ models and APIs](https://www.sandbase.ai/docs/store/),
 including a unified surface for [LLM, image, and video generation](https://blog.sandbase.ai/unified-ai-api-llm-image-video-2026/).
@@ -96,7 +96,7 @@ so other agent users can discover it.
 
 ### DeepSeek Harness
 
-Install all 98 Skills as a native DSH bundle:
+Install all 245 Skills as a native DSH bundle:
 
 ```bash
 dsh plugin --profile web add github:sandbaseai/sandbase-skills
@@ -118,7 +118,7 @@ so no npm publication or SandBase account is required.
 
 ### Claude Code marketplace
 
-Install all 98 Skills as a native Claude Code plugin:
+Install all 245 Skills as a native Claude Code plugin:
 
 ```text
 /plugin marketplace add sandbaseai/sandbase-skills
@@ -163,7 +163,7 @@ Install the matching Skill, then give your agent one of these tasks:
 | [`github-profile-research`](research/github-profile-research/SKILL.md) | “Assess this engineering team’s open-source activity.” | Repository, language, contribution, star, and activity analysis | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/github-profile-research) |
 | [`youtube-research`](research/youtube-research/SKILL.md) | “Map the leading channels and audience questions in this niche.” | Video and channel discovery, transcript evidence, and comment themes | [skills.sh](https://www.skills.sh/sandbaseai/sandbase-skills/youtube-research) |
 
-## Skill Catalog (98 Skills)
+## Skill Catalog (245 Skills)
 
 ### Social Intelligence (14 Skills)
 
@@ -186,7 +186,7 @@ Research and monitor conversations across every major social platform.
 | `china-social-research` | Multi-platform | Cross-platform China social research |
 | `community-research` | Reddit + Telegram | Online community analysis |
 
-### Search & Research (17 Skills)
+### Search & Research (24 Skills)
 
 Find, validate, and synthesize information from multiple sources.
 
@@ -209,8 +209,15 @@ Find, validate, and synthesize information from multiple sources.
 | `newsletter-research` | Discover industry newsletters and publications |
 | `podcast-research` | Find podcasts and episodes by topic |
 | `content-ideation` | Generate data-backed content ideas |
+| `internet-skill-finder` | Find and verify installable Agent Skills from current public repositories |
+| `database-lookup` | Research and verify Database Lookup with explicit validation and safety boundaries |
+| `github-gem-seeker` | Research and verify GitHub Gem Seeker with explicit validation and safety boundaries |
+| `hackernews-frontpage` | Research and verify Hacker News Front Page with explicit validation and safety boundaries |
+| `microsoft-code-reference` | Research and verify Microsoft Code Reference with explicit validation and safety boundaries |
+| `microsoft-docs` | Research and verify Microsoft Docs with explicit validation and safety boundaries |
+| `usfiscaldata` | Research and verify U.S. Fiscal Data with explicit validation and safety boundaries |
 
-### Business Intelligence (26 Skills)
+### Business Intelligence (28 Skills)
 
 Company research, sales intelligence, and competitive analysis.
 
@@ -236,6 +243,8 @@ Company research, sales intelligence, and competitive analysis.
 | `industry-landscape` | Map any industry's competitive landscape |
 | `local-market-research` | Research local markets with reviews and social data |
 | `data-enrichment` | Fill data gaps with verified intelligence |
+| `stock-analysis` | Research public companies with current market, ownership, and filing evidence |
+| `similarweb-analytics` | Compare estimated website traffic, engagement, channels, and geography |
 | `market-sizing-analysis` | Calculate evidence-backed TAM, SAM, and SOM ranges |
 | `variance-analysis` | Decompose financial variances into business drivers |
 | `reconciliation` | Match account data and classify open differences |
@@ -243,7 +252,27 @@ Company research, sales intelligence, and competitive analysis.
 | `sales-enablement` | Create buyer-specific sales collateral |
 | `prd` | Turn product ideas into measurable requirements |
 
-### Marketing & Content (15 Skills)
+### Business & Operations (12 Skills)
+
+Plan and verify operational, financial, legal, and decision-support workflows.
+
+| Skill | Use it to |
+|---|---|
+| `audit-support` | Plan and verify Audit Support with explicit validation and safety boundaries |
+| `brainstorm-experiments-new` | Plan and verify Brainstorm Experiments New with explicit validation and safety boundaries |
+| `business-model` | Plan and verify Business Model with explicit validation and safety boundaries |
+| `call-prep` | Plan and verify Call Prep with explicit validation and safety boundaries |
+| `close-management` | Plan and verify Close Management with explicit validation and safety boundaries |
+| `daily-briefing` | Plan and verify Daily Briefing with explicit validation and safety boundaries |
+| `journal-entry-prep` | Plan and verify Journal Entry Prep with explicit validation and safety boundaries |
+| `lean-canvas` | Plan and verify Lean Canvas with explicit validation and safety boundaries |
+| `legal-risk-assessment` | Plan and verify Legal Risk Assessment with explicit validation and safety boundaries |
+| `meeting-briefing` | Plan and verify Meeting Briefing with explicit validation and safety boundaries |
+| `revops` | Plan and verify Revenue Operations with explicit validation and safety boundaries |
+| `team-composition-analysis` | Plan and verify Team Composition Analysis with explicit validation and safety boundaries |
+
+
+### Marketing & Content (25 Skills)
 
 Brand monitoring, influencer marketing, and content strategy.
 
@@ -264,8 +293,18 @@ Brand monitoring, influencer marketing, and content strategy.
 | `hashtag-tracker` | Track hashtag performance across platforms |
 | `crisis-monitor` | Detect and assess crises before they escalate |
 | `reddit-customer-insights` | Discover customer language and pain points |
+| `listicle-blog-writer` | Research and write transparent, evidence-backed best-of articles |
+| `ai-seo` | Create or review AI SEO with explicit validation and safety boundaries |
+| `alternative-blog-writer` | Create or review Alternative Blog Writer with explicit validation and safety boundaries |
+| `churn-prevention` | Create or review Churn Prevention with explicit validation and safety boundaries |
+| `comparison-article-writer` | Create or review Comparison Article Writer with explicit validation and safety boundaries |
+| `copy-editing` | Create or review Copy Editing with explicit validation and safety boundaries |
+| `grammar-check` | Create or review Grammar Check with explicit validation and safety boundaries |
+| `humanizer` | Create or review Humanizer with explicit validation and safety boundaries |
+| `marketing-ideas` | Create or review Marketing Ideas with explicit validation and safety boundaries |
+| `marketing-psychology` | Create or review Marketing Psychology with explicit validation and safety boundaries |
 
-### Marketing & SEO (6 Skills)
+### Marketing & SEO (8 Skills)
 
 Search engine optimization, SERP analysis, and technical auditing.
 
@@ -277,8 +316,150 @@ Search engine optimization, SERP analysis, and technical auditing.
 | `seo-content-brief` | Generate SERP-backed content briefs |
 | `site-audit` | Audit website content, structure, and SEO health |
 | `programmatic-seo` | Design and validate data-driven SEO page families |
+| `backlink-analysis` | Analyze Backlink Analysis with explicit validation and safety boundaries |
+| `seo-competitor-analysis` | Analyze Seo Competitor Analysis with explicit validation and safety boundaries |
 
-### Tools & Utilities (20 Skills)
+### Media Generation (4 Skills)
+
+Plan, generate, assemble, and verify multimedia deliverables.
+
+| Skill | Use it to |
+|---|---|
+| `video-generator` | Produce cost-aware multi-shot videos with SandBase image, video, music, and speech models |
+| `music-prompter` | Design prompts and generate cost-aware songs, instrumentals, and multi-part music with SandBase |
+| `manim-animator` | Build reproducible mathematical and explanatory animations with optional SandBase media |
+| `game-dev` | Build and verify playable browser games with optional SandBase-generated assets |
+
+### Design & Media (30 Skills)
+
+Create and review interfaces, diagrams, animation, and editable media.
+
+| Skill | Use it to |
+|---|---|
+| `accessibility-review` | Create or review Accessibility Review with explicit validation and safety boundaries |
+| `beautiful-article` | Create or review Beautiful Article with explicit validation and safety boundaries |
+| `captions-overlay` | Create or review Captions Overlay with explicit validation and safety boundaries |
+| `cut-the-curve` | Create or review Cut The Curve with explicit validation and safety boundaries |
+| `emil-design-eng` | Create or review Design Engineering Craft with explicit validation and safety boundaries |
+| `excalidraw-diagram-generator` | Create or review Excalidraw Diagram Generator with explicit validation and safety boundaries |
+| `gsap-core` | Create or review GSAP Core with explicit validation and safety boundaries |
+| `gsap-frameworks` | Create or review GSAP Framework Integrations with explicit validation and safety boundaries |
+| `gsap-plugins` | Create or review GSAP Plugins with explicit validation and safety boundaries |
+| `gsap-react` | Create or review GSAP React with explicit validation and safety boundaries |
+| `gsap-scrolltrigger` | Create or review GSAP ScrollTrigger with explicit validation and safety boundaries |
+| `gsap-timeline` | Create or review GSAP Timeline with explicit validation and safety boundaries |
+| `gsap-utils` | Create or review GSAP Utilities with explicit validation and safety boundaries |
+| `html-video-production` | Create or review HTML Video Production with explicit validation and safety boundaries |
+| `hyperframes-keyframes` | Create or review Hyperframes Keyframes with explicit validation and safety boundaries |
+| `hyperframes-registry` | Create or review Hyperframes Registry with explicit validation and safety boundaries |
+| `image-manipulation-image-magick` | Create or review ImageMagick Image Manipulation with explicit validation and safety boundaries |
+| `json-canvas` | Create or review JSON Canvas with explicit validation and safety boundaries |
+| `legacy-circuit-mockups` | Create or review Legacy Circuit Mockups with explicit validation and safety boundaries |
+| `markdown-mermaid-writing` | Create or review Markdown and Mermaid Writing with explicit validation and safety boundaries |
+| `markdown-to-html` | Create or review Markdown To Html with explicit validation and safety boundaries |
+| `oversized-cursor` | Create or review Oversized Cursor with explicit validation and safety boundaries |
+| `penpot-uiux-design` | Create or review Penpot UI/UX Design with explicit validation and safety boundaries |
+| `plantuml-ascii` | Create or review PlantUML ASCII with explicit validation and safety boundaries |
+| `playground` | Create or review Playground with explicit validation and safety boundaries |
+| `review-animations` | Create or review Review Animations with explicit validation and safety boundaries |
+| `seam-craft` | Create or review Seam Craft with explicit validation and safety boundaries |
+| `tailwind-design-system` | Create or review Tailwind Design System with explicit validation and safety boundaries |
+| `video-template-frame-glitch-title` | Create or review Video Template Frame Glitch Title with explicit validation and safety boundaries |
+| `video-template-frame-light-leak-cinema` | Create or review Video Template Frame Light Leak Cinema with explicit validation and safety boundaries |
+
+
+### Data Science & Analytics (27 Skills)
+
+Build reproducible statistics, machine-learning, visualization, and data-engineering workflows.
+
+| Skill | Use it to |
+|---|---|
+| `airflow-dag-patterns` | Build reproducible Airflow Dag Patterns with explicit validation and safety boundaries |
+| `backtesting-frameworks` | Build reproducible Backtesting Frameworks with explicit validation and safety boundaries |
+| `dask` | Build reproducible Dask with explicit validation and safety boundaries |
+| `data-context-extractor` | Build reproducible Data Context Extractor with explicit validation and safety boundaries |
+| `data-visualization` | Build reproducible Data Visualization with explicit validation and safety boundaries |
+| `dbt-transformation-patterns` | Build reproducible dbt Transformation Patterns with explicit validation and safety boundaries |
+| `experimental-design` | Build reproducible Experimental Design with explicit validation and safety boundaries |
+| `huggingface-datasets` | Build reproducible Hugging Face Datasets with explicit validation and safety boundaries |
+| `matplotlib` | Build reproducible Matplotlib with explicit validation and safety boundaries |
+| `networkx` | Build reproducible NetworkX with explicit validation and safety boundaries |
+| `polars` | Build reproducible Polars with explicit validation and safety boundaries |
+| `powerbi-modeling` | Build reproducible Power BI Modeling with explicit validation and safety boundaries |
+| `risk-metrics-calculation` | Build reproducible Risk Metrics Calculation with explicit validation and safety boundaries |
+| `seaborn` | Build reproducible Seaborn with explicit validation and safety boundaries |
+| `shap` | Build reproducible SHAP with explicit validation and safety boundaries |
+| `single-cell-rna-qc` | Build reproducible Single-Cell RNA QC with explicit validation and safety boundaries |
+| `spark-optimization` | Build reproducible Spark Optimization with explicit validation and safety boundaries |
+| `sql-optimization-patterns` | Build reproducible SQL Optimization Patterns with explicit validation and safety boundaries |
+| `sql-queries` | Build reproducible SQL Queries with explicit validation and safety boundaries |
+| `stable-baselines3` | Build reproducible Stable-Baselines3 with explicit validation and safety boundaries |
+| `statistical-power` | Build reproducible Statistical Power with explicit validation and safety boundaries |
+| `statsmodels` | Build reproducible Statsmodels with explicit validation and safety boundaries |
+| `sympy` | Build reproducible SymPy with explicit validation and safety boundaries |
+| `torch-geometric` | Build reproducible PyTorch Geometric with explicit validation and safety boundaries |
+| `umap-learn` | Build reproducible UMAP-learn with explicit validation and safety boundaries |
+| `vaex` | Build reproducible Vaex with explicit validation and safety boundaries |
+| `validate-data` | Build reproducible Validate Data with explicit validation and safety boundaries |
+
+
+### Software Engineering & DevOps (48 Skills)
+
+Design, implement, test, document, and operate software systems.
+
+| Skill | Use it to |
+|---|---|
+| `agentic-eval` | Implement and verify Agentic Eval with explicit validation and safety boundaries |
+| `api-designer` | Implement and verify API Designer with explicit validation and safety boundaries |
+| `appinsights-instrumentation` | Implement and verify Application Insights Instrumentation with explicit validation and safety boundaries |
+| `azure-role-selector` | Implement and verify Azure Role Selector with explicit validation and safety boundaries |
+| `behave-skill` | Implement and verify Behave BDD with explicit validation and safety boundaries |
+| `chrome-devtools` | Implement and verify Chrome Devtools with explicit validation and safety boundaries |
+| `ci-cd-and-automation` | Implement and verify CI/CD and Automation with explicit validation and safety boundaries |
+| `claude-automation-recommender` | Implement and verify Claude Automation Recommender with explicit validation and safety boundaries |
+| `claude-md-improver` | Implement and verify CLAUDE.md Improver with explicit validation and safety boundaries |
+| `code-documenter` | Implement and verify Code Documenter with explicit validation and safety boundaries |
+| `cowork-plugin-customizer` | Implement and verify Cowork Plugin Customizer with explicit validation and safety boundaries |
+| `dispatching-parallel-agents` | Implement and verify Dispatching Parallel Agents with explicit validation and safety boundaries |
+| `final-release-review` | Implement and verify Final Release Review with explicit validation and safety boundaries |
+| `finishing-a-development-branch` | Implement and verify Finishing A Development Branch with explicit validation and safety boundaries |
+| `gemini-api` | Implement and verify Gemini API with explicit validation and safety boundaries |
+| `git-commit` | Implement and verify Git Commit with explicit validation and safety boundaries |
+| `git-workflow-and-versioning` | Implement and verify Git Workflow And Versioning with explicit validation and safety boundaries |
+| `google-cloud-waf-cost-optimization` | Implement and verify Google Cloud WAF Cost Optimization with explicit validation and safety boundaries |
+| `google-cloud-waf-operational-excellence` | Implement and verify Google Cloud WAF Operational Excellence with explicit validation and safety boundaries |
+| `google-cloud-waf-performance-optimization` | Implement and verify Google Cloud WAF Performance Optimization with explicit validation and safety boundaries |
+| `google-cloud-waf-reliability` | Implement and verify Google Cloud WAF Reliability with explicit validation and safety boundaries |
+| `google-cloud-waf-security` | Implement and verify Google Cloud WAF Security with explicit validation and safety boundaries |
+| `google-cloud-waf-sustainability` | Implement and verify Google Cloud WAF Sustainability with explicit validation and safety boundaries |
+| `grafana-dashboards` | Implement and verify Grafana Dashboards with explicit validation and safety boundaries |
+| `graphql-architect` | Implement and verify GraphQL Architect with explicit validation and safety boundaries |
+| `huggingface-gradio` | Implement and verify Hugging Face Gradio with explicit validation and safety boundaries |
+| `hybrid-search-implementation` | Implement and verify Hybrid Search Implementation with explicit validation and safety boundaries |
+| `k8s-security-policies` | Implement and verify Kubernetes Security Policies with explicit validation and safety boundaries |
+| `langchain-architecture` | Implement and verify LangChain Architecture with explicit validation and safety boundaries |
+| `make-repo-contribution` | Implement and verify Make Repo Contribution with explicit validation and safety boundaries |
+| `mcp-cli` | Implement and verify MCP CLI with explicit validation and safety boundaries |
+| `ml-pipeline` | Implement and verify ML Pipeline with explicit validation and safety boundaries |
+| `nuget-manager` | Implement and verify NuGet Manager with explicit validation and safety boundaries |
+| `observability-and-instrumentation` | Implement and verify Observability And Instrumentation with explicit validation and safety boundaries |
+| `pr-draft-summary` | Implement and verify PR Draft Summary with explicit validation and safety boundaries |
+| `prometheus-configuration` | Implement and verify Prometheus Configuration with explicit validation and safety boundaries |
+| `refactor` | Implement and verify Refactor with explicit validation and safety boundaries |
+| `similarity-search-patterns` | Implement and verify Similarity Search Patterns with explicit validation and safety boundaries |
+| `slo-implementation` | Implement and verify SLO Implementation with explicit validation and safety boundaries |
+| `source-management` | Implement and verify Source Management with explicit validation and safety boundaries |
+| `spec-driven-development` | Implement and verify Spec Driven Development with explicit validation and safety boundaries |
+| `systematic-debugging` | Implement and verify Systematic Debugging with explicit validation and safety boundaries |
+| `test-driven-development` | Implement and verify Test Driven Development with explicit validation and safety boundaries |
+| `turborepo` | Implement and verify Turborepo with explicit validation and safety boundaries |
+| `vector-index-tuning` | Implement and verify Vector Index Tuning with explicit validation and safety boundaries |
+| `verification-before-completion` | Implement and verify Verification Before Completion with explicit validation and safety boundaries |
+| `vscode-ext-localization` | Implement and verify VS Code Extension Localization with explicit validation and safety boundaries |
+| `writing-plans` | Implement and verify Writing Plans with explicit validation and safety boundaries |
+
+
+### Tools & Utilities (25 Skills)
 
 Practical tools for everyday agent tasks.
 
@@ -304,6 +485,11 @@ Practical tools for everyday agent tasks.
 | `task-management` | Maintain a shared repository-local task tracker |
 | `meeting-minutes` | Turn meeting inputs into decisions and action items |
 | `ticket-triage` | Classify, prioritize, and route support issues |
+| `excel-generator` | Create polished Excel workbooks and verify their formulas, structure, and layout |
+| `i-have-adhd` | Apply ADHD-Friendly Communication with explicit validation and safety boundaries |
+| `memory-management` | Apply Memory Management with explicit validation and safety boundaries |
+| `obsidian-bases` | Apply Obsidian Bases with explicit validation and safety boundaries |
+| `obsidian-markdown` | Apply Obsidian Markdown with explicit validation and safety boundaries |
 
 ## Install
 
@@ -393,4 +579,4 @@ original licenses and pinned source revisions in
 
 ---
 
-**Built for [SandBase](https://sandbase.ai)** — One API key. Every data source. 98 installable agent skills.
+**Built for [SandBase](https://sandbase.ai)** — One connection. Dynamic access to data sources and models. 245 installable agent skills.

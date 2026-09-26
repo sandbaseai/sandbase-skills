@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/grafana-dashboards",
+  "display_name": "Grafana Dashboards",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "grafana-dashboards",
+  "description": "Plan, implement, or review grafana dashboards work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests grafana dashboards work.",
+  "type": "skill",
+  "capability_tags": [
+    "Grafana Dashboards",
+    "Software Engineering & DevOps"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "software-engineering-devops"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/grafana-dashboards",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/grafana-dashboards/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/grafana-dashboards.json",
+    "skill_path": "marketing/grafana-dashboards",
+    "catalog_path": "catalog/skills/grafana-dashboards.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 650,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Software Engineering & DevOps",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

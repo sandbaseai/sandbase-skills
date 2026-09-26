@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/i-have-adhd",
+  "display_name": "ADHD-Friendly Communication",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "i-have-adhd",
+  "description": "Apply adhd-friendly communication as a bounded agent workflow while preserving user intent, privacy, and host capabilities. Use when the user explicitly requests adhd-friendly communication behavior or files.",
+  "type": "skill",
+  "capability_tags": [
+    "ADHD-Friendly Communication",
+    "Tools & Utilities"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "tools-utilities"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/i-have-adhd",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/i-have-adhd/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/i-have-adhd.json",
+    "skill_path": "marketing/i-have-adhd",
+    "catalog_path": "catalog/skills/i-have-adhd.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 668,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Tools & Utilities",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

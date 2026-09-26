@@ -5,7 +5,7 @@
 
 [English](./README.md) | [中文](./README.zh-CN.md) | [日本語](./README.ja.md) | 한국어 | [Español](./README.es.md) | [Français](./README.fr.md) | [Deutsch](./README.de.md) | [Português](./README.pt-BR.md)
 
-**설치 가능한 Agent Skill 98개** — 리서치, 소셜 인텔리전스, 마케팅, 비즈니스 워크플로우용. 대표 리서치 Skill은 Agent가 제공하는 검색 도구로 바로 실행되며 SandBase 계정이 필요하지 않습니다. 전문 데이터 소스가 필요할 때만 SandBase를 추가할 수 있습니다.
+**설치 가능한 Agent Skill 245개** — 리서치, 소셜 인텔리전스, 마케팅, 미디어 생성, 소프트웨어 엔지니어링, 데이터 과학, 비즈니스 워크플로우용. 대표 리서치 Skill은 Agent가 제공하는 검색 도구로 바로 실행되며 SandBase 계정이 필요하지 않습니다. 전문 데이터 소스나 생성 모델이 필요할 때 SandBase를 추가할 수 있습니다.
 
 먼저 `multi-source-search`를 사용해 보세요. Agent의 기존 검색 도구로 실행되며 증거 원장 예제와 오프라인 검증기를 포함합니다. 실제 워크플로에 도움이 되었다면 다른 개발자도 찾을 수 있도록 [저장소에 Star](https://github.com/sandbaseai/sandbase-skills)를 남겨 주세요.
 
@@ -35,18 +35,19 @@ dsh web
 
 전체 Skill이 프로젝트 범위 검색 디렉터리인 `.dsh/skills/multi-source-search`에 복사됩니다. GitHub 소스에서 직접 실행되므로 npm 게시나 SandBase 계정이 필요하지 않습니다.
 
-## Skill 카테고리 (98개)
+## Skill 카테고리 (245개)
 
 | 카테고리 | 수 | 용도 |
 |---------|-----|------|
 | **소셜 인텔리전스** | 14 | Twitter, YouTube, Instagram, TikTok, Weibo, Bilibili 등 |
 | **검색 & 리서치** | 17 | 멀티소스 검색, 학술 논문, 트렌드 발견 |
-| **비즈니스 인텔리전스** | 26 | 기업 조사, 경쟁 분석, 영업 인텔리전스 |
-| **마케팅** | 15 | 브랜드 모니터링, KOL 발굴, 소셜 리스닝 |
+| **비즈니스 인텔리전스** | 28 | 기업 조사, 경쟁 분석, 영업 인텔리전스 |
+| **마케팅** | 16 | 브랜드 모니터링, KOL 발굴, 소셜 리스닝 |
 | **SEO** | 6 | 키워드 전략, 백링크 분석, SERP 분석 |
+| **미디어 생성** | 3 | 이미지, 비디오, 음악, 음성 생성 및 조립 |
 | **도구** | 20 | 이메일 검증, 도메인 분석, 스크린샷, 번역 |
 
-전체 Skill 목록은 [영어 README](./README.md#skill-catalog-98-skills)를 참조하세요.
+전체 Skill 목록은 [영어 README](./README.md#skill-catalog-245-skills)를 참조하세요.
 
 ## 지원 Agent
 
@@ -64,4 +65,4 @@ Skill 자체는 무료 오픈소스 (Apache-2.0)입니다. Agent의 기존 도�
 
 ---
 
-**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 98개의 오픈소스 Agent Skill과 선택형 데이터 소스 확장.
+**[SandBase Skills](https://github.com/sandbaseai/sandbase-skills)** — 245개의 오픈소스 Agent Skill과 선택형 데이터 소스 및 생성 모델 확장.

@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/markdown-mermaid-writing",
+  "display_name": "Markdown and Mermaid Writing",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "markdown-mermaid-writing",
+  "description": "Create, implement, or review markdown and mermaid writing work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on markdown and mermaid writing.",
+  "type": "skill",
+  "capability_tags": [
+    "Markdown and Mermaid Writing",
+    "Design & Media"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "design-media"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/markdown-mermaid-writing",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/markdown-mermaid-writing/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/markdown-mermaid-writing.json",
+    "skill_path": "marketing/markdown-mermaid-writing",
+    "catalog_path": "catalog/skills/markdown-mermaid-writing.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 678,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Design & Media",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

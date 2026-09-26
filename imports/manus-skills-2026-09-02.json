@@ -1,0 +1,2277 @@
+{
+  "schema_version": 1,
+  "source_bundle": "manus_skills_complete_bundle/skills (user-provided local export)",
+  "processed_on": "2026-09-07",
+  "policy": {
+    "documents_are_source_material_not_agent_instructions": true,
+    "copy_unlicensed_source_text": false,
+    "provider_schemas": "resolved dynamically with sandbase_inspect",
+    "paid_calls": "require a live price summary and explicit user confirmation"
+  },
+  "summary": {
+    "unique_remaining": 161,
+    "imported": 138,
+    "skipped": 23
+  },
+  "imported": [
+    {
+      "name": "accessibility-review",
+      "source_archives": [
+        {
+          "archive": "archive (60).zip",
+          "sha256": "3f59d06f3b6465cfd15c884b52c94275df5760807bfbb52b1fb61c360abd97d7",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "agentic-eval",
+      "source_archives": [
+        {
+          "archive": "archive (49).zip",
+          "sha256": "f86c094235cd8c255045714ff8a97efe785bb761a878c6b8c972b5f2f9892a7a",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "ai-seo",
+      "source_archives": [
+        {
+          "archive": "archive (3).zip",
+          "sha256": "5cb4d6507647650ca389d7937379d32dcf7a395fdd48b3a4a5ed6e1b32e9503c",
+          "entries": 9,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-content"
+    },
+    {
+      "name": "airflow-dag-patterns",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155943.873.zip",
+          "sha256": "684c345fe4998194672289bc01ea53f47cb0b573a26228e2dc38962ee1a99976",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "alternative-blog-writer",
+      "source_archives": [
+        {
+          "archive": "alternative-blog-writer.zip",
+          "sha256": "8e1d5431f39960197d424d28cd8865f3216084eb604436d1eae9426f00e2c3dc",
+          "entries": 4,
+          "license_files": [
+            "LICENSE.txt"
+          ]
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-content"
+    },
+    {
+      "name": "api-designer",
+      "source_archives": [
+        {
+          "archive": "archive (96).zip",
+          "sha256": "85d8c28b0df1e6c5a5e67dad0725a5792135883edd4897a35f12924ec32759a8",
+          "entries": 6,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "appinsights-instrumentation",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160016.135.zip",
+          "sha256": "40ab67879031c4457d53785c25168e30a8653fa025a23e2a0380a94e2da5dbcb",
+          "entries": 8,
+          "license_files": [
+            "LICENSE.txt"
+          ]
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "audit-support",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160218.886.zip",
+          "sha256": "e2731e75f21b09c48d5b0517bb90f623338adcbbca3fe148136e9c494363a01c",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "azure-role-selector",
+      "source_archives": [
+        {
+          "archive": "archive (97).zip",
+          "sha256": "a3f88b749f387ef820d4a43f95117a9d003299a80cff0fbc50e62680e1879b60",
+          "entries": 2,
+          "license_files": [
+            "LICENSE.txt"
+          ]
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "backlink-analysis",
+      "source_archives": [
+        {
+          "archive": "backlink-analysis.zip",
+          "sha256": "d408a037292980b288757e8e02f55b5177d9ac6077e62bf5d6b255f76db483fb",
+          "entries": 3,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-seo"
+    },
+    {
+      "name": "backtesting-frameworks",
+      "source_archives": [
+        {
+          "archive": "archive (66).zip",
+          "sha256": "97e9bfe68085683e5987e6664508ebc20c2c11832b4b8f8a239950d4c8cd8cff",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "beautiful-article",
+      "source_archives": [
+        {
+          "archive": "archive (25).zip",
+          "sha256": "46503c3ff3b20c6c61a927c6fa7bb9403180a586f76a65925ea56eb56650f7c9",
+          "entries": 58,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "behave-skill",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155809.346.zip",
+          "sha256": "acc79fc91ab933cdbd08de5c47b91cd8673f2ba4a71f8f9b2d1e562731d03dc4",
+          "entries": 3,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "brainstorm-experiments-new",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155544.448.zip",
+          "sha256": "e78e7230a4ac1f5fddfc829a8cd824e8723a6668f5e9984ba7876eaa3e098d21",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "business-model",
+      "source_archives": [
+        {
+          "archive": "archive (24).zip",
+          "sha256": "206b99762599d96e53576acb62616dcb49a5fad36a8b817695c05adbcd4a383b",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "call-prep",
+      "source_archives": [
+        {
+          "archive": "archive (80).zip",
+          "sha256": "ee5f08236186ca41d5d5d4695c94051640025ff4d6dd1353be23fe51f4add7c5",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "captions-overlay",
+      "source_archives": [
+        {
+          "archive": "archive (88).zip",
+          "sha256": "7062f08e0bb426d3d104229fd6f88b9725192396e5fc0b1f30c03506bae65ae5",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "chrome-devtools",
+      "source_archives": [
+        {
+          "archive": "archive (30).zip",
+          "sha256": "d74be0ded06fdd80ca6101e28d1b65906bf9a0892d688ca324f7f7ea80cc0404",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "churn-prevention",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160102.994.zip",
+          "sha256": "32b538717c7d36f56c9e4401d6d4dff6b60e1c81e42b6790d59d19fb64a32020",
+          "entries": 4,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-content"
+    },
+    {
+      "name": "ci-cd-and-automation",
+      "source_archives": [
+        {
+          "archive": "archive (44).zip",
+          "sha256": "3c66ac003cafb53012e6c494b742723d9bd8a2acbda62b2414bdc73c13712dd1",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "claude-automation-recommender",
+      "source_archives": [
+        {
+          "archive": "archive (1).zip",
+          "sha256": "d59bfb959b50c24c966751a3d49b666b3b0d67a990338c39c2c49420676fd87a",
+          "entries": 6,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "claude-md-improver",
+      "source_archives": [
+        {
+          "archive": "archive (8).zip",
+          "sha256": "6793527f4305d138a76f0ca262996c23338316403a6aab79a05b44fe1a96c0a7",
+          "entries": 4,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "close-management",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155801.788.zip",
+          "sha256": "62feac63681afadcb821a562214d5ecd62f351fb7202f664fc0e08f3577b556f",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "code-documenter",
+      "source_archives": [
+        {
+          "archive": "archive (48).zip",
+          "sha256": "e70a0b30068e67a40226af5614483b88ae1dabb1520301058ffe19978629a680",
+          "entries": 9,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "comparison-article-writer",
+      "source_archives": [
+        {
+          "archive": "comparison-article-writer.zip",
+          "sha256": "48fed72012e076b8659e178260868c37695ff6e1502623d1f729eba8b8e33190",
+          "entries": 3,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-content"
+    },
+    {
+      "name": "copy-editing",
+      "source_archives": [
+        {
+          "archive": "archive (10).zip",
+          "sha256": "33cc9aee0f7ad77475680dc7ace11a07c2da0f3311da57fb2fd5cdc9f15bd479",
+          "entries": 5,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-content"
+    },
+    {
+      "name": "cowork-plugin-customizer",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155639.422.zip",
+          "sha256": "dbfe0a709234cdda66da8c094abacf1d36c09b72edebc03008f118e3784b5c83",
+          "entries": 5,
+          "license_files": [
+            "LICENSE.txt"
+          ]
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "cut-the-curve",
+      "source_archives": [
+        {
+          "archive": "archive (95).zip",
+          "sha256": "c5002a1a01ab9a970a2914f6dbedce054d2e85eaf5e9d91ac4b18e6282856133",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "daily-briefing",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155708.100.zip",
+          "sha256": "ecb20faa67991318278e0735406e4142e4da7f0cf07103d6f859fce1af5fa100",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "dask",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160323.986.zip",
+          "sha256": "bc5fea1a2582578dd8c72534cda4ead679fc3f4859769fd08df02c750bd70284",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "data-context-extractor",
+      "source_archives": [
+        {
+          "archive": "archive (34).zip",
+          "sha256": "9fa911c912f7297b82b958d05a1f3119108fe9d553431642a28d99c6a36ab648",
+          "entries": 6,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "data-visualization",
+      "source_archives": [
+        {
+          "archive": "archive (73).zip",
+          "sha256": "4915f3c3d910953fd3706158109b32980ca01d630cf39bdb0671966adce9b22a",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "database-lookup",
+      "source_archives": [
+        {
+          "archive": "archive (23).zip",
+          "sha256": "0cd057dfb2244caa9928d34abd8a9638a69950c5da6429bd1220b74b41899ef4",
+          "entries": 81,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "search-research"
+    },
+    {
+      "name": "dbt-transformation-patterns",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160124.618.zip",
+          "sha256": "384c9db6623028f6d58cd6bb7d0c539fd3d36285660b56c36d85439119ea9af3",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "source_archives": [
+        {
+          "archive": "archive (5).zip",
+          "sha256": "1ff537e85a06f45ffdb604191840fdf966980271cb5993e3f070f376451d6f99",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "emil-design-eng",
+      "source_archives": [
+        {
+          "archive": "archive (21).zip",
+          "sha256": "62f838533da502a11ec566e6b023a3801768e5c4dbb9746465bef505e3c46d32",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "excalidraw-diagram-generator",
+      "source_archives": [
+        {
+          "archive": "archive (31).zip",
+          "sha256": "b2e941ebe5531922110183e64d32e0849dac3dfcc300404b893747d8eef40fde",
+          "entries": 16,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "experimental-design",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155537.295.zip",
+          "sha256": "cd91c4ed76fddde26bf7a1599085f8bd9a50d2078e9470b54123d467e61aa3ff",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "final-release-review",
+      "source_archives": [
+        {
+          "archive": "archive (99).zip",
+          "sha256": "93a986fe07e1207772fb2125a532fc2f214c8e0883cd63fd99467c24fec7310e",
+          "entries": 4,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "source_archives": [
+        {
+          "archive": "archive (53).zip",
+          "sha256": "2e3d49142a3a0b91a2911c47b3c4d3a688845ac2784d9c1d37c18cbb9813174d",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "gemini-api",
+      "source_archives": [
+        {
+          "archive": "archive (38).zip",
+          "sha256": "dd68824f4fa4d5d3b7d27eeb1e42ddada4369705a76719af194874eeef4ca0ff",
+          "entries": 10,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "git-commit",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155626.203.zip",
+          "sha256": "303a0327474d9ede89a1becb8867a4755380e5d56dd44ce447695b108c12d87a",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "git-workflow-and-versioning",
+      "source_archives": [
+        {
+          "archive": "archive (77).zip",
+          "sha256": "0f4516189d081c93f2e1e374b9b6259fb22068d264af43f0564c9ea9873ff010",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "github-gem-seeker",
+      "source_archives": [
+        {
+          "archive": "github-gem-seeker.zip",
+          "sha256": "92ce193ea0aadc3ffa29c19983af01500a40ddcc71d306a636d625627e9c3793",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "search-research"
+    },
+    {
+      "name": "google-cloud-waf-cost-optimization",
+      "source_archives": [
+        {
+          "archive": "archive (58).zip",
+          "sha256": "33fbcbe3ddf01d38dd778306fd9126d48d07ad2e96eacdf51263d818d694d6e4",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "google-cloud-waf-operational-excellence",
+      "source_archives": [
+        {
+          "archive": "archive (52).zip",
+          "sha256": "f5287ea3d814848d568344d681ffd3ea686dba366c26919f9143b1142448963e",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "google-cloud-waf-performance-optimization",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155530.139.zip",
+          "sha256": "d0f59ad66d031fcb10d652989d99a821a4ba6b1c4fafd07d5b43f2bdd2739038",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "google-cloud-waf-reliability",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160142.731.zip",
+          "sha256": "e6b81e27f686bb61c704e8278927befa2359d2482a550618246adbd90b4f1637",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "google-cloud-waf-security",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155747.580.zip",
+          "sha256": "d0dbf86b389b900ea111955b838eb1355d30bd0c5cae0804c683a7c25372b4e1",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "google-cloud-waf-sustainability",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160001.967.zip",
+          "sha256": "594dc5a2524c893c9a02ce79d74b52fc812fd40695101b6c9f3b4e390a0e2ea7",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "grafana-dashboards",
+      "source_archives": [
+        {
+          "archive": "archive (54).zip",
+          "sha256": "eee6d951ae55595198ee148496d5d735a15cd66a470c520e9cfdba6e635e9b95",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "grammar-check",
+      "source_archives": [
+        {
+          "archive": "archive (14).zip",
+          "sha256": "1777ce95e12bb37b203e17d052f005d3cd6e03dd08602f0528bb3d6688b977e1",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-content"
+    },
+    {
+      "name": "graphql-architect",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160157.080.zip",
+          "sha256": "00236d3aefdcf48e5e0c77dc5de0a8713a2cfc03d8f0e028fa48d413cbaae27a",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "gsap-core",
+      "source_archives": [
+        {
+          "archive": "archive (64).zip",
+          "sha256": "2ded408f9f25a8f2abc94c44d62ece4818a6b57239c35deff7081b02689f0a61",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "gsap-frameworks",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160308.909.zip",
+          "sha256": "c0af976b3d8f42c53be3898fd02fad3d82a62cc139c66a17d27fa0cc50382771",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "gsap-plugins",
+      "source_archives": [
+        {
+          "archive": "archive (11).zip",
+          "sha256": "3357cad59839361fc7690439c15a1409024d9ad710589e8064689dd3dfe88c5f",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "gsap-react",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160432.890.zip",
+          "sha256": "cfd4a3031ffad837c9e373fa8b4c8c11623c8f314c0abbc076753d2d8595847c",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "gsap-scrolltrigger",
+      "source_archives": [
+        {
+          "archive": "archive (67).zip",
+          "sha256": "3df0c578ce0b3e82b49ac7d790d38f9ae6a4c75ab07e8edc165d0aedc146a898",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "gsap-timeline",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160440.062.zip",
+          "sha256": "595529a76fc268a6de0d0bdba82c4ce886c608c5eb4143a8a03def3e3eae332f",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "gsap-utils",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155858.864.zip",
+          "sha256": "59be69a322f244cea0baf20c5d9a287d12e2f4ef94a32be4cdfa96b6328ce9b8",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "hackernews-frontpage",
+      "source_archives": [
+        {
+          "archive": "archive (51).zip",
+          "sha256": "fec47de03eb5efbec5ae5e58d83474b9c0581b9076d620723b61dcb1be398db1",
+          "entries": 5,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "search-research"
+    },
+    {
+      "name": "html-video-production",
+      "source_archives": [
+        {
+          "archive": "html-video-production.zip",
+          "sha256": "f7a3f9ef1f7426cd484830835c9b37e1203a3ae2a0c7f263b816b71e78735214",
+          "entries": 925,
+          "license_files": [
+            "LICENSE",
+            "NOTICE.txt",
+            "references/talking-head-recut/NOTICE.md"
+          ]
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "huggingface-datasets",
+      "source_archives": [
+        {
+          "archive": "archive (76).zip",
+          "sha256": "4b6749825a89bf461dc7751a2840103a46e47fb3c8657299dc7aef2a426f4c27",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "huggingface-gradio",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155937.489.zip",
+          "sha256": "bfc36274c5d7116e44439585e4521353930226144a0d1751edaf1e01a9857ca5",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "humanizer",
+      "source_archives": [
+        {
+          "archive": "archive (2).zip",
+          "sha256": "a84b8c9149845effedfd06bb497670187d9661cfac3f241e1ef17a176462e201",
+          "entries": 9,
+          "license_files": [
+            "LICENSE"
+          ]
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-content"
+    },
+    {
+      "name": "hybrid-search-implementation",
+      "source_archives": [
+        {
+          "archive": "archive (69).zip",
+          "sha256": "d36955c6d317c90fc5b6e341db4a80ca3889408d9b110cbf3a23127b3713bc0b",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "hyperframes-keyframes",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155851.682.zip",
+          "sha256": "a38e464ec67981ced728b0b70a8cf1a57001745a20c72e84fe18c6b8602a7a72",
+          "entries": 3,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "hyperframes-registry",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160414.787.zip",
+          "sha256": "09c86a774d92a7dd442d75e855d80b9f23bc15378d9a0d22bfc5c57f4518e861",
+          "entries": 12,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "i-have-adhd",
+      "source_archives": [
+        {
+          "archive": "archive (92).zip",
+          "sha256": "7c760d9ca02c7ad27bce7ff3128dff02c863e30e5b757519e8b8f2ea987e17a4",
+          "entries": 3,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "tools-utilities"
+    },
+    {
+      "name": "image-manipulation-image-magick",
+      "source_archives": [
+        {
+          "archive": "archive (62).zip",
+          "sha256": "5357b0f8a98d79cb88a78f31462a93e36a65507a6c7a0599475befe8c5858cb0",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "journal-entry-prep",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155758.326.zip",
+          "sha256": "66a2a3c280617805a46d7d300623c2872f8f976c85c55219de2e815c2355e087",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "json-canvas",
+      "source_archives": [
+        {
+          "archive": "archive (13).zip",
+          "sha256": "5dfd6aa360d5f8aa976c8d33a2b2ba664ab2a5d884b71393116f1f5fd88ea6c9",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "k8s-security-policies",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160316.110.zip",
+          "sha256": "9d249fe2079e50c7939f477ccfab3189693545a6c835afe0ee4085401368bafa",
+          "entries": 3,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "langchain-architecture",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155833.239.zip",
+          "sha256": "825aa2606c5c8a9cde357adc2138f70a779c7a778a53de590230c88fe84c95f9",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "lean-canvas",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155844.481.zip",
+          "sha256": "ad225df39bff909924a1da64e9b49d28b3244cf13cc5a2712e407ead93340916",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "legacy-circuit-mockups",
+      "source_archives": [
+        {
+          "archive": "archive (90).zip",
+          "sha256": "ce07af111fcba9d37467199eebbe7af0940211ae88925c79d57e0f6076e9698e",
+          "entries": 21,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "legal-risk-assessment",
+      "source_archives": [
+        {
+          "archive": "archive (46).zip",
+          "sha256": "9a91477d78840132e71e9b5101c22f26e86077b21d7164798e1b3c8858114f39",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "make-repo-contribution",
+      "source_archives": [
+        {
+          "archive": "archive (100).zip",
+          "sha256": "7637e5e6e7a47f7c56ae5cb5b1403c48c909ea90477540aac3cbc3690920e38d",
+          "entries": 3,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "markdown-mermaid-writing",
+      "source_archives": [
+        {
+          "archive": "archive (39).zip",
+          "sha256": "ca26195c0130420a3382cecb8073c5d657c134e0274f0f3bac5f88eb98d7b253",
+          "entries": 37,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "markdown-to-html",
+      "source_archives": [
+        {
+          "archive": "archive (27).zip",
+          "sha256": "99d738deee198d7035bb2256799f42943cbe35778b085522aaf1fb70a4c473ab",
+          "entries": 16,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "marketing-ideas",
+      "source_archives": [
+        {
+          "archive": "archive.zip",
+          "sha256": "436ff9fd351400d3aef02a346d6b8f9d4edb8f4cd3d58c02b4a91be04bed9d73",
+          "entries": 4,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-content"
+    },
+    {
+      "name": "marketing-psychology",
+      "source_archives": [
+        {
+          "archive": "archive (9).zip",
+          "sha256": "e0150d7540b8bb1251adca37a3e65710f4fa6cf503d1f63422b40ae662191ff4",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-content"
+    },
+    {
+      "name": "matplotlib",
+      "source_archives": [
+        {
+          "archive": "archive (82).zip",
+          "sha256": "97ec693c1540d899af317c39a6acaa57b56a75f3411626435504841967ceac6b",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "mcp-cli",
+      "source_archives": [
+        {
+          "archive": "archive (18).zip",
+          "sha256": "4e9fda1580b27f66686daa494336a765eb5ce1df12a554ba9925e743c826a8ef",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "meeting-briefing",
+      "source_archives": [
+        {
+          "archive": "archive (81).zip",
+          "sha256": "6775ea954dd825b228e6b636a93c38f8a1f232bb07f544baec3500266fcf6fde",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "memory-management",
+      "source_archives": [
+        {
+          "archive": "archive (91).zip",
+          "sha256": "01b059ddbc77f8a329b22fe09008eb051ea13bae3e7ace92b862c25967d2b58f",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "tools-utilities"
+    },
+    {
+      "name": "microsoft-code-reference",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155913.472.zip",
+          "sha256": "43a3454066b35125206f7d36f6c71fce8d75a2ec176bf05f678f34ea5692a028",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "search-research"
+    },
+    {
+      "name": "microsoft-docs",
+      "source_archives": [
+        {
+          "archive": "archive (86).zip",
+          "sha256": "f6e9522257ac5191cfc4a02fafb40b139be90201ebfa9fd72daa719feea8a9e7",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "search-research"
+    },
+    {
+      "name": "ml-pipeline",
+      "source_archives": [
+        {
+          "archive": "archive (93).zip",
+          "sha256": "b11f4d6831ee89d0ac4acdb165f8f9921344a459b4f152f2061f4948c6f597c1",
+          "entries": 6,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "networkx",
+      "source_archives": [
+        {
+          "archive": "archive (75).zip",
+          "sha256": "1106c75af6f139b883a6fed7f7ff2f3dd4128a1f44bb1dcddc4ebcd7be0c7129",
+          "entries": 6,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "nuget-manager",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160425.776.zip",
+          "sha256": "c64f1d0851671e17ea6dc32ed9312a7d15b6ed8e7b96e75759355ebdde897133",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "observability-and-instrumentation",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160117.442.zip",
+          "sha256": "a78327254e0b0e482442f32e6f7b07c588abdd50759edeed6747280fa3846131",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "obsidian-bases",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160254.573.zip",
+          "sha256": "bfa8961fb4c47eb88f7e7c8a067a8047433d43e820d3c3ab134eaf4c4e29a48c",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "tools-utilities"
+    },
+    {
+      "name": "obsidian-markdown",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155733.483.zip",
+          "sha256": "edb1a63c9911f2f88490e1f39ddefae9d23c3c683ae10df824f8c1224d905628",
+          "entries": 4,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "tools-utilities"
+    },
+    {
+      "name": "oversized-cursor",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160055.833.zip",
+          "sha256": "cd5b2f3ee9e7ef8829c804f9e113e17fbfa6b925a5e9628446bed00cccf38898",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "penpot-uiux-design",
+      "source_archives": [
+        {
+          "archive": "archive (59).zip",
+          "sha256": "39f815aa37b21df3730eb4b6df60dff872c337a9c518720e052a511a274a5399",
+          "entries": 5,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "plantuml-ascii",
+      "source_archives": [
+        {
+          "archive": "archive (84).zip",
+          "sha256": "a71076bc07f70735d52bcfb3e626deda75fc1a22960b2b0045c0584cf6e7a8d4",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "playground",
+      "source_archives": [
+        {
+          "archive": "archive (19).zip",
+          "sha256": "30c2fe0feac9a0bf6bab5e94bcc001e43b60ea05838f2a33c9846eff354baee2",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "polars",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160110.256.zip",
+          "sha256": "5cc2329733252c7fce20e8c8b2d900325734b46b9779c2e72fa3bcc3ee613242",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "powerbi-modeling",
+      "source_archives": [
+        {
+          "archive": "archive (70).zip",
+          "sha256": "b7697b60deaf6039e9568a9bc912b899de60c0b827ff487b80e57b5a5e05847d",
+          "entries": 6,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "pr-draft-summary",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160204.264.zip",
+          "sha256": "40fd5edbfdcdbe533de6b10aba371887a5834d628f799b5056bfbff27e4456ee",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "prometheus-configuration",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160301.708.zip",
+          "sha256": "a33ac4afccd6eb62fa09e13fd7feef8d8ecdb98bddba092742ab256328b42b07",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "refactor",
+      "source_archives": [
+        {
+          "archive": "archive (94).zip",
+          "sha256": "dcf589c7eb095a3df4a3aec008dd3e4d2edab14145de13ef5c7726abf80852de",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "review-animations",
+      "source_archives": [
+        {
+          "archive": "archive (12).zip",
+          "sha256": "7c1d07d8b90b5cedc01eb7a220b078b29578138dab28ac4845aad7d2a50f783a",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "revops",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155837.314.zip",
+          "sha256": "8653eab4e5b5f882bd9f9be3b7db89d2c49e888631318c3e260618bd67e69526",
+          "entries": 6,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "risk-metrics-calculation",
+      "source_archives": [
+        {
+          "archive": "archive (37).zip",
+          "sha256": "6e8e193938c1d489a8e40d2413fa462da5df0d93b6e82cd32bbc551d490f9b23",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "seaborn",
+      "source_archives": [
+        {
+          "archive": "archive (36).zip",
+          "sha256": "b4512f98499559ee2477172af06514e0e78bffa4631ba81038ed877d2e812764",
+          "entries": 8,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "seam-craft",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160048.644.zip",
+          "sha256": "ff13a34726417f2cd0853d98a889ec50f6a951380e14bf29a76dfb0eea7c3293",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "seo-competitor-analysis",
+      "source_archives": [
+        {
+          "archive": "seo-competitor-analysis.zip",
+          "sha256": "ab4e9a1b79b3e6041ac7417de900bdc3dff06e5d740ee12c2e1ca3bf7fb3efb2",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "marketing-seo"
+    },
+    {
+      "name": "shap",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155955.582.zip",
+          "sha256": "882a572a50132486b009bb8f58907e6d5f52e0bfa20af8d203c981ab5e28b9a5",
+          "entries": 10,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "similarity-search-patterns",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155700.911.zip",
+          "sha256": "0931b7b7f19c245565d86e7b15d2662626e7f53c8617c09569cbab62bed35f23",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "single-cell-rna-qc",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160330.493.zip",
+          "sha256": "6847db32a00e7bdef6a811d18e33a027ef28d65d18f514550c1b7b50af4da27c",
+          "entries": 6,
+          "license_files": [
+            "LICENSE.txt"
+          ]
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "slo-implementation",
+      "source_archives": [
+        {
+          "archive": "archive (68).zip",
+          "sha256": "e08ee49ce91ba35f374a3327918154b4a72e237a0b8dba0732057485ef13b373",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "source-management",
+      "source_archives": [
+        {
+          "archive": "archive (85).zip",
+          "sha256": "b1628c2923b411ba07d25008f3a528285f3d21d7622b2839620e8ffeb7440319",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "spark-optimization",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160024.425.zip",
+          "sha256": "6fe84fca45e45c28c450265fc97c09f9e7d17ef01f643fa09fbb77a575ef166e",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "spec-driven-development",
+      "source_archives": [
+        {
+          "archive": "archive (56).zip",
+          "sha256": "1df33035d2091980e957bedbf17dd4e6abdd2dd9b4d7fdee2ba3f32a7d6048d0",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "sql-optimization-patterns",
+      "source_archives": [
+        {
+          "archive": "archive (17).zip",
+          "sha256": "3ca8c62cef31b7941c3409a0503b2218f56ecd5c646b06817630d242542d6ffb",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "sql-queries",
+      "source_archives": [
+        {
+          "archive": "archive (29).zip",
+          "sha256": "ff8d0a2d0d55ccae852583a615672ca6c7ec9cac06f961723db25b3419c63266",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "stable-baselines3",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155646.579.zip",
+          "sha256": "c725ea9ccd686e2298878b40a1289d5f246d5b28a2bd166548362cda43700f8d",
+          "entries": 8,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "statistical-power",
+      "source_archives": [
+        {
+          "archive": "archive (63).zip",
+          "sha256": "1b2144b2ada70a8e19c5e24034aec3f284d25d157238688a5c8ef0d68474c328",
+          "entries": 6,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "statsmodels",
+      "source_archives": [
+        {
+          "archive": "archive (74).zip",
+          "sha256": "1eab306c2daa6e26c46ed974d010589593cd775e36f53b7286b57367f73d1709",
+          "entries": 9,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "sympy",
+      "source_archives": [
+        {
+          "archive": "archive (98).zip",
+          "sha256": "13b811d16feaeb4c014f9a179b17acdec17a0973d6c579c0e77e774b8a201f39",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "systematic-debugging",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155726.256.zip",
+          "sha256": "9a0272d72653e744e7a6075a074188b777955897b12b130d80415ee6e22460ab",
+          "entries": 11,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "tailwind-design-system",
+      "source_archives": [
+        {
+          "archive": "archive (15).zip",
+          "sha256": "976060d2a06a91479e7379cffc2f4339ea77eb49764d6ec96e0003697a29f18f",
+          "entries": 3,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "team-composition-analysis",
+      "source_archives": [
+        {
+          "archive": "archive (57).zip",
+          "sha256": "9caebdc210b51782870f769c6364e74a9aeb928b3267aa2d2a377b2f67b120b2",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "business-operations"
+    },
+    {
+      "name": "test-driven-development",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155809.005.zip",
+          "sha256": "550ba125a45c0e223d555f755988d738ae7c5fecc44bfc3be0ee0679d8b4fc54",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "torch-geometric",
+      "source_archives": [
+        {
+          "archive": "archive (33).zip",
+          "sha256": "933b3fd4198ead72b6d7c8bc975d71960689b0fced33173d9fd0cce17d3e2905",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "turborepo",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155828.091.zip",
+          "sha256": "2494ab38ba95662ccb3fdbe4429a2a4376a49c5810d8a3237e76515eb8cacf8c",
+          "entries": 26,
+          "license_files": []
+        },
+        {
+          "archive": "archive - 2026-09-02T160418.620.zip",
+          "sha256": "2494ab38ba95662ccb3fdbe4429a2a4376a49c5810d8a3237e76515eb8cacf8c",
+          "entries": 26,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "umap-learn",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160225.865.zip",
+          "sha256": "16dee33b5fa1978dcbd557a8baa9ff8b54fb54a4f84de0d4b34e18fd7591ca46",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "usfiscaldata",
+      "source_archives": [
+        {
+          "archive": "archive (83).zip",
+          "sha256": "4287fdd97b088989c6bd340dd31f72a0436b3affe67d7f12c98c81d8b5a16403",
+          "entries": 9,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "search-research"
+    },
+    {
+      "name": "vaex",
+      "source_archives": [
+        {
+          "archive": "archive (50).zip",
+          "sha256": "c000f588fabeec589f28ffdde905eed8c780acdadd2f0c1968fddafa57e0b950",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "validate-data",
+      "source_archives": [
+        {
+          "archive": "archive (26).zip",
+          "sha256": "36056545909d6e4b3e470a0eab2772dcae4da4ae6e5a5f84cb321484c4ca91a8",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "data-science-analytics"
+    },
+    {
+      "name": "vector-index-tuning",
+      "source_archives": [
+        {
+          "archive": "archive (65).zip",
+          "sha256": "a4cd2337178d042cc59c79a56ad3eeb8f5098c49ec9f8faa81770177942c099e",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "verification-before-completion",
+      "source_archives": [
+        {
+          "archive": "archive (55).zip",
+          "sha256": "3655c4c4fdf4ef7e1a76bfbfb8479b1b442668152c53ec6d750b9bf87e8d677d",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "video-template-frame-glitch-title",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155906.067.zip",
+          "sha256": "62ea25a9d7922a6eb0a77341a0d5f2d05d454f3dbc4542419cf60422451a724f",
+          "entries": 12,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "video-template-frame-light-leak-cinema",
+      "source_archives": [
+        {
+          "archive": "archive (89).zip",
+          "sha256": "39ce092b011e8720c1fc680f3b0a29bcaeb47779992910b7c405666a910889da",
+          "entries": 20,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "design-media"
+    },
+    {
+      "name": "vscode-ext-localization",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T155632.167.zip",
+          "sha256": "6e00afbd9efd893dd7566f62dc8abdb71a50dc9a729cbb6c5c97a54c8c8dc2c7",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    },
+    {
+      "name": "writing-plans",
+      "source_archives": [
+        {
+          "archive": "archive (40).zip",
+          "sha256": "be9142e9acc8e84ec012cfa18dedc407d0ccc07d0747c86e777a60e86580210c",
+          "entries": 2,
+          "license_files": []
+        }
+      ],
+      "decision": "imported",
+      "treatment": "independently rewritten; source instructions, scripts, caches, templates, and frozen provider schemas were not copied",
+      "category": "software-engineering-devops"
+    }
+  ],
+  "skipped": [
+    {
+      "name": "account-research",
+      "source_archives": [
+        {
+          "archive": "archive (35).zip",
+          "sha256": "797a65bd9ad4cabc9b91bf640f868325984324d26146c8a83f64fe455cf7a9d9",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps company-enrichment and sales-intelligence"
+    },
+    {
+      "name": "careful",
+      "source_archives": [
+        {
+          "archive": "archive (32).zip",
+          "sha256": "a12f4374369add89af06f13a7f74cbc00178b242a2c3534fdc9d19843862d1a6",
+          "entries": 4,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "global safety policy rather than a task-scoped Skill"
+    },
+    {
+      "name": "cold-email",
+      "source_archives": [
+        {
+          "archive": "archive (43).zip",
+          "sha256": "25edd9eac6019113eb9a2d253ec5f3a6ec879a861553109b00908c59161308d6",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps email-outreach-prep and sales-enablement"
+    },
+    {
+      "name": "competitive-intelligence",
+      "source_archives": [
+        {
+          "archive": "archive (78).zip",
+          "sha256": "32643d9f49cc7f3389a816e1f33276c05a85fbf6314594bf4a442a5e347b853c",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps competitor-monitor"
+    },
+    {
+      "name": "content-gap-analysis",
+      "source_archives": [
+        {
+          "archive": "content-gap-analysis (1).zip",
+          "sha256": "3a63183ed252741b930ec7243f8b8b2553b16d2de0e676ca226236eb85dc6a13",
+          "entries": 16,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps competitor-content-intelligence"
+    },
+    {
+      "name": "create-prd",
+      "source_archives": [
+        {
+          "archive": "archive (87).zip",
+          "sha256": "3db74a2890869649ae719fcf44cd66cd9ad8e39a0a3801165896ce6922194a2b",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps prd"
+    },
+    {
+      "name": "customer-research",
+      "source_archives": [
+        {
+          "archive": "archive (22).zip",
+          "sha256": "3e30f68fdffc03c62c387784d2a567a089b5fdd4b6bae44a61406886410b6bdf",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps audience-research and multi-source-search"
+    },
+    {
+      "name": "debugging-and-error-recovery",
+      "source_archives": [
+        {
+          "archive": "archive (71).zip",
+          "sha256": "30df97b65dec8ba326687d812fbd5a319f645012b361fb47e3c46826babc1108",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "duplicate of systematic-debugging"
+    },
+    {
+      "name": "diagnosing-bugs",
+      "source_archives": [
+        {
+          "archive": "archive (20).zip",
+          "sha256": "a04c75dfe0d4869c73572db355805b5e87a2eea7da9879338c4d055b1b64791d",
+          "entries": 3,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "duplicate of systematic-debugging"
+    },
+    {
+      "name": "draft-outreach",
+      "source_archives": [
+        {
+          "archive": "archive (61).zip",
+          "sha256": "6596769410ffc1d09dd724ee42048f7c1f3fe36f920e2d3f18977500829914d0",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps email-outreach-prep"
+    },
+    {
+      "name": "example-skill",
+      "source_archives": [
+        {
+          "archive": "archive (45).zip",
+          "sha256": "71a30067a262391d6c0db26a9eba493abf48a6b37535a6b4f0c30270857b5899",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "placeholder/example rather than a user-facing capability"
+    },
+    {
+      "name": "financial-analysis",
+      "source_archives": [
+        {
+          "archive": "financial-analysis.zip",
+          "sha256": "e00312763924cfc292e774581c106a32d46f0a7a6e34da243fc813b296111eb8",
+          "entries": 11,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps stock-analysis; current SandBase discovery has no suitable market-data capability"
+    },
+    {
+      "name": "find-skills",
+      "source_archives": [
+        {
+          "archive": "archive (4).zip",
+          "sha256": "a3cac2cbdf7733a7ecbb028bcdd9b0560194413e616ee620353e80462d84c00d",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps internet-skill-finder"
+    },
+    {
+      "name": "keyword-research",
+      "source_archives": [
+        {
+          "archive": "keyword-research.zip",
+          "sha256": "5648698c790f058dc396310c144450ea33eb1560239d04602a73ec2ccf9454ff",
+          "entries": 5,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps seo-keyword-insights"
+    },
+    {
+      "name": "knowledge-synthesis",
+      "source_archives": [
+        {
+          "archive": "archive (7).zip",
+          "sha256": "15c3552c504782cf735924647bab3f9d167681328e081fbfe65a8b9ba39970ac",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps multi-source-search"
+    },
+    {
+      "name": "search-strategy",
+      "source_archives": [
+        {
+          "archive": "archive (16).zip",
+          "sha256": "e428056da1313f889e5c0d6ffc24fdd5a3f0e59394727b70b1d9c14a1318b4e5",
+          "entries": 1,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps multi-source-search"
+    },
+    {
+      "name": "seo-audit",
+      "source_archives": [
+        {
+          "archive": "seo-audit.zip",
+          "sha256": "4317875293ddc433b29dd3f4e1e8622f718304d099749bfe39c136498a05823e",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps site-audit"
+    },
+    {
+      "name": "skill-creator",
+      "source_archives": [
+        {
+          "archive": "skill-creator.zip",
+          "sha256": "bcbeb212e8a5bc90effed90150ab9d79d6bb813debb47b02f590d64a85cf75af",
+          "entries": 22,
+          "license_files": [
+            "skill-creator_prod/LICENSE.txt"
+          ]
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps the maintained official Skill Creator and is Manus-specific"
+    },
+    {
+      "name": "stop-slop",
+      "source_archives": [
+        {
+          "archive": "archive (41).zip",
+          "sha256": "3add8ccde7800cd306ea776ad41c73dddce09c32f5a80de9a59e4b666ad5a6be",
+          "entries": 7,
+          "license_files": [
+            "LICENSE"
+          ]
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps humanizer"
+    },
+    {
+      "name": "tdd",
+      "source_archives": [
+        {
+          "archive": "archive - 2026-09-02T160149.887.zip",
+          "sha256": "4ba4cab8225766e5297c8af8ec70809d50198c2078a19e2d3408d00da299600d",
+          "entries": 4,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "duplicate of test-driven-development"
+    },
+    {
+      "name": "website-traffic-checker",
+      "source_archives": [
+        {
+          "archive": "website-traffic-checker.zip",
+          "sha256": "9ea500261fc01bb8a8b7492e795b62c962b60bb1a3d94373341919d4ecacbab9",
+          "entries": 5,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps similarweb-analytics"
+    },
+    {
+      "name": "writing-skills",
+      "source_archives": [
+        {
+          "archive": "archive (6).zip",
+          "sha256": "cc95a63b0cdaf0eff5d2958b612f021a18520170492064d095c244b325845b9c",
+          "entries": 7,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps the maintained official Skill Creator"
+    },
+    {
+      "name": "youtube-video-research",
+      "source_archives": [
+        {
+          "archive": "youtube-video-research.zip",
+          "sha256": "19f83b5340b8e715ef8b1f60031b7b25fc610c362dd5108286f33dcce56ce5f7",
+          "entries": 6,
+          "license_files": []
+        }
+      ],
+      "decision": "skipped",
+      "reason": "overlaps youtube-research"
+    }
+  ]
+}

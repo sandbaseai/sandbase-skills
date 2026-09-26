@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/networkx",
+  "display_name": "NetworkX",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "networkx",
+  "description": "Apply networkx in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses networkx or its strengths fit the task.",
+  "type": "skill",
+  "capability_tags": [
+    "NetworkX",
+    "Data Science & Analytics"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "data-science-analytics"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/networkx",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/networkx/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/networkx.json",
+    "skill_path": "marketing/networkx",
+    "catalog_path": "catalog/skills/networkx.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 689,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Data Science & Analytics",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

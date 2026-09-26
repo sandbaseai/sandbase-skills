@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "id": "music-prompter",
+  "display_name": "Music Prompter",
+  "short_description": "Design and generate structured music with SandBase.",
+  "description": "Craft production-ready prompts, generate approved music, and assemble longer pieces with dynamically selected SandBase music models.",
+  "category": {
+    "id": "media-generation",
+    "label": "Media Generation"
+  },
+  "tags": [
+    "music generation",
+    "audio",
+    "prompting",
+    "soundtrack"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/music-prompter",
+    "skill_file": "marketing/music-prompter/SKILL.md",
+    "readme_anchor": "#music-prompter"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for music generation",
+      "Local audio tooling for multi-clip assembly"
+    ]
+  },
+  "install": {
+    "prompt": "Use $music-prompter to design and generate this music with SandBase.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill music-prompter --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill music-prompter --agent codex --global",
+    "source_path": "marketing/music-prompter"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/music-prompter"
+    }
+  ],
+  "examples": [
+    "Write a 60-second instrumental prompt for a calm product demo.",
+    "Generate a bilingual pop song after showing me the model and price.",
+    "Plan and assemble a five-minute cinematic score from consistent clips."
+  ],
+  "configuration": {
+    "required": [],
+    "optional_inputs": [
+      "purpose and target duration",
+      "genre, mood, tempo, and instrumentation",
+      "instrumental or vocal mode and lyrics",
+      "output format and audio quality requirements",
+      "authorized SandBase connection for generation"
+    ]
+  },
+  "notes": [
+    "Prompt-only work does not require SandBase or incur a generation charge.",
+    "Discover and inspect live models instead of hard-coding a provider, duration limit, or schema.",
+    "Show current pricing and obtain confirmation before the first paid generation call.",
+    "Do not duplicate a pending asynchronous run."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current music-generation candidates."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live music schemas, limits, formats, pricing, and execution requirements."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute an approved music model."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous music-generation run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent run status and recorded cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before a multi-call music batch."
+      }
+    ]
+  },
+  "related_skills": [
+    "video-generator"
+  ]
+}

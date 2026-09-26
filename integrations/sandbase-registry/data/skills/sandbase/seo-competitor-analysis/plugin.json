@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/seo-competitor-analysis",
+  "display_name": "Seo Competitor Analysis",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "seo-competitor-analysis",
+  "description": "Research and evaluate seo competitor analysis with current authoritative sources, provenance, and explicit evidence gaps. Use when the user asks for seo competitor analysis findings or verification.",
+  "type": "skill",
+  "capability_tags": [
+    "Seo Competitor Analysis",
+    "Marketing & SEO"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "marketing-seo"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/seo-competitor-analysis",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/seo-competitor-analysis/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/seo-competitor-analysis.json",
+    "skill_path": "marketing/seo-competitor-analysis",
+    "catalog_path": "catalog/skills/seo-competitor-analysis.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 708,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Marketing & SEO",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

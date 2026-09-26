@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/brainstorm-experiments-new",
+  "display_name": "Brainstorm Experiments New",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "brainstorm-experiments-new",
+  "description": "Create or review brainstorm experiments new deliverables with traceable assumptions, decision criteria, ownership, and risk controls. Use when the user asks for brainstorm experiments new planning or analysis.",
+  "type": "skill",
+  "capability_tags": [
+    "Brainstorm Experiments New",
+    "Business & Operations"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "business-operations"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/brainstorm-experiments-new",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/brainstorm-experiments-new/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/brainstorm-experiments-new.json",
+    "skill_path": "marketing/brainstorm-experiments-new",
+    "catalog_path": "catalog/skills/brainstorm-experiments-new.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 613,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Business & Operations",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

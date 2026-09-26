@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "id": "video-generator",
+  "display_name": "AI Video Generator",
+  "short_description": "Plan and produce multi-shot AI videos with SandBase.",
+  "description": "Plan, generate, assemble, and verify short videos using dynamically selected SandBase image, video, music, speech, lip-sync, and sound-effect models.",
+  "category": {
+    "id": "media-generation",
+    "label": "Media Generation"
+  },
+  "tags": [
+    "video generation",
+    "image generation",
+    "storyboard",
+    "audio"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/video-generator",
+    "skill_file": "marketing/video-generator/SKILL.md",
+    "readme_anchor": "#video-generator"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Authorized SandBase connection for generation",
+      "Local media tooling for final assembly"
+    ]
+  },
+  "install": {
+    "prompt": "Use $video-generator to plan and produce this short video with SandBase media models.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill video-generator --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill video-generator --agent codex --global",
+    "source_path": "marketing/video-generator"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/video-generator"
+    }
+  ],
+  "examples": [
+    "Create a 20-second vertical product teaser from these brand references.",
+    "Plan a six-shot cinematic launch film and estimate generation cost before running it.",
+    "Generate a narrated 16:9 explainer and assemble the final MP4."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "Authorized SandBase connection",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "creative brief",
+      "duration and aspect ratio",
+      "reference images and brand rules",
+      "dialogue, narration, music, and sound-effect requirements",
+      "output codec and container"
+    ]
+  },
+  "notes": [
+    "Discover and inspect live model capabilities instead of hard-coding provider-specific media endpoints.",
+    "Show current pricing and obtain confirmation before the first paid generation call.",
+    "Do not duplicate a pending asynchronous run.",
+    "Without the six SandBase MCP tools, the Skill supports planning only."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current media-generation model candidates."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect current schema, pricing, limits, and execution requirements."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute an approved image, video, or audio model."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous media generation run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent run status and recorded cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check account balance before a generation batch."
+      }
+    ]
+  },
+  "related_skills": [
+    "youtube-research"
+  ]
+}

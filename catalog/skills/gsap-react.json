@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "id": "gsap-react",
+  "display_name": "GSAP React",
+  "short_description": "Apply GSAP React with explicit validation and safety boundaries.",
+  "description": "Create, implement, or review gsap react work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on gsap react.",
+  "category": {
+    "id": "design-media",
+    "label": "Design & Media"
+  },
+  "tags": [
+    "GSAP React",
+    "Design & Media"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/gsap-react",
+    "skill_file": "marketing/gsap-react/SKILL.md",
+    "readme_anchor": "#gsap-react"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "Local tools appropriate to the requested task",
+      "An authorized SandBase connection only for optional external capabilities"
+    ]
+  },
+  "install": {
+    "prompt": "Use $gsap-react to complete and verify this GSAP React task.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill gsap-react --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill gsap-react --agent codex --global",
+    "source_path": "marketing/gsap-react"
+  },
+  "notes": [
+    "Core work remains local.",
+    "Optional external calls use dynamic SandBase inspection and paid-call confirmation."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp",
+    "authentication": "sandbase-authorized-connection",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current optional capabilities."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live schemas, limits, and pricing."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute a user-approved capability."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent status and observed cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before an approved batch."
+      }
+    ]
+  },
+  "related_skills": []
+}

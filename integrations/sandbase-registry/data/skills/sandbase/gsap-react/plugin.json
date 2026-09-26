@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/gsap-react",
+  "display_name": "GSAP React",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "gsap-react",
+  "description": "Create, implement, or review gsap react work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on gsap react.",
+  "type": "skill",
+  "capability_tags": [
+    "GSAP React",
+    "Design & Media"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "design-media"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/gsap-react",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/gsap-react/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/gsap-react.json",
+    "skill_path": "marketing/gsap-react",
+    "catalog_path": "catalog/skills/gsap-react.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 656,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Design & Media",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

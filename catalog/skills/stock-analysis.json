@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "id": "stock-analysis",
+  "display_name": "Stock Analysis",
+  "short_description": "Research public companies with current SandBase market data.",
+  "description": "Analyze public companies and listed securities with current profile, price, ownership, filing, valuation, and analyst evidence discovered dynamically through SandBase.",
+  "category": {
+    "id": "finance",
+    "label": "Finance"
+  },
+  "tags": [
+    "stocks",
+    "company research",
+    "market data",
+    "SEC filings"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/stock-analysis",
+    "skill_file": "marketing/stock-analysis/SKILL.md",
+    "readme_anchor": "#stock-analysis"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "SandBase MCP connection or SANDBASE_API_KEY for live data"
+    ]
+  },
+  "install": {
+    "prompt": "Use $stock-analysis to research this public company with current SandBase data.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill stock-analysis --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill stock-analysis --agent codex --global",
+    "source_path": "marketing/stock-analysis"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/stock-analysis"
+    }
+  ],
+  "examples": [
+    "Analyze AAPL's one-year performance against the S&P 500 and explain the main risks.",
+    "Summarize the latest 10-K and recent insider activity for this ticker.",
+    "Compare three semiconductor stocks on price trend, company profile, and filing evidence."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "SandBase MCP connection or API key",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "ticker, exchange, and market region",
+      "analysis window and benchmark",
+      "requested financial, filing, or ownership evidence",
+      "report depth and output format"
+    ]
+  },
+  "notes": [
+    "Supports the official SandBase MCP bridge and documented Bearer-authenticated REST API.",
+    "Discovers and inspects live capabilities instead of preserving Manus/Yahoo parameter snapshots.",
+    "Does not execute trades or provide personalized financial advice.",
+    "Never duplicates a pending asynchronous run."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp-or-rest",
+    "authentication": "sandbase-authorized-connection-or-bearer",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current stock and company-data capabilities."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live schemas, coverage, pricing, and execution requirements."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute an approved market-data or filing capability."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous research run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent run status and recorded cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before a paid multi-call batch."
+      }
+    ]
+  },
+  "related_skills": [
+    "market-sizing-analysis",
+    "cash-flow-snapshot"
+  ]
+}

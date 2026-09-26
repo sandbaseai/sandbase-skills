@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/google-cloud-waf-reliability",
+  "display_name": "Google Cloud WAF Reliability",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "google-cloud-waf-reliability",
+  "description": "Plan, implement, or review google cloud waf reliability work in an existing codebase with compatibility, security, and verification controls. Use when the user explicitly requests google cloud waf reliability work.",
+  "type": "skill",
+  "capability_tags": [
+    "Google Cloud WAF Reliability",
+    "Software Engineering & DevOps"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "software-engineering-devops"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/google-cloud-waf-reliability",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/google-cloud-waf-reliability/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/google-cloud-waf-reliability.json",
+    "skill_path": "marketing/google-cloud-waf-reliability",
+    "catalog_path": "catalog/skills/google-cloud-waf-reliability.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 647,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Software Engineering & DevOps",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

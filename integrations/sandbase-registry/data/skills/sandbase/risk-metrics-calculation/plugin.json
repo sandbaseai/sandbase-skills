@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/risk-metrics-calculation",
+  "display_name": "Risk Metrics Calculation",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "risk-metrics-calculation",
+  "description": "Apply risk metrics calculation in reproducible local data workflows with version-aware APIs, explicit assumptions, and validation. Use when the user chooses risk metrics calculation or its strengths fit the task.",
+  "type": "skill",
+  "capability_tags": [
+    "Risk Metrics Calculation",
+    "Data Science & Analytics"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "data-science-analytics"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/risk-metrics-calculation",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/risk-metrics-calculation/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/risk-metrics-calculation.json",
+    "skill_path": "marketing/risk-metrics-calculation",
+    "catalog_path": "catalog/skills/risk-metrics-calculation.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 705,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Data Science & Analytics",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

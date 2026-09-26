@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/legacy-circuit-mockups",
+  "display_name": "Legacy Circuit Mockups",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "legacy-circuit-mockups",
+  "description": "Create, implement, or review legacy circuit mockups work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on legacy circuit mockups.",
+  "type": "skill",
+  "capability_tags": [
+    "Legacy Circuit Mockups",
+    "Design & Media"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "design-media"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/legacy-circuit-mockups",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/legacy-circuit-mockups/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/legacy-circuit-mockups.json",
+    "skill_path": "marketing/legacy-circuit-mockups",
+    "catalog_path": "catalog/skills/legacy-circuit-mockups.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 675,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Design & Media",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}

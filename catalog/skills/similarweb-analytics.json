@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "id": "similarweb-analytics",
+  "display_name": "Website Traffic Analytics",
+  "short_description": "Compare estimated website traffic and acquisition signals.",
+  "description": "Analyze estimated website visits, engagement, rankings, channel mix, and geographic distribution with dynamically discovered SandBase capabilities.",
+  "category": {
+    "id": "marketing-research",
+    "label": "Marketing & Research"
+  },
+  "tags": [
+    "website traffic",
+    "Similarweb",
+    "competitive analysis",
+    "acquisition channels"
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "visibility": "public",
+  "repository": {
+    "source_path": "marketing/similarweb-analytics",
+    "skill_file": "marketing/similarweb-analytics/SKILL.md",
+    "readme_anchor": "#similarweb-analytics"
+  },
+  "compatibility": {
+    "agents": [
+      "SandBase Agent",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "requires": [
+      "SandBase MCP connection or SANDBASE_API_KEY for live data"
+    ]
+  },
+  "install": {
+    "prompt": "Use $similarweb-analytics to compare these domains with current SandBase traffic data.",
+    "cli": "npx skills add sandbaseai/sandbase-skills --skill similarweb-analytics --agent codex",
+    "global_cli": "npx skills add sandbaseai/sandbase-skills --skill similarweb-analytics --agent codex --global",
+    "source_path": "marketing/similarweb-analytics"
+  },
+  "actions": [
+    {
+      "id": "connect-sandbase",
+      "label": "Connect SandBase",
+      "kind": "authorization_required"
+    },
+    {
+      "id": "view-source",
+      "label": "View on GitHub",
+      "kind": "external_link",
+      "url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/similarweb-analytics"
+    }
+  ],
+  "examples": [
+    "Compare monthly traffic and engagement for these three competitor domains.",
+    "Explain which acquisition channels appear to be driving this site's growth.",
+    "Create a six-month traffic, ranking, and country-mix snapshot for example.com."
+  ],
+  "configuration": {
+    "required": [
+      {
+        "kind": "sandbase_connection",
+        "label": "SandBase MCP connection or API key",
+        "required": true
+      }
+    ],
+    "optional_inputs": [
+      "target and comparison domains",
+      "complete-month date range",
+      "device and geography scope",
+      "metrics and report format"
+    ]
+  },
+  "notes": [
+    "Supports the official SandBase MCP bridge and documented Bearer-authenticated REST API.",
+    "Discovers and inspects live capabilities instead of preserving Manus runtime code or frozen Similarweb parameters.",
+    "Third-party traffic estimates are not equivalent to first-party analytics.",
+    "Never duplicates a pending asynchronous run."
+  ],
+  "api": {
+    "gateway": "sandbase-mcp-or-rest",
+    "authentication": "sandbase-authorized-connection-or-bearer",
+    "pricing_model": "dynamic/usage-based",
+    "schema_resolution": {
+      "source": "sandbase-capability-registry",
+      "strategy": "dynamic",
+      "lookup": "sandbase_inspect"
+    },
+    "schema_lookup": {
+      "tool": "sandbase_inspect",
+      "argument": "name"
+    },
+    "call": {
+      "tool": "sandbase_run",
+      "arguments": [
+        "name",
+        "arguments"
+      ]
+    },
+    "endpoints": [
+      {
+        "method": "MCP",
+        "operation": "sandbase/discover",
+        "tool_name": "sandbase_discover",
+        "summary": "Discover current website-traffic and engagement capabilities."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/inspect",
+        "tool_name": "sandbase_inspect",
+        "summary": "Inspect live schemas, coverage, pricing, and execution requirements."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run",
+        "tool_name": "sandbase_run",
+        "summary": "Execute an approved traffic or audience-data capability."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/run-get",
+        "tool_name": "sandbase_run_get",
+        "summary": "Poll an asynchronous analytics run."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/runs",
+        "tool_name": "sandbase_runs",
+        "summary": "Recover recent run status and recorded cost."
+      },
+      {
+        "method": "MCP",
+        "operation": "sandbase/account",
+        "tool_name": "sandbase_account",
+        "summary": "Check balance before a paid multi-domain batch."
+      }
+    ]
+  },
+  "related_skills": [
+    "competitor-monitor",
+    "site-audit"
+  ]
+}

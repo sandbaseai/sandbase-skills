@@ -1,0 +1,56 @@
+{
+  "name": "sandbase/json-canvas",
+  "display_name": "JSON Canvas",
+  "vendor": "sandbase",
+  "vendor_slug": "sandbase",
+  "model_slug": "json-canvas",
+  "description": "Create, implement, or review json canvas work with format, accessibility, performance, and visual-verification controls. Use when the requested deliverable depends on json canvas.",
+  "type": "skill",
+  "capability_tags": [
+    "JSON Canvas",
+    "Design & Media"
+  ],
+  "unified_schema": {
+    "protocol": "skill",
+    "servers": [
+      "sandbase-mcp"
+    ],
+    "categories": [
+      "design-media"
+    ],
+    "git_url": "https://github.com/sandbaseai/sandbase-skills/tree/main/marketing/json-canvas",
+    "prompt_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/marketing/json-canvas/SKILL.md",
+    "catalog_url": "https://raw.githubusercontent.com/sandbaseai/sandbase-skills/main/catalog/skills/json-canvas.json",
+    "skill_path": "marketing/json-canvas",
+    "catalog_path": "catalog/skills/json-canvas.json",
+    "required_endpoints": [
+      "sandbase_discover",
+      "sandbase_inspect",
+      "sandbase_run",
+      "sandbase_run_get",
+      "sandbase_runs",
+      "sandbase_account"
+    ]
+  },
+  "execution_mode": "async",
+  "supported_modes": null,
+  "fallback_models": null,
+  "fallback_policy": "auto",
+  "run_count": 0,
+  "sort_order": 671,
+  "context_length": 0,
+  "icon_url": "",
+  "metadata": {
+    "category": "Design & Media",
+    "endpoint_count": 6,
+    "supported_clients": [
+      "SandBase Agent",
+      "Claude",
+      "Codex",
+      "Cursor"
+    ]
+  },
+  "published_at": null,
+  "enabled": true,
+  "featured": false
+}
