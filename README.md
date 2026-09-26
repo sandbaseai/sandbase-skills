@@ -32,40 +32,6 @@ so other builders can discover it.
 
 A Skill is an instruction file that teaches an AI agent how to do one specific job. Each Skill defines a repeatable workflow, evidence rules, and output format. Portable Skills can use capabilities already provided by the host agent; specialized social, market, and data workflows can add SandBase providers when configured.
 
-## Repository Layout
-
-The repository keeps the human-authored Skill instructions separate from the
-generated catalogs and client-specific packaging:
-
-```text
-research/                 Research, social, and intelligence Skills
-marketing/                Business, content, engineering, and data Skills
-catalog/skills/           Install metadata for every published Skill
-skills.json               Machine-readable registry manifest
-agent-plugin/             Portable Agent Plugin packaging
-.claude-plugin/           Claude Code marketplace manifest
-dsh/                      DeepSeek Harness packaging and install metadata
-examples/                 Worked research reports and validation fixtures
-integrations/             SandBase registry and integration metadata
-scripts/                  Catalog, package, and consistency checks
-tests/                    Node and Python regression tests
-```
-
-`research/` and `marketing/` are the canonical Skill sources. When adding or
-renaming a Skill, update its matching entry in `catalog/skills/`, the registry
-manifest, and the relevant generated packaging, then run the checks below.
-The catalog is the authoritative list for installation paths; the tables in
-this README are a discoverability index.
-
-### Validation before opening a PR
-
-```bash
-npm test
-npm run marketplace:check
-npm run agent-plugin:check
-python3 scripts/skillpack.py validate
-```
-
 ## Quick Start
 
 ```bash
