@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multi-Source Search"
+  short_description: "Cross-check research with a verifiable evidence ledger"
+  default_prompt: "Use $multi-source-search to investigate this claim across independent sources and return a confidence-scored evidence ledger."
