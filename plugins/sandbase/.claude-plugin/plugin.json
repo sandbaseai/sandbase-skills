@@ -1,0 +1,22 @@
+{
+  "name": "sandbase",
+  "displayName": "SandBase",
+  "version": "1.0.0",
+  "description": "Discover, inspect, and run SandBase models and data APIs from one account, with a bundled official multi-source research skill.",
+  "author": {
+    "name": "AXIOMCLOUD PTE. LTD.",
+    "email": "contact@sandbase.ai",
+    "url": "https://www.sandbase.ai"
+  },
+  "homepage": "https://www.sandbase.ai",
+  "repository": "https://github.com/sandbaseai/sandbase-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "models",
+    "data-apis",
+    "sandboxes",
+    "agents",
+    "developer-tools",
+    "research"
+  ]
+}
